@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clark Auto Service LLC — Alamosa, CO</title>
+    <meta name="description" content="Family-owned auto repair in Alamosa's San Luis Valley. Two generations of expertise — classic car restoration and modern diagnostics. 1817 Tremont St. (719) 589-4485.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        /* ═══════════════════════════════════════════
+           LIGHT THEME — Sunny Summer Driving
+           ═══════════════════════════════════════════ */
+        body[data-theme="light"] {
+            --bg-primary: #e8f6fd;
+            --bg-secondary: #ffffff;
+            --bg-section-alt: #f0faf3;
+            --text-primary: #1a2e35;
+            --text-secondary: #4a6a73;
+            --text-muted: #6b8f98;
+            --accent: #e8731a;
+            --accent-glow: #ff9a4a;
+            --grass-green: #5a9a4a;
+            --sky-top: #4a9fe0;
+            --sky-bottom: #a8ddf0;
+            --sun-color: #ffd700;
+            --sun-glow: #fff3b0;
+            --border: rgba(26, 46, 53, 0.1);
+            --card-bg: rgba(255,255,255,0.85);
+            --card-shadow: 0 4px 24px rgba(26,46,53,0.08);
+            --nav-bg: rgba(232,246,253,0.88);
+            --nav-border: rgba(26,46,53,0.08);
+        }
+
+        /* ═══════════════════════════════════════════
+           DARK THEME — Neon Sign Auto Shop
+           ═══════════════════════════════════════════ */
+        body[data-theme="dark"] {
+            --bg-primary: #0d0d0d;
+            --bg-secondary: #161616;
+            --bg-section-alt: #111111;
+            --text-primary: #f0e6d6;
+            --text-secondary: #b8a89a;
+            --text-muted: #7a6e62;
+            --accent: #ff4a2a;
+            --accent-glow: #ff7a5a;
+            --grass-green: #2a4a1a;
+            --sky-top: #1a1a2e;
+            --sky-bottom: #0d0d0d;
+            --sun-color: transparent;
+            --sun-glow: transparent;
+            --border: rgba(255,74,42,0.15);
+            --card-bg: rgba(22,22,22,0.85);
+            --card-shadow: 0 4px 32px rgba(255,74,42,0.06);
+            --nav-bg: rgba(13,13,13,0.92);
+            --nav-border: rgba(255,74,42,0.1);
+            --neon-red-glow: 0 0 8px rgba(255,74,42,0.6), 0 0 24px rgba(255,74,42,0.3);
+            --neon-amber-glow: 0 0 8px rgba(255,180,60,0.6), 0 0 24px rgba(255,180,60,0.3);
+            --neon-glow-text: 0 0 10px currentColor, 0 0 30px currentColor;
+            --wet-reflection: repeating-linear-gradient(
+                180deg,
+                transparent,
+                transparent 2px,
+                rgba(255,74,42,0.015) 2px,
+                rgba(255,74,42,0.015) 4px
+            );
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Space Grotesk', system-ui, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.5s ease, color 0.5s ease;
+        }
+
+        /* ═══ THEME TOGGLE ═══ */
+        .theme-toggle {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 9999;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            border: 2px solid var(--accent);
+            background: var(--bg-secondary);
+            color: var(--accent);
+            font-size: 1.4rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            transition: all 0.3s;
+        }
+        .theme-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 28px rgba(0,0,0,0.25);
+        }
+        [data-theme="dark"] .theme-toggle {
+            box-shadow: var(--neon-red-glow), 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        /* ═══ NAVIGATION ═══ */
+        .nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            padding: 16px 0;
+            transition: all 0.4s ease;
+        }
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 clamp(20px, 5vw, 80px);
+        }
+        .nav-brand {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            text-decoration: none;
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+        .nav-brand .year {
+            font-size: 0.6rem;
+            font-weight: 600;
+            color: var(--accent);
+            letter-spacing: 0.05em;
+        }
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+        .nav-links a {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--accent); }
+        .nav-phone {
+            font-weight: 700 !important;
+            color: var(--accent) !important;
+            font-size: 0.85rem !important;
+            letter-spacing: 0 !important;
+            text-transform: none !important;
+        }
+        .nav-hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+        .nav-hamburger span {
+            display: block;
+            width: 24px;
+            height: 1.5px;
+            background: var(--text-primary);
+            margin: 5px 0;
+            transition: all 0.3s;
+        }
+
+        .nav.scrolled {
+            background: var(--nav-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--nav-border);
+            padding: 12px 0;
+        }
+
+        /* ═══ HERO — Light: Sky + Sun + Grass ═══ */
+        .hero {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            overflow: hidden;
+        }
+
+        /* Sky gradient background */
+        .hero-bg-sky {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg,
+                var(--sky-top) 0%,
+                var(--sky-bottom) 60%,
+                var(--bg-section-alt) 85%,
+                var(--grass-green) 92%,
+                #3d7a2e 100%
+            );
+            z-index: 0;
+        }
+
+        /* Sun */
+        .hero-sun {
+            position: absolute;
+            top: 8%;
+            right: 15%;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: var(--sun-color);
+            box-shadow:
+                0 0 40px var(--sun-glow),
+                0 0 80px rgba(255,215,0,0.3),
+                0 0 140px rgba(255,215,0,0.15);
+            z-index: 1;
+            opacity: 0.9;
+        }
+
+        /* Light rays from sun */
+        .hero-sun-rays {
+            position: absolute;
+            top: 8%;
+            right: 15%;
+            width: 120px;
+            height: 120px;
+            z-index: 0;
+            opacity: 0.3;
+        }
+
+        /* Clouds */
+        .cloud {
+            position: absolute;
+            background: rgba(255,255,255,0.7);
+            border-radius: 100px;
+            z-index: 1;
+            animation: drift 60s linear infinite;
+        }
+        .cloud::before, .cloud::after {
+            content: '';
+            position: absolute;
+            background: inherit;
+            border-radius: 50%;
+        }
+        .cloud-1 {
+            width: 120px; height: 40px;
+            top: 12%; left: -120px;
+            animation-duration: 55s;
+        }
+        .cloud-1::before { width: 50px; height: 50px; top: -25px; left: 20px; }
+        .cloud-1::after { width: 70px; height: 45px; top: -20px; left: 45px; }
+        .cloud-2 {
+            width: 90px; height: 30px;
+            top: 20%; left: -90px;
+            animation-duration: 70s;
+            animation-delay: -20s;
+            opacity: 0.5;
+        }
+        .cloud-2::before { width: 40px; height: 40px; top: -20px; left: 15px; }
+        .cloud-2::after { width: 55px; height: 35px; top: -15px; left: 30px; }
+        .cloud-3 {
+            width: 100px; height: 35px;
+            top: 8%; left: -100px;
+            animation-duration: 65s;
+            animation-delay: -35s;
+            opacity: 0.4;
+        }
+        .cloud-3::before { width: 45px; height: 45px; top: -22px; left: 18px; }
+        .cloud-3::after { width: 60px; height: 40px; top: -18px; left: 40px; }
+
+        @keyframes drift {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(100vw + 300px)); }
+        }
+
+        /* Road */
+        .hero-road {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 18%;
+            z-index: 1;
+        }
+        .road-surface {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 70%;
+            background: #3a3a3a;
+        }
+        .road-line {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 4px;
+            transform: translateY(-50%);
+            background: repeating-linear-gradient(
+                90deg,
+                #f0e68c 0px,
+                #f0e68c 40px,
+                transparent 40px,
+                transparent 80px
+            );
+        }
+
+        /* Neon undercarriage glow on the road (dark only) */
+        .neon-road-glow {
+            display: none;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 30%;
+            background: linear-gradient(0deg,
+                rgba(255,74,42,0.08) 0%,
+                rgba(255,180,60,0.04) 40%,
+                transparent 100%
+            );
+            z-index: 2;
+        }
+
+        [data-theme="dark"] .hero-bg-sky {
+            background: linear-gradient(180deg, #0a0a12 0%, #0d0d0d 60%, #111111 100%);
+        }
+        [data-theme="dark"] .hero-road .road-surface {
+            background: #0f0f0f;
+        }
+        [data-theme="dark"] .hero-road .road-line {
+            background: repeating-linear-gradient(
+                90deg,
+                rgba(255,180,60,0.4) 0px,
+                rgba(255,180,60,0.4) 40px,
+                transparent 40px,
+                transparent 80px
+            );
+        }
+        [data-theme="dark"] .neon-road-glow { display: block; }
+        [data-theme="dark"] .hero-sun { display: none; }
+        [data-theme="dark"] .hero-sun-rays { display: none; }
+        [data-theme="dark"] .cloud { display: none; }
+
+        /* Neon sign neon-glow border on road edge (dark) */
+        .neon-edge-left, .neon-edge-right {
+            display: none;
+            position: absolute;
+            bottom: 18%;
+            width: 3px;
+            height: 60px;
+            z-index: 3;
+            filter: blur(1px);
+        }
+        .neon-edge-left {
+            left: 8%;
+            background: var(--accent);
+            box-shadow: var(--neon-red-glow);
+        }
+        .neon-edge-right {
+            right: 8%;
+            background: var(--accent-glow);
+            box-shadow: var(--neon-amber-glow);
+        }
+        [data-theme="dark"] .neon-edge-left,
+        [data-theme="dark"] .neon-edge-right {
+            display: block;
+        }
+
+        /* Hidden Corvette neon (dark only, very subtle) */
+        .corvette-neon {
+            display: none;
+            position: absolute;
+            top: 50%;
+            right: 8%;
+            transform: translateY(-50%);
+            width: 140px;
+            height: 80px;
+            z-index: 1;
+            opacity: 0.08;
+            pointer-events: none;
+        }
+        .corvette-neon svg {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 0 6px var(--accent)) drop-shadow(0 0 20px var(--accent));
+        }
+        [data-theme="dark"] .corvette-neon { display: block; }
+
+        /* Hero content */
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px clamp(20px, 5vw, 80px) 0;
+            text-align: center;
+            width: 100%;
+        }
+        .hero-inner {
+            max-width: 720px;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            border-radius: 100px;
+            border: 1.5px solid var(--accent);
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 32px;
+            background: rgba(255,255,255,0.1);
+        }
+        .hero-badge-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+        .hero h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2.8rem, 6.5vw, 5rem);
+            font-weight: 800;
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+        }
+        [data-theme="dark"] .hero h1 {
+            text-shadow: 0 0 40px rgba(255,74,42,0.15);
+        }
+        .hero h1 .accent {
+            color: var(--accent);
+            position: relative;
+        }
+        .hero-desc {
+            max-width: 480px;
+            margin: 0 auto 40px;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+        [data-theme="dark"] .hero-desc {
+            color: var(--text-secondary);
+        }
+        .hero-actions {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn-neon {
+            font-weight: 700;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 16px 36px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+        .btn-primary {
+            background: var(--accent);
+            color: #fff;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(232,115,26,0.3);
+        }
+        [data-theme="dark"] .btn-primary {
+            box-shadow: var(--neon-red-glow);
+        }
+        [data-theme="dark"] .btn-primary:hover {
+            box-shadow: var(--neon-red-glow), 0 8px 40px rgba(255,74,42,0.3);
+        }
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1.5px solid var(--border);
+        }
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Stats bar */
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            margin-top: 56px;
+            padding-top: 28px;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-val {
+            font-family: 'Syne', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent);
+            line-height: 1;
+        }
+        [data-theme="dark"] .stat-val {
+            text-shadow: var(--neon-red-glow);
+        }
+        .stat-label {
+            font-size: 0.55rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-top: 6px;
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 28%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            animation: bob-down 2s ease-in-out infinite;
+        }
+        .scroll-indicator span {
+            font-size: 0.5rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+        .scroll-line {
+            width: 1px;
+            height: 24px;
+            background: var(--text-muted);
+            opacity: 0.4;
+        }
+        @keyframes bob-down {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(8px); }
+        }
+
+        /* ═══ TICKER ═══ */
+        .ticker-strip {
+            background: var(--accent);
+            color: #fff;
+            padding: 14px 0;
+            overflow: hidden;
+            position: relative;
+        }
+        .ticker-inner {
+            display: flex;
+            animation: ticker 30s linear infinite;
+            width: max-content;
+        }
+        .ticker-item {
+            padding: 0 28px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+        .ticker-item .dot {
+            display: inline-block;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.6);
+            margin: 0 20px;
+            vertical-align: middle;
+        }
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* ═══ SECTIONS ═══ */
+        .section {
+            padding: clamp(72px, 10vw, 140px) clamp(20px, 5vw, 80px);
+        }
+
+        .section-label {
+            font-size: 0.55rem;
+            font-weight: 700;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .section-label::before {
+            content: '';
+            width: 28px;
+            height: 2px;
+            background: var(--accent);
+        }
+        .section-title {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+        }
+        .section-desc {
+            font-size: 1.05rem;
+            line-height: 1.75;
+            color: var(--text-secondary);
+            max-width: 520px;
+        }
+
+        /* ═══ ABOUT — Zigzag ═══ */
+        .about-section { background: var(--bg-primary); }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .about-image-container {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            background: var(--bg-section-alt);
+        }
+        .about-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .about-image-frame {
+            position: absolute;
+            inset: 12px;
+            border: 1px solid var(--accent);
+            border-radius: 4px;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+        .about-details { display: flex; flex-direction: column; gap: 20px; }
+        .about-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+        .info-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-top: 8px;
+        }
+        .info-card {
+            padding: 20px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            background: var(--card-bg);
+            backdrop-filter: blur(8px);
+        }
+        .info-card-label {
+            font-size: 0.55rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 6px;
+        }
+        .info-card-text {
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            line-height: 1.5;
+        }
+        .info-card-text a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* ═══ SERVICES — Horizontal card grid ═══ */
+        .services-section {
+            background: var(--bg-section-alt);
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1100px;
+            margin: 48px auto 0;
+        }
+        .service-card {
+            padding: 36px 28px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: var(--card-bg);
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--card-shadow);
+            border-color: var(--accent);
+        }
+        [data-theme="dark"] .service-card:hover {
+            box-shadow: var(--card-shadow), 0 0 20px rgba(255,74,42,0.05);
+        }
+        .service-icon {
+            font-size: 1.8rem;
+            margin-bottom: 18px;
+            display: block;
+        }
+        .service-name {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+        .service-desc {
+            font-size: 0.88rem;
+            line-height: 1.65;
+            color: var(--text-secondary);
+        }
+
+        /* ═══ WHY US — 4-accent strip ═══ */
+        .why-section {
+            background: var(--bg-primary);
+        }
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            max-width: 1100px;
+            margin: 48px auto 0;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .why-card {
+            padding: 40px 28px;
+            text-align: center;
+            border-right: 1px solid var(--border);
+            background: var(--card-bg);
+            transition: background 0.3s;
+        }
+        .why-card:last-child { border-right: none; }
+        .why-card:hover { background: var(--bg-section-alt); }
+        .why-icon {
+            font-size: 2rem;
+            margin-bottom: 16px;
+            display: block;
+        }
+        .why-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+        .why-desc {
+            font-size: 0.82rem;
+            line-height: 1.6;
+            color: var(--text-muted);
+        }
+
+        /* ═══ TESTIMONIAL ═══ */
+        .testimonial-section {
+            background: var(--bg-section-alt);
+            text-align: center;
+        }
+        .testimonial-wrap {
+            max-width: 700px;
+            margin: 40px auto 0;
+        }
+        .testimonial-stars {
+            color: var(--accent);
+            font-size: 1rem;
+            letter-spacing: 0.15em;
+            margin-bottom: 28px;
+        }
+        [data-theme="dark"] .testimonial-stars {
+            text-shadow: var(--neon-red-glow);
+        }
+        .testimonial-text {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+            font-weight: 500;
+            font-style: italic;
+            line-height: 1.5;
+            color: var(--text-primary);
+        }
+        .testimonial-author {
+            margin-top: 28px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+        .testimonial-src {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        /* ═══ TEAM — Full width cards ═══ */
+        .team-section { background: var(--bg-primary); }
+        .team-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 1100px;
+            margin: 48px auto 0;
+        }
+        .team-card {
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            background: var(--card-bg);
+            display: flex;
+            flex-direction: column;
+        }
+        .team-photo {
+            aspect-ratio: 4/3;
+            background: var(--bg-section-alt);
+            overflow: hidden;
+        }
+        .team-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .team-card:hover .team-photo img {
+            transform: scale(1.05);
+        }
+        .team-info {
+            padding: 28px;
+        }
+        .team-name {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+        .team-role {
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 14px;
+        }
+        .team-bio {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        /* ═══ REVIEWS ═══ */
+        .reviews-section {
+            background: var(--accent);
+            color: #fff;
+        }
+        .reviews-section .section-label {
+            color: rgba(255,255,255,0.8);
+        }
+        .reviews-section .section-label::before {
+            background: rgba(255,255,255,0.8);
+        }
+        .reviews-section .section-title {
+            color: #fff;
+        }
+        .reviews-section .section-desc {
+            color: rgba(255,255,255,0.8);
+        }
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            max-width: 1100px;
+            margin: 40px auto 0;
+        }
+        .review-card {
+            padding: 28px 24px;
+            border-radius: 6px;
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(4px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 200px;
+            transition: background 0.3s;
+        }
+        .review-card:hover {
+            background: rgba(255,255,255,0.18);
+        }
+        .review-stars {
+            color: #ffd700;
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            margin-bottom: 14px;
+        }
+        .review-text {
+            font-size: 0.9rem;
+            line-height: 1.65;
+            color: rgba(255,255,255,0.9);
+        }
+        .review-meta {
+            margin-top: 18px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.7);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* ═══ VISIT ═══ */
+        .visit-section { background: var(--bg-section-alt); }
+        .visit-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            max-width: 1100px;
+            margin: 48px auto 0;
+        }
+        .visit-block { margin-bottom: 32px; }
+        .visit-block h3 {
+            font-size: 0.55rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+        .visit-block p {
+            font-size: 1rem;
+            line-height: 1.75;
+            color: var(--text-primary);
+        }
+        .visit-block a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent);
+            transition: opacity 0.2s;
+        }
+        .visit-block a:hover { opacity: 0.7; }
+        .visit-map {
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            height: 100%;
+            min-height: 320px;
+        }
+        .visit-map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            filter: saturate(0.8);
+        }
+        [data-theme="dark"] .visit-map iframe {
+            filter: saturate(0.3) brightness(0.7);
+        }
+
+        /* ═══ FOOTER ═══ */
+        .footer {
+            background: var(--bg-primary);
+            border-top: 1px solid var(--border);
+            padding: 60px clamp(20px, 5vw, 80px) 40px;
+        }
+        [data-theme="dark"] .footer {
+            background: #0a0a0a;
+        }
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            max-width: 1100px;
+            margin: 0 auto;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .footer-brand {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+        .footer-tagline {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .footer-col h4 {
+            font-size: 0.55rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 14px;
+        }
+        .footer-col p, .footer-col a {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            text-decoration: none;
+            display: block;
+        }
+        .footer-col a:hover { color: var(--accent); }
+        .footer-bottom {
+            max-width: 1100px;
+            margin: 48px auto 0;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        /* ═══ SCROLL REVEAL ═══ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(32px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ═══ NEON WET ROAD REFLECTION (dark) ═══ */
+        .wet-reflection-overlay {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: var(--wet-reflection);
+            pointer-events: none;
+            z-index: 0;
+        }
+        [data-theme="dark"] .wet-reflection-overlay {
+            display: block;
+        }
+
+        /* ═══ NEON FLICKER ANIMATION ═══ */
+        @keyframes neon-flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 40px currentColor;
+                opacity: 1;
+            }
+            20%, 24%, 55% {
+                text-shadow: none;
+                opacity: 0.7;
+            }
+        }
+
+        /* ═══ RESPONSIVE ═══ */
+        @media (max-width: 900px) {
+            .hero h1 { font-size: clamp(2.2rem, 8vw, 3rem); }
+            .about-grid { grid-template-columns: 1fr; gap: 40px; }
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .why-grid { grid-template-columns: repeat(2, 1fr); }
+            .why-card:nth-child(2) { border-right: none; }
+            .why-card { border-bottom: 1px solid var(--border); }
+            .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+            .team-grid { grid-template-columns: 1fr; }
+            .visit-grid { grid-template-columns: 1fr; gap: 40px; }
+            .hero-stats { gap: 28px; }
+            .nav-links { display: none; }
+            .nav-hamburger { display: block; }
+        }
+        @media (max-width: 600px) {
+            .services-grid { grid-template-columns: 1fr; }
+            .why-grid { grid-template-columns: 1fr; }
+            .why-card { border-right: none; border-bottom: 1px solid var(--border); }
+            .reviews-grid { grid-template-columns: 1fr; }
+            .hero-stats { flex-direction: column; gap: 16px; }
+            .hero-sun { width: 80px; height: 80px; top: 6%; right: 10%; }
+            .info-cards { grid-template-columns: 1fr; }
+            .footer-inner { flex-direction: column; }
+            .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+        }
+
+        /* ═══ MOBILE NAV ═══ */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 999;
+            background: var(--nav-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+        }
+        .mobile-nav.open { display: flex; }
+        .mobile-nav a {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .mobile-nav a:hover { color: var(--accent); }
+        .mobile-nav-close {
+            position: absolute;
+            top: 20px;
+            right: 24px;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: var(--text-primary);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body data-theme="light">
+
+    <!-- NAV -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-brand">
+                CLARK AUTO<span class="year">EST. 2007</span>
+            </a>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#visit">Visit</a></li>
+                </ul>
+                <a href="tel:+17195894485" class="nav-phone">(719) 589-4485</a>
+                <button class="nav-hamburger" id="hamburger-btn" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MOBILE NAV -->
+    <div class="mobile-nav" id="mobile-nav">
+        <button class="mobile-nav-close" id="mobile-close">&times;</button>
+        <a href="#about" onclick="closeMobile()">About</a>
+        <a href="#services" onclick="closeMobile()">Services</a>
+        <a href="#team" onclick="closeMobile()">Team</a>
+        <a href="#reviews" onclick="closeMobile()">Reviews</a>
+        <a href="#visit" onclick="closeMobile()">Visit</a>
+        <a href="tel:+17195894485">(719) 589-4485</a>
+    </div>
+
+    <!-- THEME TOGGLE -->
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">☀️</button>
+
+    <!-- WET ROAD REFLECTION (dark) -->
+    <div class="wet-reflection-overlay"></div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-bg-sky"></div>
+        <div class="hero-sun"></div>
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+        <div class="cloud cloud-3"></div>
+        <div class="hero-road">
+            <div class="road-surface"></div>
+            <div class="road-line"></div>
+            <div class="neon-road-glow"></div>
+        </div>
+        <div class="neon-edge-left"></div>
+        <div class="neon-edge-right"></div>
+
+        <!-- Hidden Corvette neon in dark -->
+        <div class="corvette-neon">
+            <svg viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 65 L45 30 L70 20 L120 20 L155 25 L180 40 L190 55 L185 65 L160 68 L140 68 L130 78 L80 78 L70 68 L50 68 Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                <circle cx="55" cy="70" r="8" stroke="currentColor" stroke-width="1" fill="none"/>
+                <circle cx="145" cy="70" r="8" stroke="currentColor" stroke-width="1" fill="none"/>
+                <path d="M72 45 L110 45" stroke="currentColor" stroke-width="1"/>
+                <path d="M112 45 L148 45" stroke="currentColor" stroke-width="1"/>
+            </svg>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-inner">
+                <div class="hero-badge">
+                    <span class="hero-badge-dot"></span>
+                    Family-Owned Since 2007
+                </div>
+                <h1>Two Generations.<br>One <span class="accent">Trusted</span> Shop.</h1>
+                <p class="hero-desc">Classic car restoration and modern diagnostics under one roof. Alamosa's go-to auto repair — built on honesty, not invoices.</p>
+                <div class="hero-actions">
+                    <a href="tel:+17195894485" class="btn-neon btn-primary">
+                        <span>Call Now</span> →
+                    </a>
+                    <a href="#services" class="btn-neon btn-secondary">Our Services</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-val">5.0</div>
+                        <div class="stat-label">Yelp Rating</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-val">50+</div>
+                        <div class="stat-label">Five-Star Reviews</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-val">20+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- TICKER -->
+    <div class="ticker-strip">
+        <div class="ticker-inner">
+            <span class="ticker-item">Oil Changes<span class="dot"></span>Engine Diagnostics<span class="dot"></span>Brake Service<span class="dot"></span>Classic Car Restoration<span class="dot"></span>Transmission<span class="dot"></span>Electrical Systems<span class="dot"></span>Suspension<span class="dot"></span>A/C Repair<span class="dot"></span>State Inspection<span class="dot"></span>Pre-Purchase Inspection<span class="dot"></span></span>
+            <span class="ticker-item">Oil Changes<span class="dot"></span>Engine Diagnostics<span class="dot"></span>Brake Service<span class="dot"></span>Classic Car Restoration<span class="dot"></span>Transmission<span class="dot"></span>Electrical Systems<span class="dot"></span>Suspension<span class="dot"></span>A/C Repair<span class="dot"></span>State Inspection<span class="dot"></span>Pre-Purchase Inspection<span class="dot"></span></span>
+        </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section class="section about-section" id="about">
+        <div class="about-grid">
+            <div class="about-image-container reveal">
+                <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=600&h=450&fit=crop&q=80" alt="Classic car engine bay" loading="lazy">
+                <div class="about-image-frame"></div>
+            </div>
+            <div class="about-details">
+                <div class="reveal">
+                    <div class="section-label">About Us</div>
+                    <h2 class="section-title">Built in the Valley.<br>For the Valley.</h2>
+                </div>
+                <p class="about-text reveal">Clark Auto Service is a family-owned auto repair shop on Tremont Street in Alamosa, Colorado. What started as Ron Clark tinkering in a garage has grown into a full-service shop — but the philosophy hasn't changed: treat every car like it's your own, and never charge for work you wouldn't do on your own vehicle.</p>
+                <p class="about-text reveal">Today, father and son Ron and Chris Clark keep that tradition alive — blending two generations of hands-on mechanical expertise with modern diagnostic equipment.</p>
+                <div class="info-cards reveal">
+                    <div class="info-card">
+                        <div class="info-card-label">Address</div>
+                        <div class="info-card-text">1817 Tremont St<br>Alamosa, CO 81101</div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card-label">Hours</div>
+                        <div class="info-card-text">Mon–Fri 8am–5pm<br>Sat–Sun Closed</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section services-section" id="services">
+        <div style="max-width:1100px;margin:0 auto;">
+            <div class="reveal">
+                <div class="section-label">What We Do</div>
+                <h2 class="section-title">Full Service.<br>Full Transparency.</h2>
+                <p class="section-desc">From oil changes to engine builds, we cover everything between the wheels.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card reveal">
+                    <span class="service-icon">🔧</span>
+                    <h3 class="service-name">Engine Diagnostics</h3>
+                    <p class="service-desc">State-of-the-art OBD scanning and hands-on troubleshooting to find the real problem — not just the code.</p>
+                </div>
+                <div class="service-card reveal">
+                    <span class="service-icon">🛞</span>
+                    <h3 class="service-name">Brake Service</h3>
+                    <p class="service-desc">Pads, rotors, calipers, and fluid. Done right the first time, with parts that last.</p>
+                </div>
+                <div class="service-card reveal">
+                    <span class="service-icon">⚙️</span>
+                    <h3 class="service-name">Transmission</h3>
+                    <p class="service-desc">Fluid services, rebuilds, and diagnostics. We keep your car shifting smooth.</p>
+                </div>
+                <div class="service-card reveal">
+                    <span class="service-icon">🏎️</span>
+                    <h3 class="service-name">Classic Car Restoration</h3>
+                    <p class="service-desc">Our signature. We restore and maintain classic American muscle and foreign classics alike.</p>
+                </div>
+                <div class="service-card reveal">
+                    <span class="service-icon">❄️</span>
+                    <h3 class="service-name">A/C & Heating</h3>
+                    <p class="service-desc">San Luis Valley gets hot in summer and cold in winter. Stay comfortable either way.</p>
+                </div>
+                <div class="service-card reveal">
+                    <span class="service-icon">✅</span>
+                    <h3 class="service-name">State Inspection</h3>
+                    <p class="service-desc">Colorado state safety inspections — quick, thorough, and hassle-free.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY US -->
+    <section class="section why-section">
+        <div style="max-width:1100px;margin:0 auto;">
+            <div class="reveal" style="text-align:center;margin-bottom:0;">
+                <div class="section-label" style="justify-content:center;">Why Clark Auto</div>
+                <h2 class="section-title">The Difference Is Simple.</h2>
+            </div>
+            <div class="why-grid">
+                <div class="why-card reveal">
+                    <span class="why-icon">👨‍👦</span>
+                    <h3 class="why-title">Family Owned</h3>
+                    <p class="why-desc">Father and son team. You're not a ticket number here.</p>
+                </div>
+                <div class="why-card reveal">
+                    <span class="why-icon">🔬</span>
+                    <h3 class="why-title">Modern Tools</h3>
+                    <p class="why-desc">Latest diagnostic equipment meets old-school gut instinct.</p>
+                </div>
+                <div class="why-card reveal">
+                    <span class="why-icon">💬</span>
+                    <h3 class="why-title">No BS Quotes</h3>
+                    <p class="why-desc">We explain what needs doing, what can wait, and exactly what it costs.</p>
+                </div>
+                <div class="why-card reveal">
+                    <span class="why-icon">⭐</span>
+                    <h3 class="why-title">5.0 Yelp</h3>
+                    <p class="why-desc">50+ five-star reviews from actual locals. Not bought, earned.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIAL -->
+    <section class="section testimonial-section">
+        <div class="reveal">
+            <div class="section-label" style="justify-content:center;">What People Say</div>
+            <div class="testimonial-wrap">
+                <div class="testimonial-stars">★ ★ ★ ★ ★</div>
+                <p class="testimonial-text">"Ron and his son are the best mechanics in the San Luis Valley. They're honest, fair, and they actually care about doing the job right. I won't take my truck anywhere else."</p>
+                <div class="testimonial-author">Verified Customer — Yelp</div>
+                <div class="testimonial-src">5.0 ★★★★★ Rating</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEAM -->
+    <section class="section team-section" id="team">
+        <div style="max-width:1100px;margin:0 auto;">
+            <div class="reveal">
+                <div class="section-label">The Team</div>
+                <h2 class="section-title">Meet the Clark's.</h2>
+                <p class="section-desc">Two generations of mechanical know-how, same shop, same handshake.</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card reveal">
+                    <div class="team-photo">
+                        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&h=300&fit=crop&q=80" alt="Workshop tools" loading="lazy">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Ron Clark</h3>
+                        <div class="team-role">Founder & Lead Mechanic</div>
+                        <p class="team-bio">30+ years in automotive. Ron built this shop from a one-bay garage into Alamosa's most trusted repair destination. Specializes in classic American muscle and diesel engines.</p>
+                    </div>
+                </div>
+                <div class="team-card reveal">
+                    <div class="team-photo">
+                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=400&h=300&fit=crop&q=80" alt="Modern workshop" loading="lazy">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Chris Clark</h3>
+                        <div class="team-role">Co-Owner & Modern Diagnostics</div>
+                        <p class="team-bio">Brought new-school computer diagnostics into the family business. Chris bridges the gap between vintage wrench-turning and 21st-century OBD systems.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="section reviews-section" id="reviews">
+        <div style="max-width:1100px;margin:0 auto;">
+            <div class="reveal" style="text-align:center;margin-bottom:0;">
+                <div class="section-label" style="justify-content:center;">Reviews</div>
+                <h2 class="section-title">50+ Five Stars.<br>Can't Fake That.</h2>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card reveal">
+                    <div>
+                        <div class="review-stars">★ ★ ★ ★ ★</div>
+                        <p class="review-text">"Best mechanic in Alamosa, hands down. They fixed my transmission issue that two other shops couldn't figure out."</p>
+                    </div>
+                    <div class="review-meta">
+                        <span>Mike R.</span>
+                        <span>Google Reviews</span>
+                    </div>
+                </div>
+                <div class="review-card reveal">
+                    <div>
+                        <div class="review-stars">★ ★ ★ ★ ★</div>
+                        <p class="review-text">"Ron restored my '67 Mustang to better than original. These guys know classics like nobody else in the valley."</p>
+                    </div>
+                    <div class="review-meta">
+                        <span>Sarah T.</span>
+                        <span>Yelp</span>
+                    </div>
+                </div>
+                <div class="review-card reveal">
+                    <div>
+                        <div class="review-stars">★ ★ ★ ★ ★</div>
+                        <p class="review-text">"Fair pricing, honest diagnostics, and they actually call you with updates. Not something you get everywhere."</p>
+                    </div>
+                    <div class="review-meta">
+                        <span>James K.</span>
+                        <span>Google Reviews</span>
+                    </div>
+                </div>
+                <div class="review-card reveal">
+                    <div>
+                        <div class="review-stars">★ ★ ★ ★ ★</div>
+                        <p class="review-text">"They went above and beyond to get me back on the road when my truck broke down on US-160. True heroes."</p>
+                    </div>
+                    <div class="review-meta">
+                        <span>Linda W.</span>
+                        <span>Yelp</span>
+                    </div>
+                </div>
+                <div class="review-card reveal">
+                    <div>
+                        <div class="review-stars">★ ★ ★ ★ ★</div>
+                        <p class="review-text">"I've been bringing my vehicles here for 5 years. Never once have I felt like they were upselling me."</p>
+                    </div>
+                    <div class="review-meta">
+                        <span>David M.</span>
+                        <span>Google Reviews</span>
+                    </div>
+                </div>
+                <div class="review-card reveal">
+                    <div>
+                        <div class="review-stars">★ ★ ★ ★ ★</div>
+                        <p class="review-text">"Chris explained exactly what was wrong with my car in terms I could understand. Rare to find that level of patience."</p>
+                    </div>
+                    <div class="review-meta">
+                        <span>Amy P.</span>
+                        <span>Yelp</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VISIT -->
+    <section class="section visit-section" id="visit">
+        <div style="max-width:1100px;margin:0 auto;">
+            <div class="reveal">
+                <div class="section-label">Find Us</div>
+                <h2 class="section-title">Come Say Hi.</h2>
+            </div>
+            <div class="visit-grid">
+                <div>
+                    <div class="visit-block reveal">
+                        <h3>Address</h3>
+                        <p>1817 Tremont Street<br>Alamosa, CO 81101</p>
+                    </div>
+                    <div class="visit-block reveal">
+                        <h3>Phone</h3>
+                        <p><a href="tel:+17195894485">(719) 589-4485</a></p>
+                    </div>
+                    <div class="visit-block reveal">
+                        <h3>Email</h3>
+                        <p><a href="mailto:clarkautoservice@gmail.com">clarkautoservice@gmail.com</a></p>
+                    </div>
+                    <div class="visit-block reveal">
+                        <h3>Hours</h3>
+                        <p>Monday – Friday: 8:00 AM – 5:00 PM<br>Saturday – Sunday: Closed</p>
+                    </div>
+                    <div class="reveal" style="margin-top:8px;">
+                        <a href="https://www.google.com/maps/dir//1817+Tremont+St,+Alamosa,+CO+81101" target="_blank" class="btn-neon btn-primary" style="font-size:0.7rem;">
+                            Get Directions →
+                        </a>
+                    </div>
+                </div>
+                <div class="visit-map reveal">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3106.5!2d-105.8728!3d37.4717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x873b5a3c1a2b3c4d%3A0x0!2s1817+Tremont+St%2C+Alamosa%2C+CO+81101!5e0!3m2!1sen!2sus!4v1"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Clark Auto Service location">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div>
+                <div class="footer-brand">CLARK AUTO SERVICE</div>
+                <div class="footer-tagline">Family-owned auto repair since 2007. Alamosa, Colorado.</div>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><a href="tel:+17195894485">(719) 589-4485</a></p>
+                <p><a href="mailto:clarkautoservice@gmail.com">clarkautoservice@gmail.com</a></p>
+                <p>1817 Tremont St, Alamosa CO 81101</p>
+            </div>
+            <div class="footer-col">
+                <h4>Hours</h4>
+                <p>Mon – Fri: 8am – 5pm</p>
+                <p>Sat – Sun: Closed</p>
+            </div>
+            <div class="footer-col">
+                <h4>Follow</h4>
+                <a href="https://www.yelp.com/biz/clark-auto-service-alamosa" target="_blank">Yelp</a>
+                <a href="https://www.google.com/maps/place/Clark+Auto+Service" target="_blank">Google</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Clark Auto Service LLC. All rights reserved.</span>
+            <span>Hand-crafted with care in the San Luis Valley</span>
+        </div>
+    </footer>
+
+    <!-- SCROLL REVEAL ANIMATION -->
+    <script>
+        // Scroll reveal
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        reveals.forEach(el => observer.observe(el));
+
+        // Nav scroll
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 60);
+        });
+
+        // Theme toggle
+        const toggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        let isDark = false;
+        toggle.addEventListener('click', () => {
+            isDark = !isDark;
+            body.setAttribute('data-theme', isDark ? 'dark' : 'light');
+            toggle.textContent = isDark ? '🌙' : '☀️';
+            if (isDark) {
+                toggle.style.boxShadow = '0 0 12px rgba(255,74,42,0.6), 0 0 36px rgba(255,74,42,0.3)';
+            } else {
+                toggle.style.boxShadow = '';
+            }
+        });
+
+        // Mobile nav
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileNav = document.getElementById('mobile-nav');
+        const mobileClose = document.getElementById('mobile-close');
+        hamburgerBtn.addEventListener('click', () => mobileNav.classList.add('open'));
+        mobileClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+        function closeMobile() { mobileNav.classList.remove('open'); }
+    </script>
+</body>
+</html>

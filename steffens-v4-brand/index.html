@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Steffens Quality Plumbing & Heating — Alamosa, CO</title>
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  /* === BRAND COLORS (from SQPH logo) === */
+  :root {
+    --red: #D32F2F;       /* main logo red */
+    --red-dark: #B71C1C;   /* hover/dark red */
+    --red-light: #FF5F52;  /* accent */
+    --blue: #1565C0;       /* logo blue bar */
+    --blue-dark: #0D47A1;  /* dark blue */
+    --blue-light: #42A5F5; /* light blue accent */
+    --black: #1a1a1a;
+    --white: #ffffff;
+    --gray-50: #fafafa;
+    --gray-100: #f5f5f5;
+    --gray-200: #eeeeee;
+    --gray-600: #757575;
+    --gray-800: #424242;
+  }
+
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: var(--gray-800);
+    line-height: 1.6;
+    background: var(--white);
+  }
+  a { text-decoration: none; color: inherit; }
+
+  .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+
+  /* --- TOP BAR --- */
+  .top-bar {
+    background: var(--black);
+    color: rgba(255,255,255,0.7);
+    padding: 8px 0;
+    font-size: 0.82rem;
+  }
+  .top-bar .container {
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 8px;
+  }
+  .top-bar a { color: var(--red-light); }
+  .top-bar a:hover { color: var(--white); }
+
+  /* --- NAV --- */
+  header {
+    background: var(--white);
+    border-bottom: 3px solid var(--red);
+    position: sticky; top: 0; z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  }
+  .nav-bar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 12px 24px; max-width: 1160px; margin: 0 auto;
+  }
+  .logo { display: flex; align-items: center; gap: 16px; }
+  .logo img {
+    width: 160px; height: auto;
+  }
+  nav { display: flex; align-items: center; gap: 4px; }
+  nav a {
+    color: var(--gray-800);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    transition: background 0.2s, color 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  nav a:hover { background: var(--gray-100); color: var(--red); }
+  .nav-call {
+    background: var(--red) !important;
+    color: white !important;
+    padding: 10px 22px !important;
+    margin-left: 8px;
+  }
+  .nav-call:hover { background: var(--red-dark) !important; }
+  .hamburger {
+    display: none; background: none; border: none;
+    font-size: 1.5rem; cursor: pointer; color: var(--red);
+  }
+
+  /* --- HERO --- */
+  .hero {
+    position: relative;
+    min-height: 520px;
+    display: flex; align-items: center;
+    background:
+      linear-gradient(135deg, rgba(21,101,192,0.88) 0%, rgba(211,47,47,0.75) 100%),
+      url('https://images.unsplash.com/photo-1585128792020-803d29415281?w=1600&q=80') center/cover no-repeat;
+    color: white;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0; height: 60px;
+    background: linear-gradient(transparent, rgba(255,255,255,0.05));
+  }
+  .hero .container { position: relative; z-index: 2; padding: 70px 24px; }
+  .hero-content { max-width: 620px; }
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 18px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+  .hero p { font-size: 1.15rem; opacity: 0.95; margin-bottom: 30px; max-width: 500px; }
+  .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 28px; border-radius: 8px;
+    font-size: 1rem; font-weight: 700;
+    cursor: pointer; border: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
+  .btn-red { background: var(--red); color: white; }
+  .btn-red:hover { background: var(--red-dark); }
+  .btn-white { background: white; color: var(--blue-dark); }
+  .btn-outline {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255,255,255,0.6);
+  }
+  .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.1); }
+
+  /* --- TRUST STRIP --- */
+  .trust-strip {
+    background: var(--gray-100);
+    border-bottom: 1px solid var(--gray-200);
+    padding: 24px 0;
+  }
+  .trust-items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px; text-align: center;
+  }
+  .trust-item { padding: 8px; }
+  .trust-icon { font-size: 1.6rem; margin-bottom: 6px; }
+  .trust-item h4 { font-size: 0.88rem; color: var(--red); font-weight: 700; margin-bottom: 2px; }
+  .trust-item p { font-size: 0.78rem; color: var(--gray-600); }
+
+  /* --- SERVICES --- */
+  .section { padding: 70px 0; }
+  .section-header { text-align: center; margin-bottom: 44px; }
+  .section-header .label {
+    display: inline-block;
+    color: var(--red);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
+  .section-header h2 {
+    font-size: 2rem; font-weight: 800;
+    color: var(--black); margin-bottom: 12px;
+  }
+  .section-header p { color: var(--gray-600); max-width: 520px; margin: 0 auto; }
+  .accent-line {
+    width: 50px; height: 4px;
+    background: linear-gradient(90deg, var(--red), var(--blue));
+    margin: 16px auto 0;
+    border-radius: 2px;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .svc-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    border: 1px solid var(--gray-200);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .svc-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+  .svc-img {
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  .svc-img::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0; height: 60px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.1));
+  }
+  .svc-body { padding: 24px; }
+  .svc-body h3 { font-size: 1.05rem; color: var(--black); margin-bottom: 8px; }
+  .svc-body p { font-size: 0.88rem; color: var(--gray-600); line-height: 1.6; margin-bottom: 14px; }
+  .svc-link {
+    color: var(--red);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-flex; align-items: center; gap: 6px;
+    transition: gap 0.2s;
+  }
+  .svc-link:hover { gap: 10px; }
+
+  /* --- ABOUT --- */
+  .about-section { background: var(--gray-100); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px; align-items: center;
+  }
+  .about-img-wrap {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    aspect-ratio: 4/3;
+  }
+  .about-img-wrap img {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+  .about-badge {
+    position: absolute; bottom: 20px; left: 20px;
+    background: var(--red);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-weight: 800;
+    font-size: 1.4rem;
+    line-height: 1;
+    box-shadow: 0 4px 12px rgba(211,47,47,0.4);
+  }
+  .about-badge span { display: block; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; opacity: 0.9; }
+  .about-content h2 { font-size: 2rem; color: var(--black); margin-bottom: 18px; }
+  .about-content p { color: var(--gray-800); margin-bottom: 14px; }
+  .about-list { list-style: none; margin: 20px 0; }
+  .about-list li {
+    padding: 6px 0 6px 28px;
+    position: relative;
+    font-size: 0.95rem;
+  }
+  .about-list li::before {
+    content: '\2713';
+    position: absolute; left: 0;
+    color: var(--red);
+    font-weight: 800;
+  }
+
+  /* --- WHY US (red bar) --- */
+  .why-section {
+    background: var(--red);
+    color: white;
+  }
+  .why-section .section-header .label { color: rgba(255,255,255,0.8); }
+  .why-section .section-header h2 { color: white; }
+  .why-section .section-header p { color: rgba(255,255,255,0.8); }
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .why-item {
+    text-align: center;
+    padding: 30px 20px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 12px;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .why-item:hover { border-color: white; background: rgba(255,255,255,0.1); }
+  .why-icon { font-size: 2rem; margin-bottom: 12px; }
+  .why-item h3 { font-size: 1rem; margin-bottom: 8px; }
+  .why-item p { font-size: 0.82rem; opacity: 0.85; line-height: 1.6; }
+
+  /* --- CTA --- */
+  .cta-banner {
+    background:
+      linear-gradient(135deg, var(--blue-dark), var(--blue)),
+      url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1600&q=80') center/cover no-repeat;
+    padding: 70px 0;
+    text-align: center;
+    color: white;
+  }
+  .cta-banner h2 { font-size: 2rem; margin-bottom: 12px; }
+  .cta-banner p { opacity: 0.9; margin-bottom: 28px; font-size: 1.1rem; }
+  .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+  /* --- CONTACT --- */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+  }
+  .contact-info h3 { font-size: 1.3rem; color: var(--black); margin-bottom: 20px; }
+  .c-item { display: flex; gap: 14px; margin-bottom: 22px; align-items: flex-start; }
+  .c-icon {
+    width: 44px; height: 44px;
+    background: linear-gradient(135deg, var(--red), var(--blue));
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+  .c-item h4 { font-size: 0.78rem; color: var(--gray-600); text-transform: uppercase; letter-spacing: 1px; }
+  .c-item p, .c-item a { color: var(--black); font-size: 1rem; }
+  .c-item a:hover { color: var(--red); }
+
+  .contact-form {
+    background: var(--gray-100);
+    padding: 36px;
+    border-radius: 16px;
+    border: 1px solid var(--gray-200);
+  }
+  .contact-form h3 { font-size: 1.2rem; color: var(--black); margin-bottom: 20px; }
+  .field { margin-bottom: 16px; }
+  .field label { display: block; font-size: 0.82rem; color: var(--gray-600); margin-bottom: 6px; font-weight: 600; }
+  .field input, .field textarea, .field select {
+    width: 100%; padding: 12px 16px;
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    font-size: 0.95rem; font-family: inherit;
+    background: white;
+    transition: border-color 0.2s;
+  }
+  .field input:focus, .field textarea:focus, .field select:focus { outline: none; border-color: var(--red); }
+  .field textarea { resize: vertical; min-height: 90px; }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-submit {
+    width: 100%; padding: 14px;
+    background: var(--red); color: white;
+    border: none; border-radius: 8px;
+    font-size: 1rem; font-weight: 700;
+    cursor: pointer; text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background 0.2s;
+  }
+  .form-submit:hover { background: var(--red-dark); }
+
+  /* --- FOOTER --- */
+  footer {
+    background: var(--black);
+    color: rgba(255,255,255,0.6);
+    padding: 50px 0 24px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 40px; margin-bottom: 40px;
+  }
+  footer h4 { color: white; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 16px; }
+  footer ul { list-style: none; }
+  footer li { margin-bottom: 10px; }
+  footer a { color: rgba(255,255,255,0.6); font-size: 0.88rem; }
+  footer a:hover { color: var(--red-light); }
+  .footer-brand p { font-size: 0.85rem; line-height: 1.7; }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px; text-align: center;
+    font-size: 0.78rem;
+  }
+
+  /* --- RESPONSIVE --- */
+  @media (max-width: 900px) {
+    .about-grid, .contact-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .why-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 768px) {
+    nav { display: none; }
+    .hamburger { display: block; }
+    nav.open {
+      display: flex; flex-direction: column;
+      position: absolute; top: 100%; left: 0; right: 0;
+      background: white; padding: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    .trust-items { grid-template-columns: repeat(2, 1fr); }
+    .services-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .logo img { width: 120px; }
+  }
+  @media (max-width: 480px) {
+    .trust-items { grid-template-columns: 1fr; }
+    .field-row { grid-template-columns: 1fr; }
+    .hero-btns, .cta-btns { flex-direction: column; }
+    .btn { justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+  <div class="container">
+    <span>Serving the San Luis Valley since 1990 &mdash; Licensed &amp; Insured</span>
+    <span>Phone: <a href="tel:7195890257">(719) 589-0257</a></span>
+  </div>
+</div>
+
+<!-- Header with actual logo -->
+<header>
+  <div class="nav-bar">
+    <a href="#" class="logo">
+      <img src="http://steffensplumbing.com/SQPH-logo.jpg" alt="Steffens Quality Plumbing & Heating Logo">
+    </a>
+    <button class="hamburger" onclick="document.querySelector('nav').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#why-us">Why Us</a>
+      <a href="#contact">Contact</a>
+      <a href="tel:7195890257" class="nav-call">&#9742; Call Now</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>Professional Plumbing &amp; Heating in the San Luis Valley</h1>
+      <p>Trusted experts for radiant heating, plumbing, water filtration, and emergency service throughout Alamosa and the entire valley.</p>
+      <div class="hero-btns">
+        <a href="tel:7195890257" class="btn btn-red">&#9742; Call (719) 589-0257</a>
+        <a href="#contact" class="btn btn-outline">Request a Quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Trust Strip -->
+<div class="trust-strip">
+  <div class="container">
+    <div class="trust-items">
+      <div class="trust-item">
+        <div class="trust-icon">&#128339;</div>
+        <h4>Est. 1990</h4>
+        <p>35+ Years in Business</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">&#127968;</div>
+        <h4>Triangle Tube</h4>
+        <p>Preferred Contractor</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">&#9889;</div>
+        <h4>Emergency</h4>
+        <p>Fast Response Time</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">&#10003;</div>
+        <h4>Licensed &amp; Insured</h4>
+        <p>Colorado Licensed</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Services -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-header">
+      <div class="label">What We Do</div>
+      <h2>Our Services</h2>
+      <p>Comprehensive plumbing and heating solutions for residential and commercial properties throughout the San Luis Valley.</p>
+      <div class="accent-line"></div>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card">
+        <div class="svc-img" style="background: linear-gradient(135deg, rgba(211,47,47,0.2), rgba(21,101,192,0.2)), url('https://images.unsplash.com/photo-1585128792020-803d29415281?w=600&q=80') center/cover no-repeat;"></div>
+        <div class="svc-body">
+          <h3>Radiant &amp; Hydronic Heating</h3>
+          <p>Our specialty. Expert installation of radiant floor and high-efficiency hydronic heating systems designed for Colorado winters.</p>
+          <a href="#contact" class="svc-link">Learn More &rarr;</a>
+        </div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-img" style="background: linear-gradient(135deg, rgba(21,101,192,0.2), rgba(211,47,47,0.1)), url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80') center/cover no-repeat;"></div>
+        <div class="svc-body">
+          <h3>Plumbing Installation</h3>
+          <p>New construction and remodeling plumbing. From rough-in to finish work, every connection done right and up to code.</p>
+          <a href="#contact" class="svc-link">Learn More &rarr;</a>
+        </div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-img" style="background: linear-gradient(135deg, rgba(211,47,47,0.15), rgba(21,101,192,0.15)), url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80') center/cover no-repeat;"></div>
+        <div class="svc-body">
+          <h3>Heating System Service</h3>
+          <p>Boiler service, furnace repair, and hydronic system maintenance. Triangle Tube preferred contractor for all major brands.</p>
+          <a href="#contact" class="svc-link">Learn More &rarr;</a>
+        </div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-img" style="background: linear-gradient(135deg, rgba(66,165,245,0.3), rgba(21,101,192,0.2)), url('https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=80') center/cover no-repeat;"></div>
+        <div class="svc-body">
+          <h3>Water Filtration</h3>
+          <p>Clean water matters. We install and maintain water filtration systems tailored to the San Luis Valley's unique water quality.</p>
+          <a href="#contact" class="svc-link">Learn More &rarr;</a>
+        </div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-img" style="background: linear-gradient(135deg, rgba(211,47,47,0.3), rgba(183,28,28,0.2)), url('https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=600&q=80') center/cover no-repeat;"></div>
+        <div class="svc-body">
+          <h3>Emergency Repairs</h3>
+          <p>Burst pipes, leaks, and heating failures don't wait. We respond quickly to keep your property safe and comfortable.</p>
+          <a href="tel:7195890257" class="svc-link">Call Now &rarr;</a>
+        </div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-img" style="background: linear-gradient(135deg, rgba(21,101,192,0.25), rgba(66,165,245,0.15)), url('https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=80') center/cover no-repeat;"></div>
+        <div class="svc-body">
+          <h3>Water Heaters</h3>
+          <p>Installation and repair of tank and tankless water heaters. We help you find the right solution for your home and budget.</p>
+          <a href="#contact" class="svc-link">Learn More &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="section about-section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap">
+        <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80" alt="Professional plumber at work">
+        <div class="about-badge">
+          35+
+          <span>Years of Service</span>
+        </div>
+      </div>
+      <div class="about-content">
+        <div class="section-header" style="text-align:left;margin-bottom:0;">
+          <div class="label">About Us</div>
+          <h2>A San Luis Valley Tradition Since 1990</h2>
+        </div>
+        <p>Based in the heart of the beautiful San Luis Valley, Steffens Quality Plumbing &amp; Heating Inc. has been providing the highest quality plumbing and heating services for over three decades.</p>
+        <p>Our regular customers particularly value our prompt and professional service. We believe in doing the job right the first time, with transparent pricing and honest communication.</p>
+        <ul class="about-list">
+          <li>Radiant &amp; high-efficiency hydronic heating specialists</li>
+          <li>Triangle Tube preferred contractor</li>
+          <li>Serving the entire San Luis Valley</li>
+          <li>Transparent estimates before any work begins</li>
+          <li>Licensed, insured, and locally owned</li>
+        </ul>
+        <a href="#contact" class="btn btn-red">Get in Touch</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Us -->
+<section class="section why-section" id="why-us">
+  <div class="container">
+    <div class="section-header">
+      <div class="label">Why Choose Us</div>
+      <h2>Why San Luis Valley Trusts Steffens</h2>
+      <p>We've earned the trust of hundreds of customers through quality work and honest service.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-icon">&#128222;</div>
+        <h3>Prompt Response</h3>
+        <p>We answer the phone and show up on time. Your time is valuable.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">&#128176;</div>
+        <h3>Fair Pricing</h3>
+        <p>Quality service at competitive prices. Clear estimates, no surprises.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">&#127942;</div>
+        <h3>Quality Work</h3>
+        <p>Licensed professionals who take pride in every job, big or small.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">&#128161;</div>
+        <h3>Expert Knowledge</h3>
+        <p>Specialists in hydronic and radiant heating for valley homes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Banner -->
+<section class="cta-banner">
+  <div class="container">
+    <h2>Ready to Get Started?</h2>
+    <p>Call us today for a free estimate — or send us a message below.</p>
+    <div class="cta-btns">
+      <a href="tel:7195890257" class="btn btn-white">&#9742; Call (719) 589-0257</a>
+      <a href="#contact" class="btn btn-outline">Send a Message</a>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="section-header">
+      <div class="label">Contact</div>
+      <h2>Get in Touch</h2>
+      <p>Reach out for estimates, questions, or service requests.</p>
+      <div class="accent-line"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Steffens Quality Plumbing &amp; Heating</h3>
+        <div class="c-item">
+          <div class="c-icon">&#128205;</div>
+          <div><h4>Address</h4><p>171 Curtis Lane, Alamosa, CO 81101</p></div>
+        </div>
+        <div class="c-item">
+          <div class="c-icon">&#9742;</div>
+          <div><h4>Phone</h4><a href="tel:7195890257">(719) 589-0257</a></div>
+        </div>
+        <div class="c-item">
+          <div class="c-icon">&#9993;</div>
+          <div><h4>Email</h4><a href="mailto:alamosaplumber@gmail.com">alamosaplumber@gmail.com</a></div>
+        </div>
+        <div class="c-item">
+          <div class="c-icon">&#128338;</div>
+          <div><h4>Service Area</h4><p>Entire San Luis Valley, CO</p></div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h3>Request a Quote</h3>
+        <form onsubmit="event.preventDefault(); alert('This is a demo. Please call us directly at (719) 589-0257 to request service.');">
+          <div class="field-row">
+            <div class="field"><label>Your Name</label><input type="text" required></div>
+            <div class="field"><label>Phone</label><input type="tel" required></div>
+          </div>
+          <div class="field"><label>Email</label><input type="email"></div>
+          <div class="field">
+            <label>Service Needed</label>
+            <select>
+              <option value="">Select a service...</option>
+              <option>Radiant/Heating Installation</option>
+              <option>Plumbing Installation</option>
+              <option>Heating System Repair</option>
+              <option>Water Filtration</option>
+              <option>Water Heater</option>
+              <option>Emergency Service</option>
+            </select>
+          </div>
+          <div class="field"><label>Message</label><textarea placeholder="Tell us about your project or issue..."></textarea></div>
+          <button type="submit" class="form-submit">Send Request</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h4>Steffens Quality Plumbing &amp; Heating</h4>
+        <p>Professional plumbing and heating services for the San Luis Valley since 1990. Licensed, insured, and committed to quality workmanship on every job.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Radiant Heating</a></li>
+          <li><a href="#services">Plumbing</a></li>
+          <li><a href="#services">Heating Repair</a></li>
+          <li><a href="#services">Water Filtration</a></li>
+          <li><a href="#services">Water Heaters</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#why-us">Why Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="https://www.facebook.com/p/Steffens-Quality-Plumbing-Heating-Inc-100063517149102/" target="_blank">Facebook</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>171 Curtis Lane, Alamosa, CO 81101</li>
+          <li><a href="tel:7195890257">(719) 589-0257</a></li>
+          <li><a href="mailto:alamosaplumber@gmail.com">alamosaplumber@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Steffens Quality Plumbing &amp; Heating Inc. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,1622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monte Vista Machine Tool — Machine Work, Welding & Crane Services Since 1979</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;600;700&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================================
+       MVMachinetool Redesign — BMW + Stripe + IBM Hybrid
+       ============================================================ */
+
+    :root {
+      /* BMW angular precision — sharp, industrial */
+      --color-bg: #ffffff;
+      --color-dark: #1a1a1a;
+      --color-dark-alt: #262626;
+      --color-metal: #3a3a3a;
+      --color-steel: #6b7280;
+      --color-silver: #e5e7eb;
+      --color-surface: #f4f4f4;
+      --color-accent: #0f62fe;      /* IBM Blue 60 - the singular accent */
+      --color-accent-hover: #0043ce; /* IBM Blue 70 */
+      --color-accent-light: #edf5ff;
+      --color-spark: #f59e0b;        /* Warm amber accent for welding/heat */
+      --color-spark-dark: #d97706;
+
+      /* Typography */
+      --font-primary: 'IBM Plex Sans', system-ui, sans-serif;
+      --font-mono: 'IBM Plex Mono', monospace;
+      --font-display: 'DM Sans', system-ui, sans-serif;
+
+      /* IBM 8px grid spacing */
+      --sp-xs: 8px;
+      --sp-sm: 16px;
+      --sp-md: 24px;
+      --sp-lg: 32px;
+      --sp-xl: 48px;
+      --sp-2xl: 64px;
+      --sp-3xl: 96px;
+    }
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-primary);
+      color: var(--color-dark);
+      background: var(--color-bg);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ============================================================
+       NAVIGATION — IBM Carbon masthead style
+       ============================================================ */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: var(--color-dark);
+      height: 48px;
+      display: flex;
+      align-items: center;
+      transition: background 0.3s;
+    }
+
+    .nav.scrolled {
+      background: rgba(26, 26, 26, 0.97);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 rgba(255,255,255,0.08);
+    }
+
+    .nav-inner {
+      width: 100%;
+      max-width: 1584px;
+      margin: 0 auto;
+      padding: 0 var(--sp-lg);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-sm);
+      text-decoration: none;
+      color: #ffffff;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-logo-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--color-spark);
+      border-radius: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 14px;
+      color: #000;
+      letter-spacing: -1px;
+    }
+
+    .nav-logo-text {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.16px;
+      line-height: 1;
+    }
+
+    .nav-logo-text span {
+      color: var(--color-steel);
+      font-weight: 400;
+      margin-left: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-lg);
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #c6c6c6;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.16px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--color-accent);
+      color: #fff !important;
+      padding: 8px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 0;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .nav-cta:hover {
+      background: var(--color-accent-hover);
+    }
+
+    .nav-phone {
+      color: var(--color-spark);
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: #fff;
+      margin: 4px 0;
+      transition: 0.3s;
+    }
+
+    /* ============================================================
+       HERO — BMW-style dark cinematic + IBM headline
+       ============================================================ */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      background: var(--color-dark);
+      overflow: hidden;
+      padding-top: 48px;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      /* Dark industrial gradient overlay simulating machinery environment */
+      background:
+        linear-gradient(135deg, rgba(26,26,26,0.95) 0%, rgba(26,26,26,0.7) 50%, rgba(26,26,26,0.85) 100%),
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 49px,
+          rgba(255,255,255,0.02) 49px,
+          rgba(255,255,255,0.02) 50px
+        ),
+        repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 49px,
+          rgba(255,255,255,0.02) 49px,
+          rgba(255,255,255,0.02) 50px
+        );
+      background-color: #111;
+    }
+
+    /* Decorative machinery grid lines */
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      background:
+        radial-gradient(ellipse at 80% 40%, rgba(245,158,11,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse at 60% 70%, rgba(15,98,254,0.04) 0%, transparent 50%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 1584px;
+      margin: 0 auto;
+      padding: var(--sp-3xl) var(--sp-lg);
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-2xl);
+      align-items: center;
+    }
+
+    .hero-text {
+      max-width: 720px;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--color-spark);
+      margin-bottom: var(--sp-md);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--color-spark);
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(42px, 6vw, 68px);
+      font-weight: 300;
+      line-height: 1.08;
+      color: #ffffff;
+      letter-spacing: -1px;
+      margin-bottom: var(--sp-md);
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--color-spark);
+    }
+
+    .hero-desc {
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.65);
+      max-width: 520px;
+      margin-bottom: var(--sp-xl);
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: var(--sp-sm);
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      font-family: var(--font-primary);
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 0;
+      cursor: pointer;
+      transition: all 0.2s;
+      letter-spacing: 0.16px;
+    }
+
+    .btn-primary {
+      background: var(--color-accent);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background: var(--color-accent-hover);
+    }
+
+    .btn-spark {
+      background: var(--color-spark);
+      color: #000;
+    }
+
+    .btn-spark:hover {
+      background: var(--color-spark-dark);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #ffffff;
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+
+    .btn-outline:hover {
+      border-color: #ffffff;
+      background: rgba(255,255,255,0.05);
+    }
+
+    /* Hero right side — stat cards (Stripe card layout) */
+    .hero-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-sm);
+    }
+
+    .stat-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: var(--sp-md);
+      transition: all 0.3s;
+    }
+
+    .stat-card:hover {
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(255,255,255,0.15);
+    }
+
+    .stat-card:first-child {
+      grid-column: 1 / -1;
+    }
+
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 48px;
+      font-weight: 300;
+      line-height: 1;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+
+    .stat-number.accent {
+      color: var(--color-spark);
+    }
+
+    .stat-label {
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    /* ============================================================
+       TRUST BAR — thin strip below hero
+       ============================================================ */
+    .trust-bar {
+      background: var(--color-surface);
+      border-bottom: 1px solid var(--color-silver);
+      padding: var(--sp-md) var(--sp-lg);
+    }
+
+    .trust-bar-inner {
+      max-width: 1584px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--sp-xl);
+      flex-wrap: wrap;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--color-steel);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .trust-icon {
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+
+    /* ============================================================
+       SECTION COMMON
+       ============================================================ */
+    .section {
+      padding: var(--sp-3xl) var(--sp-lg);
+    }
+
+    .section-dark {
+      background: var(--color-dark);
+      color: #ffffff;
+    }
+
+    .section-surface {
+      background: var(--color-surface);
+    }
+
+    .section-inner {
+      max-width: 1584px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      margin-bottom: var(--sp-xl);
+    }
+
+    .section-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: var(--sp-xs);
+    }
+
+    .section-dark .section-eyebrow {
+      color: var(--color-spark);
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 300;
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+      margin-bottom: var(--sp-sm);
+    }
+
+    .section-dark .section-title {
+      color: #ffffff;
+    }
+
+    .section-subtitle {
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 1.6;
+      color: var(--color-steel);
+      max-width: 640px;
+    }
+
+    .section-dark .section-subtitle {
+      color: rgba(255,255,255,0.55);
+    }
+
+    /* ============================================================
+       SERVICES — Stripe-style card grid on white
+       ============================================================ */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp-md);
+    }
+
+    .service-card {
+      background: var(--color-bg);
+      border: 1px solid var(--color-silver);
+      padding: var(--sp-md);
+      transition: all 0.3s;
+    }
+
+    .service-card:hover {
+      border-color: var(--color-accent);
+      box-shadow: 0 4px 12px rgba(15,98,254,0.08), 0 1px 3px rgba(0,0,0,0.06);
+      transform: translateY(-2px);
+    }
+
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--color-accent-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--sp-sm);
+      font-size: 22px;
+    }
+
+    .service-card h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: var(--sp-xs);
+      letter-spacing: 0.16px;
+    }
+
+    .service-card p {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--color-steel);
+    }
+
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: var(--sp-sm);
+    }
+
+    .service-tag {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      padding: 3px 8px;
+      background: var(--color-surface);
+      color: var(--color-steel);
+      letter-spacing: 0.32px;
+    }
+
+    /* ============================================================
+       CRANE SERVICES — BMW dark section with Stripe cards
+       ============================================================ */
+    .crane-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-2xl);
+      align-items: start;
+    }
+
+    .crane-info {
+      position: sticky;
+      top: 120px;
+    }
+
+    .crane-info h3 {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 300;
+      line-height: 1.2;
+      color: #ffffff;
+      margin-bottom: var(--sp-sm);
+    }
+
+    .crane-info p {
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: var(--sp-md);
+    }
+
+    .crane-highlights {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-sm);
+    }
+
+    .crane-highlights li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 15px;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .crane-highlight-check {
+      color: var(--color-spark);
+      font-size: 18px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .crane-cards {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-sm);
+    }
+
+    .crane-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: var(--sp-md);
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: var(--sp-md);
+      align-items: center;
+      transition: all 0.3s;
+    }
+
+    .crane-card:hover {
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(255,255,255,0.15);
+    }
+
+    .crane-card-size {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 300;
+      color: var(--color-spark);
+      white-space: nowrap;
+    }
+
+    .crane-card-size span {
+      font-size: 16px;
+      color: rgba(255,255,255,0.4);
+      font-weight: 400;
+      margin-left: 4px;
+    }
+
+    .crane-card-details {
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.5;
+    }
+
+    .crane-card-cta {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--color-accent);
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .crane-card-cta:hover {
+      color: #ffffff;
+    }
+
+    /* ============================================================
+       WHY US — IBM structured grid with credentials
+       ============================================================ */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--sp-sm);
+    }
+
+    .why-card {
+      padding: var(--sp-md);
+      background: var(--color-bg);
+      border: 1px solid var(--color-silver);
+      border-left: 3px solid var(--color-accent);
+    }
+
+    .why-card-num {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--color-accent);
+      letter-spacing: 0.5px;
+      margin-bottom: var(--sp-xs);
+    }
+
+    .why-card h4 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: var(--sp-xs);
+      letter-spacing: 0.16px;
+    }
+
+    .why-card p {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--color-steel);
+    }
+
+    /* ============================================================
+       COMMUNITY SPONSORS — light section
+       ============================================================ */
+    .sponsors-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--sp-sm);
+      justify-content: center;
+      margin-top: var(--sp-xl);
+    }
+
+    .sponsor-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: var(--color-bg);
+      border: 1px solid var(--color-silver);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--color-dark);
+      transition: all 0.2s;
+    }
+
+    .sponsor-badge:hover {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+    }
+
+    .sponsor-icon {
+      font-size: 16px;
+    }
+
+    /* ============================================================
+       CTA BANNER — Stripe dark band
+       ============================================================ */
+    .cta-banner {
+      background: var(--color-dark);
+      padding: var(--sp-3xl) var(--sp-lg);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(245,158,11,0.08) 0%, transparent 70%);
+    }
+
+    .cta-banner-inner {
+      position: relative;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .cta-banner h2 {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 300;
+      line-height: 1.15;
+      color: #ffffff;
+      margin-bottom: var(--sp-sm);
+    }
+
+    .cta-banner p {
+      font-size: 18px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: var(--sp-xl);
+    }
+
+    .cta-banner .btn-spark {
+      font-size: 17px;
+      padding: 16px 40px;
+    }
+
+    /* ============================================================
+       CONTACT — IBM form structure
+       ============================================================ */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-2xl);
+    }
+
+    .contact-info h3 {
+      font-size: 28px;
+      font-weight: 300;
+      line-height: 1.2;
+      margin-bottom: var(--sp-md);
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-md);
+      margin-bottom: var(--sp-xl);
+    }
+
+    .contact-detail {
+      display: flex;
+      gap: var(--sp-sm);
+    }
+
+    .contact-detail-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--color-accent-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .contact-detail-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-detail-label {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--color-steel);
+      margin-bottom: 2px;
+    }
+
+    .contact-detail-value {
+      font-size: 16px;
+      color: var(--color-dark);
+      text-decoration: none;
+    }
+
+    .contact-detail-value:hover {
+      color: var(--color-accent);
+    }
+
+    .contact-map {
+      width: 100%;
+      height: 240px;
+      background: var(--color-surface);
+      border: 1px solid var(--color-silver);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: var(--color-steel);
+      overflow: hidden;
+    }
+
+    .contact-map iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-sm);
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .form-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.32px;
+      text-transform: uppercase;
+      color: var(--color-steel);
+    }
+
+    .form-input,
+    .form-textarea,
+    .form-select {
+      background: var(--color-surface);
+      border: 0;
+      border-bottom: 2px solid transparent;
+      padding: 12px 0;
+      font-family: var(--font-primary);
+      font-size: 15px;
+      color: var(--color-dark);
+      transition: border-color 0.2s;
+      outline: none;
+      width: 100%;
+    }
+
+    .form-input:focus,
+    .form-textarea:focus,
+    .form-select:focus {
+      border-bottom-color: var(--color-accent);
+      background: var(--color-bg);
+    }
+
+    .form-textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-md);
+    }
+
+    /* ============================================================
+       FOOTER
+       ============================================================ */
+    .footer {
+      background: var(--color-dark);
+      color: rgba(255,255,255,0.4);
+      padding: var(--sp-xl) var(--sp-lg);
+    }
+
+    .footer-inner {
+      max-width: 1584px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: var(--sp-xl);
+    }
+
+    .footer-brand {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .footer-brand strong {
+      color: #ffffff;
+      font-size: 16px;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .footer-col h5 {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: var(--sp-sm);
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .footer-col a {
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: #ffffff;
+    }
+
+    .footer-bottom {
+      max-width: 1584px;
+      margin: var(--sp-lg) auto 0;
+      padding-top: var(--sp-md);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+    }
+
+    /* ============================================================
+       MOBILE RESPONSIVE
+       ============================================================ */
+    @media (max-width: 1056px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 672px) {
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: 48px;
+        left: 0;
+        right: 0;
+        background: var(--color-dark);
+        flex-direction: column;
+        padding: var(--sp-md);
+        gap: var(--sp-sm);
+        border-top: 1px solid rgba(255,255,255,0.08);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-hamburger {
+        display: block;
+      }
+
+      .hero-content {
+        grid-template-columns: 1fr;
+        padding: var(--sp-xl) var(--sp-md);
+        min-height: auto;
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-desc {
+        font-size: 16px;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .crane-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .crane-info {
+        position: static;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: var(--sp-md);
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: var(--sp-xs);
+        text-align: center;
+      }
+
+      .section {
+        padding: var(--sp-xl) var(--sp-md);
+      }
+
+      .trust-bar-inner {
+        flex-direction: column;
+        gap: var(--sp-xs);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+       ============================================================ -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-brand">
+        <div class="nav-logo">
+          <div class="nav-logo-icon">M</div>
+          <div class="nav-logo-text">MV<span>Machine Tool</span></div>
+        </div>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#crane">Crane Service</a></li>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#community">Community</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><span class="nav-phone">719-852-4990</span></li>
+        <li><a href="#contact" class="nav-cta">Request Service</a></li>
+      </ul>
+
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu" onclick="document.getElementById('navLinks').classList.toggle('open')">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       HERO — BMW dark cinematic
+       ============================================================ -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-eyebrow">Serving the San Luis Valley Since 1979</div>
+        <h1>Your One-Stop Shop for <em>Machine Work</em>, Welding & Heavy-Lifting</h1>
+        <p class="hero-desc">
+          A family-owned and operated full job shop, always up for new challenges.
+          From precision machining to 100-ton crane lifts, we've got the equipment
+          and expertise to handle it all.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-spark">Get Free Estimate</a>
+          <a href="#services" class="btn btn-outline">View All Services</a>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-card">
+          <div class="stat-number accent">47+</div>
+          <div class="stat-label">Years in Business</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">100<span style="font-size:24px;color:rgba(255,255,255,0.4)">ton</span></div>
+          <div class="stat-label">Max Crane Capacity</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">207<span style="font-size:24px;color:rgba(255,255,255,0.4)">ft</span></div>
+          <div class="stat-label">Max Crane Reach</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">NCCCO</div>
+          <div class="stat-label">Certified Operators</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TRUST BAR
+       ============================================================ -->
+  <div class="trust-bar">
+    <div class="trust-bar-inner">
+      <div class="trust-item">
+        <span class="trust-icon">&#10003;</span>
+        Family Owned & Operated
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon">&#10003;</span>
+        NCCCO Certified Operators
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon">&#10003;</span>
+        Serving All of the San Luis Valley
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon">&#10003;</span>
+        Free Estimates
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon">&#10003;</span>
+        Stainless Steel &bull; Aluminum &bull; Cast Iron
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SERVICES — Stripe-style clean cards
+       ============================================================ -->
+  <section class="section" id="services">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-eyebrow">What We Do</div>
+        <h2 class="section-title">Full Job Shop. Any Challenge.</h2>
+        <p class="section-subtitle">
+          Highly diversified to handle most of your custom machine, fabrication,
+          repair, and welding jobs. Combined with our crane service, there are few
+          jobs we can't handle.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">&#9881;</div>
+          <h3>Precision Machine Shop</h3>
+          <p>CNC and manual machining for custom parts, prototypes, and production runs. Stainless steel, aluminum, and cast iron.</p>
+          <div class="service-tags">
+            <span class="service-tag">CNC</span>
+            <span class="service-tag">Manual</span>
+            <span class="service-tag">Prototypes</span>
+            <span class="service-tag">Production</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">&#9830;</div>
+          <h3>Welding Services</h3>
+          <p>Professional welding for structural, repair, and custom fabrication. Experienced with multiple materials and positions.</p>
+          <div class="service-tags">
+            <span class="service-tag">MIG</span>
+            <span class="service-tag">TIG</span>
+            <span class="service-tag">Stick</span>
+            <span class="service-tag">Structural</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">&#9857;</div>
+          <h3>Metal Fabrication</h3>
+          <p>Custom fabrication from design to finished product. We cut, bend, form, and assemble metal components.</p>
+          <div class="service-tags">
+            <span class="service-tag">Cutting</span>
+            <span class="service-tag">Bending</span>
+            <span class="service-tag">Assembly</span>
+            <span class="service-tag">Custom</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">&#9898;</div>
+          <h3>Repair & Restoration</h3>
+          <p>Equipment repair, rebuild, and restoration. Get your machinery back up and running fast.</p>
+          <div class="service-tags">
+            <span class="service-tag">Rebuild</span>
+            <span class="service-tag">Restoration</span>
+            <span class="service-tag">Diagnostics</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">&#128214;</div>
+          <h3>Crane Service & Rigging</h3>
+          <p>7 to 100-ton crane fleet with certified operators for heavy lifts, tower erection, modular buildings, and more.</p>
+          <div class="service-tags">
+            <span class="service-tag">7 Ton</span>
+            <span class="service-tag">50 Ton</span>
+            <span class="service-tag">75 Ton</span>
+            <span class="service-tag">100 Ton</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">&#9876;</div>
+          <h3>Travel Outside the Valley</h3>
+          <p>We occasionally travel outside the San Luis Valley on larger jobs. Call us to discuss your project location.</p>
+          <div class="service-tags">
+            <span class="service-tag">Regional</span>
+            <span class="service-tag">Large Projects</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CRANE SERVICES — BMW dark + Stripe cards
+       ============================================================ -->
+  <section class="section section-dark" id="crane">
+    <div class="section-inner">
+      <div class="crane-layout">
+        <div class="crane-info">
+          <div class="section-eyebrow">MVMT Crane Service</div>
+          <h3>7 to 100-Ton Crane Fleet.<br>Up to 207 Feet of Reach.</h3>
+          <p>
+            Require a crane for your heavy lifting project? Our NCCCO certified operators
+            and qualified riggers handle everything from setting RTUs to erecting towers,
+            setting modular homes, buildings, locomotives, and most everything in between.
+          </p>
+
+          <ul class="crane-highlights">
+            <li>
+              <span class="crane-highlight-check">&#10003;</span>
+              <span>NCCCO Certified Crane Operators</span>
+            </li>
+            <li>
+              <span class="crane-highlight-check">&#10003;</span>
+              <span>Qualified Riggers on Every Lift</span>
+            </li>
+            <li>
+              <span class="crane-highlight-check">&#10003;</span>
+              <span>RTU Setting, Tower Erection, Modular Buildings</span>
+            </li>
+            <li>
+              <span class="crane-highlight-check">&#10003;</span>
+              <span>Locomotive & Heavy Equipment Placement</span>
+            </li>
+            <li>
+              <span class="crane-highlight-check">&#10003;</span>
+              <span>Full Insurance & Safety Compliance</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="crane-cards">
+          <div class="crane-card">
+            <div class="crane-card-size">7<span>ton</span></div>
+            <div class="crane-card-details">Compact lifts, small equipment placement, tight access jobs</div>
+            <a href="#contact" class="crane-card-cta">Inquire &rarr;</a>
+          </div>
+          <div class="crane-card">
+            <div class="crane-card-size">50<span>ton</span></div>
+            <div class="crane-card-details">General construction, RTU setting, mid-range structural lifts</div>
+            <a href="#contact" class="crane-card-cta">Inquire &rarr;</a>
+          </div>
+          <div class="crane-card">
+            <div class="crane-card-size">75<span>ton</span></div>
+            <div class="crane-card-details">Heavy construction, tower erection, large modular placement</div>
+            <a href="#contact" class="crane-card-cta">Inquire &rarr;</a>
+          </div>
+          <div class="crane-card">
+            <div class="crane-card-size">100<span>ton</span></div>
+            <div class="crane-card-details">Maximum capacity. Industrial projects, locomotives, heavy structural</div>
+            <a href="#contact" class="crane-card-cta">Inquire &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       WHY US — IBM structured grid
+       ============================================================ -->
+  <section class="section" id="why">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-eyebrow">Why MVMachinetool</div>
+        <h2 class="section-title">Built on 47 Years of Trusted Work</h2>
+        <p class="section-subtitle">
+          We don't just fix machines &mdash; we keep the valley running.
+          Here's what sets us apart.
+        </p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-card-num">01</div>
+          <h4>Family Owned Since 1979</h4>
+          <p>Four decades in the San Luis Valley means we know our customers, their equipment, and what it takes to get them back up and running.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-card-num">02</div>
+          <h4>One Call, Full Solution</h4>
+          <p>Machine work, welding, fabrication, and crane service. You only need one number. No juggling multiple vendors for your project.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-card-num">03</div>
+          <h4>Certified & Qualified</h4>
+          <p>NCCCO certified crane operators and qualified riggers. Safety and compliance aren't optional &mdash; they're standard procedure.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-card-num">04</div>
+          <h4>Always Up for New Challenges</h4>
+          <p>We're a full job shop that takes on projects others pass on. If you can describe it, we'll figure out how to build or fix it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       COMMUNITY
+       ============================================================ -->
+  <section class="section section-surface" id="community">
+    <div class="section-inner">
+      <div class="section-header" style="text-align:center;">
+        <div class="section-eyebrow">Rooted in the Valley</div>
+        <h2 class="section-title">Proud Community Sponsor</h2>
+        <p class="section-subtitle" style="margin:0 auto;">
+          Monte Vista Machine Tool isn't just a business in the San Luis Valley &mdash;
+          we're part of it. Proud sponsors of local events and organizations that make this community great.
+        </p>
+      </div>
+
+      <div class="sponsors-grid">
+        <div class="sponsor-badge">
+          <span class="sponsor-icon">&#127881;</span>
+          MV After Prom Committee
+        </div>
+        <div class="sponsor-badge">
+          <span class="sponsor-icon">&#127793;</span>
+          Monte Vista Farmer's Market
+        </div>
+        <div class="sponsor-badge">
+          <span class="sponsor-icon">&#127970;</span>
+          Ski Hi Stampede
+        </div>
+        <div class="sponsor-badge">
+          <span class="sponsor-icon">&#128176;</span>
+          Monte Vista Rotary
+        </div>
+        <div class="sponsor-badge">
+          <span class="sponsor-icon">&#127757;</span>
+          Colorado Mountain College
+        </div>
+        <div class="sponsor-badge">
+          <span class="sponsor-icon">&#127968;</span>
+          Mountain Valley Produce
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CTA BANNER
+       ============================================================ -->
+  <section class="cta-banner">
+    <div class="cta-banner-inner">
+      <h2>Got a Job We Can Handle?</h2>
+      <p>Call us today for a free estimate. We're always up for a new challenge.</p>
+      <a href="tel:7198524990" class="btn btn-spark">&#9742; 719-852-4990</a>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT — IBM form structure
+       ============================================================ -->
+  <section class="section" id="contact">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-eyebrow">Get in Touch</div>
+        <h2 class="section-title">Request a Free Estimate</h2>
+        <p class="section-subtitle">
+          Tell us about your project and we'll get back to you with a
+          no-obligation estimate.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-details">
+            <div class="contact-detail">
+              <div class="contact-detail-icon">&#128205;</div>
+              <div class="contact-detail-text">
+                <span class="contact-detail-label">Address</span>
+                <span class="contact-detail-value">0839 US Hwy 285 N<br>Monte Vista, CO 81144</span>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-detail-icon">&#9742;</div>
+              <div class="contact-detail-text">
+                <span class="contact-detail-label">Phone</span>
+                <a href="tel:7198524990" class="contact-detail-value">719-852-4990</a>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-detail-icon">&#9993;</div>
+              <div class="contact-detail-text">
+                <span class="contact-detail-label">Email</span>
+                <a href="mailto:mvmt@mvmachinetool.com" class="contact-detail-value">mvmt@mvmachinetool.com</a>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-detail-icon">&#128337;</div>
+              <div class="contact-detail-text">
+                <span class="contact-detail-label">Hours</span>
+                <span class="contact-detail-value">Mon &ndash; Fri: 8:00 AM &ndash; 5:00 PM<br>Sat &ndash; Sun: Closed</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3006.5!2d-106.1499!3d37.5865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8737e3a0a6e3b3b1%3A0x0!2s0839+US+Hwy+285+N%2C+Monte+Vista%2C+CO+81144!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="MVMachinetool Location">
+            </iframe>
+          </div>
+        </div>
+
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you! We will get back to you soon.');">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="name">Name</label>
+              <input class="form-input" type="text" id="name" placeholder="Your full name" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="phone">Phone</label>
+              <input class="form-input" type="tel" id="phone" placeholder="(719) 000-0000">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="email">Email</label>
+            <input class="form-input" type="email" id="email" placeholder="you@company.com" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="service">Service Needed</label>
+            <select class="form-select" id="service">
+              <option value="">Select a service...</option>
+              <option value="machine">Machine Shop</option>
+              <option value="welding">Welding</option>
+              <option value="fabrication">Metal Fabrication</option>
+              <option value="repair">Repair & Restoration</option>
+              <option value="crane">Crane Service</option>
+              <option value="other">Other / Multiple Services</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="message">Project Details</label>
+            <textarea class="form-textarea" id="message" placeholder="Describe your project, timeline, and any specific requirements..." rows="5"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="align-self: flex-start;">Send Request</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>Monte Vista Machine Tool</strong>
+        Family-owned and operated since 1979. Full job shop specializing in machine work, welding, fabrication, and heavy-lifting crane service for the San Luis Valley.
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#services">Machine Shop</a></li>
+          <li><a href="#services">Welding</a></li>
+          <li><a href="#services">Fabrication</a></li>
+          <li><a href="#services">Repair</a></li>
+          <li><a href="#crane">Crane Service</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#why">About Us</a></li>
+          <li><a href="#community">Community</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="tel:7198524990">719-852-4990</a></li>
+          <li><a href="mailto:mvmt@mvmachinetool.com">mvmt@mvmachinetool.com</a></li>
+          <li><a href="#contact">0839 US Hwy 285 N</a></li>
+          <li><a href="#">Monte Vista, CO 81144</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Monte Vista Machine Tool. All rights reserved.</span>
+      <span>Designed with precision &mdash; just like their work.</span>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       SCRIPTS
+       ============================================================ -->
+  <script>
+    // Navbar scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // Close mobile nav on link click
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('open');
+      });
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const offset = 60;
+          const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

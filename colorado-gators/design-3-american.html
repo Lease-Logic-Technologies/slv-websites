@@ -1,0 +1,1585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Colorado Gators Reptile Park — the only high-altitude alligator farm in the world. Family-run reptile rescue and tourist attraction in Mosca, CO at 9,400 ft elevation.">
+<title>Colorado Gators Reptile Park — Reptile Rescue &amp; Education | Mosca, CO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Zoo",
+  "name": "Colorado Gators Reptile Park",
+  "description": "The only high-altitude alligator farm in the world. Family-run reptile rescue and tourist attraction in Mosca, CO at 9,400 ft elevation.",
+  "url": "https://www.facebook.com/ColoradoGatorFarm",
+  "telephone": "+1-719-378-2612",
+  "email": "colog8rs@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "9162 Lane 9 N",
+    "addressLocality": "Mosca",
+    "addressRegion": "CO",
+    "postalCode": "81146",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "37.4933",
+    "longitude": "-105.3533"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "09:00",
+      "closes": "17:00",
+      "startTime": "2024-02-27",
+      "endTime": "2024-11-01"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "09:00",
+      "closes": "16:00",
+      "startTime": "2024-11-02",
+      "endTime": "2024-02-26"
+    }
+  ],
+  "priceRange": "$15 - $30",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.6",
+    "reviewCount": "380"
+  }
+}
+</script>
+<style>
+/* ============================
+   RESET & BASE
+   ============================ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #1a1a1a;
+  background: #ffffff;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+h1, h2, h3, h4, h5 { font-family: 'DM Sans', sans-serif; font-weight: 700; line-height: 1.2; }
+
+/* ============================
+   SCROLL PROGRESS BAR
+   ============================ */
+#scroll-progress {
+  position: fixed; top: 0; left: 0; width: 0%; height: 3px;
+  background: linear-gradient(90deg, #ff6b35, #e55a2b);
+  z-index: 10000;
+  transition: width 0.1s linear;
+}
+
+/* ============================
+   NAVIGATION
+   ============================ */
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0;
+  background: #ffffff;
+  border-bottom: 1px solid #e4e4e7;
+  z-index: 9000;
+  transition: box-shadow 0.3s ease;
+}
+.navbar.scrolled { box-shadow: 0 2px 16px rgba(0,0,0,0.08); }
+.nav-inner {
+  max-width: 1280px; margin: 0 auto;
+  padding: 0 2rem;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 72px;
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 0.75rem;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700; font-size: 1.25rem;
+  color: #1a1a1a;
+}
+.nav-logo-icon {
+  width: 40px; height: 40px;
+  background: linear-gradient(135deg, #ff6b35, #166534);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 1.1rem;
+  flex-shrink: 0;
+}
+.nav-links { display: flex; align-items: center; gap: 2rem; }
+.nav-links a {
+  font-size: 0.938rem; font-weight: 500;
+  color: #71717a;
+  transition: color 0.2s ease;
+  padding: 0.5rem 0;
+}
+.nav-links a:hover { color: #1a1a1a; }
+.nav-cta {
+  background: #ff6b35; color: #ffffff !important;
+  padding: 0.625rem 1.25rem;
+  border-radius: 999px;
+  font-weight: 600; font-size: 0.938rem;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.nav-cta:hover { background: #e55a2b; transform: translateY(-1px); }
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer;
+  padding: 0.5rem;
+  min-width: 44px; min-height: 44px;
+  align-items: center; justify-content: center;
+}
+.hamburger span {
+  display: block; width: 22px; height: 2px;
+  background: #1a1a1a; border-radius: 2px;
+  transition: all 0.3s ease;
+}
+.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+/* Mobile Menu */
+.mobile-menu {
+  display: none;
+  position: fixed; top: 72px; left: 0; right: 0; bottom: 0;
+  background: #ffffff;
+  padding: 2rem;
+  flex-direction: column; gap: 1.5rem;
+  z-index: 8999;
+  overflow-y: auto;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  font-size: 1.25rem; font-weight: 500;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e4e4e7;
+  color: #1a1a1a;
+}
+.mobile-menu a:last-child { border-bottom: none; }
+
+/* ============================
+   HERO — SPLIT SCREEN
+   ============================ */
+.hero {
+  margin-top: 72px;
+  min-height: calc(100vh - 72px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  background: #fef7f0;
+}
+.hero-left {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 4rem 4rem 4rem 5rem;
+  max-width: 640px;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: #ffffff;
+  border: 1px solid #e4e4e7;
+  border-radius: 999px;
+  padding: 0.375rem 1rem;
+  font-size: 0.875rem; font-weight: 500;
+  color: #166534;
+  margin-bottom: 2rem;
+  width: fit-content;
+}
+.hero-badge i { color: #ff6b35; }
+.hero h1 {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 700;
+  line-height: 1.08;
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+}
+.hero h1 .accent { color: #ff6b35; }
+.hero-sub {
+  font-size: 1.125rem;
+  color: #71717a;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  max-width: 480px;
+}
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: #ff6b35; color: #ffffff;
+  padding: 0.875rem 2rem;
+  border-radius: 999px;
+  font-weight: 600; font-size: 1rem;
+  border: none; cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-primary:hover { background: #e55a2b; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,107,53,0.3); }
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: transparent; color: #1a1a1a;
+  padding: 0.875rem 2rem;
+  border-radius: 999px;
+  font-weight: 600; font-size: 1rem;
+  border: 2px solid #e4e4e7;
+  cursor: pointer;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.btn-secondary:hover { border-color: #1a1a1a; transform: translateY(-2px); }
+.hero-trust {
+  margin-top: 2rem;
+  display: flex; align-items: center; gap: 0.5rem;
+  font-size: 0.875rem; color: #71717a;
+}
+.hero-trust .stars { color: #ff6b35; font-size: 0.875rem; letter-spacing: 2px; }
+
+/* Hero Right — Visual Panel */
+.hero-right {
+  background: linear-gradient(160deg, #166534 0%, #14532d 30%, #1a1a1a 100%);
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+  padding: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+.hero-right::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 30% 40%, rgba(255,107,53,0.15) 0%, transparent 50%),
+    radial-gradient(circle at 70% 60%, rgba(255,255,255,0.05) 0%, transparent 40%);
+}
+.hero-visual-text {
+  position: relative; z-index: 1;
+  text-align: center;
+}
+.hero-visual-text .big-icon {
+  font-size: 8rem;
+  color: rgba(255,255,255,0.08);
+  margin-bottom: 1.5rem;
+  line-height: 1;
+}
+.hero-visual-quote {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(1.5rem, 3.5vw, 2.75rem);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+  max-width: 400px;
+  margin-bottom: 1rem;
+}
+.hero-visual-quote .highlight { color: #ff6b35; }
+.hero-visual-meta {
+  font-size: 0.938rem;
+  color: rgba(255,255,255,0.6);
+  font-weight: 400;
+}
+.hero-silhouette {
+  position: absolute;
+  bottom: -2rem; left: -2rem;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(255,107,53,0.1) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+/* ============================
+   QUICK FACTS BAR
+   ============================ */
+.facts-bar {
+  background: #ffffff;
+  border-bottom: 1px solid #e4e4e7;
+  padding: 2rem 0;
+}
+.facts-inner {
+  max-width: 1280px; margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+.fact-item {
+  text-align: center;
+  padding: 1rem;
+  border-right: 1px solid #e4e4e7;
+}
+.fact-item:last-child { border-right: none; }
+.fact-number {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.75rem; font-weight: 700;
+  color: #ff6b35;
+  line-height: 1.2;
+}
+.fact-label {
+  font-size: 0.875rem;
+  color: #71717a;
+  margin-top: 0.25rem;
+  font-weight: 500;
+}
+
+/* ============================
+   SECTION COMMONS
+   ============================ */
+.section {
+  padding: 6rem 2rem;
+}
+.section-inner {
+  max-width: 1280px; margin: 0 auto;
+}
+.section-label {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-size: 0.875rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 1.5px;
+  color: #ff6b35;
+  margin-bottom: 1rem;
+}
+.section-label::before {
+  content: '';
+  width: 24px; height: 2px;
+  background: #ff6b35;
+  border-radius: 2px;
+}
+.section-title {
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  color: #1a1a1a;
+}
+.section-desc {
+  font-size: 1.125rem;
+  color: #71717a;
+  max-width: 640px;
+  line-height: 1.7;
+}
+
+/* Scroll Reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ============================
+   ABOUT SECTION — ZIGZAG
+   ============================ */
+.about { background: #ffffff; }
+.about-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+.about-image-block {
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(145deg, #fef3e2, #fde8d0);
+  aspect-ratio: 4/3;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  position: relative;
+}
+.about-image-block .img-illustration {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+.about-image-block .img-label {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: #1a1a1a;
+}
+.about-image-block .img-sublabel {
+  font-size: 0.875rem;
+  color: #71717a;
+  margin-top: 0.25rem;
+}
+.about-image-block::after {
+  content: '';
+  position: absolute; inset: 0;
+  border: 1px solid rgba(255,107,53,0.15);
+  border-radius: 16px;
+  pointer-events: none;
+}
+.about-text h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.about-text p {
+  color: #71717a;
+  margin-bottom: 1rem;
+}
+.about-story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+.about-story-text p {
+  color: #71717a;
+  margin-bottom: 1.25rem;
+}
+.about-story-image {
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(145deg, #e8f5e9, #c8e6c9);
+  aspect-ratio: 3/4;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  position: relative;
+}
+.about-story-image .img-illustration { font-size: 5rem; opacity: 0.9; }
+.about-story-image .img-label { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 1.125rem; }
+.about-story-image .img-sublabel { font-size: 0.875rem; color: #71717a; margin-top: 0.25rem; }
+.about-story-image::after {
+  content: '';
+  position: absolute; inset: 0;
+  border: 1px solid rgba(22,101,52,0.15);
+  border-radius: 16px;
+  pointer-events: none;
+}
+
+/* ============================
+   EXPERIENCES — CARD GRID
+   ============================ */
+.experiences { background: #fef7f0; }
+.exp-filter {
+  display: flex; gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+.exp-filter button {
+  padding: 0.5rem 1.25rem;
+  border-radius: 999px;
+  border: 1.5px solid #e4e4e7;
+  background: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #71717a;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 44px;
+  min-width: 44px;
+}
+.exp-filter button:hover,
+.exp-filter button.active {
+  border-color: #ff6b35;
+  color: #ff6b35;
+  background: #fff8f5;
+}
+.exp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.exp-card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  border: 1px solid #e4e4e7;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.exp-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+}
+.exp-card-image {
+  aspect-ratio: 16/10;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.exp-card-image .card-icon {
+  font-size: 3.5rem;
+  z-index: 1;
+}
+.exp-card-image .card-pattern {
+  position: absolute; inset: 0;
+  opacity: 0.6;
+}
+.exp-card-body { padding: 1.5rem; }
+.exp-card-body h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+.exp-card-body p {
+  font-size: 0.938rem;
+  color: #71717a;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+.exp-card-cta {
+  display: inline-flex; align-items: center; gap: 0.375rem;
+  font-size: 0.875rem; font-weight: 600;
+  color: #ff6b35;
+  transition: gap 0.2s ease;
+}
+.exp-card:hover .exp-card-cta { gap: 0.625rem; }
+.exp-card-tag {
+  position: absolute; top: 1rem; left: 1rem;
+  background: #ffffff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #166534;
+  z-index: 2;
+}
+
+/* Card color themes */
+.card-orange { background: linear-gradient(135deg, #ffedd5, #fde8d0); }
+.card-green { background: linear-gradient(135deg, #dcfce7, #bbf7d0); }
+.card-peach { background: linear-gradient(135deg, #fef3e2, #fde8d0); }
+.card-blue { background: linear-gradient(135deg, #e0f2fe, #bae6fd); }
+.card-yellow { background: linear-gradient(135deg, #fef9c3, #fef08a); }
+.card-purple { background: linear-gradient(135deg, #f3e8ff, #e9d5ff); }
+.card-rose { background: linear-gradient(135deg, #ffe4e6, #fecdd3); }
+.card-slate { background: linear-gradient(135deg, #f1f5f9, #e2e8f0); }
+
+/* ============================
+   ANIMALS — GALLERY GRID
+   ============================ */
+.animals { background: #ffffff; }
+.animals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+.animal-card {
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 1;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e4e4e7;
+  cursor: pointer;
+}
+.animal-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+.animal-card .animal-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+.animal-card h4 {
+  font-size: 1.125rem;
+  margin-bottom: 0.375rem;
+  color: #1a1a1a;
+}
+.animal-card p {
+  font-size: 0.875rem;
+  color: #71717a;
+}
+
+/* ============================
+   MORRIS TRIBUTE
+   ============================ */
+.morris {
+  background: linear-gradient(160deg, #1a1a1a 0%, #2d1f15 100%);
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+.morris::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 20% 80%, rgba(255,107,53,0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255,107,53,0.05) 0%, transparent 40%);
+}
+.morris .section-inner { position: relative; z-index: 1; }
+.morris .section-label { color: #ff6b35; }
+.morris .section-title { color: #ffffff; }
+.morris .section-desc { color: rgba(255,255,255,0.7); }
+.morris-content {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 3rem;
+  align-items: start;
+  margin-top: 3rem;
+}
+.morris-portrait {
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff6b35, #166534);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  font-size: 5rem;
+  border: 4px solid rgba(255,255,255,0.1);
+}
+.morris-text p {
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 1.25rem;
+  font-size: 1.063rem;
+}
+.morris-text p strong { color: #ffffff; }
+.morris-films {
+  display: flex; flex-wrap: wrap; gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+.film-tag {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 0.375rem 0.875rem;
+  border-radius: 999px;
+  font-size: 0.813rem;
+  color: rgba(255,255,255,0.8);
+  font-weight: 500;
+}
+.morris-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.morris-stat { text-align: center; }
+.morris-stat .stat-num {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 2rem; font-weight: 700;
+  color: #ff6b35;
+}
+.morris-stat .stat-label {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.5);
+  margin-top: 0.25rem;
+}
+
+/* ============================
+   REVIEWS
+   ============================ */
+.reviews { background: #fef7f0; }
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+.review-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid #e4e4e7;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.review-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+.review-stars {
+  color: #ff6b35;
+  font-size: 0.875rem;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+.review-quote {
+  font-size: 1.063rem;
+  line-height: 1.7;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+.review-source {
+  display: flex; align-items: center; gap: 0.75rem;
+}
+.review-avatar {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+.review-source-info .review-name {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #1a1a1a;
+}
+.review-source-info .review-platform {
+  font-size: 0.75rem;
+  color: #71717a;
+}
+
+/* ============================
+   VISIT INFO
+   ============================ */
+.visit { background: #ffffff; }
+.visit-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 3rem;
+}
+.visit-block {
+  background: #fef7f0;
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid #e4e4e7;
+}
+.visit-block h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1.25rem;
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.visit-block h3 i { color: #ff6b35; }
+.hours-table { width: 100%; }
+.hours-table tr { border-bottom: 1px solid #e4e4e7; }
+.hours-table tr:last-child { border-bottom: none; }
+.hours-table td {
+  padding: 0.75rem 0;
+  font-size: 0.938rem;
+}
+.hours-table td:last-child {
+  text-align: right;
+  font-weight: 500;
+}
+.admission-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+.admission-row {
+  display: flex; justify-content: space-between;
+  padding: 0.625rem 1rem;
+  background: #ffffff;
+  border-radius: 8px;
+  font-size: 0.938rem;
+}
+.admission-row .free { color: #166534; font-weight: 600; }
+.contact-list { display: flex; flex-direction: column; gap: 1rem; }
+.contact-item {
+  display: flex; align-items: center; gap: 0.75rem;
+  font-size: 0.938rem;
+}
+.contact-item i {
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  background: #ffffff;
+  border-radius: 8px;
+  color: #ff6b35;
+  font-size: 0.875rem;
+  flex-shrink: 0;
+}
+.contact-item a {
+  color: #71717a;
+  transition: color 0.2s ease;
+}
+.contact-item a:hover { color: #ff6b35; }
+
+/* Map placeholder */
+.map-block {
+  grid-column: 1 / -1;
+  background: linear-gradient(145deg, #f1f5f9, #e2e8f0);
+  border-radius: 16px;
+  padding: 3rem;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+  border: 1px solid #e4e4e7;
+  min-height: 240px;
+}
+.map-block i { font-size: 3rem; color: #ff6b35; margin-bottom: 1rem; }
+.map-block h4 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+.map-block p { color: #71717a; font-size: 0.938rem; margin-bottom: 1.25rem; }
+
+/* ============================
+   CTA BANNER
+   ============================ */
+.cta-banner {
+  background: linear-gradient(135deg, #ff6b35, #e55a2b);
+  padding: 5rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-banner::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(255,255,255,0.05) 0%, transparent 40%);
+}
+.cta-banner .section-inner { position: relative; z-index: 1; }
+.cta-banner h2 {
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+.cta-banner p {
+  font-size: 1.125rem;
+  color: rgba(255,255,255,0.85);
+  max-width: 560px;
+  margin: 0 auto 2rem;
+}
+.btn-white {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: #ffffff; color: #ff6b35;
+  padding: 0.875rem 2rem;
+  border-radius: 999px;
+  font-weight: 700; font-size: 1rem;
+  border: none; cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
+
+/* ============================
+   FOOTER
+   ============================ */
+.footer {
+  background: #1a1a1a;
+  color: rgba(255,255,255,0.7);
+  padding: 4rem 2rem 2rem;
+}
+.footer-inner {
+  max-width: 1280px; margin: 0 auto;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+.footer-brand h3 {
+  font-size: 1.25rem;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+.footer-brand p {
+  font-size: 0.875rem;
+  line-height: 1.7;
+  max-width: 320px;
+}
+.footer-col h4 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 1rem;
+}
+.footer-col a {
+  display: block;
+  font-size: 0.938rem;
+  color: rgba(255,255,255,0.7);
+  padding: 0.3rem 0;
+  transition: color 0.2s ease;
+}
+.footer-col a:hover { color: #ff6b35; }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 2rem;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 1rem;
+  font-size: 0.813rem;
+  color: rgba(255,255,255,0.4);
+}
+.footer-social {
+  display: flex; gap: 1rem;
+}
+.footer-social a {
+  width: 40px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(255,255,255,0.06);
+  border-radius: 50%;
+  color: rgba(255,255,255,0.5);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.footer-social a:hover { background: #ff6b35; color: #ffffff; }
+
+/* ============================
+   RESPONSIVE
+   ============================ */
+@media (max-width: 1200px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+}
+@media (max-width: 992px) {
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-left { padding: 4rem 2rem; max-width: 100%; order: 2; }
+  .hero-right { min-height: 320px; order: 1; }
+  .about-intro { grid-template-columns: 1fr; gap: 2rem; }
+  .about-story { grid-template-columns: 1fr; gap: 2rem; }
+  .visit-grid { grid-template-columns: 1fr; }
+  .morris-content { grid-template-columns: 1fr; }
+  .morris-portrait { margin: 0 auto; }
+}
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .section { padding: 4rem 1.5rem; }
+  .facts-inner { grid-template-columns: repeat(2, 1fr); }
+  .fact-item:nth-child(2) { border-right: none; }
+  .exp-grid { grid-template-columns: 1fr; }
+  .animals-grid { grid-template-columns: repeat(2, 1fr); }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .morris-stats { grid-template-columns: repeat(3, 1fr); }
+  .admission-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .hero-left { padding: 3rem 1.5rem; }
+}
+@media (max-width: 480px) {
+  .facts-inner { grid-template-columns: 1fr; }
+  .fact-item { border-right: none; border-bottom: 1px solid #e4e4e7; }
+  .fact-item:last-child { border-bottom: none; }
+  .animals-grid { grid-template-columns: 1fr; }
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .hero-left { padding: 2rem 1.25rem; }
+}
+
+/* ============================
+   REDUCED MOTION
+   ============================ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+  html { scroll-behavior: auto; }
+}
+</style>
+</head>
+<body>
+
+<!-- Scroll Progress -->
+<div id="scroll-progress"></div>
+
+<!-- ========================
+     NAVIGATION
+     ======================== -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-icon"><i class="fa-solid fa-dragon"></i></div>
+      Colorado Gators
+    </a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#experiences">Experiences</a>
+      <a href="#animals">Animals</a>
+      <a href="#morris">Morris</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#visit" class="nav-cta">Plan Your Visit</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#about" class="mobile-link">About</a>
+  <a href="#experiences" class="mobile-link">Experiences</a>
+  <a href="#animals" class="mobile-link">Animals</a>
+  <a href="#morris" class="mobile-link">Morris</a>
+  <a href="#reviews" class="mobile-link">Reviews</a>
+  <a href="#visit" class="mobile-link">Plan Your Visit</a>
+</div>
+
+<!-- ========================
+     HERO
+     ======================== -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <div class="hero-badge reveal"><i class="fa-solid fa-location-dot"></i> Mosca, CO — 9,400 ft Elevation</div>
+    <h1 class="reveal reveal-delay-1">The Only <span class="accent">Alligator Farm</span> at 9,400 Feet</h1>
+    <p class="hero-sub reveal reveal-delay-2">Discover hundreds of rescued alligators, crocodiles, caimans, tortoises, and turtles in the heart of the San Luis Valley. A family-run adventure that's been delighting visitors since day one.</p>
+    <div class="hero-actions reveal reveal-delay-3">
+      <a href="#visit" class="btn-primary"><i class="fa-solid fa-map-pin"></i> Come See the Gators</a>
+      <a href="#experiences" class="btn-secondary"><i class="fa-solid fa-compass"></i> Explore Experiences</a>
+    </div>
+    <div class="hero-trust reveal reveal-delay-4">
+      <span class="stars">★★★★★</span>
+      <span>4.6 rating from hundreds of happy visitors</span>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-silhouette"></div>
+    <div class="hero-visual-text">
+      <div class="big-icon"><i class="fa-solid fa-dragon"></i></div>
+      <div class="hero-visual-quote">Where <span class="highlight">reptiles</span> meet <span class="highlight">mountains</span></div>
+      <div class="hero-visual-meta">Mosca, Colorado · Est. as fish farm, now a tourist landmark</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================
+     QUICK FACTS BAR
+     ======================== -->
+<div class="facts-bar">
+  <div class="facts-inner">
+    <div class="fact-item reveal">
+      <div class="fact-number">9,400 ft</div>
+      <div class="fact-label">Highest Altitude Alligator Farm in the World</div>
+    </div>
+    <div class="fact-item reveal reveal-delay-1">
+      <div class="fact-number">100+</div>
+      <div class="fact-label">Rescued Reptiles &amp; Amphibians</div>
+    </div>
+    <div class="fact-item reveal reveal-delay-2">
+      <div class="fact-number">9–5</div>
+      <div class="fact-label">Open Daily During Peak Season</div>
+    </div>
+    <div class="fact-item reveal reveal-delay-3">
+      <div class="fact-number">$0–$30</div>
+      <div class="fact-label">Admission · Under 5 Free</div>
+    </div>
+  </div>
+</div>
+
+<!-- ========================
+     ABOUT
+     ======================== -->
+<section class="section about" id="about">
+  <div class="section-inner">
+    <div class="about-intro">
+      <div class="about-image-block reveal">
+        <div class="img-illustration"><i class="fa-solid fa-people-roof" style="font-family: 'Font Awesome 6 Free'; font-weight: 900;"></i></div>
+        <div class="img-label">A Family Affair</div>
+        <div class="img-sublabel">Three generations of reptile love</div>
+      </div>
+      <div class="about-text reveal reveal-delay-1">
+        <div class="section-label">Our Story</div>
+        <h3>From Fish Farm to the Only High-Altitude Alligator Farm in the World</h3>
+        <p>Colorado Gators started as a humble fish farm in the San Luis Valley, and like many rural ventures, it evolved in the most unexpected way. What began as a way to supply bait fish slowly attracted a very different kind of animal — alligators.</p>
+        <p>Those gators were originally "convenient garbage disposals," as the family jokes. But over the years, they grew from a handful of surplus reptiles into a thriving community of hundreds of rescued animals — and a one-of-a-kind roadside attraction that draws visitors from across the country.</p>
+        <p>Today, Colorado Gators is a registered reptile rescue and education center, a San Luis Valley landmark, and a favorite stop for road-trippers exploring Highway 160.</p>
+      </div>
+    </div>
+
+    <div class="about-story">
+      <div class="about-story-text reveal">
+        <h3 style="font-size:1.5rem; margin-bottom:1rem;">More Than an Attraction — A Rescue</h3>
+        <p>Every animal at Colorado Gators has a story. Many were surrendered by owners who could no longer care for them. Some were rescued from neglect or dangerous situations. All of them receive daily care from the family who runs this place with genuine love.</p>
+        <p>The collection includes American alligators, crocodiles, caimans, tortoises of various species, turtles, snakes, and more — each with its own personality and history. Some residents have lived here for decades.</p>
+        <p>The Morris family has opened their doors to the public not for profit, but to share their passion and to educate visitors about these remarkable creatures. Roadside America has featured them as a must-stop roadside attraction, and word-of-mouth keeps families coming back.</p>
+      </div>
+      <div class="about-story-image reveal reveal-delay-2">
+        <div class="img-illustration"><i class="fa-solid fa-heart" style="font-family: 'Font Awesome 6 Free'; font-weight: 900;"></i></div>
+        <div class="img-label">Rescue &amp; Education</div>
+        <div class="img-sublabel">Every animal has a story worth hearing</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================
+     EXPERIENCES
+     ======================== -->
+<section class="section experiences" id="experiences">
+  <div class="section-inner">
+    <div class="section-label reveal">Hand-On Adventures</div>
+    <h2 class="section-title reveal reveal-delay-1">Experiences You Won't Find Anywhere Else</h2>
+    <p class="section-desc reveal reveal-delay-2">Get up close with some of the world's most fascinating reptiles. These aren't behind-glass encounters — they're real, hands-on adventures that kids (and kids at heart) will never forget.</p>
+
+    <div class="exp-filter reveal reveal-delay-3">
+      <button class="active" data-filter="all">All Experiences</button>
+      <button data-filter="touch">Hands-On</button>
+      <button data-filter="feed">Feeding</button>
+      <button data-filter="educational">Educational</button>
+    </div>
+
+    <div class="exp-grid">
+
+      <div class="exp-card reveal" data-category="touch">
+        <div class="exp-card-image card-orange">
+          <span class="card-tag">Most Popular</span>
+          <div class="card-icon"><i class="fa-solid fa-hand" style="color:#1a1a1a;"></i></div>
+        </div>
+        <div class="exp-card-body">
+          <h3>Pet the Alligator</h3>
+          <p>Stroke the rough, prehistoric skin of a real American alligator — yes, really. Our calm, well-socialized gators love the attention, and your kids will get a once-in-a-lifetime tactile experience.</p>
+          <div class="exp-card-cta">Learn more <i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+      </div>
+
+      <div class="exp-card reveal reveal-delay-1" data-category="feed">
+        <div class="exp-card-image card-green">
+          <span class="card-tag">Fan Favorite</span>
+          <div class="card-icon"><i class="fa-solid fa-drumstick-bite" style="color:#1a1a1a;"></i></div>
+        </div>
+        <div class="exp-card-body">
+          <h3>Feed the Gators</h3>
+          <p>Watch the power and grace of an alligator up close as you drop a carefully prepared meal into their enclosure. The splash, the snap, the sheer force — it's wild, and it's absolutely thrilling.</p>
+          <div class="exp-card-cta">Learn more <i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+      </div>
+
+      <div class="exp-card reveal reveal-delay-2" data-category="touch feed">
+        <div class="exp-card-image card-peach">
+          <div class="card-icon"><i class="fa-solid fa-shield-dog" style="color:#1a1a1a;"></i></div>
+        </div>
+        <div class="exp-card-body">
+          <h3>Tortoise Time</h3>
+          <p>Say hello to our gentle giant tortoises and hand-feed them fresh greens. These ancient creatures move slowly but are full of character — perfect for families with younger children.</p>
+          <div class="exp-card-cta">Learn more <i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+      </div>
+
+      <div class="exp-card reveal reveal-delay-3" data-category="feed educational">
+        <div class="exp-card-image card-blue">
+          <div class="card-icon"><i class="fa-solid fa-fish" style="color:#1a1a1a;"></i></div>
+        </div>
+        <div class="exp-card-body">
+          <h3>Fish for Carp</h3>
+          <p>Catch your own carp in our pond, then bring them over to feed the alligators and caimans. It's a two-step adventure that teaches kids about the food chain in the most entertaining way possible.</p>
+          <div class="exp-card-cta">Learn more <i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+      </div>
+
+      <div class="exp-card reveal" data-category="educational">
+        <div class="exp-card-image card-purple">
+          <div class="card-icon"><i class="fa-solid fa-graduation-cap" style="color:#1a1a1a;"></i></div>
+        </div>
+        <div class="exp-card-body">
+          <h3>Guided Reptile Tour</h3>
+          <p>Take a guided walk through the facility with a knowledgeable family member who'll share fascinating stories about each species — from the biology of snake shedding to the conservation challenges facing wild alligators.</p>
+          <div class="exp-card-cta">Learn more <i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+      </div>
+
+      <div class="exp-card reveal reveal-delay-1" data-category="touch educational">
+        <div class="exp-card-image card-rose">
+          <div class="card-icon"><i class="fa-solid fa-hand-holding-heart" style="color:#1a1a1a;"></i></div>
+        </div>
+        <div class="exp-card-body">
+          <h3>Hold a Snake</h3>
+          <p>Overcome your fears or deepen your fascination. Our staff will gently place a non-venomous snake in your hands while sharing its unique story. A confidence-building experience for all ages.</p>
+          <div class="exp-card-cta">Learn more <i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========================
+     THE ANIMALS
+     ======================== -->
+<section class="section animals" id="animals">
+  <div class="section-inner">
+    <div class="section-label reveal">Meet the Residents</div>
+    <h2 class="section-title reveal reveal-delay-1">Hundreds of Amazing Reptiles Call This Place Home</h2>
+    <p class="section-desc reveal reveal-delay-2">From massive albino alligators to tiny tree frogs, Colorado Gators houses an incredible diversity of reptiles and amphibians — each rescued, rehabilitated, or hand-raised by the family.</p>
+
+    <div class="animals-grid">
+
+      <div class="animal-card reveal card-orange">
+        <div class="animal-icon"><i class="fa-solid fa-dragon" style="font-family: 'Font Awesome 6 Free'; font-weight: 900;"></i></div>
+        <h4>American Alligators</h4>
+        <p>Our flagship residents, including albino specials</p>
+      </div>
+
+      <div class="animal-card reveal reveal-delay-1 card-green">
+        <div class="animal-icon"><i class="fa-solid fa-dragon" style="font-family: 'Font Awesome 6 Free'; font-weight: 900; transform: scaleX(-1);"></i></div>
+        <h4>Crocodiles</h4>
+        <p>Broad snouts, broader personalities</p>
+      </div>
+
+      <div class="animal-card reveal reveal-delay-2 card-peach">
+        <div class="animal-icon"><i class="fa-solid fa-dragon" style="font-family: 'Font Awesome 6 Free'; font-weight: 900; transform: scale(0.8);"></i></div>
+        <h4>Caimans</h4>
+        <p>Smaller cousins with big attitudes</p>
+      </div>
+
+      <div class="animal-card reveal reveal-delay-3 card-blue">
+        <div class="animal-icon"><i class="fa-solid fa-shield-dog" style="font-family: 'Font Awesome 6 Free'; font-weight: 900;"></i></div>
+        <h4>Tortoises &amp; Turtles</h4>
+        <p>Shelled friends from around the world</p>
+      </div>
+
+      <div class="animal-card reveal card-purple">
+        <div class="animal-icon"><i class="fa-solid fa-snake" style="font-family: 'Font Awesome 6 Free'; font-weight: 900;"></i></div>
+        <h4>Snakes</h4>
+        <p>From corn snakes to pythons</p>
+      </div>
+
+      <div class="animal-card reveal reveal-delay-1 card-rose">
+        <div class="animal-icon"><i class="fa-solid fa-frog" style="font-family: 'Font Awesome 6 Free'; font-weight: 900;"></i></div>
+        <h4>Frogs &amp; Newts</h4>
+        <p>The amphibian collection grows</p>
+      </div>
+
+      <div class="animal-card reveal reveal-delay-2 card-slate">
+        <div class="animal-icon"><i class="fa-solid fa-fish" style="font-family: 'Font Awesome 6 Free'; font-weight: 900;"></i></div>
+        <h4>Fish &amp; Aquatic Life</h4>
+        <p>Pond fish, koi, and more</p>
+      </div>
+
+      <div class="animal-card reveal reveal-delay-3 card-yellow">
+        <div class="animal-icon"><i class="fa-solid fa-star" style="font-family: 'Font Awesome 6 Free'; font-weight: 900; color: #f59e0b;"></i></div>
+        <h4>Surprise Residents</h4>
+        <p>New arrivals and surprise guests</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========================
+     MORRIS TRIBUTE
+     ======================== -->
+<section class="section morris" id="morris">
+  <div class="section-inner">
+    <div class="section-label reveal">Legends</div>
+    <h2 class="section-title reveal reveal-delay-1">Meet Morris — The Alligator Who Was in Every Great Film</h2>
+    <p class="section-desc reveal reveal-delay-2">Before he retired to the Colorado mountains, Morris lived a life most alligators only dream of: a Hollywood career spanning over 30 years.</p>
+
+    <div class="morris-content reveal reveal-delay-3">
+      <div class="morris-portrait"><i class="fa-solid fa-dragon" style="font-family: 'Font Awesome 6 Free'; font-weight: 900;"></i></div>
+      <div class="morris-text">
+        <p><strong>Morris was no ordinary alligator.</strong> At 640 pounds of pure, prehistoric charisma, he appeared in <em>ALLIGATOR</em> (1980) — the cult classic about a mutated sewer gator — and went on to star in dozens of films and TV shows. Movies like <em>Happy Gilmore</em>, <em>Hot Shots!</em>, <em>Top Gun</em>, and countless others featured Morris in everything from background cameos to memorable close-ups.</p>
+        <p>From 1975 to 2006, Morris was Hollywood's go-to alligator. He was the original screen gator, the actor's actor, the one you called when you needed a real deal in the scene. He worked until his retirement, when he found a forever home right here in the San Luis Valley.</p>
+        <p><strong>Morris lived to be over 80 years old</strong> — an impressive lifespan for an alligator — and spent his golden years basking in the high-altitude Colorado sun, watched over by the family who loved him. He was a legend on screen, and a legend off it.</p>
+        <div class="morris-films">
+          <span class="film-tag">ALLIGATOR (1980)</span>
+          <span class="film-tag">Happy Gilmore</span>
+          <span class="film-tag">Hot Shots!</span>
+          <span class="film-tag">Top Gun</span>
+          <span class="film-tag">Baywatch</span>
+          <span class="film-tag">TJ Hooker</span>
+          <span class="film-tag">The A-Team</span>
+          <span class="film-tag">Magnum P.I.</span>
+          <span class="film-tag">And many more...</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="morris-stats reveal reveal-delay-4">
+      <div class="morris-stat">
+        <div class="stat-num">30+</div>
+        <div class="stat-label">Years in Film (1975–2006)</div>
+      </div>
+      <div class="morris-stat">
+        <div class="stat-num">640 lbs</div>
+        <div class="stat-label">Of Pure Star Power</div>
+      </div>
+      <div class="morris-stat">
+        <div class="stat-num">80+</div>
+        <div class="stat-label">Years Old at Peaceful Retirement</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================
+     REVIEWS
+     ======================== -->
+<section class="section reviews" id="reviews">
+  <div class="section-inner">
+    <div class="section-label reveal">What Visitors Say</div>
+    <h2 class="section-title reveal reveal-delay-1">Real Words from Real Visitors</h2>
+    <p class="section-desc reveal reveal-delay-2">Don't just take our word for it. Here's what families, road-trippers, and reptile enthusiasts have shared about their experience at Colorado Gators.</p>
+
+    <div class="reviews-grid">
+
+      <div class="review-card reveal">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-quote">"A family run rescue centre for animals that are abandoned or people can't manage any more. All the staff were super friendly and spent time talking to us."</p>
+        <div class="review-source">
+          <div class="review-avatar" style="background: linear-gradient(135deg, #ff6b35, #e55a2b);">T</div>
+          <div class="review-source-info">
+            <div class="review-name">TripAdvisor Visitor</div>
+            <div class="review-platform">Verified Review · TripAdvisor</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card reveal reveal-delay-1">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-quote">"They have so many cool things here. So many alligators, snakes, fishes, you name it, they have it! It's well taken care of and their employees were super nice!"</p>
+        <div class="review-source">
+          <div class="review-avatar" style="background: linear-gradient(135deg, #166534, #14532d);">Y</div>
+          <div class="review-source-info">
+            <div class="review-name">Yelp Reviewer</div>
+            <div class="review-platform">Verified Review · Yelp</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card reveal reveal-delay-2">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-quote">"Between the crocs, gators, and the wild mix of rescued reptiles, this place is such a quirky, fun Colorado gem. We drove all the way from Alamosa just to stop by and it was worth every mile."</p>
+        <div class="review-source">
+          <div class="review-avatar" style="background: linear-gradient(135deg, #4f46e5, #6366f1);">F</div>
+          <div class="review-source-info">
+            <div class="review-name">Facebook Visitor</div>
+            <div class="review-platform">Public Comment · Facebook</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========================
+     CTA BANNER
+     ======================== -->
+<div class="cta-banner">
+  <div class="section-inner">
+    <h2 class="reveal">Ready to See the Gators?</h2>
+    <p class="reveal reveal-delay-1">Open daily during season. Admission starts at just $15 for kids and $30 for adults. Ages 5 and under get in free — come make some memories.</p>
+    <a href="#visit" class="btn-white reveal reveal-delay-2"><i class="fa-solid fa-map-pin"></i> Plan Your Visit</a>
+  </div>
+</div>
+
+<!-- ========================
+     VISIT INFO
+     ======================== -->
+<section class="section visit" id="visit">
+  <div class="section-inner">
+    <div class="section-label reveal">Plan Your Trip</div>
+    <h2 class="section-title reveal reveal-delay-1">Everything You Need to Visit</h2>
+    <p class="section-desc reveal reveal-delay-2">We're located on Highway 160 in the San Luis Valley. It's an easy detour that turns into the highlight of your road trip.</p>
+
+    <div class="visit-grid">
+
+      <div class="visit-block reveal">
+        <h3><i class="fa-regular fa-clock"></i> Seasonal Hours</h3>
+        <table class="hours-table">
+          <tr><td>Peak Season</td><td>Feb 27 – Nov 1: 9:00 AM – 5:00 PM</td></tr>
+          <tr><td>Off Season</td><td>Nov 2 – Feb 26: 9:00 AM – 4:00 PM</td></tr>
+          <tr><td>Closed</td><td>Thanksgiving Day &amp; Christmas Day</td></tr>
+        </table>
+      </div>
+
+      <div class="visit-block reveal reveal-delay-1">
+        <h3><i class="fa-solid fa-ticket"></i> Admission</h3>
+        <div class="admission-grid">
+          <div class="admission-row"><span>Ages 5 and under</span><span class="free">FREE</span></div>
+          <div class="admission-row"><span>Ages 6–15</span><span>$15</span></div>
+          <div class="admission-row"><span>Ages 16–64</span><span>$30</span></div>
+          <div class="admission-row"><span>Ages 65–79</span><span>$15</span></div>
+          <div class="admission-row"><span>Ages 80+</span><span class="free">FREE</span></div>
+        </div>
+      </div>
+
+      <div class="visit-block reveal reveal-delay-2">
+        <h3><i class="fa-solid fa-address-book"></i> Contact Us</h3>
+        <div class="contact-list">
+          <div class="contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <div><strong>9162 Lane 9 N</strong><br>Mosca, CO 81146</div>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <a href="tel:+17193782612">(719) 378-2612</a>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:colog8rs@gmail.com">colog8rs@gmail.com</a>
+          </div>
+          <div class="contact-item">
+            <i class="fa-brands fa-facebook-f"></i>
+            <a href="https://www.facebook.com/ColoradoGatorFarm" target="_blank" rel="noopener">Facebook Page</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="visit-block reveal reveal-delay-3">
+        <h3><i class="fa-solid fa-car"></i> Getting Here</h3>
+        <p style="color:#71717a; font-size:0.938rem; line-height:1.7; margin-bottom:1rem;">Located directly on <strong>Highway 160</strong> in the San Luis Valley, about 30 miles east of Alamosa. Colorado Gators is a classic roadside attraction — you won't miss it once you're in Mosca. Pull off, park, and start exploring.</p>
+        <p style="color:#71717a; font-size:0.938rem; line-height:1.7;"><strong>Elevation:</strong> Approximately 9,400 feet. Dress in layers — mountain weather changes fast, even in summer!</p>
+      </div>
+
+      <div class="map-block reveal">
+        <i class="fa-solid fa-map-location-dot"></i>
+        <h4>Find Us in the San Luis Valley</h4>
+        <p>9162 Lane 9 N, Mosca, CO 81146 · Just off Highway 160</p>
+        <a href="https://www.google.com/maps/search/9162+Lane+9+N+Mosca+CO+81146" target="_blank" rel="noopener" class="btn-primary" style="padding:0.625rem 1.5rem; font-size:0.938rem;"><i class="fa-solid fa-diamond-turn-right"></i> Get Directions</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========================
+     FOOTER
+     ======================== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3><i class="fa-solid fa-dragon" style="font-family: 'Font Awesome 6 Free'; font-weight: 900; color: #ff6b35;"></i> Colorado Gators</h3>
+        <p>The only high-altitude alligator farm in the world. A family-run reptile rescue and education center in the heart of Colorado's San Luis Valley. Open daily (except Thanksgiving and Christmas).</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="#about">Our Story</a>
+        <a href="#experiences">Experiences</a>
+        <a href="#animals">The Animals</a>
+        <a href="#morris">Morris the Alligator</a>
+        <a href="#reviews">Reviews</a>
+      </div>
+      <div class="footer-col">
+        <h4>Visit</h4>
+        <a href="#visit">Hours &amp; Admission</a>
+        <a href="https://www.google.com/maps/search/9162+Lane+9+N+Mosca+CO+81146" target="_blank" rel="noopener">Directions</a>
+        <a href="tel:+17193782612">(719) 378-2612</a>
+        <a href="mailto:colog8rs@gmail.com">Email Us</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="https://www.facebook.com/ColoradoGatorFarm" target="_blank" rel="noopener">Facebook</a>
+        <a href="#visit">TripAdvisor</a>
+        <a href="#visit">Yelp</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2024 Colorado Gators Reptile Park. All rights reserved.</span>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/ColoradoGatorFarm" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="mailto:colog8rs@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        <a href="tel:+17193782612" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ========================
+     JAVASCRIPT
+     ======================== -->
+<script>
+(function() {
+  'use strict';
+
+  /* ---- Scroll Progress Bar ---- */
+  var progressBar = document.getElementById('scroll-progress');
+  function updateProgress() {
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    progressBar.style.width = scrollPercent + '%';
+  }
+  window.addEventListener('scroll', updateProgress, { passive: true });
+
+  /* ---- Navbar Shadow on Scroll ---- */
+  var navbar = document.getElementById('navbar');
+  function updateNavbar() {
+    if (window.scrollY > 10) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  }
+  window.addEventListener('scroll', updateNavbar, { passive: true });
+
+  /* ---- Hamburger Menu ---- */
+  var hamburger = document.getElementById('hamburger');
+  var mobileMenu = document.getElementById('mobile-menu');
+  var mobileLinks = document.querySelectorAll('.mobile-link');
+
+  hamburger.addEventListener('click', function() {
+    var isOpen = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('active');
+    hamburger.setAttribute('aria-expanded', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+
+  mobileLinks.forEach(function(link) {
+    link.addEventListener('click', function() {
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
+
+  /* ---- Scroll Reveal (IntersectionObserver) ---- */
+  var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!prefersReducedMotion) {
+    var reveals = document.querySelectorAll('.reveal');
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    reveals.forEach(function(el) {
+      observer.observe(el);
+    });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el) {
+      el.classList.add('visible');
+    });
+  }
+
+  /* ---- Experience Filter Tabs ---- */
+  var filterButtons = document.querySelectorAll('.exp-filter button');
+  var expCards = document.querySelectorAll('.exp-card');
+
+  filterButtons.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var filter = this.getAttribute('data-filter');
+
+      // Update active state
+      filterButtons.forEach(function(b) { b.classList.remove('active'); });
+      this.classList.add('active');
+
+      // Filter cards
+      expCards.forEach(function(card) {
+        var categories = card.getAttribute('data-category');
+        if (filter === 'all' || categories.indexOf(filter) !== -1) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  /* ---- Smooth Scroll for Anchor Links ---- */
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+      var targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      var target = document.querySelector(targetId);
+      if (target) {
+        e.preventDefault();
+        var navHeight = navbar.offsetHeight;
+        var targetPos = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+        window.scrollTo({ top: targetPos, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+      }
+    });
+  });
+
+})();
+</script>
+</body>
+</html>

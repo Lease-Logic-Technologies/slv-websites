@@ -1,0 +1,1831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Colorado Gators Reptile Park — the only high-altitude alligator farm in the world. Family-run reptile rescue, education, and tourist attraction in Mosca, CO at 9,400 ft elevation in the San Luis Valley.">
+  <meta name="keywords" content="Colorado Gators, alligator farm, reptile rescue, San Luis Valley, Mosco Colorado, alligator experience, rescued reptiles">
+  <meta name="author" content="Colorado Gators Reptile Park">
+  <meta property="og:title" content="Colorado Gators Reptile Park — Reptile Rescue and Education">
+  <meta property="og:description" content="The only high-altitude alligator farm in the world. Family-run reptile rescue and tourist attraction in Mosca, CO.">
+  <meta property="og:type" content="website">
+  <title>Colorado Gators Reptile Park — Reptile Rescue and Education</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ZooOrAquarium",
+    "name": "Colorado Gators Reptile Park",
+    "alternateName": "Colorado Gators",
+    "description": "Family-run reptile rescue and tourist attraction in Mosca, CO. The only high-altitude alligator farm in the world at 9,400 ft elevation in the San Luis Valley.",
+    "url": "https://www.colorado-gators.com",
+    "telephone": "+1-719-378-2612",
+    "email": "colog8rs@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "9162 Lane 9 N",
+      "addressLocality": "Mosca",
+      "addressRegion": "CO",
+      "postalCode": "81146",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 37.489,
+      "longitude": -105.583
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "starts": "09:00",
+        "ends": "17:00",
+        "description": "February 27 through November 1"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "starts": "09:00",
+        "ends": "16:00",
+        "description": "November 2 through February 26"
+      }
+    ],
+    "priceRange": "$15 - $30",
+    "slogan": "Reptile Rescue and Education",
+    "image": "https://images.unsplash.com/photo-1516934024742-b467f36a4093?w=1200",
+    "sameAs": ["https://www.facebook.com/ColoradoGatorFarm"],
+    "acceptsReservations": false,
+    "hasMap": "https://www.google.com/maps/search/9162+Lane+9+N+Mosca+CO+81146"
+  }
+  </script>
+
+  <style>
+    /* ========== RESET & BASE ========== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-primary: #fafaf9;
+      --bg-secondary: #f5f5f4;
+      --bg-tertiary: #e7e5e4;
+      --ink: #1c1917;
+      --ink-light: #44403c;
+      --ink-subtle: #78716c;
+      --accent: #166534;
+      --accent-hover: #15803d;
+      --accent-deep: #14532d;
+      --border: #e7e5e4;
+      --border-light: #f5f5f4;
+      --white: #ffffff;
+      --serif: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+      --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --nav-height: 64px;
+      --container: 1200px;
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--sans);
+      font-size: 1.125rem;
+      line-height: 1.7;
+      color: var(--ink);
+      background-color: var(--bg-primary);
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul { list-style: none; }
+
+    /* ========== SCROLL PROGRESS ========== */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: var(--accent);
+      z-index: 10001;
+      transition: width 0.05s linear;
+    }
+
+    /* ========== NAVIGATION ========== */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--nav-height);
+      z-index: 10000;
+      transition: background var(--transition), box-shadow var(--transition);
+    }
+
+    .nav--solid {
+      background: rgba(250, 250, 249, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 1px 0 var(--border);
+    }
+
+    .nav__inner {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav__logo {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      transition: color var(--transition);
+      white-space: nowrap;
+    }
+
+    .nav--solid .nav__logo {
+      color: var(--ink);
+    }
+
+    .nav__logo span {
+      font-weight: 400;
+      opacity: 0.7;
+    }
+
+    .nav__links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+    }
+
+    .nav__link {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.85);
+      letter-spacing: 0.01em;
+      transition: color var(--transition);
+      position: relative;
+      padding: 0.25rem 0;
+    }
+
+    .nav__link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1.5px;
+      background: currentColor;
+      transition: width var(--transition);
+    }
+
+    .nav__link:hover::after {
+      width: 100%;
+    }
+
+    .nav--solid .nav__link {
+      color: var(--ink-light);
+    }
+
+    .nav__link:hover {
+      color: var(--white);
+    }
+
+    .nav--solid .nav__link:hover {
+      color: var(--ink);
+    }
+
+    .nav__cta {
+      font-size: 0.875rem;
+      font-weight: 600;
+      padding: 0.6rem 1.5rem;
+      border-radius: 100px;
+      background: var(--white);
+      color: var(--ink);
+      transition: background var(--transition), transform var(--transition);
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav--solid .nav__cta {
+      background: var(--accent);
+      color: var(--white);
+    }
+
+    .nav__cta:hover {
+      background: var(--bg-tertiary);
+      transform: translateY(-1px);
+    }
+
+    .nav--solid .nav__cta:hover {
+      background: var(--accent-hover);
+    }
+
+    /* Hamburger */
+    .nav__hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 44px;
+      height: 44px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 1001;
+    }
+
+    .nav__hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: all var(--transition);
+    }
+
+    .nav--solid .nav__hamburger span {
+      background: var(--ink);
+    }
+
+    .nav__hamburger.active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .nav__hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .nav__hamburger.active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* Mobile menu */
+    .nav__mobile {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(28, 25, 23, 0.97);
+      backdrop-filter: blur(20px);
+      z-index: 999;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity var(--transition), visibility var(--transition);
+    }
+
+    .nav__mobile.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .nav__mobile a {
+      font-family: var(--serif);
+      font-size: 2rem;
+      color: var(--white);
+      transition: opacity var(--transition);
+    }
+
+    .nav__mobile a:hover {
+      opacity: 0.7;
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero__bg-layer {
+      position: absolute;
+      inset: 0;
+      background:
+        url('https://images.unsplash.com/photo-1516934024742-b467f36a4093?auto=format&fit=crop&w=1920&q=80')
+        center center / cover no-repeat;
+    }
+
+    .hero__overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(20, 83, 45, 0.35) 0%,
+          rgba(28, 25, 23, 0.55) 50%,
+          rgba(28, 25, 23, 0.80) 100%
+        );
+      z-index: 1;
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 900px;
+      padding: 2rem;
+    }
+
+    .hero__tagline {
+      font-family: var(--sans);
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero__title {
+      font-family: var(--serif);
+      font-size: clamp(3rem, 8vw, 7rem);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero__subtitle {
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      font-weight: 300;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.8);
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .hero__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 1rem 2.5rem;
+      border-radius: 100px;
+      background: var(--white);
+      color: var(--ink);
+      transition: all var(--transition);
+      min-height: 52px;
+    }
+
+    .hero__cta:hover {
+      background: var(--bg-tertiary);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero__cta i {
+      font-size: 0.75rem;
+      transition: transform var(--transition);
+    }
+
+    .hero__cta:hover i {
+      transform: translateX(4px);
+    }
+
+    .hero__scroll-hint {
+      position: absolute;
+      bottom: 3rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      animation: float 2s ease-in-out infinite;
+    }
+
+    .hero__scroll-hint span {
+      display: block;
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ========== SECTION BASE ========== */
+    .section {
+      padding: 8rem 2rem;
+    }
+
+    .section--alt {
+      background: var(--bg-secondary);
+    }
+
+    .section__inner {
+      max-width: var(--container);
+      margin: 0 auto;
+    }
+
+    .section__label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .section__title {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 4vw, 3.5rem);
+      font-weight: 600;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+    }
+
+    .section__text {
+      font-size: 1.125rem;
+      line-height: 1.7;
+      color: var(--ink-light);
+      max-width: 65ch;
+    }
+
+    .section__text--wide {
+      max-width: 70ch;
+    }
+
+    /* ========== REVEAL ANIMATIONS ========== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+      .hero__scroll-hint { animation: none; }
+      html { scroll-behavior: auto; }
+    }
+
+    /* ========== ABOUT SECTION ========== */
+    .about {
+      padding-top: 10rem;
+      padding-bottom: 10rem;
+    }
+
+    .about__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    .about__image-wrapper {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+    }
+
+    .about__image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about__image-wrapper::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(22, 101, 52, 0.1), transparent);
+      pointer-events: none;
+    }
+
+    .about__stat {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.25rem;
+      margin-top: 2rem;
+      padding: 1rem 1.5rem;
+      background: var(--bg-secondary);
+      border-radius: 12px;
+    }
+
+    .about__stat-number {
+      font-family: var(--serif);
+      font-size: 2.5rem;
+      font-weight: 400;
+      line-height: 1;
+      color: var(--accent);
+    }
+
+    .about__stat-label {
+      font-size: 0.875rem;
+      color: var(--ink-subtle);
+      margin-left: 0.5rem;
+      line-height: 1.3;
+    }
+
+    .about__divider {
+      width: 60px;
+      height: 2px;
+      background: var(--accent);
+      margin: 2rem 0;
+    }
+
+    /* ========== EXPERIENCES ========== */
+    .experiences {
+      text-align: center;
+    }
+
+    .experiences .section__title,
+    .experiences .section__text {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .experiences__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 4rem;
+    }
+
+    .experience-card {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      aspect-ratio: 3/4;
+      cursor: pointer;
+      group: experience;
+    }
+
+    .experience-card__image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .experience-card:hover .experience-card__image {
+      transform: scale(1.05);
+    }
+
+    .experience-card__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(20, 83, 45, 0.85) 100%);
+      transition: background var(--transition);
+    }
+
+    .experience-card:hover .experience-card__overlay {
+      background: linear-gradient(180deg, transparent 30%, rgba(20, 83, 45, 0.9) 100%);
+    }
+
+    .experience-card__content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 2rem 1.5rem;
+      color: var(--white);
+      text-align: left;
+    }
+
+    .experience-card__icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+    }
+
+    .experience-card__title {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+
+    .experience-card__desc {
+      font-size: 0.875rem;
+      line-height: 1.5;
+      opacity: 0.85;
+    }
+
+    /* ========== ANIMALS GALLERY ========== */
+    .animals {
+      background: var(--ink);
+      color: var(--white);
+      padding: 8rem 2rem;
+    }
+
+    .animals .section__label {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .animals .section__title {
+      color: var(--white);
+    }
+
+    .animals .section__text {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .animals__header {
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+
+    .animals__header .section__text {
+      margin: 0 auto;
+    }
+
+    .animals__grid {
+      max-width: var(--container);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto;
+      gap: 1.5rem;
+    }
+
+    .animal-card {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .animal-card--wide {
+      grid-column: span 2;
+    }
+
+    .animal-card--tall {
+      grid-row: span 2;
+    }
+
+    .animal-card__image {
+      width: 100%;
+      height: 100%;
+      min-height: 280px;
+      object-fit: cover;
+      transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .animal-card:hover .animal-card__image {
+      transform: scale(1.04);
+    }
+
+    .animal-card__info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 3rem 2rem 2rem;
+      background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    }
+
+    .animal-card__name {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      color: var(--white);
+      margin-bottom: 0.25rem;
+    }
+
+    .animal-card__species {
+      font-size: 0.875rem;
+      font-style: italic;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .animal-card__caption {
+      position: absolute;
+      top: 1.5rem;
+      left: 1.5rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: rgba(0,0,0,0.3);
+      backdrop-filter: blur(10px);
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+    }
+
+    /* ========== MORRIS TRIBUTE ========== */
+    .morris {
+      position: relative;
+      padding: 10rem 2rem;
+      overflow: hidden;
+    }
+
+    .morris__bg {
+      position: absolute;
+      inset: 0;
+      background:
+        url('https://images.unsplash.com/photo-1476863077854-4bcc305415a4?auto=format&fit=crop&w=1920&q=80')
+        center center / cover no-repeat;
+      filter: brightness(0.3) saturate(0.7);
+    }
+
+    .morris__overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at center, rgba(20, 83, 45, 0.2), transparent 70%),
+        linear-gradient(180deg, var(--bg-primary), transparent 20%, transparent 80%, var(--bg-primary));
+    }
+
+    .morris__content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .morris__quote-mark {
+      font-family: var(--serif);
+      font-size: 8rem;
+      line-height: 0.5;
+      color: var(--accent);
+      opacity: 0.3;
+      margin-bottom: 1rem;
+    }
+
+    .morris__title {
+      font-family: var(--serif);
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.5rem;
+      color: var(--ink);
+    }
+
+    .morris__subtitle {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 3rem;
+    }
+
+    .morris__text {
+      font-size: 1.25rem;
+      line-height: 1.8;
+      color: var(--ink-light);
+      max-width: 60ch;
+      margin: 0 auto 3rem;
+    }
+
+    .morris__films {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 3rem;
+    }
+
+    .morris__film {
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.5rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      color: var(--ink-light);
+    }
+
+    .morris__stats {
+      display: flex;
+      justify-content: center;
+      gap: 4rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .morris__stat-number {
+      font-family: var(--serif);
+      font-size: 3rem;
+      font-weight: 400;
+      line-height: 1;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .morris__stat-label {
+      font-size: 0.8rem;
+      color: var(--ink-subtle);
+      letter-spacing: 0.05em;
+    }
+
+    /* ========== VISIT INFO ========== */
+    .visit {
+      text-align: center;
+    }
+
+    .visit .section__text {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .visit__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      margin-top: 4rem;
+      text-align: left;
+    }
+
+    .visit__card {
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem;
+    }
+
+    .visit__card-title {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--ink);
+    }
+
+    .hours-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .hours-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .hours-item:last-child {
+      border-bottom: none;
+    }
+
+    .hours-day {
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    .hours-time {
+      font-size: 0.95rem;
+      color: var(--ink-subtle);
+    }
+
+    .hours-note {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: var(--ink-subtle);
+      font-style: italic;
+    }
+
+    /* Pricing table */
+    .pricing-table {
+      width: 100%;
+    }
+
+    .pricing-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .pricing-row:last-child {
+      border-bottom: none;
+    }
+
+    .pricing-row--free {
+      color: var(--accent);
+    }
+
+    .pricing-age {
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .pricing-price {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 400;
+    }
+
+    .pricing-row--free .pricing-price {
+      font-weight: 600;
+    }
+
+    /* Contact card */
+    .contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .contact-item__icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--bg-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .contact-item__label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--ink-subtle);
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-item__value {
+      font-size: 1rem;
+      color: var(--ink);
+    }
+
+    .contact-item__value a {
+      color: var(--accent);
+      transition: color var(--transition);
+    }
+
+    .contact-item__value a:hover {
+      color: var(--accent-hover);
+    }
+
+    .visit__map {
+      margin-top: 4rem;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      aspect-ratio: 16/7;
+    }
+
+    .visit__map iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* ========== FOOTER ========== */
+    .footer {
+      background: var(--ink);
+      color: rgba(255, 255, 255, 0.6);
+      padding: 4rem 2rem;
+    }
+
+    .footer__inner {
+      max-width: var(--container);
+      margin: 0 auto;
+    }
+
+    .footer__top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer__brand {
+      max-width: 350px;
+    }
+
+    .footer__name {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+    }
+
+    .footer__desc {
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .footer__links-group h4 {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.4);
+      margin-bottom: 1rem;
+    }
+
+    .footer__links-group a {
+      display: block;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.7);
+      padding: 0.3rem 0;
+      transition: color var(--transition);
+    }
+
+    .footer__links-group a:hover {
+      color: var(--white);
+    }
+
+    .footer__social {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .footer__social a {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.6);
+      transition: all var(--transition);
+    }
+
+    .footer__social a:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--white);
+    }
+
+    .footer__bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 2rem;
+      font-size: 0.8rem;
+    }
+
+    .footer__bottom a {
+      transition: color var(--transition);
+    }
+
+    .footer__bottom a:hover {
+      color: var(--white);
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 1200px) {
+      :root {
+        --container: 960px;
+      }
+    }
+
+    @media (max-width: 992px) {
+      :root {
+        --container: 720px;
+      }
+
+      .section {
+        padding: 5rem 1.5rem;
+      }
+
+      .about__grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .about__image-wrapper {
+        order: -1;
+        aspect-ratio: 16/9;
+      }
+
+      .experiences__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .animals__grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .animal-card--wide {
+        grid-column: span 2;
+      }
+
+      .animal-card--tall {
+        grid-row: span 1;
+      }
+
+      .morris__stats {
+        gap: 2.5rem;
+      }
+
+      .visit__grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      :root {
+        --nav-height: 56px;
+        --container: 100%;
+      }
+
+      .nav__links {
+        display: none;
+      }
+
+      .nav__hamburger {
+        display: flex;
+      }
+
+      .nav__mobile {
+        display: flex;
+      }
+
+      .hero__title {
+        font-size: clamp(2.5rem, 10vw, 4rem);
+      }
+
+      .hero__subtitle {
+        font-size: 1.05rem;
+      }
+
+      .section {
+        padding: 4rem 1.25rem;
+      }
+
+      .about {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+      }
+
+      .about__stat {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+      }
+
+      .experiences__grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .experience-card {
+        aspect-ratio: 16/9;
+      }
+
+      .animals__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .animal-card--wide {
+        grid-column: span 1;
+      }
+
+      .animals {
+        padding: 5rem 1.25rem;
+      }
+
+      .morris {
+        padding: 5rem 1.25rem;
+      }
+
+      .morris__stats {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .visit__card {
+        padding: 1.75rem;
+      }
+
+      .footer__top {
+        flex-direction: column;
+      }
+
+      .footer__bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+
+      .visit__map {
+        aspect-ratio: 4/3;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero__title {
+        font-size: 2.5rem;
+      }
+
+      .hero__cta {
+        font-size: 0.9rem;
+        padding: 0.85rem 2rem;
+      }
+
+      .section__title {
+        font-size: 1.8rem;
+      }
+
+      .morris__title {
+        font-size: 2.5rem;
+      }
+
+      .morris__films {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Scroll Progress -->
+  <div id="scroll-progress"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__logo">Colorado <span>Gators</span></a>
+      <div class="nav__links">
+        <a href="#about" class="nav__link">About</a>
+        <a href="#experiences" class="nav__link">Experiences</a>
+        <a href="#animals" class="nav__link">Animals</a>
+        <a href="#morris" class="nav__link">Our Legacy</a>
+        <a href="#visit" class="nav__link">Visit</a>
+        <a href="#visit" class="nav__cta">Plan Your Visit</a>
+      </div>
+      <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobile-menu">
+      <a href="#about">About</a>
+      <a href="#experiences">Experiences</a>
+      <a href="#animals">Animals</a>
+      <a href="#morris">Our Legacy</a>
+      <a href="#visit">Visit</a>
+      <a href="#visit" class="hero__cta" style="font-size:1rem;margin-top:1rem;">Plan Your Visit</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="hero__bg">
+      <div class="hero__bg-layer"></div>
+      <div class="hero__overlay"></div>
+    </div>
+    <div class="hero__content">
+      <p class="hero__tagline reveal">San Luis Valley, Colorado &middot; Elevation 9,400 ft</p>
+      <h1 class="hero__title reveal reveal-delay-1">Colorado Gators</h1>
+      <p class="hero__subtitle reveal reveal-delay-2">The only high-altitude alligator farm in the world. A family-run reptile rescue, education center, and unforgettable roadside attraction.</p>
+      <a href="#visit" class="hero__cta reveal reveal-delay-3">Plan Your Visit <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <div class="hero__scroll-hint">
+      Scroll
+      <span></span>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section about" id="about">
+    <div class="section__inner">
+      <div class="about__grid">
+        <div>
+          <p class="section__label reveal">Our Story</p>
+          <h2 class="section__title reveal reveal-delay-1">From Fish Farm<br>to Reptile Rescue</h2>
+          <div class="about__divider reveal reveal-delay-2"></div>
+          <p class="section__text reveal reveal-delay-2">Colorado Gators began as a humble fish farm in the high desert of the San Luis Valley. When the owners needed an efficient way to dispose of waste from the operation, they turned to the most practical solution available &mdash; a few alligators. What started as a functional arrangement grew into something far more remarkable.</p>
+          <p class="section__text reveal reveal-delay-3" style="margin-top: 1.25rem;">Today, Colorado Gators is the only high-altitude alligator farm in the world, home to hundreds of rescued reptiles including alligators, crocodiles, caimans, tortoises, and turtles. It has become a beloved classic roadside attraction, featured on Roadside America and visited by thousands of travelers each year who come to experience something truly unique at 9,400 feet above sea level.</p>
+          <div class="about__stat reveal reveal-delay-4">
+            <span class="about__stat-number">100+</span>
+            <span class="about__stat-label">Rescued reptiles<br>call Colorado home</span>
+          </div>
+        </div>
+        <div class="about__image-wrapper reveal reveal-delay-2">
+          <img src="https://images.unsplash.com/photo-1516934024742-b467f36a4093?auto=format&fit=crop&w=800&q=80" alt="American alligator resting near water" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experiences -->
+  <section class="section experiences section--alt" id="experiences">
+    <div class="section__inner">
+      <p class="section__label reveal">Hands-On Experiences</p>
+      <h2 class="section__title reveal reveal-delay-1">Get Up Close<br>with the Reptiles</h2>
+      <p class="section__text section__text--wide reveal reveal-delay-2">At Colorado Gators, you don't just observe from behind a fence. Every visit offers unique opportunities to touch, hold, and feed some of the most extraordinary reptiles on Earth.</p>
+
+      <div class="experiences__grid">
+        <!-- Card 1: Hold -->
+        <div class="experience-card reveal">
+          <img class="experience-card__image" src="https://images.unsplash.com/photo-1531386151447-fd76ad50012f?auto=format&fit=crop&w=600&q=80" alt="Person holding a small reptile" loading="lazy">
+          <div class="experience-card__overlay"></div>
+          <div class="experience-card__content">
+            <div class="experience-card__icon"><i class="fa-solid fa-hand"></i></div>
+            <h3 class="experience-card__title">Hold an Alligator</h3>
+            <p class="experience-card__desc">Pet, hold, and feed alligators of various sizes with expert guidance from our staff.</p>
+          </div>
+        </div>
+
+        <!-- Card 2: Tortoises -->
+        <div class="experience-card reveal reveal-delay-1">
+          <img class="experience-card__image" src="https://images.unsplash.com/photo-1484557052118-f32bd25b45b5?auto=format&fit=crop&w=600&q=80" alt="Large tortoise in natural setting" loading="lazy">
+          <div class="experience-card__overlay"></div>
+          <div class="experience-card__content">
+            <div class="experience-card__icon"><i class="fa-solid fa-leaf"></i></div>
+            <h3 class="experience-card__title">Feed the Tortoises</h3>
+            <p class="experience-card__desc">Hand-feed our giant desert tortoises fresh vegetables. A gentle experience for all ages.</p>
+          </div>
+        </div>
+
+        <!-- Card 3: Fish -->
+        <div class="experience-card reveal reveal-delay-2">
+          <img class="experience-card__image" src="https://images.unsplash.com/photo-1520302630591-e691b146273a?auto=format&fit=crop&w=600&q=80" alt="Fish being caught in water" loading="lazy">
+          <div class="experience-card__overlay"></div>
+          <div class="experience-card__content">
+            <div class="experience-card__icon"><i class="fa-solid fa-fish"></i></div>
+            <h3 class="experience-card__title">Fish for Carp</h3>
+            <p class="experience-card__desc">Catch your own carp from our pond, then watch in delight as the alligators gobble them up.</p>
+          </div>
+        </div>
+
+        <!-- Card 4: Tour -->
+        <div class="experience-card reveal reveal-delay-3">
+          <img class="experience-card__image" src="https://images.unsplash.com/photo-1504450874802-0ba2bcd659e3?auto=format&fit=crop&w=600&q=80" alt="Educational nature experience" loading="lazy">
+          <div class="experience-card__overlay"></div>
+          <div class="experience-card__content">
+            <div class="experience-card__icon"><i class="fa-solid fa-binoculars"></i></div>
+            <h3 class="experience-card__title">Guided Tours</h3>
+            <p class="experience-card__desc">Explore the park with knowledgeable guides who share fascinating facts about each species.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Animals Gallery -->
+  <section class="animals" id="animals">
+    <div class="animals__header">
+      <p class="section__label reveal">The Animals</p>
+      <h2 class="section__title reveal reveal-delay-1">Our Residents</h2>
+      <p class="section__text reveal reveal-delay-2">Hundreds of rescued reptiles from around the world have found a permanent home on our high-altitude ranch. Each one has a story &mdash; most were surrendered or rescued from situations where they could no longer be properly cared for.</p>
+    </div>
+
+    <div class="animals__grid">
+      <div class="animal-card animal-card--wide animal-card--tall reveal">
+        <img class="animal-card__image" src="https://images.unsplash.com/photo-1516934024742-b467f36a4093?auto=format&fit=crop&w=1200&q=80" alt="American alligator" loading="lazy">
+        <span class="animal-card__caption">Signature Species</span>
+        <div class="animal-card__info">
+          <h3 class="animal-card__name">American Alligator</h3>
+          <p class="animal-card__species">Alligator mississippiensis</p>
+        </div>
+      </div>
+
+      <div class="animal-card reveal reveal-delay-1">
+        <img class="animal-card__image" src="https://images.unsplash.com/photo-1476863077854-4bcc305415a4?auto=format&fit=crop&w=800&q=80" alt="Crocodile" loading="lazy">
+        <span class="animal-card__caption">VIP Resident</span>
+        <div class="animal-card__info">
+          <h3 class="animal-card__name">Crocodiles</h3>
+          <p class="animal-card__species">Crocodylidae</p>
+        </div>
+      </div>
+
+      <div class="animal-card reveal reveal-delay-2">
+        <img class="animal-card__image" src="https://images.unsplash.com/photo-1484557052118-f32bd25b45b5?auto=format&fit=crop&w=800&q=80" alt="Desert tortoise" loading="lazy">
+        <span class="animal-card__caption">Gentle Giant</span>
+        <div class="animal-card__info">
+          <h3 class="animal-card__name">Desert Tortoises</h3>
+          <p class="animal-card__species">Gopherus agassizii</p>
+        </div>
+      </div>
+
+      <div class="animal-card reveal reveal-delay-3">
+        <img class="animal-card__image" src="https://images.unsplash.com/photo-1504450874802-0ba2bcd659e3?auto=format&fit=crop&w=800&q=80" alt="Albino alligator" loading="lazy">
+        <span class="animal-card__caption">Rare</span>
+        <div class="animal-card__info">
+          <h3 class="animal-card__name">Albino Alligator</h3>
+          <p class="animal-card__species">Alligator mississippiensis (leucistic)</p>
+        </div>
+      </div>
+
+      <div class="animal-card animal-card--wide reveal reveal-delay-4">
+        <img class="animal-card__image" src="https://images.unsplash.com/photo-1531386151447-fd76ad50012f?auto=format&fit=crop&w=1200&q=80" alt="Caiman" loading="lazy">
+        <span class="animal-card__caption">Rescued</span>
+        <div class="animal-card__info">
+          <h3 class="animal-card__name">Caimans &amp; Turtles</h3>
+          <p class="animal-card__species">Caimaninae &amp; Testudines</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Morris Tribute -->
+  <section class="morris" id="morris">
+    <div class="morris__bg"></div>
+    <div class="morris__overlay"></div>
+    <div class="morris__content">
+      <p class="section__label reveal">Our Legacy</p>
+      <div class="morris__quote-mark reveal reveal-delay-1">&ldquo;</div>
+      <h2 class="morris__title reveal reveal-delay-1">Morris</h2>
+      <p class="morris__subtitle reveal reveal-delay-2">640 lbs &middot; Hollywood Legend &middot; 1975&ndash;2006</p>
+
+      <p class="morris__text reveal reveal-delay-2">Morris wasn't just an alligator. He was an actor. Appearing in dozens of films and television shows from 1975 to 2006, Morris brought prehistoric charm to Hollywood screens. His most famous roles include the title creature in <em>Alligator</em> (1980) and a memorable appearance in Adam Sandler's <em>Happy Gilmore</em> &mdash; where he literally stole the scene.</p>
+
+      <p class="morris__text reveal reveal-delay-3">After a long career in entertainment, Morris retired to Colorado Gators, where he spent his golden years at 9,400 feet. He lived a peaceful retirement surrounded by his reptile family, far from the chaos of film sets. Morris passed away at the remarkable age of 80+, having earned his rest in the quiet Colorado mountains he came to love.</p>
+
+      <div class="morris__films reveal reveal-delay-3">
+        <span class="morris__film">Alligator (1980)</span>
+        <span class="morris__film">Happy Gilmore (1996)</span>
+        <span class="morris__film">Dinocroc (2004)</span>
+        <span class="morris__film">Swamp King Croc (2003)</span>
+        <span class="morris__film">Croc (1999)</span>
+        <span class="morris__film">Dozens of TV &amp; Film Credits</span>
+      </div>
+
+      <div class="morris__stats reveal reveal-delay-4">
+        <div>
+          <div class="morris__stat-number">30+</div>
+          <div class="morris__stat-label">Film &amp; TV Credits</div>
+        </div>
+        <div>
+          <div class="morris__stat-number">640</div>
+          <div class="morris__stat-label">Pounds of Legend</div>
+        </div>
+        <div>
+          <div class="morris__stat-number">80+</div>
+          <div class="morris__stat-label">Years of Life</div>
+        </div>
+        <div>
+          <div class="morris__stat-number">1975</div>
+          <div class="morris__stat-label">First Appearance</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visit Info -->
+  <section class="section visit section--alt" id="visit">
+    <div class="section__inner">
+      <p class="section__label reveal">Plan Your Visit</p>
+      <h2 class="section__title reveal reveal-delay-1">Everything You<br>Need to Know</h2>
+      <p class="section__text reveal reveal-delay-2">Located on Highway 160 in the heart of the San Luis Valley, Colorado Gators is a must-stop destination for any traveler crossing southern Colorado.</p>
+
+      <div class="visit__grid">
+        <!-- Hours -->
+        <div class="visit__card reveal">
+          <h3 class="visit__card-title"><i class="fa-regular fa-clock" style="margin-right:0.5rem;color:var(--accent);"></i>Seasonal Hours</h3>
+          <div class="hours-list">
+            <div class="hours-item">
+              <span class="hours-day">Feb 27 &ndash; Nov 1</span>
+              <span class="hours-time">9:00 AM &ndash; 5:00 PM (Daily)</span>
+            </div>
+            <div class="hours-item">
+              <span class="hours-day">Nov 2 &ndash; Feb 26</span>
+              <span class="hours-time">9:00 AM &ndash; 4:00 PM (Daily)</span>
+            </div>
+          </div>
+          <p class="hours-note">Closed Thanksgiving Day and Christmas Day</p>
+        </div>
+
+        <!-- Admission -->
+        <div class="visit__card reveal reveal-delay-1">
+          <h3 class="visit__card-title"><i class="fa-solid fa-ticket" style="margin-right:0.5rem;color:var(--accent);"></i>Admission</h3>
+          <div class="pricing-table">
+            <div class="pricing-row pricing-row--free">
+              <span class="pricing-age">Ages 5 &amp; under</span>
+              <span class="pricing-price">FREE</span>
+            </div>
+            <div class="pricing-row">
+              <span class="pricing-age">Ages 6 &ndash; 15</span>
+              <span class="pricing-price">$15</span>
+            </div>
+            <div class="pricing-row">
+              <span class="pricing-age">Ages 16 &ndash; 64</span>
+              <span class="pricing-price">$30</span>
+            </div>
+            <div class="pricing-row pricing-row--free">
+              <span class="pricing-age">Ages 65 &ndash; 79</span>
+              <span class="pricing-price">$15</span>
+            </div>
+            <div class="pricing-row pricing-row--free">
+              <span class="pricing-age">Ages 80 &amp; up</span>
+              <span class="pricing-price">FREE</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="visit__card reveal">
+          <h3 class="visit__card-title"><i class="fa-solid fa-location-dot" style="margin-right:0.5rem;color:var(--accent);"></i>Contact &amp; Directions</h3>
+          <div class="contact-list">
+            <div class="contact-item">
+              <div class="contact-item__icon"><i class="fa-solid fa-map-pin"></i></div>
+              <div>
+                <div class="contact-item__label">Address</div>
+                <div class="contact-item__value">9162 Lane 9 N, Mosca, CO 81146</div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item__icon"><i class="fa-solid fa-phone"></i></div>
+              <div>
+                <div class="contact-item__label">Phone</div>
+                <div class="contact-item__value"><a href="tel:+17193782612">(719) 378-2612</a></div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item__icon"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <div class="contact-item__label">Email</div>
+                <div class="contact-item__value"><a href="mailto:colog8rs@gmail.com">colog8rs@gmail.com</a></div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item__icon"><i class="fa-brands fa-facebook-f"></i></div>
+              <div>
+                <div class="contact-item__label">Facebook</div>
+                <div class="contact-item__value"><a href="https://www.facebook.com/ColoradoGatorFarm" target="_blank" rel="noopener">ColoradoGatorFarm</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Elevation -->
+        <div class="visit__card reveal reveal-delay-1">
+          <h3 class="visit__card-title"><i class="fa-solid fa-mountain" style="margin-right:0.5rem;color:var(--accent);"></i>Location</h3>
+          <div class="contact-list">
+            <div class="contact-item">
+              <div class="contact-item__icon"><i class="fa-solid fa-gauge-high"></i></div>
+              <div>
+                <div class="contact-item__label">Elevation</div>
+                <div class="contact-item__value">Approximately 9,400 ft (2,865 m)</div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item__icon"><i class="fa-solid fa-road"></i></div>
+              <div>
+                <div class="contact-item__label">Highway</div>
+                <div class="contact-item__value">US Highway 160, San Luis Valley</div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item__icon"><i class="fa-solid fa-compass"></i></div>
+              <div>
+                <div class="contact-item__label">Region</div>
+                <div class="contact-item__value">Southeastern Colorado<br>Between Alamosa &amp; Alamosa East</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div class="visit__map reveal">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12438.456!2d-105.583!3d37.489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x870f1b0b0b0b0b0b%3A0x0!2sMosca%2C+CO+81146!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Colorado Gators location on Google Maps"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="footer">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <div class="footer__name">Colorado Gators</div>
+          <p class="footer__desc">The only high-altitude alligator farm in the world. A family-run reptile rescue, education center, and tourist attraction in the heart of Colorado's San Luis Valley.</p>
+        </div>
+        <div class="footer__links-group">
+          <h4>Explore</h4>
+          <a href="#about">Our Story</a>
+          <a href="#experiences">Experiences</a>
+          <a href="#animals">The Animals</a>
+          <a href="#morris">Our Legacy</a>
+          <a href="#visit">Plan Your Visit</a>
+        </div>
+        <div class="footer__links-group">
+          <h4>Contact</h4>
+          <a href="tel:+17193782612">(719) 378-2612</a>
+          <a href="mailto:colog8rs@gmail.com">colog8rs@gmail.com</a>
+          <a href="https://www.facebook.com/ColoradoGatorFarm" target="_blank" rel="noopener">Facebook</a>
+        </div>
+        <div>
+          <h4 style="font-size:0.8rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:1rem;">Follow Us</h4>
+          <div class="footer__social">
+            <a href="https://www.facebook.com/ColoradoGatorFarm" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Colorado Gators Reptile Park. All rights reserved.</p>
+        <p>9162 Lane 9 N, Mosca, CO 81146 &middot; (719) 378-2612</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ========== SCROLL PROGRESS BAR ==========
+    (function() {
+      var progressBar = document.getElementById('scroll-progress');
+      function updateProgress() {
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        progressBar.style.width = scrollPercent + '%';
+      }
+      window.addEventListener('scroll', updateProgress, { passive: true });
+      updateProgress();
+    })();
+
+    // ========== STICKY NAV: Transparent to Solid ==========
+    (function() {
+      var nav = document.getElementById('nav');
+      var hero = document.getElementById('hero');
+      var threshold = 80;
+
+      function updateNav() {
+        var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollY > threshold) {
+          nav.classList.add('nav--solid');
+        } else {
+          nav.classList.remove('nav--solid');
+        }
+      }
+      window.addEventListener('scroll', updateNav, { passive: true });
+      updateNav();
+    })();
+
+    // ========== HAMBURGER MENU ==========
+    (function() {
+      var hamburger = document.getElementById('hamburger');
+      var mobileMenu = document.getElementById('mobile-menu');
+      var mobileLinks = mobileMenu.querySelectorAll('a');
+
+      function toggleMenu() {
+        var isOpen = mobileMenu.classList.toggle('open');
+        hamburger.classList.toggle('active');
+        hamburger.setAttribute('aria-expanded', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      }
+
+      hamburger.addEventListener('click', toggleMenu);
+
+      mobileLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+          mobileMenu.classList.remove('open');
+          hamburger.classList.remove('active');
+          hamburger.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        });
+      });
+    })();
+
+    // ========== SCROLL REVEAL ==========
+    (function() {
+      var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (prefersReducedMotion) {
+        var reveals = document.querySelectorAll('.reveal');
+        reveals.forEach(function(el) {
+          el.classList.add('visible');
+        });
+        return;
+      }
+
+      var observerOptions = {
+        root: null,
+        rootMargin: '0px 0px -60px 0px',
+        threshold: 0.1
+      };
+
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      var reveals = document.querySelectorAll('.reveal');
+      reveals.forEach(function(el) {
+        observer.observe(el);
+      });
+    })();
+
+    // ========== SMOOTH SCROLL (fallback for Safari) ==========
+    (function() {
+      document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener('click', function(e) {
+          var targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          var target = document.querySelector(targetId);
+          if (target) {
+            e.preventDefault();
+            var navHeight = document.getElementById('nav').offsetHeight;
+            var targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
