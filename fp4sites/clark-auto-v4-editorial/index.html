@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clark Auto Service — The Story of Alamosa's Trusted Mechanic</title>
+    <meta name="description" content="The story of Clark Auto Service — two generations of mechanics keeping the San Luis Valley moving. Honest repair, classic car expertise, since 2003.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --cream: #faf8f3;
+            --cream-dark: #f0ebe1;
+            --crimson: #b91c1c;
+            --crimson-light: #fca5a5;
+            --ink: #1a1a1a;
+            --text: #333;
+            --text-secondary: #555;
+            --border: #e0dcd4;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Source Sans 3', -apple-system, sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        /* ── TYPOGRAPHY ── */
+        h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; }
+        .drop-cap::first-letter {
+            float: left; font-size: 3.5rem; line-height: 0.8; margin-right: 8px;
+            margin-top: 4px; color: var(--crimson); font-family: 'Playfair Display', serif; font-weight: 700;
+        }
+
+        /* ── NAV ── */
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            padding: 0 48px; height: 60px;
+            background: rgba(250,248,243,0.95);
+            border-bottom: 1px solid var(--border);
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav-brand {
+            font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700;
+            color: var(--ink); text-decoration: none; letter-spacing: 0.02em;
+        }
+        .nav-brand span { color: var(--crimson); }
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+        .nav-links a {
+            text-decoration: none; color: var(--text-secondary); font-size: 0.85rem;
+            font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--crimson); }
+        .nav-cta {
+            border: 1px solid var(--crimson); color: var(--crimson); padding: 6px 18px;
+            border-radius: 0; font-size: 0.8rem; font-weight: 600; text-decoration: none;
+            text-transform: uppercase; letter-spacing: 0.08em; transition: all 0.2s;
+        }
+        .nav-cta:hover { background: var(--crimson); color: white; }
+
+        /* ── HERO — Editorial ── */
+        .hero {
+            padding: 140px 48px 80px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+        .hero-overline {
+            font-size: 0.7rem; font-weight: 600; text-transform: uppercase;
+            letter-spacing: 0.2em; color: var(--crimson); margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 700;
+            line-height: 1.1; color: var(--ink); max-width: 700px; margin: 0 auto 24px;
+            letter-spacing: -0.01em;
+        }
+        .hero-lead {
+            font-size: 1.2rem; color: var(--text-secondary); max-width: 560px;
+            margin: 0 auto 32px; font-style: italic;
+        }
+        .hero-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .btn-crimson {
+            background: var(--crimson); color: white; padding: 14px 32px;
+            font-size: 0.85rem; font-weight: 600; text-transform: uppercase;
+            letter-spacing: 0.1em; text-decoration: none; transition: all 0.2s;
+        }
+        .btn-crimson:hover { background: #991b1b; }
+        .btn-outline {
+            border: 1px solid var(--border); color: var(--text); padding: 14px 32px;
+            font-size: 0.85rem; font-weight: 600; text-transform: uppercase;
+            letter-spacing: 0.1em; text-decoration: none; transition: all 0.2s;
+        }
+        .btn-outline:hover { border-color: var(--crimson); color: var(--crimson); }
+
+        /* ── ARTICLE LAYOUT ── */
+        .article {
+            max-width: 680px; margin: 0 auto; padding: 60px 24px;
+        }
+        .article h2 { font-size: 1.8rem; font-weight: 700; color: var(--ink); margin-bottom: 16px; margin-top: 48px; }
+        .article h2:first-child { margin-top: 0; }
+        .article p { margin-bottom: 20px; font-size: 1.05rem; color: var(--text); }
+        .article .pull-quote {
+            border-left: 3px solid var(--crimson); padding-left: 24px; margin: 32px 0;
+            font-family: 'Playfair Display', serif; font-size: 1.3rem; font-style: italic;
+            color: var(--crimson); line-height: 1.5;
+        }
+        .article .divider {
+            width: 60px; height: 2px; background: var(--crimson); margin: 40px 0;
+        }
+
+        /* ── SERVICES — Side by side ── */
+        .services-section {
+            padding: 80px 24px;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        .services-section-inner { max-width: 1200px; margin: 0 auto; }
+        .services-section .section-label {
+            font-size: 0.7rem; font-weight: 600; text-transform: uppercase;
+            letter-spacing: 0.2em; color: var(--crimson); margin-bottom: 8px;
+        }
+        .services-section h2 { font-size: 2rem; margin-bottom: 40px; }
+        .services-columns {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+        }
+        .service-item { padding: 20px 0; border-bottom: 1px solid var(--border); }
+        .service-item h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 6px; color: var(--ink); }
+        .service-item p { font-size: 0.9rem; color: var(--text-secondary); margin: 0; }
+        .service-item .service-num {
+            font-size: 0.75rem; color: var(--crimson); font-weight: 600; margin-bottom: 4px;
+        }
+
+        /* ── HIGHLIGHTS BAR ── */
+        .highlights {
+            background: var(--ink); color: white; padding: 48px 24px;
+        }
+        .highlights-inner {
+            max-width: 1200px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center;
+        }
+        .highlight-num { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 700; color: var(--crimson-light); }
+        .highlight-label { font-size: 0.8rem; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 4px; }
+
+        /* ── TESTIMONIALS ── */
+        .reviews-section { padding: 80px 24px; }
+        .reviews-inner { max-width: 900px; margin: 0 auto; }
+        .reviews-section .section-label {
+            font-size: 0.7rem; font-weight: 600; text-transform: uppercase;
+            letter-spacing: 0.2em; color: var(--crimson); margin-bottom: 8px;
+        }
+        .reviews-section h2 { font-size: 2rem; margin-bottom: 40px; }
+        .review-item {
+            padding: 32px 0; border-bottom: 1px solid var(--border);
+            display: grid; grid-template-columns: auto 1fr; gap: 24px;
+        }
+        .review-stars { font-size: 14px; color: var(--crimson); letter-spacing: 2px; font-weight: 600; padding-top: 4px; }
+        .review-text { font-size: 1.05rem; font-style: italic; color: var(--text); margin-bottom: 8px; }
+        .review-author { font-size: 0.85rem; color: var(--text-secondary); }
+
+        /* ── CTA ── */
+        .cta-section {
+            background: var(--crimson); color: white; padding: 64px 24px; text-align: center;
+        }
+        .cta-section h2 { font-size: 2.2rem; margin-bottom: 12px; font-weight: 700; }
+        .cta-section p { color: rgba(255,255,255,0.85); margin-bottom: 24px; font-size: 1.05rem; }
+        .cta-section .btn-white {
+            background: white; color: var(--crimson); padding: 14px 32px;
+            font-size: 0.9rem; font-weight: 600; text-transform: uppercase;
+            letter-spacing: 0.1em; text-decoration: none; display: inline-block;
+        }
+
+        /* ── CONTACT ── */
+        .contact-section { padding: 80px 24px; }
+        .contact-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+        .contact-inner h2 { font-size: 2rem; margin-bottom: 24px; }
+        .contact-detail { padding: 16px 0; border-bottom: 1px solid var(--border); }
+        .contact-detail .label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--crimson); margin-bottom: 4px; }
+        .contact-detail p, .contact-detail a { font-size: 1rem; color: var(--text); text-decoration: none; }
+        .contact-detail a:hover { color: var(--crimson); }
+        .hours-grid { display: grid; gap: 8px; }
+        .hours-grid div { display: flex; justify-content: space-between; font-size: 0.95rem; }
+        .hours-grid div:last-child { border-bottom: none; }
+        .hours-grid .day { font-weight: 500; }
+        .hours-grid .time { color: var(--text-secondary); }
+        .map-frame { width: 100%; height: 300px; border: 1px solid var(--border); background: var(--cream-dark); }
+
+        /* ── FOOTER ── */
+        .footer { padding: 32px 24px; text-align: center; font-size: 0.8rem; color: var(--text-secondary); border-top: 1px solid var(--border); }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 900px) {
+            .nav { padding: 0 24px; }
+            .hero { padding: 120px 24px 60px; }
+            .services-columns { grid-template-columns: 1fr; }
+            .highlights-inner { grid-template-columns: 1fr 1fr; }
+            .contact-inner { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 600px) {
+            .highlights-inner { grid-template-columns: 1fr 1fr; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="nav">
+    <a href="#top" class="nav-brand">Clark<span>Auto</span></a>
+    <ul class="nav-links">
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Visit</a></li>
+    </ul>
+    <a href="tel:7195894485" class="nav-cta">Call (719) 589-4485</a>
+</nav>
+
+<header class="hero" id="top">
+    <div class="hero-overline">Alamosa's Trusted Mechanic Since 2003</div>
+    <h1>A family shop with two generations of knowledge</h1>
+    <p class="hero-lead">Where old-world craftsmanship meets modern diagnostics — right here in the San Luis Valley.</p>
+    <div class="hero-actions">
+        <a href="tel:7195894485" class="btn-crimson">Schedule Service</a>
+        <a href="#story" class="btn-outline">Read Our Story</a>
+    </div>
+</header>
+
+<article class="article" id="story">
+    <h2>The beginning</h2>
+    <p class="drop-cap">In 2003, Ron Clark opened the doors of Clark Auto Service on Tremont Street in Alamosa. With decades of experience working on classic cars — particularly pre-1950s vehicles — Ron built a reputation for honest work and rare mechanical talent that few could match.</p>
+    <p>What started as a one-man operation in a small shop has grown into a full-service repair facility. But the core values remain the same: do the work right, be fair with the customer, and never sell a repair that isn't needed.</p>
+
+    <div class="divider"></div>
+
+    <h2>Two generations</h2>
+    <p>Today, Chris Clark — Ron's son — runs day-to-day operations. While Ron specializes in vintage and classic vehicles, Chris brings modern expertise in engine diagnostics, hybrid systems, and advanced electrical troubleshooting.</p>
+
+    <div class="pull-quote">"My dad taught me that every car tells a story. You just have to know how to listen. Now I get to combine that with tools he could only dream about 20 years ago."</div>
+
+    <p>Together, the Clark family handles everything from a 1940 Ford's carburetor to a 2024 Toyota's hybrid battery. That's the kind of range you find at very few independent shops.</p>
+
+    <div class="divider"></div>
+
+    <h2>Our philosophy</h2>
+    <p>We don't use high-pressure sales tactics. We don't recommend unnecessary repairs. When you bring your vehicle to Clark Auto Service, you get a thorough diagnosis, an honest assessment, and a clear quote before we touch a wrench.</p>
+    <p>We've been part of this community for over 20 years. Our reputation is built on the cars we fix and the relationships we build. That matters more to us than any award or certificate.</p>
+</article>
+
+<section class="services-section" id="services">
+    <div class="services-section-inner">
+        <div class="section-label">What We Do</div>
+        <h2>Services</h2>
+        <div class="services-columns">
+            <div>
+                <div class="service-item">
+                    <div class="service-num">01</div>
+                    <h3>Engine Diagnostics &amp; Repair</h3>
+                    <p>Check engine light, OBD-II scanning, performance issues, engine rebuilds.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-num">02</div>
+                    <h3>Brake Systems</h3>
+                    <p>Pads, rotors, calipers, fluid service, ABS diagnostics and repair.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-num">03</div>
+                    <h3>Oil &amp; Fluid Service</h3>
+                    <p>Conventional, synthetic blend, full synthetic with multi-point inspection.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-num">04</div>
+                    <h3>Transmission</h3>
+                    <p>Fluid service, diagnostics, and internal repair for automatic and manual.</p>
+                </div>
+            </div>
+            <div>
+                <div class="service-item">
+                    <div class="service-num">05</div>
+                    <h3>AC &amp; Climate Control</h3>
+                    <p>Recharge, leak repair, compressor, heater core, and blend door service.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-num">06</div>
+                    <h3>Suspension &amp; Steering</h3>
+                    <p>Shocks, struts, tie rods, power steering, and wheel alignment.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-num">07</div>
+                    <h3>Electrical Systems</h3>
+                    <p>Battery testing, alternator, starter, wiring diagnostics.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-num">08</div>
+                    <h3>Classic Car Restoration</h3>
+                    <p>Pre-1950s vehicles by Ron. Engine rebuilds, custom fabrication, authentic restoration.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="highlights">
+    <div class="highlights-inner">
+        <div><div class="highlight-num">20+</div><div class="highlight-label">Years</div></div>
+        <div><div class="highlight-num">5.0</div><div class="highlight-label">Yelp Rating</div></div>
+        <div><div class="highlight-num">2nd</div><div class="highlight-label">Gen Family</div></div>
+        <div><div class="highlight-num">24mo</div><div class="highlight-label">Warranty</div></div>
+    </div>
+</section>
+
+<section class="reviews-section" id="reviews">
+    <div class="reviews-inner">
+        <div class="section-label">Kind Words</div>
+        <h2>What our customers tell us</h2>
+        <div class="review-item">
+            <div class="review-stars">★★★★★</div>
+            <div>
+                <p class="review-text">"Chris and his team are fantastic. They diagnosed an issue that two other shops couldn't figure out. Fair price and honest advice. Won't go anywhere else."</p>
+                <div class="review-author">— Sarah M., Alamosa</div>
+            </div>
+        </div>
+        <div class="review-item">
+            <div class="review-stars">★★★★★</div>
+            <div>
+                <p class="review-text">"Ron is a treasure. He got my 1957 Chevy running like new. The man truly knows old cars inside and out."</p>
+                <div class="review-author">— Mike R., Alamosa</div>
+            </div>
+        </div>
+        <div class="review-item">
+            <div class="review-stars">★★★★★</div>
+            <div>
+                <p class="review-text">"Finally a mechanic I can trust. They showed me exactly what needed to be done and waited for my approval before starting any work."</p>
+                <div class="review-author">— Jennifer L., Sangre</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <h2>Bring your car in today</h2>
+    <p>No appointment needed for diagnostics. We'll give you an honest assessment.</p>
+    <a href="tel:7195894485" class="btn-white">📞 (719) 589-4485</a>
+</section>
+
+<section class="contact-section" id="contact">
+    <div class="contact-inner">
+        <div>
+            <h2>Visit the shop</h2>
+            <div class="contact-detail">
+                <div class="label">Address</div>
+                <p>1817 Tremont St, Alamosa, CO 81101</p>
+            </div>
+            <div class="contact-detail">
+                <div class="label">Phone</div>
+                <a href="tel:7195894485">(719) 589-4485</a>
+            </div>
+            <div class="contact-detail">
+                <div class="label">Email</div>
+                <a href="mailto:clarkautoservice@gmail.com">clarkautoservice@gmail.com</a>
+            </div>
+        </div>
+        <div>
+            <h2>Hours</h2>
+            <div class="hours-grid">
+                <div><span class="day">Monday</span><span class="time">8:00 AM – 6:00 PM</span></div>
+                <div><span class="day">Tuesday</span><span class="time">8:00 AM – 6:00 PM</span></div>
+                <div><span class="day">Wednesday</span><span class="time">8:00 AM – 6:00 PM</span></div>
+                <div><span class="day">Thursday</span><span class="time">8:00 AM – 6:00 PM</span></div>
+                <div><span class="day">Friday</span><span class="time">Closed</span></div>
+                <div><span class="day">Saturday</span><span class="time">Closed</span></div>
+                <div><span class="day">Sunday</span><span class="time">Closed</span></div>
+            </div>
+            <br>
+            <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2925.8!2d-105.87!3d37.4775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87353c2a1b1b1b1b%3A0x0!2s1817%20Tremont%20St%2C%20Alamosa%2C%20CO%2081101!5e0!3m2!1sen!2sus!4v1" allowfullscreen loading="lazy"></iframe>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <p>&copy; 2025 Clark Auto Service LLC. 1817 Tremont St, Alamosa, CO 81101</p>
+</footer>
+
+</body>
+</html>

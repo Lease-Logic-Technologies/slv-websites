@@ -1,0 +1,2169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clark Auto Service — Alamosa, CO | Family-Owned Auto Repair & Restoration</title>
+    <meta name="description" content="Family-owned auto repair in Alamosa's San Luis Valley. Two generations of expertise. Classic car restoration, modern diagnostics, custom fabrication. 1817 Tremont St. (719) 589-4485.">
+    <meta name="keywords" content="auto repair Alamosa, car mechanic San Luis Valley, classic car restoration, engine diagnostics, brake service, towing Colorado">
+
+    <!-- Schema.org Local Business -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AutoRepair",
+        "name": "Clark Auto Service LLC",
+        "image": "",
+        "url": "https://clarkautoservice.com",
+        "telephone": "+17195894485",
+        "email": "clarkautoservice@gmail.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1817 Tremont St",
+            "addressLocality": "Alamosa",
+            "addressRegion": "CO",
+            "postalCode": "81101",
+            "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 37.4775,
+            "longitude": -105.8700
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"],
+                "opens": "08:00",
+                "closes": "18:00"
+            }
+        ],
+        "priceRange": "$$",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "6"
+        },
+        "makesOffer": [
+            {"@type": "Offer", "name": "Engine Diagnostics"},
+            {"@type": "Offer", "name": "Classic Car Restoration"},
+            {"@type": "Offer", "name": "Brake Service"},
+            {"@type": "Offer", "name": "Oil Changes"},
+            {"@type": "Offer", "name": "Custom Fabrication"},
+            {"@type": "Offer", "name": "Roadside Assistance"},
+            {"@type": "Offer", "name": "Towing"}
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* =============================================
+           CLARK AUTO SERVICE — New Design
+           Premium industrial + family workshop feel
+           ============================================= */
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-deep: #0a0a0a;
+            --bg-dark: #111111;
+            --bg-card: #1a1a1a;
+            --bg-elevated: #222222;
+            --surface: #2a2a2a;
+            --border: #333333;
+            --text-primary: #f0f0f0;
+            --text-secondary: #a0a0a0;
+            --text-muted: #666666;
+            --accent: #d4521a;        /* Warm rust/orange — automotive */
+            --accent-light: #e8724a;
+            --accent-dark: #a03a10;
+            --success: #2e7d32;
+            --warning: #f59e0b;
+            --radius-sm: 2px;
+            --radius-md: 4px;
+            --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --nav-h: 64px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font);
+            background: var(--bg-deep);
+            color: var(--text-primary);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        a { color: inherit; text-decoration: none; }
+        button { font-family: var(--font); cursor: pointer; }
+        img { max-width: 100%; display: block; }
+        ul { list-style: none; }
+
+        /* =============================================
+           NAVIGATION
+           ============================================= */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid transparent;
+            transition: all 0.3s ease;
+            height: var(--nav-h);
+        }
+
+        .nav.scrolled {
+            background: rgba(10, 10, 10, 0.95);
+            border-bottom-color: var(--border);
+        }
+
+        .nav-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+        }
+
+        .nav-brand-text {
+            font-size: 1.1rem;
+            font-weight: 900;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--text-primary);
+        }
+
+        .nav-brand-location {
+            font-size: 0.65rem;
+            font-weight: 400;
+            color: var(--text-muted);
+            letter-spacing: 0.04em;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            transition: color 0.2s;
+            position: relative;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--text-primary);
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--accent);
+        }
+
+        .nav-phone {
+            font-weight: 700 !important;
+            color: var(--accent) !important;
+            font-size: 0.85rem !important;
+            letter-spacing: 0 !important;
+            text-transform: none !important;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-phone i { font-size: 0.75rem; }
+
+        .nav-hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .nav-hamburger span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--text-primary);
+            margin: 5px 0;
+            transition: all 0.3s;
+        }
+
+        /* Mobile menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: var(--bg-deep);
+            z-index: 999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+        }
+
+        .mobile-menu.open { display: flex; }
+
+        .mobile-menu a {
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            padding: 8px 0;
+        }
+
+        .mobile-menu a:hover { color: var(--accent); }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 20px;
+            right: 24px;
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        /* =============================================
+           HERO
+           ============================================= */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: var(--nav-h);
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            background:
+                radial-gradient(ellipse at 20% 60%, rgba(212, 82, 26, 0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 30%, rgba(42, 42, 42, 0.5) 0%, transparent 50%),
+                linear-gradient(135deg, var(--bg-deep) 0%, #0f0f0f 50%, var(--bg-deep) 100%);
+        }
+
+        /* Decorative grid pattern */
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+            background-size: 80px 80px;
+            mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+            -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 80px 24px;
+            width: 100%;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 24px;
+        }
+
+        .hero-eyebrow::before {
+            content: '';
+            width: 24px;
+            height: 1.5px;
+            background: var(--accent);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.8rem, 6vw, 5rem);
+            font-weight: 300;
+            line-height: 1.08;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+        }
+
+        .hero h1 strong {
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            max-width: 520px;
+            margin-bottom: 40px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 56px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(212, 82, 26, 0.25);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--text-secondary);
+            background: rgba(255,255,255,0.03);
+        }
+
+        .btn-sm {
+            padding: 10px 20px;
+            font-size: 0.68rem;
+        }
+
+        /* Hero right — trust cards */
+        .hero-stats {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2px;
+        }
+
+        .stat-card {
+            padding: 24px;
+            background: var(--bg-card);
+            border-left: 2px solid var(--accent);
+            transition: background 0.2s;
+        }
+
+        .stat-card:hover { background: var(--bg-elevated); }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        .stat-detail {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            margin-top: 6px;
+            line-height: 1.5;
+        }
+
+        /* =============================================
+           SECTIONS
+           ============================================= */
+        .section {
+            padding: 100px 24px;
+        }
+
+        .section-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 56px;
+        }
+
+        .section-dark .section-header { color: var(--text-primary); }
+
+        .section-eyebrow {
+            font-size: 0.62rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-eyebrow::before {
+            content: '';
+            width: 20px;
+            height: 1.5px;
+            background: var(--accent);
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            font-weight: 300;
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+            margin-bottom: 16px;
+        }
+
+        .section-title strong { font-weight: 700; }
+
+        .section-subtitle {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            max-width: 560px;
+        }
+
+        .section-dark {
+            background: var(--bg-dark);
+        }
+
+        .section-darker {
+            background: var(--bg-deep);
+        }
+
+        /* =============================================
+           VEHICLE SELECTOR — Core feature
+           ============================================= */
+        .selector-section {
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .selector-grid {
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            gap: 48px;
+            align-items: start;
+        }
+
+        .selector-form {
+            background: var(--bg-deep);
+            border: 1px solid var(--border);
+            padding: 32px;
+        }
+
+        .selector-form h3 {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group:last-child { margin-bottom: 0; }
+
+        .form-label {
+            display: block;
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .form-select, .form-input {
+            width: 100%;
+            padding: 12px 14px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            font-family: var(--font);
+            font-size: 0.9rem;
+            appearance: none;
+            -webkit-appearance: none;
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+
+        .form-select:focus, .form-input:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .form-select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23a0a0a0' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            padding-right: 36px;
+        }
+
+        .form-input::placeholder { color: var(--text-muted); }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .selector-result {
+            display: none;
+        }
+
+        .selector-result.active { display: block; }
+
+        .result-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 20px 24px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            margin-bottom: 24px;
+        }
+
+        .result-car-icon {
+            font-size: 1.8rem;
+            color: var(--accent);
+        }
+
+        .result-car-info h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .result-car-info span {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .result-actions {
+            display: flex;
+            gap: 8px;
+            margin-left: auto;
+        }
+
+        /* Service recommendations */
+        .service-recs-title {
+            font-size: 0.62rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .service-rec-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .service-rec {
+            padding: 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            transition: all 0.2s;
+            cursor: default;
+        }
+
+        .service-rec:hover {
+            border-color: var(--accent);
+            background: var(--bg-elevated);
+        }
+
+        .service-rec-icon {
+            font-size: 1.2rem;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .service-rec-name {
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .service-rec-desc {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 8px;
+        }
+
+        .service-rec-price {
+            font-size: 0.68rem;
+            font-weight: 700;
+            color: var(--success);
+            letter-spacing: 0.04em;
+        }
+
+        .service-rec-tag {
+            display: inline-block;
+            padding: 2px 8px;
+            font-size: 0.58rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            background: rgba(212, 82, 26, 0.15);
+            color: var(--accent);
+            margin-top: 8px;
+        }
+
+        /* Maintenance schedule */
+        .maint-schedule {
+            margin-top: 32px;
+            padding: 24px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+        }
+
+        .maint-schedule h4 {
+            font-size: 0.62rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+
+        .maint-items {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .maint-item {
+            display: flex;
+            align-items: start;
+            gap: 10px;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+
+        .maint-item-icon {
+            color: var(--success);
+            font-size: 0.7rem;
+            margin-top: 3px;
+        }
+
+        .maint-item-name {
+            font-size: 0.78rem;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .maint-item-interval {
+            font-size: 0.68rem;
+            color: var(--text-muted);
+        }
+
+        /* =============================================
+           SERVICES SHOWCASE
+           ============================================= */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+        }
+
+        .service-card {
+            padding: 40px 32px;
+            background: var(--bg-card);
+            position: relative;
+            transition: background 0.2s;
+        }
+
+        .service-card:hover { background: var(--bg-elevated); }
+
+        .service-card-num {
+            font-size: 0.6rem;
+            font-weight: 800;
+            color: var(--accent);
+            letter-spacing: 0.05em;
+            margin-bottom: 18px;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .service-card-icon {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+
+        .service-card h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* =============================================
+           WHY CLARK
+           ============================================= */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .why-item {
+            text-align: center;
+            padding: 32px 20px;
+        }
+
+        .why-icon {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+
+        .why-item h3 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .why-item p {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* =============================================
+           TEAM
+           ============================================= */
+        .team-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .team-card {
+            padding: 48px 40px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        .team-card-letter {
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--accent);
+            opacity: 0.15;
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+
+        .team-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .team-card-role {
+            font-size: 0.62rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 18px;
+        }
+
+        .team-card p {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: var(--text-muted);
+        }
+
+        /* =============================================
+           GUARANTEE
+           ============================================= */
+        .guarantee-bar {
+            padding: 48px;
+            background: var(--accent);
+            color: #fff;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            text-align: center;
+        }
+
+        .guarantee-item-icon {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .guarantee-item h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .guarantee-item p {
+            font-size: 0.82rem;
+            opacity: 0.85;
+            line-height: 1.5;
+        }
+
+        /* =============================================
+           SEASONAL SPECIALS
+           ============================================= */
+        .specials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .special-card {
+            padding: 32px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            position: relative;
+        }
+
+        .special-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            padding: 4px 12px;
+            font-size: 0.58rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            background: var(--accent);
+            color: #fff;
+        }
+
+        .special-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .special-card .special-price {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .special-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* =============================================
+           FAQ ACCORDION
+           ============================================= */
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .faq-question {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 22px 0;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .faq-question:hover { color: var(--accent); }
+
+        .faq-question i {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-question i {
+            transform: rotate(180deg);
+            color: var(--accent);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 300px;
+            padding-bottom: 22px;
+        }
+
+        .faq-answer p {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: var(--text-muted);
+        }
+
+        /* =============================================
+           CONTACT / BOOKING FORM
+           ============================================= */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+
+        .contact-info-block { margin-bottom: 28px; }
+
+        .contact-info-block h4 {
+            font-size: 0.62rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .contact-info-block p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+
+        .contact-info-block a {
+            color: var(--text-primary);
+            border-bottom: 1px solid var(--border);
+            transition: border-color 0.2s;
+        }
+
+        .contact-info-block a:hover { border-color: var(--accent); }
+
+        .contact-form {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 36px;
+        }
+
+        .contact-form h3 {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 24px;
+        }
+
+        .form-textarea {
+            width: 100%;
+            padding: 12px 14px;
+            background: var(--bg-deep);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            font-family: var(--font);
+            font-size: 0.9rem;
+            resize: vertical;
+            min-height: 100px;
+            transition: border-color 0.2s;
+        }
+
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .form-textarea::placeholder { color: var(--text-muted); }
+
+        .contact-form .btn { width: 100%; justify-content: center; margin-top: 8px; }
+
+        .form-success {
+            display: none;
+            padding: 16px;
+            background: rgba(46, 125, 50, 0.1);
+            border: 1px solid var(--success);
+            color: var(--success);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 16px;
+            text-align: center;
+        }
+
+        .form-success.visible { display: block; }
+
+        /* =============================================
+           MAP
+           ============================================= */
+        .map-section {
+            padding: 0;
+        }
+
+        .map-container {
+            position: relative;
+            height: 400px;
+            background: var(--bg-card);
+            overflow: hidden;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            filter: grayscale(0.6) brightness(0.7) contrast(1.1);
+        }
+
+        .map-overlay {
+            position: absolute;
+            top: 24px;
+            left: 24px;
+            background: var(--bg-deep);
+            border: 1px solid var(--border);
+            padding: 24px 28px;
+            z-index: 2;
+        }
+
+        .map-overlay h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .map-overlay p {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        /* =============================================
+           FOOTER
+           ============================================= */
+        .footer {
+            background: var(--bg-deep);
+            border-top: 1px solid var(--border);
+            padding: 60px 24px 32px;
+        }
+
+        .footer-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand {
+            font-size: 1.1rem;
+            font-weight: 900;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .footer-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            max-width: 320px;
+        }
+
+        .footer-col h5 {
+            font-size: 0.62rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+
+        .footer-col a {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            padding: 4px 0;
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover { color: var(--text-primary); }
+
+        .footer-bottom {
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-copy {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+        }
+
+        /* =============================================
+           SCROLL REVEAL
+           ============================================= */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* =============================================
+           MOBILE RESPONSIVE
+           ============================================= */
+        @media (max-width: 1024px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+
+            .selector-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .specials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-hamburger { display: block; }
+
+            .hero h1 { font-size: clamp(2.2rem, 10vw, 3.2rem); }
+
+            .hero-stats { grid-template-columns: 1fr; }
+
+            .services-grid { grid-template-columns: 1fr; }
+
+            .team-grid { grid-template-columns: 1fr; }
+
+            .guarantee-bar {
+                grid-template-columns: 1fr;
+                padding: 32px 24px;
+            }
+
+            .service-rec-grid { grid-template-columns: 1fr; }
+            .maint-items { grid-template-columns: 1fr; }
+
+            .map-overlay { position: relative; top: 0; left: 0; }
+
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+        }
+
+        /* =============================================
+           ACTIVE NAV TRACKING
+           ============================================= */
+        .nav-links a[data-section]:hover {
+            color: var(--text-primary);
+        }
+
+        /* =============================================
+           PRINT STYLES
+           ============================================= */
+        @media print {
+            .nav, .mobile-menu, .selector-form, .contact-form, .form-select, .form-input, .form-textarea, .btn { display: none !important; }
+            body { background: #fff; color: #000; }
+            .section { padding: 32px 0; }
+        }
+
+        /* =============================================
+           REDUCED MOTION
+           ============================================= */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            html { scroll-behavior: auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========== NAVIGATION ========== -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#top" class="nav-brand">
+                <span class="nav-brand-text">Clark Auto</span>
+                <span class="nav-brand-location">Alamosa, CO</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#selector" data-section="selector">Vehicle</a></li>
+                <li><a href="#services" data-section="services">Services</a></li>
+                <li><a href="#team" data-section="team">Team</a></li>
+                <li><a href="#faq" data-section="faq">FAQ</a></li>
+                <li><a href="#contact" data-section="contact">Contact</a></li>
+                <li><a href="tel:7195894485" class="nav-phone"><i class="fa-solid fa-phone"></i> (719) 589-4485</a></li>
+            </ul>
+            <button class="nav-hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" onclick="toggleMobileMenu()">&times;</button>
+        <a href="#selector" onclick="toggleMobileMenu()">Vehicle</a>
+        <a href="#services" onclick="toggleMobileMenu()">Services</a>
+        <a href="#team" onclick="toggleMobileMenu()">Team</a>
+        <a href="#faq" onclick="toggleMobileMenu()">FAQ</a>
+        <a href="#contact" onclick="toggleMobileMenu()">Contact</a>
+        <a href="tel:7195894485" style="color: var(--accent);">(719) 589-4485</a>
+    </div>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="top">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-grid">
+                <div>
+                    <div class="hero-eyebrow">Family-owned in Alamosa</div>
+                    <h1>Two generations.<br><strong>One shop.</strong></h1>
+                    <p class="hero-desc">
+                        Ron and Chris Clark keep Alamosa rolling. Classic car restorations,
+                        modern diagnostics, custom fabrication — honest work at fair prices
+                        on Tremont Street.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="tel:7195894485" class="btn btn-primary">
+                            <i class="fa-solid fa-phone"></i> Call Now
+                        </a>
+                        <a href="#selector" class="btn btn-outline">
+                            Find My Service <i class="fa-solid fa-arrow-down"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <div class="stat-value">5.0</div>
+                        <div class="stat-label">Yelp Rating</div>
+                        <div class="stat-detail">Six reviews. Zero complaints.</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">2 Gen</div>
+                        <div class="stat-label">Family Mechanics</div>
+                        <div class="stat-detail">Classic expertise meets modern diagnostics.</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">US-160</div>
+                        <div class="stat-label">Roadtrip Haven</div>
+                        <div class="stat-detail">Travelers say: "A trustworthy valley shop."</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== VEHICLE SELECTOR ========== -->
+    <section class="section selector-section" id="selector">
+        <div class="section-inner">
+            <div class="section-header reveal">
+                <div class="section-eyebrow">Service Finder</div>
+                <h2 class="section-title">What are you <strong>driving?</strong></h2>
+                <p class="section-subtitle">
+                    Select your vehicle and we'll recommend the services you need,
+                    based on year, type, and condition.
+                </p>
+            </div>
+            <div class="selector-grid reveal">
+                <div class="selector-form">
+                    <h3><i class="fa-solid fa-car"></i>&nbsp; Vehicle Details</h3>
+                    <div class="form-group">
+                        <label class="form-label" for="sel-year">Year</label>
+                        <select class="form-select" id="sel-year" onchange="updateRecommendations()">
+                            <option value="">Select year...</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="sel-make">Make</label>
+                        <select class="form-select" id="sel-make" onchange="updateModels(); updateRecommendations()">
+                            <option value="">Select make...</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="sel-model">Model</label>
+                        <select class="form-select" id="sel-model" onchange="updateRecommendations()">
+                            <option value="">Select model...</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="sel-yearly">Mileage / Year</label>
+                        <select class="form-select" id="sel-yearly" onchange="updateRecommendations()">
+                            <option value="new">New / Under 10k</option>
+                            <option value="low">10k–30k</option>
+                            <option value="mid" selected>30k–80k</option>
+                            <option value="high">80k–150k</option>
+                            <option value="very-high">150k+</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="selector-result" id="selectorResult">
+                    <div class="result-header">
+                        <div class="result-car-icon"><i class="fa-solid fa-car-side"></i></div>
+                        <div class="result-car-info">
+                            <h4 id="resultTitle">—</h4>
+                            <span id="resultSubtitle">Select your vehicle to see recommendations</span>
+                        </div>
+                        <div class="result-actions">
+                            <a href="#contact" class="btn btn-sm btn-primary">Book This</a>
+                        </div>
+                    </div>
+                    <div class="service-recs-title">Recommended Services</div>
+                    <div class="service-rec-grid" id="serviceRecs">
+                        <!-- Filled by JS -->
+                    </div>
+                    <div class="maint-schedule" id="maintSchedule">
+                        <h4><i class="fa-solid fa-calendar-check"></i>&nbsp; Next Maintenance Due</h4>
+                        <div class="maint-items" id="maintItems">
+                            <!-- Filled by JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SERVICES ========== -->
+    <section class="section section-dark" id="services">
+        <div class="section-inner">
+            <div class="section-header reveal">
+                <div class="section-eyebrow">What We Do</div>
+                <h2 class="section-title">Not your typical <strong>chain shop.</strong></h2>
+                <p class="section-subtitle">
+                    Every repair gets two generations of hands-on know-how — not a
+                    checklist and a rush.
+                </p>
+            </div>
+            <div class="services-grid reveal">
+                <div class="service-card">
+                    <div class="service-card-num">01</div>
+                    <div class="service-card-icon"><i class="fa-solid fa-microchip"></i></div>
+                    <h3>Engine Diagnostics</h3>
+                    <p>Check engine light? We find it fast with modern scan tools and old-school intuition.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-num">02</div>
+                    <div class="service-card-icon"><i class="fa-solid fa-gear"></i></div>
+                    <h3>Classic Car Restoration</h3>
+                    <p>Ron's specialty — pre-1950s frame-up restorations and period-correct repairs.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-num">03</div>
+                    <div class="service-card-icon"><i class="fa-solid fa-oil-can"></i></div>
+                    <h3>Routine Maintenance</h3>
+                    <p>Oil changes, brakes, cooling systems, tune-ups — keep it rolling through the valley.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-num">04</div>
+                    <div class="service-card-icon"><i class="fa-solid fa-fire"></i></div>
+                    <h3>Custom Fabrication & Welding</h3>
+                    <p>Removable tops, custom panels, specialty parts — if you can dream it, we can form it.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-num">05</div>
+                    <div class="service-card-icon"><i class="fa-solid fa-paintbrush"></i></div>
+                    <h3>Pinstriping & Paint</h3>
+                    <p>Hand-painted designs, custom logos, professional pinstriping with decades of flair.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-num">06</div>
+                    <div class="service-card-icon"><i class="fa-solid fa-truck-pickup"></i></div>
+                    <h3>Roadside & Towing</h3>
+                    <p>Dead battery on US-160? We'll come to you and get you rolling again.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== WHY CLARK ========== -->
+    <section class="section" id="why">
+        <div class="section-inner">
+            <div class="section-header reveal" style="text-align: center; max-width: 480px; margin-left: auto; margin-right: auto;">
+                <div class="section-eyebrow" style="justify-content: center;">Why Clark Auto</div>
+                <h2 class="section-title">What sets us <strong>apart</strong></h2>
+            </div>
+            <div class="why-grid reveal">
+                <div class="why-item">
+                    <div class="why-icon"><i class="fa-solid fa-handshake"></i></div>
+                    <h3>Honest Pricing</h3>
+                    <p>No surprises. We explain what's needed, what can wait, and give you fair estimates before starting work.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <h3>Dual Expertise</h3>
+                    <p>One mechanic who speaks carburetor. One who speaks OBD-II. Together, every car is covered.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon"><i class="fa-solid fa-route"></i></div>
+                    <h3>Traveler Friendly</h3>
+                    <p>Driving through the Valley? Pull in. We'll get you on your way fast — whether you're passing through or moving in.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>Warranty Included</h3>
+                    <p>All parts and labor are backed by our warranty. If something doesn't sit right, we make it right.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== GUARANTEE BAR ========== -->
+    <div class="guarantee-bar">
+        <div class="guarantee-item">
+            <div class="guarantee-item-icon"><i class="fa-solid fa-check-circle"></i></div>
+            <h4>Parts & Labor Warranty</h4>
+            <p>All work backed by our guarantee. No questions, no hassle.</p>
+        </div>
+        <div class="guarantee-item">
+            <div class="guarantee-item-icon"><i class="fa-solid fa-dollar-sign"></i></div>
+            <h4>Fair Estimates First</h4>
+            <p>We tell you the cost before we touch the wrench.</p>
+        </div>
+        <div class="guarantee-item">
+            <div class="guarantee-item-icon"><i class="fa-solid fa-clock"></i></div>
+            <h4>Quick Turnaround</h4>
+            <p>Most repairs finished same day. Emergency roadside service dispatched immediately.</p>
+        </div>
+    </div>
+
+    <!-- ========== SEASONAL SPECIALS ========== -->
+    <section class="section section-dark" id="specials">
+        <div class="section-inner">
+            <div class="section-header reveal">
+                <div class="section-eyebrow">Seasonal Offers</div>
+                <h2 class="section-title">Save on <strong>what matters</strong></h2>
+                <p class="section-subtitle">
+                    Real discounts on the services the Colorado high country demands.
+                </p>
+            </div>
+            <div class="specials-grid reveal">
+                <div class="special-card">
+                    <div class="special-badge">Winter</div>
+                    <h3>Winter Safety Check</h3>
+                    <div class="special-price">$49</div>
+                    <p>Battery load test, coolant freeze point, wiper blades, tire tread depth, and heating system inspection. Get Valley-winter ready.</p>
+                </div>
+                <div class="special-card">
+                    <div class="special-badge">Spring</div>
+                    <h3>Full Service Package</h3>
+                    <div class="special-price">$89</div>
+                    <p>Oil change, multi-point inspection, brake check, fluid top-off, and tire rotation. Everything in one visit.</p>
+                </div>
+                <div class="special-card">
+                    <div class="special-badge">All Season</div>
+                    <h3>Diagnostic Scan</h3>
+                    <div class="special-price">$59</div>
+                    <p>Check engine light on? We run a full OBD-II diagnostic and give you a clear report with options.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TEAM ========== -->
+    <section class="section" id="team">
+        <div class="section-inner">
+            <div class="section-header reveal">
+                <div class="section-eyebrow">The Mechanics</div>
+                <h2 class="section-title">Best of both <strong>worlds.</strong></h2>
+                <p class="section-subtitle">
+                    One mechanic who's worked on cars since before computers existed.
+                    One who speaks OBD-II natively. Together, they cover every year and every make.
+                </p>
+            </div>
+            <div class="team-grid reveal">
+                <div class="team-card">
+                    <div class="team-card-letter">R</div>
+                    <h3>Ron Clark</h3>
+                    <div class="team-card-role">Co-Owner — Classic Specialist</div>
+                    <p>
+                        Ron's expertise lives in the era of carburetors, points, and hand-fitted body panels.
+                        Pre-1950s vehicles are his domain — frame-up restorations, mechanical overhauls,
+                        and the kind of knowledge that only comes from decades of turning wrenches on
+                        cars that predate the computer age.
+                    </p>
+                </div>
+                <div class="team-card">
+                    <div class="team-card-letter">C</div>
+                    <h3>Chris Clark</h3>
+                    <div class="team-card-role">Co-Owner — Modern Specialist</div>
+                    <p>
+                        Chris handles the other side — modern diagnostics, emissions systems,
+                        electronic fuel injection, and hybrid platforms. He also runs the custom
+                        fabrication and pinstriping work that makes Clark Auto unique in the
+                        entire San Luis Valley.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FAQ ========== -->
+    <section class="section section-dark" id="faq">
+        <div class="section-inner">
+            <div class="section-header reveal" style="text-align: center;">
+                <div class="section-eyebrow" style="justify-content: center;">FAQ</div>
+                <h2 class="section-title">Common <strong>questions</strong></h2>
+            </div>
+            <div class="faq-list reveal">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        What are your hours of operation?
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We're open Monday through Thursday, 8:00 AM to 6:00 PM. We're closed Friday through Sunday. For roadside emergencies outside these hours, call and leave a message — we'll get back to you first thing in the morning.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Do you work on both classic and modern cars?
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely. That's our specialty. Ron handles classic cars from the pre-1950s era — carburetors, mechanical brakes, hand-formed bodywork. Chris handles everything from 1980s OBD-I cars through modern hybrids and electrics. If it has wheels, we can fix it.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Do I need an appointment or can I walk in?
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Walk-ins are welcome for diagnostics and roadside assistance. For repairs that require shop time, it's best to call ahead so we can reserve a bay and give you an accurate timeline.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        What areas do you serve?
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Our shop is in Alamosa and we serve the entire San Luis Valley — Fort Lewis, Alamosa, Monte Vista, Creede, South Fork, and all surrounding communities. For roadside assistance, we can come to you anywhere in the Valley.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        What forms of payment do you accept?
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We accept cash, all major credit cards, debit cards, and NFC mobile payments (Apple Pay, Google Pay). Parts and labor come with our warranty.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Can you help if I'm stranded on the highway?
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes — that's our roadside assistance and towing service. We've been the go-to for roadtrippers stuck on US-160. Call (719) 589-4485 and we'll come to you.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT / BOOKING ========== -->
+    <section class="section" id="contact">
+        <div class="section-inner">
+            <div class="section-header reveal">
+                <div class="section-eyebrow">Get In Touch</div>
+                <h2 class="section-title">Ready to <strong>book?</strong></h2>
+                <p class="section-subtitle">
+                    Call, text, or fill out the form and we'll get back to you within the hour.
+                </p>
+            </div>
+            <div class="contact-grid reveal">
+                <div>
+                    <div class="contact-info-block">
+                        <h4>Call Direct</h4>
+                        <p><a href="tel:7195894485"><i class="fa-solid fa-phone"></i>&nbsp; (719) 589-4485</a></p>
+                    </div>
+                    <div class="contact-info-block">
+                        <h4>Address</h4>
+                        <p>1817 Tremont St<br>Alamosa, CO 81101</p>
+                    </div>
+                    <div class="contact-info-block">
+                        <h4>Hours</h4>
+                        <p>Monday – Thursday: 8:00 AM – 6:00 PM<br>Fri – Sun: Closed</p>
+                    </div>
+                    <div class="contact-info-block">
+                        <h4>Email</h4>
+                        <p><a href="mailto:clarkautoservice@gmail.com"><i class="fa-solid fa-envelope"></i>&nbsp; clarkautoservice@gmail.com</a></p>
+                    </div>
+                    <div class="contact-info-block">
+                        <h4>Reviews</h4>
+                        <p><a href="https://www.yelp.com/biz/clark-auto-service-alamosa" target="_blank" rel="noopener"><i class="fa-brands fa-yelp"></i>&nbsp; Read our Yelp reviews</a></p>
+                    </div>
+                    <div class="contact-info-block">
+                        <h4>Accepted Payment</h4>
+                        <p>Cash, credit cards, debit cards, Apple Pay, Google Pay</p>
+                    </div>
+                </div>
+                <div class="contact-form" id="contactForm">
+                    <h3><i class="fa-solid fa-clipboard"></i>&nbsp; Service Request</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="cf-name">Your Name</label>
+                            <input class="form-input" type="text" id="cf-name" placeholder="Jane Smith">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="cf-phone">Phone</label>
+                            <input class="form-input" type="tel" id="cf-phone" placeholder="(719) 555-1234">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="cf-email">Email</label>
+                        <input class="form-input" type="email" id="cf-email" placeholder="you@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="cf-car">Vehicle</label>
+                        <input class="form-input" type="text" id="cf-car" placeholder="e.g. 1967 Ford Mustang or 2019 Toyota Tacoma">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="cf-service">Service Needed</label>
+                        <select class="form-select" id="cf-service">
+                            <option value="">Select a service...</option>
+                            <option value="diagnostics">Engine Diagnostics</option>
+                            <option value="classic">Classic Car Restoration</option>
+                            <option value="routine">Routine Maintenance</option>
+                            <option value="fab">Custom Fabrication / Welding</option>
+                            <option value="pinstriping">Pinstriping & Paint</option>
+                            <option value="roadside">Roadside Assistance</option>
+                            <option value="towing">Towing</option>
+                            <option value="brakes">Brake Service</option>
+                            <option value="oil">Oil Change</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="cf-notes">Details</label>
+                        <textarea class="form-textarea" id="cf-notes" placeholder="Describe the issue, symptoms, or what you're looking for..."></textarea>
+                    </div>
+                    <button class="btn btn-primary" onclick="submitForm()">
+                        <i class="fa-solid fa-paper-plane"></i> Submit Request
+                    </button>
+                    <div class="form-success" id="formSuccess">
+                        <i class="fa-solid fa-check-circle"></i> Request submitted! We'll call you within the hour.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== MAP ========== -->
+    <div class="map-section">
+        <div class="map-container">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2039.5!2d-105.8700!3d37.4775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x873a2a1a1a1a1a1a%3A0x0!2s1817+Tremont+St%2C+Alamosa%2C+CO+81101!5e0!3m2!1sen!2sus!4v1"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Clark Auto Service location on Google Maps">
+            </iframe>
+            <div class="map-overlay">
+                <h4>Clark Auto Service</h4>
+                <p>1817 Tremont St, Alamosa, CO 81101</p>
+                <a href="https://www.google.com/maps/dir//1817+Tremont+St,+Alamosa,+CO+81101" target="_blank" rel="noopener" class="btn btn-sm btn-primary">
+                    <i class="fa-solid fa-diamond-turn-right"></i> Get Directions
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">Clark Auto Service LLC</div>
+                    <p class="footer-desc">
+                        Family-owned auto repair and restoration in the heart of
+                        Alamosa, Colorado. Serving the San Luis Valley with pride
+                        since day one.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h5>Quick Links</h5>
+                    <a href="#selector">Vehicle Service Finder</a>
+                    <a href="#services">Services</a>
+                    <a href="#team">The Team</a>
+                    <a href="#faq">FAQ</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h5>Contact</h5>
+                    <a href="tel:7195894485">(719) 589-4485</a>
+                    <a href="mailto:clarkautoservice@gmail.com">clarkautoservice@gmail.com</a>
+                    <a href="https://www.yelp.com/biz/clark-auto-service-alamosa" target="_blank" rel="noopener">Yelp Reviews</a>
+                    <a href="https://www.google.com/maps/dir//1817+Tremont+St,+Alamosa,+CO+81101" target="_blank" rel="noopener">Get Directions</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span class="footer-copy">&copy; 2026 Clark Auto Service LLC. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== JAVASCRIPT ========== -->
+    <script>
+    /* =============================================
+       NAVIGATION
+       ============================================= */
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    function toggleMobileMenu() {
+        document.getElementById('mobileMenu').classList.toggle('open');
+    }
+
+    /* =============================================
+       VEHICLE DATA
+       ============================================= */
+    const vehicleData = {
+        'Ford': {
+            classic: ['Mustang', 'F-100', 'Fairlane', 'Thunderbird', 'Bronco', 'Galaxie'],
+            modern: ['F-150', 'Explorer', 'Escape', 'Focus', 'Fusion', 'Ranger', 'Expedition', 'Edge']
+        },
+        'Chevrolet': {
+            classic: ['Camaro', 'Corvette', 'Bel Air', 'Impala', 'Nova', 'El Camino'],
+            modern: ['Silverado', 'Tahoe', 'Equinox', 'Malibu', 'Traverse', 'Cruze', 'Suburban', 'Blazer']
+        },
+        'Toyota': {
+            classic: ['2000 GT', 'Corolla Classic', 'Celica', 'Supra (MK1-MK3)', 'FJ40 Land Cruiser'],
+            modern: ['Camry', 'Corolla', 'RAV4', 'Tacoma', 'Tundra', '4Runner', 'Highlander', 'Sienna', 'Prius']
+        },
+        'Honda': {
+            classic: ['Civic (1st-3rd gen)', 'Accord (1st-2nd gen)', 'Prelude', 'CRX', 'S2000'],
+            modern: ['Civic', 'Accord', 'CR-V', 'Pilot', 'Fit', 'Odyssey', 'HR-V', 'Insight']
+        },
+        'Dodge': {
+            classic: ['Charger', 'Challenger', 'Coronet', 'Dart', 'Monaco', 'Dart'],
+            modern: ['Ram 1500', 'Durango', 'Challenger', 'Charger', 'Journey', 'Grand Caravan']
+        },
+        'Jeep': {
+                    classic: [' CJ-5', ' CJ-7', 'Wrangler (YJ/TJ)', 'J-Class', 'Scrambler'],
+            modern: ['Wrangler', 'Grand Cherokee', 'Cherokee', 'Compass', 'Renegade', 'Gladiator']
+        },
+        'GMC': {
+            classic: ['C10', 'Sierra Classic', 'Vandura', 'Suburban'],
+            modern: ['Sierra 1500', 'Yukon', 'Canyon', 'Acadia', 'Terrain']
+        },
+        'Nissan': {
+            classic: ['240ZX', '280ZX', 'Datsun 240Z', 'Fairlady'],
+            modern: ['Altima', 'Maxima', 'Sentra', 'Frontier', 'Titan', 'Pathfinder', 'Rogue']
+        },
+        'Subaru': {
+            classic: ['DL / GL', 'XT', 'SVX'],
+            modern: ['Outback', 'Forester', 'Impreza', 'Crosstrek', 'Legacy', 'WRX', 'BRZ', 'Ascent']
+        },
+        'Volkswagen': {
+            classic: ['Beetle', 'Type 3', 'Karmann Ghia', 'Bus (Type 2)', 'Dasher'],
+            modern: ['Golf', 'Jetta', 'Atlas', 'Tiguan', 'Passat', 'Arteon', 'ID.4']
+        },
+        'BMW': {
+            classic: ['2002', '3.0 CSL', 'E9 2002', 'E12 5 Series'],
+            modern: ['3 Series', '5 Series', 'X3', 'X5', 'X1', '4 Series', 'M3']
+        },
+        'Mercedes-Benz': {
+            classic: ['280SL', '230SL', '190', 'W111'],
+            modern: ['C-Class', 'E-Class', 'GLE', 'GLC', 'S-Class']
+        },
+        'Ford (Classic Car)': {
+            classic: ['Model A', 'Model B', 'Hot Rod (custom)', 'T-Bucket', 'Roadster'],
+            modern: []
+        }
+    };
+
+    // Build year dropdown
+    const yearSelect = document.getElementById('sel-year');
+    const currentYear = new Date().getFullYear();
+    for (let y = currentYear + 1; y >= 1920; y--) {
+        const opt = document.createElement('option');
+        opt.value = y;
+        opt.textContent = y;
+        yearSelect.appendChild(opt);
+    }
+
+    // Make dropdown population
+    const makeSelect = document.getElementById('sel-make');
+    const modelSelect = document.getElementById('sel-model');
+
+    function populateMakes() {
+        makeSelect.innerHTML = '<option value="">Select make...</option>';
+        Object.keys(vehicleData).sort().forEach(make => {
+            const opt = document.createElement('option');
+            opt.value = make;
+            opt.textContent = make;
+            makeSelect.appendChild(opt);
+        });
+    }
+    populateMakes();
+
+    function updateModels() {
+        const make = makeSelect.value;
+        modelSelect.innerHTML = '<option value="">Select model...</option>';
+        if (!make || !vehicleData[make]) return;
+        const allModels = [
+            ...(vehicleData[make].classic || []).map(m => ({ label: m, type: 'classic' })),
+            ...(vehicleData[make].modern || []).map(m => ({ label: m, type: 'modern' }))
+        ];
+        // Add year-based filtering
+        const year = parseInt(yearSelect.value);
+        allModels.forEach(m => {
+            if (m.type === 'classic' && year >= 1960) {
+                // Still show but mark as classic
+                const opt = document.createElement('option');
+                opt.value = m.label;
+                opt.textContent = m.label + ' [Classic]';
+                opt.dataset.vehicleType = 'classic';
+                modelSelect.appendChild(opt);
+            } else if (m.type === 'modern' && year <= 1955) {
+                const opt = document.createElement('option');
+                opt.value = m.label;
+                opt.textContent = m.label + ' [Modern]';
+                opt.dataset.vehicleType = 'modern';
+                modelSelect.appendChild(opt);
+            } else {
+                const opt = document.createElement('option');
+                opt.value = m.label;
+                opt.textContent = m.label;
+                opt.dataset.vehicleType = m.type;
+                modelSelect.appendChild(opt);
+            }
+        });
+    }
+
+    /* =============================================
+       SERVICE RECOMMENDATION ENGINE
+       ============================================= */
+    const serviceDatabase = {
+        classic: {
+            services: [
+                { icon: 'fa-gear', name: 'Carburetor Rebuild', desc: 'Tune and rebuild carburetors for smooth idle and power.', price: '$200–600', tag: 'Classic Essential' },
+                { icon: 'fa-fire', name: 'Point & Condenser', desc: 'Breakpoint system adjustment or electronic conversion.', price: '$150–350', tag: 'Classic Essential' },
+                { icon: 'fa-oil-can', name: 'Mechanical Oil Change', desc: 'High-mileage and classic formula with ZDDP protection.', price: '$50–90', tag: '' },
+                { icon: 'fa-brake', name: 'Drum Brake Service', desc: 'Adjustment, shoe replacement, and wheel cylinder rebuild.', price: '$200–400', tag: 'Classic Essential' },
+                { icon: 'fa-paintbrush', name: 'Body Panel Work', desc: 'Dent removal, rust repair, or custom shaping.', price: '$150–2000', tag: '' },
+                { icon: 'fa-wrench', name: 'Steering & Suspension', desc: 'Pitman arm, idler arm, and leaf spring service.', price: '$200–600', tag: '' }
+            ],
+            maintenance: [
+                { name: 'Oil & Filter', interval: 'Every 3,000 miles' },
+                { name: 'Brake Inspection', interval: 'Every 6 months' },
+                { name: 'Coolant Flush', interval: 'Annually' },
+                { name: 'Battery Check', interval: 'Every 6 months' },
+                { name: 'Timing Adjustment', interval: 'Every oil change' },
+                { name: 'Points & Condenser', interval: 'Every 6 months' }
+            ]
+        },
+        modern: {
+            services: [
+                { icon: 'fa-microchip', name: 'OBD-II Diagnostics', desc: 'Full computer scan for check engine lights and codes.', price: '$59–120', tag: 'Most Common' },
+                { icon: 'fa-oil-can', name: 'Synthetic Oil Change', desc: 'Full synthetic with multi-point safety inspection.', price: '$45–85', tag: '' },
+                { icon: 'fa-brake', name: 'Brake Pad & Rotor', desc: 'Front or rear brake service with quality parts.', price: '$150–400', tag: '' },
+                { icon: 'fa-fan', name: 'Cooling System', desc: 'Radiator, thermostat, water pump, and hose service.', price: '$200–600', tag: '' },
+                { icon: 'fa-battery-full', name: 'Battery Replacement', desc: 'Load-tested battery install and charging system check.', price: '$120–250', tag: '' },
+                { icon: 'fa-car-battery', name: 'Tire & Alignment', desc: 'Mount, balance, and computerized wheel alignment.', price: '$80–300', tag: '' }
+            ],
+            maintenance: [
+                { name: 'Oil & Filter', interval: '5,000–7,500 miles' },
+                { name: 'Brake Inspection', interval: 'Every 10,000 miles' },
+                { name: 'Tire Rotation', interval: 'Every oil change' },
+                { name: 'Air Filter', interval: '15,000–30,000 miles' },
+                { name: 'Coolant Flush', interval: '30,000–60,000 miles' },
+                { name: 'Transmission Fluid', interval: '60,000–100,000 miles' }
+            ]
+        }
+    };
+
+    function getVehicleType(year, model) {
+        if (year && parseInt(year) <= 1960) return 'classic';
+        // Check if model was selected with a [Classic] tag
+        const selected = modelSelect.options[modelSelect.selectedIndex];
+        if (selected && selected.dataset.vehicleType) {
+            return selected.dataset.vehicleType;
+        }
+        return 'modern';
+    }
+
+    function updateRecommendations() {
+        const year = yearSelect.value;
+        const make = makeSelect.value;
+        const model = modelSelect.value;
+        const resultDiv = document.getElementById('selectorResult');
+
+        if (!year || !make || !model) {
+            resultDiv.classList.remove('active');
+            return;
+        }
+
+        const vType = getVehicleType(year, model);
+        const data = serviceDatabase[vType];
+
+        // Update result header
+        document.getElementById('resultTitle').textContent = `${year} ${make} ${model}`;
+        document.getElementById('resultSubtitle').textContent = vType === 'classic'
+            ? 'Classic vehicle — vintage service recommended'
+            : 'Modern vehicle — factory-spec service recommended';
+
+        // Render service recommendations
+        const recsContainer = document.getElementById('serviceRecs');
+        recsContainer.innerHTML = '';
+        const allServices = data.services.slice(0, 4); // Show top 4
+        allServices.forEach(s => {
+            const card = document.createElement('div');
+            card.className = 'service-rec';
+            card.innerHTML = `
+                <div class="service-rec-icon"><i class="fa-solid ${s.icon}"></i></div>
+                <div class="service-rec-name">${s.name}</div>
+                <div class="service-rec-desc">${s.desc}</div>
+                <div class="service-rec-price">Est. ${s.price}</div>
+                ${s.tag ? `<div class="service-rec-tag">${s.tag}</div>` : ''}
+            `;
+            recsContainer.appendChild(card);
+        });
+
+        // Maintenance schedule
+        const maintContainer = document.getElementById('maintItems');
+        maintContainer.innerHTML = '';
+        data.maintenance.forEach(m => {
+            const item = document.createElement('div');
+            item.className = 'maint-item';
+            item.innerHTML = `
+                <div class="maint-item-icon"><i class="fa-solid fa-circle-check"></i></div>
+                <div>
+                    <div class="maint-item-name">${m.name}</div>
+                    <div class="maint-item-interval">${m.interval}</div>
+                </div>
+            `;
+            maintContainer.appendChild(item);
+        });
+
+        resultDiv.classList.add('active');
+    }
+
+    /* =============================================
+       FAQ ACCORDION
+       ============================================= */
+    function toggleFaq(btn) {
+        const item = btn.closest('.faq-item');
+        const wasOpen = item.classList.contains('open');
+        // Close all
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        // Toggle clicked
+        if (!wasOpen) item.classList.add('open');
+    }
+
+    /* =============================================
+       CONTACT FORM
+       ============================================= */
+    function submitForm() {
+        const name = document.getElementById('cf-name').value.trim();
+        const phone = document.getElementById('cf-phone').value.trim();
+        if (!name || !phone) {
+            alert('Please fill in your name and phone number.');
+            return;
+        }
+        // In production: send to backend, email, or SMS
+        // For now, simulate success
+        document.getElementById('formSuccess').classList.add('visible');
+        // Reset after delay
+        setTimeout(() => {
+            document.getElementById('formSuccess').classList.remove('visible');
+        }, 5000);
+    }
+
+    /* =============================================
+       SCROLL REVEAL
+       ============================================= */
+    document.addEventListener('DOMContentLoaded', () => {
+        const reveals = document.querySelectorAll('.reveal');
+
+        // Check already-visible elements
+        reveals.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                el.classList.add('visible');
+            }
+        });
+
+        // Observe below-fold
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        reveals.forEach(el => {
+            if (!el.classList.contains('visible')) {
+                observer.observe(el);
+            }
+        });
+
+        // Fallback timeout — 500ms guarantee no content stays hidden
+        setTimeout(() => {
+            reveals.forEach(el => {
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+            });
+        }, 500);
+
+        /* Active nav tracking */
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-links a[data-section]');
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => {
+                        link.classList.toggle('active',
+                            link.getAttribute('data-section') === entry.target.id
+                        );
+                    });
+                }
+            });
+        }, { rootMargin: '-30% 0px -70% 0px' });
+
+        sections.forEach(section => sectionObserver.observe(section));
+    });
+    </script>
+</body>
+</html>

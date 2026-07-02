@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Green Spot — Alamosa, CO | San Luis Valley Garden Center</title>
+  <meta name="description" content="The Green Spot: houseplants, annuals, perennials, trees, and expert gardening in Alamosa, Colorado. Locally owned at 711 State Ave.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "GardenStore",
+    "name": "The Green Spot",
+    "address": { "@type": "PostalAddress", "streetAddress": "711 State Ave", "addressLocality": "Alamosa", "addressRegion": "CO", "postalCode": "81101" },
+    "telephone": "(719) 589-6362",
+    "openingHours": "Mo-Sa 10:00-17:30"
+  }
+  </script>
+  <style>
+    :root {
+      --black: #0a0a0a;
+      --white: #f5f5f5;
+      --green: #00c853;
+      --green-dim: rgba(0,200,83,0.15);
+      --green-bright: #69f0ae;
+      --accent: #ff6d00;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--white);
+      background: var(--black);
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 32px;
+      background: rgba(10,10,10,0.8);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .logo {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--white);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .logo i { color: var(--green); font-size: 16px; }
+    .nav-links { display: flex; gap: 24px; list-style: none; }
+    .nav-links a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--green); }
+    .nav-toggle { display: none; background: none; border: none; color: var(--white); font-size: 22px; cursor: pointer; }
+
+    /* HERO - Full screen cinematic */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 32px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 30% 50%, var(--green-dim) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 30%, rgba(255,109,0,0.06) 0%, transparent 50%);
+    }
+    .hero-content { position: relative; z-index: 1; }
+    .hero .overline {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: var(--green);
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: 80px;
+      font-weight: 900;
+      line-height: 0.95;
+      letter-spacing: -3px;
+      margin-bottom: 24px;
+      color: var(--white);
+    }
+    .hero h1 .accent { color: var(--green); }
+    .hero p {
+      font-size: 20px;
+      color: rgba(255,255,255,0.5);
+      max-width: 500px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+    }
+    .hero-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--green); color: var(--black); }
+    .btn-primary:hover { background: var(--green-bright); }
+    .btn-outline { border: 1px solid rgba(255,255,255,0.2); color: var(--white); }
+    .btn-outline:hover { border-color: var(--green); color: var(--green); }
+
+    /* SCROLLING MARQUEE */
+    .marquee-section {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 20px 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .marquee {
+      display: inline-flex;
+      gap: 48px;
+      animation: scroll 20s linear infinite;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: rgba(255,255,255,0.2);
+    }
+    .marquee .accent { color: var(--green); }
+    .marquee span { display: flex; align-items: center; gap: 48px; }
+    .marquee span::after { content: '✦'; font-size: 8px; }
+    @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* SECTION */
+    .section {
+      padding: 100px 32px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--green);
+      margin-bottom: 20px;
+    }
+    .section h2 {
+      font-size: 52px;
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -2px;
+      margin-bottom: 20px;
+    }
+    .section p { font-size: 18px; color: rgba(255,255,255,0.5); max-width: 600px; line-height: 1.6; }
+
+    /* BENTO GRID */
+    .bento {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 60px;
+    }
+    .bento-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      padding: 32px;
+      transition: border-color 0.2s, background 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .bento-card:hover { border-color: rgba(0,200,83,0.2); background: rgba(0,200,83,0.03); }
+    .bento-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--green), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .bento-card:hover::before { opacity: 0.5; }
+    .bento-card.span-2 { grid-column: span 2; }
+    .bento-card .icon { font-size: 32px; color: var(--green); margin-bottom: 20px; }
+    .bento-card h3 { font-size: 22px; font-weight: 700; margin-bottom: 8px; color: var(--white); }
+    .bento-card p { font-size: 15px; color: rgba(255,255,255,0.45); line-height: 1.6; }
+
+    /* HORIZONTAL CATEGORIES */
+    .h-cats { display: flex; gap: 0; margin-top: 60px; }
+    .h-cat {
+      flex: 1;
+      border-right: 1px solid rgba(255,255,255,0.06);
+      padding: 32px;
+      transition: background 0.2s;
+    }
+    .h-cat:last-child { border-right: none; }
+    .h-cat:hover { background: rgba(255,255,255,0.02); }
+    .h-cat .num { font-size: 11px; font-weight: 700; color: var(--green); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
+    .h-cat h3 { font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .h-cat p { font-size: 14px; color: rgba(255,255,255,0.4); line-height: 1.6; }
+
+    /* DATA DISPLAY */
+    .data-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      margin-top: 60px;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .data-item {
+      padding: 32px;
+      border-right: 1px solid rgba(255,255,255,0.06);
+      text-align: center;
+    }
+    .data-item:last-child { border-right: none; }
+    .data-number { font-size: 40px; font-weight: 900; color: var(--green); margin-bottom: 4px; }
+    .data-label { font-size: 13px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+
+    /* REVIEWS */
+    .reviews { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 60px; }
+    .review {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      padding: 32px;
+    }
+    .review .stars { color: var(--green); font-size: 14px; margin-bottom: 12px; }
+    .review blockquote { font-size: 16px; line-height: 1.7; color: rgba(255,255,255,0.7); margin-bottom: 12px; font-style: italic; }
+    .review cite { font-size: 13px; color: rgba(255,255,255,0.3); font-style: normal; font-weight: 500; }
+
+    /* HOURS BAND */
+    .hours-band {
+      padding: 80px 32px;
+      background: var(--green);
+      color: var(--black);
+    }
+    .hours-band-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .hours-band h2 { font-size: 48px; font-weight: 900; letter-spacing: -2px; margin-bottom: 8px; }
+    .hours-band p { color: rgba(0,0,0,0.55); font-size: 16px; }
+    .hours-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
+    .hour-item { padding: 20px; border: 1px solid rgba(0,0,0,0.1); }
+    .hour-item .day { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+    .hour-item .time { font-size: 18px; font-weight: 800; }
+
+    /* CONTACT */
+    .contact-section { padding: 100px 32px; text-align: center; }
+    .contact-section h2 { font-size: 60px; font-weight: 900; letter-spacing: -2px; margin-bottom: 20px; }
+    .contact-section p { font-size: 18px; color: rgba(255,255,255,0.5); margin: 0 auto 40px; max-width: 500px; }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 64px 32px 32px;
+    }
+    .footer-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    footer h4 { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: rgba(255,255,255,0.3); margin-bottom: 16px; }
+    footer ul { list-style: none; }
+    footer li { margin-bottom: 10px; }
+    footer a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+    footer a:hover { color: var(--green); }
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      color: rgba(255,255,255,0.3);
+    }
+
+    /* REVEAL */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 44px; letter-spacing: -1.5px; }
+      .hero p { font-size: 16px; }
+      .section { padding: 64px 24px; }
+      .section h2 { font-size: 36px; letter-spacing: -1px; }
+      .bento { grid-template-columns: 1fr; }
+      .bento-card.span-2 { grid-column: span 1; }
+      .h-cats { flex-direction: column; }
+      .h-cat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); padding: 24px; }
+      .h-cat:last-child { border-bottom: none; }
+      .data-row { grid-template-columns: repeat(2, 1fr); }
+      .data-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+      .data-item:last-child { border-bottom: none; }
+      .reviews { grid-template-columns: 1fr; }
+      .hours-band-inner { grid-template-columns: 1fr; }
+      .hours-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-section h2 { font-size: 36px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--black); flex-direction: column; padding: 80px 32px; gap: 24px; }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: block; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#" class="logo"><i class="fas fa-leaf"></i> Green Spot</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#products">Products</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="tel:7195896362" style="color: var(--green);">(719) 589-6362</a></li>
+    </ul>
+    <button class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')"><i class="fas fa-bars"></i></button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" style="background-image: url('images/hero-design-5-dark.png'); background-size: cover; background-position: center;">
+    <div style="position:absolute;inset:0;background:rgba(0,0,0,0.5);"></div>
+    <div class="hero-content" style="position:relative;z-index:1;">
+      <div class="overline reveal">Alamosa, Colorado — Est. 2000</div>
+      <h1 class="reveal reveal-delay-1">THE <span class="accent">GREEN</span><br>SPOT</h1>
+      <p class="reveal reveal-delay-2">San Luis Valley's locally owned garden center. Plants, supplies, and expert advice — all under one roof.</p>
+      <div class="hero-actions reveal reveal-delay-3">
+        <a href="#products" class="btn btn-primary">Explore Products</a>
+        <a href="#contact" class="btn btn-outline">Find Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-section">
+    <div class="marquee">
+      <span><span class="accent">Houseplants</span></span>
+      <span><span class="accent">Annuals</span></span>
+      <span><span class="accent">Perennials</span></span>
+      <span><span class="accent">Trees</span></span>
+      <span><span class="accent">Vegetables</span></span>
+      <span><span class="accent">Water-Wise</span></span>
+      <span><span class="accent">Supplies</span></span>
+      <span><span class="accent">Antiques</span></span>
+      <span><span class="accent">Kitchen</span></span>
+      <span><span class="accent">Houseplants</span></span>
+      <span><span class="accent">Annuals</span></span>
+      <span><span class="accent">Perennials</span></span>
+      <span><span class="accent">Trees</span></span>
+      <span><span class="accent">Vegetables</span></span>
+      <span><span class="accent">Water-Wise</span></span>
+      <span><span class="accent">Supplies</span></span>
+      <span><span class="accent">Antiques</span></span>
+      <span><span class="accent">Kitchen</span></span>
+    </div>
+  </div>
+
+  <!-- BENTO PRODUCTS -->
+  <section class="section" id="products">
+    <div class="container">
+      <div class="section-label reveal">Products</div>
+      <h2 class="reveal">What We Carry</h2>
+      <p class="reveal">Every product selected for the San Luis Valley's unique growing conditions.</p>
+      <div class="bento">
+        <div class="bento-card span-2 reveal">
+          <div class="icon"><i class="fas fa-leaf"></i></div>
+          <h3>Living Plants</h3>
+          <p>From houseplants to full-season outdoor gardeners — we stock annuals, perennials, vegetable plugs, and a curated selection of trees and shrubs built for high-altitude gardening. Ruthie Brown personally selects every variety for valley compatibility.</p>
+        </div>
+        <div class="bento-card reveal reveal-delay-1">
+          <div class="icon"><i class="fas fa-mountain"></i></div>
+          <h3>Water-Wise</h3>
+          <p>Native and drought-tolerant species. Expert landscaping guidance.</p>
+        </div>
+        <div class="bento-card reveal">
+          <div class="icon"><i class="fas fa-tools"></i></div>
+          <h3>Supplies</h3>
+          <p>Potting soil, mulch, fertilizers, tools, and everything you need.</p>
+        </div>
+        <div class="bento-card reveal reveal-delay-1">
+          <div class="icon"><i class="fas fa-store"></i></div>
+          <h3>Antiques</h3>
+          <p>Unique collectibles, antiques, and character pieces.</p>
+        </div>
+        <div class="bento-card span-2 reveal reveal-delay-2">
+          <div class="icon"><i class="fas fa-utensils"></i></div>
+          <h3>Kitchen Store</h3>
+          <p>Quality kitchen gadgets, baking essentials, and useful finds. A surprising and delightful complement to our plant selection — stop by to see what's new.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HORIZONTAL CATEGORIES -->
+  <section class="section">
+    <div class="container">
+      <div class="section-label reveal">Categories</div>
+      <h2 class="reveal">Browse by Type</h2>
+      <div class="h-cats">
+        <div class="h-cat reveal">
+          <div class="num">01</div>
+          <h3>Indoor Plants</h3>
+          <p>Succulents, tropicals, ferns, cacti, and statement plants for every room.</p>
+        </div>
+        <div class="h-cat reveal reveal-delay-1">
+          <div class="num">02</div>
+          <h3>Seasonal Blooms</h3>
+          <p>Annuals that bring color all season, perennials that come back year after year.</p>
+        </div>
+        <div class="h-cat reveal reveal-delay-2">
+          <div class="num">03</div>
+          <h3>Trees & Fruit</h3>
+          <p>Ornamental and fruit trees selected for Colorado's short growing season.</p>
+        </div>
+        <div class="h-cat reveal reveal-delay-3">
+          <div class="num">04</div>
+          <h3>Garden Tools</h3>
+          <p>Quality tools, soil amendments, mulch, fertilizers, and irrigation supplies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DATA ROW -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-label reveal">By the Numbers</div>
+      <h2 class="reveal">Trusted by the Valley</h2>
+      <div class="data-row">
+        <div class="data-item reveal"><div class="data-number">4.5</div><div class="data-label">Star Rating</div></div>
+        <div class="data-item reveal reveal-delay-1"><div class="data-number">143+</div><div class="data-label">Reviews</div></div>
+        <div class="data-item reveal reveal-delay-2"><div class="data-number">25+</div><div class="data-label">Years</div></div>
+        <div class="data-item reveal reveal-delay-3"><div class="data-number">6</div><div class="data-label">Days / Week</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="section" id="reviews">
+    <div class="container">
+      <div class="section-label reveal">Reviews</div>
+      <h2 class="reveal">Valley Locals Speak</h2>
+      <div class="reviews">
+        <div class="review reveal">
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <blockquote>"I really like the Green Spot! Great selection and the staff always has good advice for valley gardening conditions."</blockquote>
+          <cite>— Local Valley Gardener</cite>
+        </div>
+        <div class="review reveal reveal-delay-1">
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <blockquote>"Talk to Ruthie at the Green Spot and you'll find someone who truly knows plants. She helped me find water-wise alternatives for my landscape."</blockquote>
+          <cite>— Valley Community Member</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOURS -->
+  <div class="hours-band">
+    <div class="hours-band-inner">
+      <div>
+        <h2 class="reveal">Hours</h2>
+        <p class="reveal">Open Mon–Sat, 10 AM to 5:30 PM</p>
+      </div>
+      <div class="hours-grid reveal">
+        <div class="hour-item"><div class="day">Mon–Fri</div><div class="time">10–5:30</div></div>
+        <div class="hour-item"><div class="day">Saturday</div><div class="time">10–5:30</div></div>
+        <div class="hour-item"><div class="day">Sunday</div><div class="time">Closed</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <h2 class="reveal">Visit The Green Spot</h2>
+    <p class="reveal">711 State Avenue, Alamosa, CO 81101</p>
+    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;" class="reveal reveal-delay-1">
+      <a href="tel:7195896362" class="btn btn-primary"><i class="fas fa-phone"></i> (719) 589-6362</a>
+      <a href="https://maps.google.com/?q=711+State+Ave+Alamosa+CO+81101" target="_blank" class="btn btn-outline"><i class="fas fa-directions"></i> Get Directions</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h4>The Green Spot</h4>
+        <p>Locally owned garden center in the heart of the San Luis Valley. Serving Alamosa and the surrounding communities with quality plants, supplies, and expert high-altitude gardening advice.</p>
+      </div>
+      <div>
+        <h4>Products</h4>
+        <ul>
+          <li><a href="#">Houseplants</a></li>
+          <li><a href="#">Annuals & Perennials</a></li>
+          <li><a href="#">Trees</a></li>
+          <li><a href="#">Vegetables</a></li>
+          <li><a href="#">Water-Wise</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Store</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Hours</a></li>
+          <li><a href="#">Location</a></li>
+          <li><a href="#">Reviews</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:7195896362">(719) 589-6362</a></li>
+          <li><a href="https://www.facebook.com/p/Green-Spot-100057419269180/" target="_blank">Facebook</a></li>
+          <li><a href="https://maps.google.com/?q=711+State+Ave+Alamosa+CO+81101" target="_blank">Directions</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 The Green Spot. Alamosa, CO.</span>
+      <span>San Luis Valley, Colorado</span>
+    </div>
+  </footer>
+
+  <script>
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => observer.observe(el));
+
+    setTimeout(() => { revealEls.forEach(el => el.classList.add('visible')); }, 2500);
+
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('open');
+      });
+    });
+  </script>
+</body>
+</html>
