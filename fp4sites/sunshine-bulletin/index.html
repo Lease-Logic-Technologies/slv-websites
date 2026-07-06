@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sunshine Laundromat — Your Neighborhood Laundry</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;color:#3a2e22}
+.navbar{background:#fff8f0;padding:1rem 2rem;border-bottom:2px solid #f0c040;display:flex;justify-content:space-between;align-items:center}
+.brand{font-size:1.5rem;font-weight:700;color:#c08600}
+.brand em{font-style:normal;color:#e67e22}
+.nav-links a{color:#5a4a3a;text-decoration:none;margin-left:1.5rem;font-size:.9rem}
+.hero{background:linear-gradient(135deg,#fef9e7,#fdebd0);padding:5rem 2rem;text-align:center;border-bottom:2px solid #f0c040}
+.hero h1{font-size:2.8rem;color:#c08600;margin-bottom:1rem}
+.hero p{font-size:1.2rem;color:#6a5a4a;max-width:500px;margin:0 auto}
+.board{background:#fffdf8;padding:4rem 2rem;max-width:800px;margin:0 auto}
+.board h2{font-size:1.6rem;color:#8b6914;text-align:center;margin-bottom:2rem;padding-bottom:.5rem;border-bottom:3px double #f0c040;display:inline-block;width:100%}
+.pin{background:#fff;border:2px solid #e8dcc8;border-radius:8px;padding:1.5rem;margin-bottom:1.5rem;position:relative;box-shadow:2px 3px 8px rgba(0,0,0,.08)}
+.pin::before{content:'';position:absolute;top:-8px;left:50%;transform:translateX(-50%);width:20px;height:20px;background:#e74c3c;border-radius:50%;border:2px solid #c0392b}
+.pin h3{color:#c08600;margin-bottom:.5rem;font-size:1.1rem}
+.pin p{color:#5a4a3a;line-height:1.6}
+.pin .note{font-size:.85rem;color:#999;font-style:italic;margin-top:.5rem}
+.board .notice{background:#fef3cd;border:2px solid #f0c040;border-radius:8px;padding:1.5rem;margin-bottom:1.5rem;text-align:center}
+.board .notice strong{color:#c08600}
+.schedule{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:2rem 0}
+.schedule-box{background:#fff;border:2px solid #e8dcc8;border-radius:8px;padding:2rem;text-align:center}
+.schedule-box h3{color:#c08600;margin-bottom:1rem;font-size:1.1rem}
+.schedule-box table{width:100%;border-collapse:collapse}
+.schedule-box td{padding:.5rem;border-bottom:1px solid #eee;font-size:.95rem}
+.schedule-box td:first-child{text-align:right;font-weight:600;margin-right:1rem}
+.schedule-box td:last-child{text-align:left;color:#5a4a3a}
+.reviews-box{background:#fdf2e9;border:2px dashed #f0c040;border-radius:8px;padding:2rem;margin:2rem 0}
+.reviews-box h3{color:#8b6914;margin-bottom:1rem}
+.reviews-box .r{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px dotted #e8dcc8}
+.reviews-box .r:last-child{border:none;margin:0;padding:0}
+.reviews-box blockquote{font-style:italic;color:#5a4a3a;margin-bottom:.3rem}
+.reviews-box cite{font-size:.85rem;color:#999}
+.contact-strip{background:#f0c040;text-align:center;padding:2rem}
+.contact-strip p{color:#3a2e22;margin-bottom:.5rem}
+.contact-strip a{color:#3a2e22;font-weight:700}
+.footer{background:#3a2e22;color:#f5f0e0;text-align:center;padding:2rem;font-size:.9rem}
+.footer a{color:#f0c040;text-decoration:none}
+@media(max-width:768px){.schedule{grid-template-columns:1fr}.hero h1{font-size:2rem}}
+</style>
+</head>
+<body>
+<div class="navbar">
+<div class="brand">☀ Sunshine <em>Laundromat</em></div>
+<div class="nav-links">
+<a href="#info">Info</a>
+<a href="#hours">Hours</a>
+<a href="#reviews">Reviews</a>
+<a href="#contact">Contact</a>
+</div>
+</div>
+<div class="hero">
+<h1>Your Neighborhood Laundry</h1>
+<p>A clean, welcoming self-service spot in the heart of Alamosa — right behind City Market.</p>
+</div>
+<div class="board" id="info">
+<h2>☁ Community Bulletin ☁</h2>
+<div class="notice">
+<strong>📢 New machines installed!</strong><br>
+Check out our big-capacity washers — perfect for comforters and bulky items. Just $7.50 per load.
+</div>
+<div class="pin">
+<h3>Pricing</h3>
+<p>Small washer: <strong>$5.00</strong> per load</p>
+<p>Large washer: <strong>$7.50</strong> per load</p>
+<p>Dryers: <strong>25¢</strong> / 2 minutes ($1 = 8 min)</p>
+<p class="note">Change machine available on site!</p>
+</div>
+<div class="pin">
+<h3>What People Say</h3>
+<p>"Nice laundry. Not fancy but clean with good prices."</p>
+<p class="note">— Yelp Review</p>
+</div>
+<div class="pin">
+<h3>Amenities</h3>
+<p>✅ Change machine on site</p>
+<p>✅ Staffed office — someone's always here</p>
+<p>✅ New washers with big capacity</p>
+<p>✅ Great for a quick stop while you shop nearby</p>
+</div>
+</div>
+<div class="board" id="hours">
+<h2>☁ Hours & Location ☁</h2>
+<div class="schedule">
+<div class="schedule-box">
+<h3>Hours</h3>
+<table>
+<tr><td>Mon – Fri</td><td>7:00 AM – 9:00 PM</td></tr>
+<tr><td>Saturday</td><td>7:00 AM – 9:00 PM</td></tr>
+<tr><td>Sunday</td><td>8:00 AM – 8:00 PM</td></tr>
+</table>
+</div>
+<div class="schedule-box">
+<h3>Getting Here</h3>
+<table>
+<tr><td>Address:</td><td>217 Market St</td></tr>
+<tr><td>City:</td><td>Alamosa, CO 81101</td></tr>
+<tr><td>Phone:</td><td><a href="tel:7195895254">(719) 589-5254</a></td></tr>
+<tr><td>Landmark:</td><td>Behind City Market</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="board" id="reviews">
+<div class="reviews-box">
+<h3>⭐ Local Reviews</h3>
+<div class="r">
+<blockquote>"Laundromat was clean and reasonably priced to do our laundry while laid over in Alamosa."</blockquote>
+<cite>— Yelp Reviewer</cite>
+</div>
+<div class="r">
+<blockquote>"They have some new washers and they r big. Great for big loads."</blockquote>
+<cite>— Local Facebook Community</cite>
+</div>
+</div>
+</div>
+<div class="contact-strip" id="contact">
+<p>📍 217 Market St, Alamosa, CO 81101</p>
+<p>📞 <a href="tel:7195895254">(719) 589-5254</a></p>
+</div>
+<div class="footer">
+<p>Sunshine Laundromat · Alamosa, Colorado</p>
+<p>Behind City Market, near Ortega Middle School</p>
+</div>
+</body>
+</html>

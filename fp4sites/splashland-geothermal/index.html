@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Splashland Hot Springs — Alamosa's Natural Geothermal Pool Since 1955</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;color:#2d2a26;background:#faf8f5}
+.navbar{background:linear-gradient(90deg,#5c3d2e,#7a5c4f);padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10;box-shadow:0 2px 20px rgba(0,0,0,.15)}
+.brand{font-size:1.6rem;font-weight:800;color:#f5e6d3;letter-spacing:1px}
+.brand span{color:#ff9f43}
+.nav-links a{color:#e8d5c4;text-decoration:none;margin-left:2rem;font-size:.9rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:#ff9f43}
+.hero{background:linear-gradient(135deg,#3d2b1f 0%,#5c3d2e 30%,#8b6914 70%,#d4a017 100%);padding:6rem 2rem;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 50% 80%,rgba(212,160,23,.3) 0%,transparent 60%)}
+.hero h1{font-size:3.2rem;color:#fff;margin-bottom:1rem;position:relative;text-shadow:2px 2px 4px rgba(0,0,0,.3)}
+.hero p{font-size:1.3rem;color:#f5e6d3;max-width:600px;margin:0 auto;position:relative;line-height:1.6}
+.steam{position:absolute;font-size:3rem;opacity:.15;animation:rise 4s ease-in infinite}
+@keyframes rise{0%{transform:translateY(0);opacity:.15}100%{transform:translateY(-40px);opacity:0}}
+.steam:nth-child(1){left:20%;top:40%;animation-delay:0s}
+.steam:nth-child(2){left:50%;top:50%;animation-delay:1.5s}
+.steam:nth-child(3){left:75%;top:45%;animation-delay:3s}
+.section{padding:4rem 2rem;max-width:900px;margin:0 auto}
+.section h2{font-size:2rem;color:#5c3d2e;margin-bottom:1.5rem;text-align:center;position:relative}
+.section h2::after{content:'';display:block;width:60px;height:3px;background:linear-gradient(90deg,#d4a017,#8b6914);margin:1rem auto 0;border-radius:2px}
+.history-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem}
+.history-card{background:#fff;border-radius:12px;padding:2rem;box-shadow:0 4px 15px rgba(0,0,0,.06);border-left:4px solid #8b6914}
+.history-card h3{color:#7a5c4f;margin-bottom:.75rem;font-size:1.2rem}
+.history-card p{color:#5a534a;line-height:1.7}
+.amenities{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem}
+.amenity{background:#fff;border-radius:12px;padding:2rem;text-align:center;box-shadow:0 4px 15px rgba(0,0,0,.06);transition:transform .2s,box-shadow .2s}
+.amenity:hover{transform:translateY(-4px);box-shadow:0 8px 25px rgba(0,0,0,.1)}
+.amenity .icon{font-size:2.5rem;margin-bottom:1rem}
+.amenity h3{color:#5c3d2e;margin-bottom:.5rem;font-size:1.1rem}
+.amenity p{color:#6a6356;font-size:.9rem;line-height:1.5}
+.schedule{background:linear-gradient(135deg,#5c3d2e,#7a5c4f);border-radius:12px;padding:2.5rem;color:#fff;margin-top:2rem}
+.schedule h3{font-size:1.4rem;margin-bottom:1.5rem;text-align:center;color:#f5e6d3}
+.schedule-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.schedule-item{background:rgba(255,255,255,.1);border-radius:8px;padding:1rem 1.25rem}
+.schedule-item strong{color:#ff9f43;display:block;margin-bottom:.25rem}
+.schedule-item span{color:#e8d5c4;font-size:.9rem}
+.contact-strip{background:linear-gradient(90deg,#d4a017,#8b6914);padding:3rem 2rem;text-align:center}
+.contact-strip h2{color:#fff;margin-bottom:1rem;position:relative}
+.contact-strip h2::after{display:none}
+.contact-strip p{color:#fff;font-size:1.1rem;margin-bottom:.5rem}
+.contact-strip a{color:#fff;font-weight:700;text-decoration:underline}
+.footer{background:#3d2b1f;color:#c4b399;text-align:center;padding:2rem;font-size:.85rem}
+.footer a{color:#d4a017;text-decoration:none}
+@media(max-width:768px){.history-grid,.amenities,.schedule-grid{grid-template-columns:1fr}.hero h1{font-size:2.2rem}.nav-links a{margin-left:1rem;font-size:.8rem}}
+</style>
+</head>
+<body>
+<nav class="navbar">
+<div class="brand">Splash<span>land</span> Hot Springs</div>
+<div class="nav-links">
+<a href="#history">History</a>
+<a href="#amenities">Amenities</a>
+<a href="#schedule">Schedule</a>
+<a href="#visit">Visit</a>
+</div>
+</nav>
+<header class="hero">
+<div class="steam">💨</div>
+<div class="steam">💨</div>
+<div class="steam">💨</div>
+<h1>104&deg; Water. 1955. Alamosa.</h1>
+<p>A natural geothermal hot spring pool that has been warming families in the San Luis Valley for over 70 years.</p>
+</header>
+
+<section class="section" id="history">
+<h2>Born From the Earth</h2>
+<div class="history-grid">
+<div class="history-card">
+<h3>🌋 The Discovery</h3>
+<p>In 1955, the founders of Splashland were drilling for oil on the site and struck an unexpected geothermal pocket — hot water flowing at 104&deg;F straight from the earth. They turned a drilling accident into a family legacy that endures to this day.</p>
+</div>
+<div class="history-card">
+<h3>🌡️ Nature Heats the Pool</h3>
+<p>The geothermal water enters the pool at a constant 104&deg;F year-round. Temperatures average 88&ndash;96&deg;F across the pool — naturally heated, no boilers needed. It's the San Luis Valley's hidden geothermal treasure.</p>
+</div>
+</div>
+</section>
+
+<section class="section" id="amenities">
+<h2>What's Waiting For You</h2>
+<div class="amenities">
+<div class="amenity">
+<div class="icon">🎢</div>
+<h3>3 Water Slides</h3>
+<p>Family-friendly slides for all ages. The thrill of hot water riding.</p>
+</div>
+<div class="amenity">
+<div class="icon">🏊</div>
+<h3>Lap Lanes</h3>
+<p>Dedicated lap swimming lanes for a serious workout in warm water. Mon&ndash;Fri 6&ndash;9 AM.</p>
+</div>
+<div class="amenity">
+<div class="icon">🤿</div>
+<h3>Diving Board</h3>
+<p>Classic diving board over naturally warm water. A San Luis Valley tradition.</p>
+</div>
+<div class="amenity">
+<div class="icon">🏋️</div>
+<h3>Water Aerobics</h3>
+<p>Low-impact, high-benefit exercise in warm water. Classes available seasonally.</p>
+</div>
+<div class="amenity">
+<div class="icon">👶</div>
+<h3>Parent&ndash;Tot Classes</h3>
+<p>Gentle introduction to the water for little ones and their parents.</p>
+</div>
+<div class="amenity">
+<div class="icon">🎓</div>
+<h3>Swim Lessons</h3>
+<p>Professional instruction for all ages and skill levels. Mon&ndash;Thu 9&ndash;11 AM.</p>
+</div>
+</div>
+</section>
+
+<section class="section" id="schedule">
+<h2>Hours &amp; Schedule</h2>
+<div class="schedule">
+<h3>Season: Late May &mdash; Mid September</h3>
+<div class="schedule-grid">
+<div class="schedule-item">
+<strong>Lap Swim</strong>
+<span>Mon &ndash; Fri, 6:00 &ndash; 9:00 AM</span>
+</div>
+<div class="schedule-item">
+<strong>Swim Lessons</strong>
+<span>Mon &ndash; Thu, 9:00 &ndash; 11:00 AM</span>
+</div>
+<div class="schedule-item">
+<strong>Open Swim</strong>
+<span>Mon &ndash; Sat, 12:00 PM &ndash; 7:00 PM</span>
+</div>
+<div class="schedule-item">
+<strong>Family Nights</strong>
+<span>Tue &ndash; Sat, 5:00 &ndash; 7:00 PM</span>
+</div>
+<div class="schedule-item">
+<strong>Pool Rental</strong>
+<span>After Hours 7:00 &ndash; 10:00 PM</span>
+</div>
+<div class="schedule-item">
+<strong>Closed</strong>
+<span>Sundays</span>
+</div>
+</div>
+<p style="text-align:center;margin-top:1.5rem;opacity:.8;font-size:.9rem">Reservations for cabana/table rentals required 48 hours in advance.</p>
+</div>
+</section>
+
+<section class="contact-strip" id="visit">
+<h2>Plan Your Visit</h2>
+<p>📍 5895 Highway 17, Alamosa, CO 81101 &mdash; 1 mile north of Alamosa on Colorado State Hwy 17</p>
+<p>📞 <a href="tel:7195896258">(719) 589-6258</a> &mdash; Call for prices, swim lesson schedules, and party reservations</p>
+<p style="margin-top:.75rem;font-size:.95rem">Season opening May 25th, 2026. Visit us on <a href="https://www.facebook.com/profile.php?id=100064738984369">Facebook</a> for updates.</p>
+</section>
+
+<footer class="footer">
+<p>&copy; 2026 Splashland LLC &mdash; Serving Alamosa, the San Luis Valley, and visitors from around the world since 1955.</p>
+<p style="margin-top:.5rem">Host of the Splashland Benefit Sprint Triathlon &mdash; Leg 3 of the Great Southwest Triathlon Series.</p>
+</footer>
+</body>
+</html>

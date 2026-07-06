@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B & D's — Caring Clean Laundry</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--lavender:#c8b8db;--peach:#f7d4c8;--mint:#c4dfdf;--lilac:#b8a9c9;--pink:#f2c6c2;--cream:#fdf6f0;--text:#5a4a6a}
+body{font-family:system-ui,-apple-system,sans-serif;background:var(--cream);color:var(--text)}
+.hero{background:linear-gradient(135deg,var(--lavender),var(--peach));padding:5rem 2rem;text-align:center}
+.hero h1{font-size:3rem;font-weight:800;color:var(--text);margin-bottom:.5rem}
+.hero p{font-size:1.15rem;opacity:.7}
+.content{max-width:700px;margin:0 auto;padding:3rem 2rem}
+.intro{text-align:center;margin-bottom:3rem}
+.intro h2{font-size:1.6rem;font-weight:600;margin-bottom:1rem;color:var(--lilac)}
+.intro p{font-size:1.05rem;line-height:1.8}
+.care-box{background:white;border-radius:24px;padding:2.5rem;box-shadow:0 8px 30px rgba(184,169,201,.15);margin-bottom:2rem}
+.care-box h3{font-size:1.2rem;color:var(--lilac);margin-bottom:1.5rem;text-align:center}
+.features{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.feature{padding:1.5rem;border-radius:16px;background:var(--cream)}
+.feature h4{font-size:1rem;margin-bottom:.5rem}
+.feature p{font-size:.9rem;opacity:.7}
+.pricing{background:white;border-radius:24px;padding:2.5rem;margin:2rem 0;box-shadow:0 4px 20px rgba(0,0,0,.04)}
+.pricing h3{text-align:center;font-size:1.2rem;color:var(--lilac);margin-bottom:1.5rem}
+.price-row{display:flex;justify-content:space-between;padding:.75rem 0;border-bottom:1px solid #f0e8f0;font-size:1.05rem}
+.price-row:last-child{border:none}
+.schedule{background:var(--mint);border-radius:24px;padding:2.5rem;margin:2rem 0}
+.schedule h3{text-align:center;font-size:1.2rem;margin-bottom:1.5rem;color:#3a6b6b}
+.time-grid{display:grid;gap:1rem;max-width:300px;margin:0 auto}
+.time-item{background:white;border-radius:12px;padding:1rem;display:flex;justify-content:space-between;font-size:1rem}
+.testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin:2rem 0}
+.testimonial{background:white;padding:1.5rem;border-radius:20px;text-align:center;font-size:.9rem;line-height:1.6}
+.testimonial .stars{color:var(--pink);font-size:1.2rem;margin-bottom:.5rem}
+.contact{background:var(--peach);border-radius:24px;padding:2.5rem;text-align:center;margin-top:2rem}
+.contact h3{font-size:1.2rem;margin-bottom:1rem;color:var(--text)}
+.contact .phone{font-size:1.8rem;font-weight:800;color:var(--lilac);text-decoration:none}
+.contact .address{margin-top:1rem;font-size:1rem}
+footer{text-align:center;padding:2rem;font-size:.85rem;opacity:.6;margin-top:2rem}
+@media(max-width:768px){.features,.testimonials{grid-template-columns:1fr}.hero h1{font-size:2rem}}
+</style>
+</head>
+<body>
+<div class="hero">
+<h1>💜 B & D's</h1>
+<p>Caring Clean Laundry · Alamosa, Colorado</p>
+</div>
+<div class="content">
+<div class="intro">
+<h2>Welcome to Our Home</h2>
+<p>B & D's is more than a laundromat — it's our home. We live on-site, serve our neighbors, and believe that clean laundry should come with genuine kindness. You'll always find a warm welcome here.</p>
+</div>
+<div class="care-box">
+<h3>💚 What Makes Us Different</h3>
+<div class="features">
+<div class="feature">
+<h4>🏡 We Live Here</h4>
+<p>Owners live on-site so we're always just a step away. This is our home and we treat you like family.</p>
+</div>
+<div class="feature">
+<h4>🫧 Hand Wash Available</h4>
+<p>Dedicated sink for delicates. We care about the little things too.</p>
+</div>
+<div class="feature">
+<h4>😊 Always Welcome</h4>
+<p>People here love helping. Questions, quarters, or just a chat — we're happy.</p>
+</div>
+<div class="feature">
+<h4>💲 Honest Pricing</h4>
+<p>Fair rates that respect your budget. No surprises, no hidden fees.</p>
+</div>
+</div>
+</div>
+<div class="pricing">
+<h3>💛 Our Rates</h3>
+<div class="price-row"><span>Small Load</span><strong>$5.00</strong></div>
+<div class="price-row"><span>Large Load</span><strong>$7.50</strong></div>
+<div class="price-row"><span>Dryer</span><strong>25¢ / 2 min</strong></div>
+<div class="price-row"><span>Change Machine</span><strong>FREE</strong></div>
+</div>
+<div class="schedule">
+<h3>🕐 We're Open</h3>
+<div class="time-grid">
+<div class="time-item"><span>Monday – Friday</span><span>7AM – 9PM</span></div>
+<div class="time-item"><span>Saturday</span><span>7AM – 9PM</span></div>
+<div class="time-item"><span>Sunday</span><span>8AM – 8PM</span></div>
+</div>
+</div>
+<div class="testimonials">
+<div class="testimonial">
+<div class="stars">♥♥♥</div>
+<p>"Great hours. Needed to do some laundry so stopped by."</p>
+</div>
+<div class="testimonial">
+<div class="stars">♥♥♥</div>
+<p>"The lady running B&D was very sweet and helpful."</p>
+</div>
+<div class="testimonial">
+<div class="stars">♥♥♥</div>
+<p>"Hand wash sink. Owners live on site. Very nice."</p>
+</div>
+</div>
+<div class="contact">
+<h3>Come Say Hello 👋</h3>
+<p><a href="tel:7195896441" class="phone">(719) 589-6441</a></p>
+<p class="address">510 La Veta Avenue, Alamosa, CO 81101</p>
+</div>
+</div>
+<footer>B & D's Caring Clean Laundry · Alamosa, CO</footer>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sunshine Laundromat — Alamosa's Classic Self-Service Laundry</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--pink:#FF6B8B;--teal:#1A9E8F;--cream:#FFF5E4;--charcoal:#2C2C2C;--mint:#B5EAD7;--gold:#C9956B}
+body{font-family:'Georgia','Times New Roman',serif;background:var(--cream);color:var(--charcoal)}
+.banner{background:var(--pink);color:white;text-align:center;padding:.8rem;font-size:.9rem;letter-spacing:2px;text-transform:uppercase;font-weight:bold}
+header{background:var(--cream);border-bottom:3px solid var(--teal);padding:1.5rem 2rem;display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:Impact,'Arial Black',sans-serif;font-size:2.5rem;color:var(--pink);text-shadow:2px 2px 0 var(--charcoal);letter-spacing:2px;transform:rotate(-2deg);display:inline-block}
+.logo small{font-size:.4em;display:block;color:var(--teal);letter-spacing:4px;text-transform:uppercase;font-family:sans-serif}
+nav{display:flex;gap:2rem;align-items:center}
+nav a{color:var(--charcoal);text-decoration:none;font-family:sans-serif;font-weight:700;text-transform:uppercase;font-size:.85rem;letter-spacing:1px;padding:.5rem 1rem;border:2px solid var(--charcoal);transition:all .2s}
+nav a:hover{background:var(--charcoal);color:var(--cream)}
+.hero{background:var(--teal);color:white;text-align:center;padding:6rem 2rem;position:relative}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:20px;background:repeating-linear-gradient(90deg,var(--pink) 0,var(--pink) 40px,var(--cream) 40px,var(--cream) 80px)}
+.hero h1{font-family:Impact,'Arial Black',sans-serif;font-size:3.5rem;text-transform:uppercase;letter-spacing:4px;text-shadow:3px 3px 0 var(--charcoal);margin-bottom:1rem}
+.hero .tagline{font-size:1.3rem;font-style:italic;opacity:.9}
+.stripes{background:repeating-linear-gradient(-45deg,var(--pink),var(--pink) 20px,var(--cream) 20px,var(--cream) 40px);height:30px}
+.section{padding:4rem 2rem;max-width:900px;margin:0 auto}
+.section h2{font-family:Impact,'Arial Black',sans-serif;font-size:2rem;text-transform:uppercase;letter-spacing:3px;color:var(--teal);margin-bottom:2rem;text-align:center}
+.pricing-table{width:100%;border-collapse:collapse;margin:2rem 0}
+.pricing-table th{background:var(--charcoal);color:white;padding:1rem;font-family:sans-serif;text-transform:uppercase;letter-spacing:2px;font-size:.9rem}
+.pricing-table td{padding:1rem;border-bottom:2px solid var(--cream);font-size:1.1rem}
+.pricing-table tr:nth-child(even){background:rgba(26,158,143,.08)}
+.pricing-table .highlight-row{background:var(--pink);color:white;font-weight:bold}
+.amenities{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin:2rem 0}
+.amenity{text-align:center;padding:2rem;border:3px solid var(--charcoal);background:white;position:relative}
+.amenity::before{content:'';position:absolute;top:-6px;left:-6px;right:-6px;bottom:-6px;border:2px solid var(--pink);z-index:-1}
+.amenity .icon{font-size:2.5rem;margin-bottom:1rem;display:block}
+.amenity h3{font-family:sans-serif;text-transform:uppercase;font-size:1rem;letter-spacing:1px;margin-bottom:.5rem}
+.hours-box{background:var(--charcoal);color:white;padding:2.5rem;border:4px solid var(--pink);position:relative}
+.hours-box::after{content:'✦';position:absolute;top:-20px;right:20px;font-size:2rem;color:var(--pink);animation:glow 2s ease-in-out infinite}
+@keyframes glow{0%,100%{opacity:.5;transform:scale(1)}50%{opacity:1;transform:scale(1.2)}}
+.hours-box h2{color:var(--cream);font-family:Impact,sans-serif;text-transform:uppercase;letter-spacing:3px;margin-bottom:1.5rem}
+.hours-list{font-family:sans-serif}
+.hours-list .row{display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid rgba(255,255,255,.2);font-size:1.1rem}
+.hours-list .row:last-child{border:none}
+.reviews-section{background:white;border:3px solid var(--charcoal);padding:3rem;margin:2rem 0}
+.review{border:2px solid var(--teal);padding:1.5rem;margin-bottom:1rem;position:relative}
+.review::before{content:'"';font-size:4rem;color:var(--pink);position:absolute;top:-20px;left:10px;font-family:serif}
+.review p{font-style:italic;padding-left:2rem;font-size:1.05rem}
+.review .stars{color:var(--pink);margin-left:2rem;display:block;margin-top:.5rem}
+.cta-banner{background:var(--pink);color:white;text-align:center;padding:3rem;border:4px solid var(--charcoal)}
+.cta-banner h2{font-family:Impact,sans-serif;text-transform:uppercase;font-size:2.2rem;margin-bottom:1rem}
+.cta-btn{display:inline-block;background:var(--charcoal);color:white;padding:1rem 3rem;text-decoration:none;font-family:sans-serif;font-weight:bold;text-transform:uppercase;letter-spacing:2px;border:3px solid var(--charcoal);margin-top:1rem;transition:all .2s}
+.cta-btn:hover{background:var(--teal);border-color:var(--teal)}
+footer{background:var(--charcoal);color:var(--cream);text-align:center;padding:2rem;font-family:sans-serif}
+footer a{color:var(--pink);text-decoration:none}
+@media(max-width:768px){.hero h1{font-size:2rem}.amenities{grid-template-columns:1fr}header{flex-direction:column;gap:1rem}nav{flex-wrap:wrap;justify-content:center}}
+</style>
+</head>
+<body>
+<div class="banner">☀ Now Open — Self-Service Laundry in Alamosa ☀</div>
+<header>
+<div class="logo">SUNSHINE<small>Launderette</small></div>
+<nav>
+<a href="#pricing">Prices</a>
+<a href="#about">About</a>
+<a href="#contact">Visit</a>
+</nav>
+</header>
+<section class="hero">
+<h1>Sunshine<br>Laundromat</h1>
+<p class="tagline">Where Clean Meets Classic — Serving Alamosa's Laundry Needs Since Day One</p>
+</section>
+<div class="stripes"></div>
+<section class="section" id="pricing">
+<h2>Our Prices</h2>
+<table class="pricing-table">
+<tr><th>Service</th><th>Price</th><th>Details</th></tr>
+<tr class="highlight-row"><td>Small Load Wash</td><td>$5.00</td><td>Perfect for everyday loads</td></tr>
+<tr><td>Large Load Wash</td><td>$7.50</td><td>New big-capacity machines</td></tr>
+<tr><td>Standard Dryer</td><td>25¢ / 2 min</td><td>$1 for 8 full minutes</td></tr>
+<tr><td>Change Machine</td><td>FREE</td><td>On-site quarters available</td></tr>
+</table>
+</section>
+<div class="stripes"></div>
+<section class="section" id="about">
+<h2>Why Sunshine?</h2>
+<div class="amenities">
+<div class="amenity">
+<span class="icon">🔄</span>
+<h3>New Machines</h3>
+<p>Recently upgraded washers handle any load size. Big loads? We've got you covered.</p>
+</div>
+<div class="amenity">
+<span class="icon">💲</span>
+<h3>Fair Prices</h3>
+<p>No hidden fees. 25 cents buys 8 minutes in the dryers. Simple and honest.</p>
+</div>
+<div class="amenity">
+<span class="icon">🏠</span>
+<h3>Community Spot</h3>
+<p>Behind City Market, right near Ortega Middle School. A neighborhood staple.</p>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="hours-box">
+<h2>Hours of Operation</h2>
+<div class="hours-list">
+<div class="row"><span>Monday – Friday</span><span>7:00 AM – 9:00 PM</span></div>
+<div class="row"><span>Saturday</span><span>7:00 AM – 9:00 PM</span></div>
+<div class="row"><span>Sunday</span><span>8:00 AM – 8:00 PM</span></div>
+</div>
+</div>
+</section>
+<section class="section">
+<h2>Local Love</h2>
+<div class="reviews-section">
+<div class="review">
+<p>Laundromat was clean and reasonably priced to do our laundry while laid over in Alamosa.</p>
+<span class="stars">★★★★☆</span>
+</div>
+<div class="review">
+<p>They have some new washers and they r big. Great for comforters!</p>
+<span class="stars">★★★★☆</span>
+</div>
+</div>
+</section>
+<div class="cta-banner" id="contact">
+<h2>Stop On By Today!</h2>
+<p>We're behind City Market on Market Street. Plenty of parking.</p>
+<a href="tel:7195895254" class="cta-btn">Call (719) 589-5254</a>
+<p style="margin-top:1.5rem;font-size:.9rem">217 Market St, Alamosa, CO 81101</p>
+</div>
+<footer>
+<p>☀ Sunshine Launderette — Alamosa, Colorado ☀</p>
+<p>📞 <a href="tel:7195895254">(719) 589-5254</a> &nbsp;|&nbsp; 217 Market St, Alamosa, CO 81101</p>
+</footer>
+</body>
+</html>

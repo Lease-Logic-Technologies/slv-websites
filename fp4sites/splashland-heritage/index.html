@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Splashland Hot Springs — Alamosa's Community Heritage Since 1955</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Georgia','Times New Roman',serif;color:#3d3229;background:#faf6f0}
+.navbar{background:#fff;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #e8e0d4;position:sticky;top:0;z-index:10;box-shadow:0 1px 8px rgba(0,0,0,.04)}
+.brand{font-size:1.3rem;color:#5a4a3a;letter-spacing:1px}
+.brand span{color:#c0392b;font-style:italic}
+.nav-links a{color:#8a7a6a;text-decoration:none;margin-left:1.5rem;font-size:.8rem;letter-spacing:1px;transition:color .2s;font-style:normal}
+.nav-links a:hover{color:#c0392b}
+.hero{background:linear-gradient(180deg,#3d2b1f 0%,#5a3d2e 40%,#7a5c4f 100%);padding:5rem 2rem 4rem;text-align:center;position:relative}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 30 Q15 15 30 30 Q45 45 60 30' fill='none' stroke='rgba(255,255,255,0.03)' stroke-width='1'/%3E%3C/svg%3E")}
+.hero h1{font-size:2.5rem;color:#f5e6d3;margin-bottom:1rem;position:relative;font-weight:400;font-style:italic}
+.hero p{font-size:1.1rem;color:rgba(245,230,211,.7);max-width:550px;margin:0 auto;position:relative;line-height:1.7;font-style:normal}
+.ornament{text-align:center;margin:2rem 0;position:relative;font-size:1.5rem;opacity:.3;color:#d4a017}
+.section{padding:4rem 2rem;max-width:800px;margin:0 auto}
+.section h2{font-size:1.6rem;color:#5a3d2e;margin-bottom:1.5rem;text-align:center;font-style:italic;font-weight:400;position:relative}
+.section h2::before,.section h2::after{content:'\2014';color:#d4c5b0;margin:0 .5rem;font-weight:300}
+.history-block{background:#fff;border:1px solid #e8e0d4;border-radius:8px;padding:2.5rem;margin-bottom:2rem;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.history-block p{color:#5a534a;line-height:1.85;font-size:1rem;margin-bottom:1rem}
+.history-block p:last-child{margin-bottom:0}
+.history-block .quote{border-left:3px solid #d4a017;padding-left:1.25rem;margin:1.5rem 0;font-style:italic;color:#7a6a5a;font-size:.95rem}
+.timeline{position:relative;padding-left:2rem;margin-top:2rem}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(180deg,#d4a017,#c0392b)}
+.timeline-item{position:relative;padding:0 0 2rem 1.5rem}
+.timeline-item::before{content:'';position:absolute;left:-1.65rem;top:.4rem;width:10px;height:10px;border-radius:50%;background:#d4a017;border:2px solid #faf6f0}
+.timeline-item:last-child{padding-bottom:0}
+.timeline-item .year{font-size:.8rem;color:#d4a017;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:.25rem}
+.timeline-item .desc{color:#5a534a;line-height:1.6;font-size:.95rem}
+.amenity-list{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
+.amenity-item{background:#fff;border:1px solid #e8e0d4;border-radius:8px;padding:1.5rem;display:flex;gap:1rem;align-items:flex-start}
+.amenity-item .a-icon{font-size:1.5rem;flex-shrink:0;margin-top:.1rem}
+.amenity-item h3{font-size:1rem;color:#5a3d2e;margin-bottom:.35rem;font-style:italic;font-weight:400}
+.amenity-item p{color:#7a6a5a;font-size:.85rem;line-height:1.5;font-style:normal}
+.community{background:linear-gradient(135deg,#f5f0e8,#ede4d6);border-radius:8px;padding:2.5rem;margin-top:2rem;text-align:center}
+.community p{color:#5a534a;line-height:1.8;font-size:.95rem;max-width:600px;margin:0 auto}
+.community .highlight{color:#c0392b;font-weight:600;font-style:italic}
+.hours-table{width:100%;border-collapse:collapse;margin-top:1.5rem;font-size:.9rem}
+.hours-table th{text-align:left;color:#d4a017;font-weight:700;font-size:.75rem;letter-spacing:1px;text-transform:uppercase;padding:.75rem 1rem;border-bottom:2px solid #d4a017}
+.hours-table td{padding:.75rem 1rem;border-bottom:1px solid #e8e0d4;color:#5a534a}
+.hours-table tr:hover{background:rgba(212,160,23,.04)}
+.reviews{margin-top:2rem}
+.review{background:#fff;border:1px solid #e8e0d4;border-radius:8px;padding:1.5rem;margin-bottom:1rem}
+.review .stars{color:#d4a017;margin-bottom:.5rem;font-size:.9rem}
+.review blockquote{color:#5a534a;font-style:italic;line-height:1.7;font-size:.95rem;margin-bottom:.5rem}
+.review cite{font-size:.8rem;color:#999;font-style:normal}
+.contact-box{background:#5a3d2e;border-radius:8px;padding:2.5rem;text-align:center;color:#f5e6d3;margin-top:2rem}
+.contact-box h2{color:#f5e6d3;margin-bottom:1rem;font-size:1.4rem}
+.contact-box h2::before,.contact-box h2::after{content:''}
+.contact-box p{color:rgba(245,230,211,.7);line-height:1.7;margin-bottom:.5rem}
+.contact-box a{color:#d4a017;text-decoration:none;font-weight:600}
+.footer{background:#3d2b1f;color:#9a8a7a;text-align:center;padding:2.5rem;font-size:.8rem;line-height:1.7}
+.footer strong{color:#d4a017;font-weight:400;font-style:italic}
+@media(max-width:768px){.amenity-list{grid-template-columns:1fr}.hero h1{font-size:1.8rem}.nav-links a{font-size:.7rem;margin-left:1rem}}
+</style>
+</head>
+<body>
+<nav class="navbar">
+<div class="brand"><span>Splash</span>land Hot Springs</div>
+<div class="nav-links">
+<a href="#heritage">Heritage</a>
+<a href="#experience">Experience</a>
+<a href="#schedule">Schedule</a>
+<a href="#visit">Visit</a>
+</div>
+</nav>
+<header class="hero">
+<h1>A San Luis Valley Tradition<br>Since 1955</h1>
+<p>For more than seven decades, Splashland has been where Alamosa comes to swim, connect, and celebrate summer in naturally warm geothermal water.</p>
+<div class="ornament">\2766</div>
+</header>
+
+<section class="section" id="heritage">
+<h2>Our Heritage</h2>
+<div class="history-block">
+<p>Splashland Hot Springs Swimming Pool began in <strong>1955</strong> when the founders were drilling for oil on the site and struck an unexpected geothermal pocket of water &mdash; flowing at 104\&deg;F straight from the earth beneath the San Luis Valley.</p>
+<p>What could have been a geological curiosity became something enduring. They turned a drilling accident into a family-run swimming pool that has served Alamosa, the entire San Luis Valley, and visitors from across the country and around the world ever since.</p>
+<div class="quote">"The water enters the pool at 104\&deg;F year-round with average temperatures ranging 88&ndash;96\&deg;F pool wide." &mdash; Splashland Hot Springs</div>
+<p>Today, Splashland remains a community institution. It is where families come for their first swim lessons. Where retirees come for morning laps. Where out-of-state visitors discover that Colorado has something most people don't know about: a natural hot spring swimming pool.</p>
+</div>
+
+<h2>A Brief Timeline</h2>
+<div class="timeline">
+<div class="timeline-item">
+<div class="year">1955</div>
+<div class="desc">Geothermal water discovered while drilling for oil on the site. Splashland is born from the find.</div>
+</div>
+<div class="timeline-item">
+<div class="year">1955&ndash;1990s</div>
+<div class="desc">Generations of Alamosa families grow up with Splashland as their summer destination.</div>
+</div>
+<div class="timeline-item">
+<div class="year">Ongoing</div>
+<div class="desc">Splashland hosts the Benefit Sprint Triathlon, Leg 3 of the Great Southwest Triathlon Series, drawing athletes from across Colorado.</div>
+</div>
+</div>
+</section>
+
+<section class="section" id="experience">
+<h2>The Experience</h2>
+<div class="amenity-list">
+<div class="amenity-item">
+<div class="a-icon">\26F3\0FE0F</div>
+<div><h3>Three Water Slides</h3><p>Family fun on naturally heated water. A classic Colorado summer experience.</p></div>
+</div>
+<div class="amenity-item">
+<div class="a-icon">\26F5\0FE0F</div>
+<div><h3>Diving Board</h3><p>Classic aluminum board over 104\&deg; geothermal water. Dive like the locals.</p></div>
+</div>
+<div class="amenity-item">
+<div class="a-icon">\1F3CA\0FE0F</div>
+<div><h3>Lap Lanes</h3><p>Quiet morning laps Mon&ndash;Fri 6&ndash;9 AM. Serious exercise in warm water.</p></div>
+</div>
+<div class="amenity-item">
+<div class="a-icon">\1F487\0FE0F</div>
+<div><h3>Water Aerobics</h3><p>Low-impact therapy and exercise in naturally warm water.</p></div>
+</div>
+<div class="amenity-item">
+<div class="a-icon">\1F476\0FE0F</div>
+<div><h3>Swim Lessons</h3><p>Professional instruction for all ages, Mon&ndash;Thu 9&ndash;11 AM.</p></div>
+</div>
+<div class="amenity-item">
+<div class="a-icon">\1F468\u200D\1F467\u200D\1F467\u200D\1F466</div>
+<div><h3>Parent&ndash;Tot</h3><p>Gentle first-water experiences for little ones and their parents.</p></div>
+</div>
+</div>
+
+<div class="reviews">
+<h2>What People Say</h2>
+<div class="review">
+<div class="stars">\2605\2605\2605\2605\2605</div>
+<blockquote>"It was perfect for us and as my 8 year old grandson stated 'it's the best pool ever!' Very clean and well run with nice locker rooms and amenities. You guys do it right and make a lot of happy faces."</blockquote>
+<cite>\u2014 Thomas B., TripAdvisor (July 2022)</cite>
+</div>
+<div class="review">
+<div class="stars">\2606\2606\2606\2606\2606</div>
+<blockquote>"After visiting the Sand Dunes National Park and Colorado Gator Reptile Park, we luckily found Splashland Hot Springs on Hwy 17. Great place for families."</blockquote>
+<cite>\u2014 Local Tourism Review</cite>
+</div>
+</div>
+</section>
+
+<section class="section" id="schedule">
+<h2>Season Schedule</h2>
+<p style="text-align:center;color:#888;font-size:.9rem;margin-bottom:1.5rem">Open Late May through Mid September &bull; Alamosa, Colorado</p>
+<table class="hours-table">
+<thead><tr><th>Activity</th><th>When</th><th>Details</th></tr></thead>
+<tbody>
+<tr><td>Lap Swim</td><td>Mon&ndash;Fri</td><td>6:00&ndash;9:00 AM</td></tr>
+<tr><td>Swim Lessons</td><td>Mon&ndash;Thu</td><td>9:00&ndash;11:00 AM</td></tr>
+<tr><td>Open Swim</td><td>Mon&ndash;Sat</td><td>12:00 PM&ndash;7:00 PM</td></tr>
+<tr><td>Family Nights</td><td>Tue&ndash;Sat</td><td>5:00&ndash;7:00 PM Special Rates</td></tr>
+<tr><td>Pool Rental</td><td>Mon&ndash;Sat</td><td>After Hours 7:00&ndash;10:00 PM</td></tr>
+<tr><td>Triathlon</td><td>Mid Sept &amp; Oct</td><td>Kids &amp; Benefit Sprint events</td></tr>
+</tbody>
+</table>
+<div class="community">
+<p>Splashland is the heartbeat of Alamosa's summer culture. Family reunions. Work parties. Birthday celebrations. The Great Southwest Triathlon Series. This is a place where the <span class="highlight">community gathers</span> and makes memories that last a lifetime.</p>
+<p style="margin-top:1rem">Reservations for cabana and table rentals required 48 hours in advance. Call to reserve.</p>
+</div>
+</section>
+
+<section class="contact-box" id="visit">
+<h2>Come Visit Us</h2>
+<p>\1F4CD 5895 Highway 17, Alamosa, CO 81101</p>
+<p>\1F4DE 1 mile north of Alamosa on Colorado State Highway 17</p>
+<p>\1F4DE Call for prices and reservations: <a href="tel:7195896258">(719) 589-6258</a></p>
+<p style="margin-top:.75rem;opacity:.6;font-size:.85rem">Follow Splashland on Facebook for the latest updates and announcements.</p>
+</section>
+
+<footer class="footer">
+<p><strong>Splashland Hot Springs</strong></p>
+<p>5895 Colorado State Hwy 17, Alamosa, CO 81101</p>
+<p>(719) 589-6258 &bull; Serving the San Luis Valley since 1955</p>
+<p style="margin-top:1rem;opacity:.5">Host of the Splashland Benefit Sprint Triathlon &bull; Great Southwest Triathlon Series, Leg 3</p>
+</footer>
+</body>
+</html>

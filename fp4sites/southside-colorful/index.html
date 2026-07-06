@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Southside Suds — Colorful Clean</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--red:#ff1744;--yellow:#ffd600;--blue:#2979ff;--green:#00e676;--purple:#d500f9;--dark:#1a1a2e}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:#fff}
+.hero{background:linear-gradient(135deg,var(--red),var(--yellow),var(--blue),var(--green),var(--purple));padding:5rem 2rem;text-align:center}
+.hero h1{font-size:5rem;font-weight:900;color:#fff;text-shadow:0 0 40px rgba(0,0,0,.5),0 4px 0 #000;letter-spacing:-4px}
+.hero h1 .s{color:var(--yellow)}
+.hero p{font-size:1.2rem;color:rgba(255,255,255,.9);max-width:500px;margin:1rem auto 0;text-shadow:0 2px 4px rgba(0,0,0,.3)}
+.content{max-width:900px;margin:0 auto;padding:3rem 2rem}
+h2{font-size:2rem;font-weight:900;margin-bottom:2rem;text-align:center;letter-spacing:-1px}
+.h2-red{color:var(--red)}.h2-blue{color:var(--blue)}.h2-green{color:var(--green)}.h2-yellow{color:var(--yellow)}.h2-purple{color:var(--purple)}
+.about-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin:2rem 0}
+.about-card{padding:2rem;border-radius:20px;color:var(--dark);font-weight:600}
+.about-card:nth-child(1){background:var(--red)}
+.about-card:nth-child(2){background:var(--blue)}
+.about-card:nth-child(3){background:var(--yellow)}
+.about-card:nth-child(4){background:var(--green)}
+.about-card h3{font-size:1.3rem;margin-bottom:.75rem}
+.about-card p{font-size:.95rem;line-height:1.6}
+.pricing-section{margin:3rem 0}
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.price{background:rgba(255,255,255,.05);border:2px solid;border-radius:20px;padding:2.5rem 2rem;text-align:center}
+.price:nth-child(1){border-color:var(--red)}
+.price:nth-child(2){border-color:var(--yellow);color:var(--yellow)}
+.price:nth-child(3){border-color:var(--blue)}
+.price .amount{font-size:3rem;font-weight:900;margin-bottom:.5rem}
+.price .label{font-size:.9rem;opacity:.7}
+.hours-section{background:rgba(255,255,255,.03);border:2px solid rgba(255,255,255,.1);border-radius:20px;padding:3rem;margin:3rem 0}
+.hours-grid{display:grid;gap:1rem}
+.hour-row{display:flex;justify-content:space-between;padding:1rem 1.5rem;background:rgba(255,255,255,.05);border-radius:12px;font-size:1.1rem;font-weight:600}
+.hour-row span:first-child{color:rgba(255,255,255,.5)}
+.review{background:rgba(255,255,255,.05);border:2px solid rgba(255,255,255,.1);border-radius:20px;padding:2.5rem;margin:2rem 0;position:relative}
+.review::before{content:'';position:absolute;top:-10px;right:30px;width:20px;height:20px;background:var(--purple);border-radius:50%}
+.review p{font-size:1.1rem;line-height:1.8;font-style:italic;margin-bottom:1rem}
+.review .src{font-size:.85rem;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:2px}
+.contact-banner{background:var(--purple);text-align:center;padding:4rem 2rem;border-radius:20px;margin:3rem 0}
+.contact-banner h2{color:#fff}
+.contact-banner .phone{font-size:2.5rem;font-weight:900;color:#fff;text-decoration:none}
+.contact-banner .addr{margin-top:1rem;font-size:1.1rem;opacity:.8}
+footer{background:rgba(0,0,0,.3);text-align:center;padding:2rem;font-size:.9rem;color:rgba(255,255,255,.3);margin-top:3rem}
+@media(max-width:768px){.about-grid,.price-grid{grid-template-columns:1fr}.hero h1{font-size:3rem}.content h2{font-size:1.5rem}}
+</style>
+</head>
+<body>
+<div class="hero">
+<h1>S<span class="s">S</span> <span class="s">S</span></h1>
+<p>Southside Suds — Where color meets clean. Alamosa's vibrant self-service laundry.</p>
+</div>
+<div class="content">
+<h2 class="h2-red">Who We Are</h2>
+<div class="about-grid">
+<div class="about-card">
+<h3>⭐ Helpful Staff</h3>
+<p>Our team makes your laundry day easier. Questions? Just ask. We're here for you.</p>
+</div>
+<div class="about-card">
+<h3>✨ Impeccably Clean</h3>
+<p>Every machine wiped down before each use. We maintain the highest standards.</p>
+</div>
+<div class="about-card">
+<h3>🎨 Come As You Are</h3>
+<p>Open to everyone. A welcoming space for the whole community on Alamosa's south side.</p>
+</div>
+<div class="about-card">
+<h3>📸 Instagrammable</h3>
+<p>Share your clean! We've got Yelp photos that show off our clean interior.</p>
+</div>
+</div>
+<h2 class="h2-blue">What We Do</h2>
+<div class="price-grid">
+<div class="price"><div class="amount">$5</div><div class="label">Small Wash</div></div>
+<div class="price"><div class="amount">$7.50</div><div class="label">Large Wash</div></div>
+<div class="price"><div class="amount">25¢</div><div class="label">Dryer 2 Min</div></div>
+</div>
+<h2 class="h2-green">Hours</h2>
+<div class="hours-section">
+<div class="hours-grid">
+<div class="hour-row"><span>Monday – Friday</span><span>7AM – 9PM</span></div>
+<div class="hour-row"><span>Saturday</span><span>7AM – 9PM</span></div>
+<div class="hour-row"><span>Sunday</span><span>8AM – 8PM</span></div>
+</div>
+</div>
+<h2 class="h2-yellow">Reviews</h2>
+<div class="review">
+<p>"Great laundromat! The staff was helpful; wiping down machines before the next person used them to be sure they..."</p>
+<div class="src">— YELP</div>
+</div>
+<h2 class="h2-purple">Find Us</h2>
+<div class="contact-banner">
+<h2>804 State Avenue, Alamosa, CO 81101</h2>
+<p class="addr">South Side of Alamosa · Free Parking</p>
+</div>
+</div>
+<footer>Southside Suds © 2025 · Alamosa, Colorado</footer>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Splashland Hot Springs — Where Families Make Summer Memories</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;color:#2c3e50;background:#f0f4f8;overflow-x:hidden}
+.navbar{background:#fff;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px rgba(0,0,0,.07);position:sticky;top:0;z-index:10}
+.brand{font-size:1.5rem;font-weight:800;background:linear-gradient(135deg,#e74c3c,#f39c12);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nav-links a{color:#555;text-decoration:none;margin-left:1.5rem;font-size:.85rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px;transition:color .2s}
+.nav-links a:hover{color:#e74c3c}
+.hero{position:relative;overflow:hidden}
+.hero-bg{background:linear-gradient(135deg,#74b9ff,#a29bfe);padding:5rem 2rem 8rem;text-align:center}
+.hero-bg h1{font-size:2.8rem;color:#fff;font-weight:800;text-shadow:2px 2px 8px rgba(0,0,0,.2);margin-bottom:1rem}
+.hero-bg p{font-size:1.2rem;color:rgba(255,255,255,.9);max-width:500px;margin:0 auto}
+.wave{position:absolute;bottom:-2px;left:0;right:0;height:80px}
+.wave svg{width:100%;height:100%;display:block}
+.cards-wrap{max-width:1000px;margin:-4rem auto 0;padding:0 2rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;position:relative;z-index:2}
+.card{background:#fff;border-radius:16px;padding:2rem;box-shadow:0 8px 30px rgba(0,0,0,.08);text-align:center;transition:transform .2s}
+.card:hover{transform:translateY(-6px)}
+.card-icon{font-size:2.5rem;margin-bottom:.75rem}
+.card h3{color:#2c3e50;margin-bottom:.5rem;font-size:1.1rem}
+.card p{color:#7f8c8d;font-size:.9rem;line-height:1.6}
+.featured{padding:4rem 2rem;max-width:900px;margin:0 auto}
+.featured h2{font-size:2rem;color:#2c3e50;margin-bottom:2rem;text-align:center}
+.featured h2::before{content:''}
+.family-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}
+.family-card{background:linear-gradient(135deg,#fdedec,#fadbd8);border-radius:16px;padding:2rem;position:relative;overflow:hidden}
+.family-card.blue{background:linear-gradient(135deg,#ebf5fb,#d6eaf8)}
+.family-card h3{font-size:1.2rem;color:#2c3e50;margin-bottom:.75rem}
+.family-card p{color:#555;line-height:1.7;font-size:.95rem}
+.family-card ul{list-style:none;padding:0;margin-top:.75rem}
+.family-card li{padding:.3rem 0;color:#555;font-size:.9rem}
+.family-card li::before{content:'\2764\00a0';color:#e74c3c}
+.fun-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2rem}
+.stat{text-align:center;background:#fff;border-radius:12px;padding:1.5rem 1rem;box-shadow:0 4px 15px rgba(0,0,0,.05)}
+.stat .num{font-size:2rem;font-weight:800;color:#e74c3c}
+.stat .label{font-size:.8rem;color:#888;margin-top:.25rem;text-transform:uppercase;letter-spacing:.5px}
+.hours-strip{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.08);margin:2rem auto;max-width:700px}
+.hours-header{background:linear-gradient(90deg,#e74c3c,#f39c12);padding:1.5rem;text-align:center;color:#fff}
+.hours-header h3{font-size:1.3rem}
+.hours-body{padding:1.5rem}
+.hours-row{display:flex;justify-content:space-between;padding:.6rem 0;border-bottom:1px solid #eee;font-size:.95rem}
+.hours-row:last-child{border:none}
+.hours-row .day{font-weight:600;color:#2c3e50}
+.hours-row .time{color:#888}
+.cta{background:linear-gradient(135deg,#e74c3c,#f39c12);padding:4rem 2rem;text-align:center;color:#fff}
+.cta h2{font-size:2rem;margin-bottom:1rem}
+.cta p{font-size:1.1rem;opacity:.9;margin-bottom:1.5rem}
+.cta-btn{display:inline-block;background:#fff;color:#e74c3c;padding:1rem 2.5rem;border-radius:50px;font-weight:700;font-size:1.1rem;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 15px rgba(0,0,0,.2)}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.3)}
+.footer{background:#2c3e50;color:#bdc3c7;text-align:center;padding:2rem;font-size:.85rem}
+.footer a{color:#f39c12;text-decoration:none}
+@media(max-width:768px){.cards-wrap{grid-template-columns:1fr}.family-grid{grid-template-columns:1fr}.fun-stats{grid-template-columns:1fr 1fr}.hero-bg h1{font-size:2rem}.nav-links a{font-size:.75rem;margin-left:1rem}}
+</style>
+</head>
+<body>
+<nav class="navbar">
+<div class="brand">Splashland</div>
+<div class="nav-links">
+<a href="#fun">Fun</a>
+<a href="#for-kids">Kids</a>
+<a href="#schedule">Schedule</a>
+<a href="#visit">Visit</a>
+</div>
+</nav>
+<header class="hero">
+<div class="hero-bg">
+<h1>Where Families<br>Make Summer Memories</h1>
+<p>3 water slides. 104&deg; geothermal water. One unforgettable experience.</p>
+</div>
+<div class="wave"><svg viewBox="0 0 1200 80" preserveAspectRatio="none"><path d="M0,40 C200,80 400,0 600,40 C800,80 1000,0 1200,40 L1200,80 L0,80 Z" fill="#f0f4f8"/></svg></div>
+</header>
+<div class="cards-wrap">
+<div class="card">
+<div class="card-icon">🎢</div>
+<h3>3 Water Slides</h3>
+<p>Sliding on warm geothermal water feels different — and everyone agrees it's the best thing ever.</p>
+</div>
+<div class="card">
+<div class="card-icon">🤿</div>
+<h3>Diving Board</h3>
+<p>Classic splashdown into naturally warm water. A San Luis Valley tradition for generations.</p>
+</div>
+<div class="card">
+<div class="card-icon">👨‍👩‍👧‍👦</div>
+<h3>For Every Age</h3>
+<p>From parent-tot classes to lap lanes, Splashland has something for every member of the family.</p>
+</div>
+</div>
+
+<section class="featured" id="for-kids">
+<h2>Programs for Every Kid (and Adult)</h2>
+<div class="family-grid">
+<div class="family-card">
+<h3>👶 Parent&ndash;Tot Classes</h3>
+<p>A gentle introduction to the water for little ones. Build confidence and water safety skills in our naturally warm pool.</p>
+<ul>
+<li>Weekday mornings</li>
+<li>Small group setting</li>
+<li>104&deg; water is comfortable</li>
+<li>Parent participates with child</li>
+</ul>
+</div>
+<div class="family-card blue">
+<h3>🏊 Swim Lessons</h3>
+<p>Professional instruction for all ages and skill levels — from first splashes to advanced strokes.</p>
+<ul>
+<li>Mon &ndash; Thu, 9&ndash;11 AM</li>
+<li>All age groups welcome</li>
+<li>Group sessions available</li>
+<li>Trained instructors</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section class="featured" id="fun">
+<h2>The Numbers Say It All</h2>
+<div class="fun-stats">
+<div class="stat"><div class="num">70+</div><div class="label">Years of Service</div></div>
+<div class="stat"><div class="num">3</div><div class="label">Water Slides</div></div>
+<div class="stat"><div class="num">104&deg;</div><div class="label">Geothermal Water</div></div>
+<div class="stat"><div class="num">#6</div><div class="label">Thing to Do in Alamosa</div></div>
+</div>
+</section>
+
+<section class="featured" id="schedule">
+<h2>Summer Schedule</h2>
+<div class="hours-strip">
+<div class="hours-header">
+<h3>Season Open May &ndash; September</h3>
+</div>
+<div class="hours-body">
+<div class="hours-row"><span class="day">Lap Swim (Mon&ndash;Fri)</span><span class="time">6:00 &ndash; 9:00 AM</span></div>
+<div class="hours-row"><span class="day">Swim Lessons (Mon&ndash;Thu)</span><span class="time">9:00 &ndash; 11:00 AM</span></div>
+<div class="hours-row"><span class="day">Open Swim (Mon&ndash;Sat)</span><span class="time">12:00 PM &ndash; 7:00 PM</span></div>
+<div class="hours-row"><span class="day">Family Nights (Tue&ndash;Sat)</span><span class="time">5:00 &ndash; 7:00 PM</span></div>
+<div class="hours-row"><span class="day">After-Hours Rental</span><span class="time">7:00 &ndash; 10:00 PM</span></div>
+<div class="hours-row"><span class="day">Sunday</span><span class="time">Closed</span></div>
+</div>
+</div>
+<p style="text-align:center;color:#888;margin-top:1rem;font-size:.9rem">Reservations for cabana/table rentals required 48 hours in advance.</p>
+</section>
+
+<section class="cta" id="visit">
+<h2>Ready for Splash?</h2>
+<p>Open Swim: 12&ndash;7, Mon&ndash;Sat. Family Nights: 5&ndash;7, Tue&ndash;Sat.</p>
+<a href="tel:7195896258" class="cta-btn">Call (719) 589-6258</a>
+<p style="margin-top:1rem;font-size:.9rem;opacity:.8">📍 5895 Highway 17, Alamosa, CO &mdash; 1 mile north of town on State Hwy 17</p>
+</section>
+
+<footer class="footer">
+<p>&copy; 2026 Splashland LLC &mdash; Alamosa's family hot spring pool since 1955.</p>
+<p style="margin-top:.5rem">Also hosting the Splashland Benefit Sprint Triathlon each October.</p>
+</footer>
+</body>
+</html>

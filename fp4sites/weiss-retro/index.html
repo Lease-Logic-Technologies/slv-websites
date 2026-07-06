@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weiss Dry Cleaners — Alamosa's Neighborhood Cleaner</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--rust:#c05621;--ochre:#d69e2e;--cream:#fff5eb;--tan:#fbd38d;--dark:#744210;--text:#5c3a1e}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:var(--cream);color:var(--text)}
+.hero{background:var(--rust);padding:0;position:relative;overflow:hidden}
+.hero-inner{padding:5rem 2rem;text-align:center;position:relative;z-index:1}
+.hero::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 30px,rgba(255,255,255,.03) 30px,rgba(255,255,255,.03) 31px);pointer-events:none}
+.hero h1{font-size:3rem;font-weight:900;color:white;text-transform:uppercase;letter-spacing:3px;text-shadow:3px 3px 0 rgba(0,0,0,.2)}
+.hero h1 .w{color:var(--tan)}
+.hero .sub{color:rgba(255,255,255,.85);font-size:1.1rem;margin-top:1rem;font-style:italic}
+.top-bar{background:var(--dark);color:var(--tan);text-align:center;padding:.5rem;font-size:.85rem;letter-spacing:2px;text-transform:uppercase}
+.nav{background:white;padding:.75rem 2rem;display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid var(--ochre)}
+.brand{font-size:1.2rem;font-weight:800;color:var(--dark);letter-spacing:2px}
+.nav-links a{color:var(--text);text-decoration:none;margin-left:1.5rem;font-size:.9rem;font-weight:600}
+.content{max-width:800px;margin:0 auto;padding:3rem 2rem}
+.section{margin-bottom:3rem}
+.section h2{font-size:1.6rem;color:var(--dark);margin-bottom:1.5rem;padding-bottom:.75rem;border-bottom:3px solid var(--ochre);display:inline-block}
+.note{background:white;border:2px solid var(--ochre);border-radius:0;padding:2rem;margin-bottom:2rem;position:relative}
+.note::before{content:'★';position:absolute;top:-12px;left:20px;background:var(--ochre);color:white;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem}
+.note h3{font-size:1.2rem;color:var(--dark);margin-bottom:1rem}
+.note p{line-height:1.7;margin-bottom:.75rem}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.service{padding:2rem;text-align:center;border:2px solid var(--ochre);margin:-1px}
+.service .icon{font-size:2rem;display:block;margin-bottom:.75rem}
+.service h4{font-size:1rem;color:var(--dark);margin-bottom:.5rem;text-transform:uppercase;letter-spacing:1px}
+.service p{font-size:.9rem;line-height:1.6}
+.info-strip{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:2rem 0;border:2px solid var(--ochre)}
+.info-panel{padding:2.5rem;background:white}
+.info-panel h3{font-size:1rem;color:var(--dark);text-transform:uppercase;letter-spacing:2px;margin-bottom:1.5rem}
+.time-row{display:flex;justify-content:space-between;padding:.4rem 0;font-size:1.05rem;border-bottom:1px solid var(--tan)}
+.time-row:last-child{border:none}
+.time-row .day{color:#744210;opacity:.7}
+.time-row .time{font-weight:600;color:var(--dark)}
+.time-row .closed{color:var(--rust)}
+.call{text-align:center}
+.call .phone{font-size:2rem;font-weight:900;color:var(--rust);text-decoration:none}
+.call .addr{margin-top:1rem;color:#744210}
+.reviews{background:var(--tan);padding:2rem;margin:2rem 0}
+.reviews h3{font-size:1.1rem;color:var(--dark);margin-bottom:1rem;text-transform:uppercase;letter-spacing:1px}
+.review{padding:1rem;background:rgba(255,255,255,.5);margin-bottom:.75rem;font-style:italic;line-height:1.6;border-left:3px solid var(--rust)}
+.cta{background:var(--dark);color:white;text-align:center;padding:3rem;margin:2rem 0}
+.cta h2{font-size:2rem;color:var(--tan);margin-bottom:1rem;border:none;padding-bottom:0;display:block}
+.cta p{opacity:.8;margin-bottom:1.5rem}
+.cta a{display:inline-block;background:var(--rust);color:white;padding:1rem 2.5rem;text-decoration:none;font-weight:700;text-transform:uppercase;letter-spacing:2px;transition:background .2s}
+.cta a:hover{background:var(--ochre);color:var(--dark)}
+footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;padding:2rem;font-size:.85rem;letter-spacing:1px}
+@media(max-width:768px){.services,.info-strip{grid-template-columns:1fr}.hero h1{font-size:2rem}.content h2{font-size:1.3rem}}
+</style>
+</head>
+<body>
+<div class="top-bar">☛ Alamosa's Neighborhood Dry Cleaner Since the Beginning ☚</div>
+<div class="hero">
+<div class="hero-inner">
+<h1><span class="w">W</span>EISS <span class="w">D</span>RY <span class="w">C</span>LEANERS</h1>
+<p class="sub">Main Street. Family owned. You know us.</p>
+</div>
+</div>
+<div class="nav">
+<div class="brand">☛ WEISS DRY CLEAN ☚</div>
+<div class="nav-links">
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#hours">Hours</a>
+<a href="#contact">Contact</a>
+</div>
+</div>
+<div class="content">
+<div class="section" id="about">
+<div class="note">
+<h3>Who Is Weiss?</h3>
+<p>We're the dry cleaner on Main Street you've been walking past a hundred times. 627 Main St — near San Juan Ave — we've been the valley's trusted garment care spot for years.</p>
+<p>Family owned. Green cleaning. No corporate overhead, no fancy websites. Just clean clothes, fair prices, and a friendly wave from the person behind the counter.</p>
+</div>
+</div>
+<div class="section" id="services">
+<h2>What We Do</h2>
+<div class="services">
+<div class="service">
+<span class="icon">🧥</span>
+<h4>Dry Clean</h4>
+<p>Professional eco-friendly cleaning. Suits, coats, dresses, delicates — we handle it all.</p>
+</div>
+<div class="service">
+<span class="icon">✂️</span>
+<h4>Alterations</h4>
+<p>Same-day tailoring. Hems, tapers, repairs. Done fast and done right.</p>
+</div>
+<div class="service">
+<span class="icon">🎓</span>
+<h4>Formal</h4>
+<p>Jim's Formal Wear partner. Tuxes, prom, wedding — looking sharp is our business.</p>
+</div>
+</div>
+</div>
+<div class="section" id="hours">
+<div class="info-strip">
+<div class="info-panel">
+<h3>Hours of Operation</h3>
+<div class="time-row"><span class="day">Monday – Friday</span><span class="time">7:30 AM – 5:30 PM</span></div>
+<div class="time-row"><span class="day">Sunday</span><span class="time">10:00 AM – 2:00 PM</span></div>
+<div class="time-row"><span class="day">Saturday</span><span class="time closed">Closed</span></div>
+</div>
+<div class="info-panel call" id="contact">
+<h3>Get In Touch</h3>
+<p><a href="tel:7195892598" class="phone">📞 (719) 589-2598</a></p>
+<p class="addr">627 Main St, Alamosa, CO 81101</p>
+<p class="addr" style="font-size:.9rem;opacity:.6;margin-top:.5rem">Corner of Main St & San Juan Ave</p>
+</div>
+</div>
+</div>
+<div class="section">
+<h3>Community Involvement</h3>
+<div class="note" style="margin-top:1.5rem">
+<p>We're not just a business. We're your neighbors.</p>
+<p>⭐ Ironed American flags for Centennial Park's 250th anniversary<br>
+⭐ Pressed mask materials for Valley Health<br>
+⭐ Donation sorting drop-off point for local drives<br>
+⭐ Partnered with local artists for banner pickups</p>
+</div>
+</div>
+<div class="cta">
+<h2>Drop Off Today</h2>
+<p>Walk in at 627 Main St or give us a call. No appointment needed — just walk on by.</p>
+<a href="tel:7195892598">Call (719) 589-2598</a>
+</div>
+</div>
+<footer>
+<p>WEISS DRY CLEANERS · 627 Main St, Alamosa, CO 81101 · ☎ (719) 589-2598</p>
+</footer>
+</body>
+</html>

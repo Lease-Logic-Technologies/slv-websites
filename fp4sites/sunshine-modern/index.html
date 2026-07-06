@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sunshine Laundry — Premium Self-Service Laundry | Alamosa, CO</title>
+<meta name="description" content="Modern self-service laundromat in Alamosa, CO. Clean, well-maintained machines at competitive prices. Open daily.">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#FAFAFA;--fg:#111;--muted:#666;--accent:#000;--light:#F0F0F0;--border:#E0E0E0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--fg);line-height:1.7;-webkit-font-smoothing:antialiased}
+.container{max-width:1200px;margin:0 auto;padding:0 2rem}
+nav{padding:2rem 0;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(250,250,250,.95);backdrop-filter:blur(10px);z-index:100}
+nav .nav-inner{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;padding:0 2rem}
+.brand{font-size:1.2rem;font-weight:300;letter-spacing:4px;text-transform:uppercase}
+.brand strong{font-weight:600}
+.nav-links{display:flex;gap:2.5rem}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:.85rem;letter-spacing:1px;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:var(--fg)}
+.hero{min-height:80vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem}
+.hero h1{font-size:clamp(3rem,8vw,7rem);font-weight:200;line-height:1;letter-spacing:-3px;margin-bottom:2rem}
+.hero h1 span{font-weight:600}
+.hero p{font-size:1.15rem;color:var(--muted);max-width:480px;margin:0 auto}
+.grid{padding:6rem 0}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:4rem}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:4rem;align-items:center}
+.card{padding:2rem 0}
+.card::before{content:'';display:block;width:40px;height:1px;background:var(--fg);margin-bottom:1.5rem}
+.card h3{font-size:1.3rem;font-weight:500;margin-bottom:1rem;letter-spacing:-.5px}
+.card p{color:var(--muted);font-size:.95rem}
+.pricing{padding:6rem 0;border-top:1px solid var(--border)}
+.pricing-header{text-align:center;margin-bottom:4rem}
+.pricing-header h2{font-size:clamp(2rem,5vw,3.5rem);font-weight:200;letter-spacing:-2px;margin-bottom:1rem}
+.pricing-header h2 strong{font-weight:600}
+.price-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.price-card{border:1px solid var(--border);padding:3rem 2rem;text-align:center;transition:all .3s}
+.price-card:hover{border-color:var(--fg)}
+.price-card .amount{font-size:3rem;font-weight:200;letter-spacing:-2px}
+.price-card .amount strong{font-weight:700}
+.price-card .unit{font-size:.85rem;color:var(--muted);display:block;margin-top:.5rem}
+.price-card h4{font-size:1rem;font-weight:500;margin-bottom:1rem;text-transform:uppercase;letter-spacing:2px}
+.price-card p{color:var(--muted);font-size:.9rem}
+.reviews{padding:6rem 0;background:var(--fg);color:var(--bg)}
+.reviews h2{font-size:2.5rem;font-weight:200;letter-spacing:-1px;margin-bottom:3rem}
+.review-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem}
+.review-item{border:1px solid rgba(255,255,255,.15);padding:2rem}
+.review-item p{font-size:1rem;line-height:1.8;margin-bottom:1rem}
+.review-item .meta{font-size:.8rem;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1px}
+.contact{padding:8rem 0;text-align:center}
+.contact h2{font-size:clamp(2rem,5vw,4rem);font-weight:200;letter-spacing:-2px;margin-bottom:2rem}
+.contact p{color:var(--muted);margin-bottom:2rem}
+.info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;max-width:600px;margin:3rem auto 0;text-align:left}
+.info-item{padding-bottom:2rem;border-bottom:1px solid var(--border)}
+.info-item .label{font-size:.75rem;text-transform:uppercase;letter-spacing:2px;color:var(--muted);margin-bottom:.5rem}
+.info-item .value{font-size:1.1rem;font-weight:500}
+.info-item a{color:var(--fg);text-decoration:none}
+.info-item a:hover{text-decoration:underline}
+footer{padding:3rem 0;border-top:1px solid var(--border);text-align:center;font-size:.85rem;color:var(--muted)}
+footer a{color:var(--fg)}
+@media(max-width:768px){.grid-3,.grid-2,.price-cards,.review-grid,.info-grid{grid-template-columns:1fr}.nav-links{gap:1rem}}
+</style>
+</head>
+<body>
+<nav>
+<div class="nav-inner">
+<div class="brand"><strong>Sunshine</strong>&nbsp; Laundry</div>
+<div class="nav-links">
+<a href="#pricing">Pricing</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</div>
+</div>
+</nav>
+<section class="hero">
+<div>
+<h1>Laundry,<br><span>refined.</span></h1>
+<p>A modern self-service experience in the heart of Alamosa. Clean machines. Fair prices. No fuss.</p>
+</div>
+</section>
+<section class="grid" id="about">
+<div class="grid-3">
+<div class="card">
+<h3>Space</h3>
+<p>Spacious, well-lit interior designed for comfort. Room to move, tables to fold, and a calm atmosphere.</p>
+</div>
+<div class="card">
+<h3>Machines</h3>
+<p>Recently upgraded high-capacity washers handle everything from daily loads to king-size comforters.</p>
+</div>
+<div class="card">
+<h3>Community</h3>
+<p>A trusted Alamosa institution. Recommended by locals, reviewed on Yelp, and always open when you need us.</p>
+</div>
+</div>
+</section>
+<section class="pricing" id="pricing">
+<div class="container">
+<div class="pricing-header">
+<h2>Transparent <strong>pricing</strong></h2>
+<p>What you see is what you pay.</p>
+</div>
+<div class="price-cards">
+<div class="price-card">
+<h4>Small Wash</h4>
+<div class="amount"><strong>$5</strong></div>
+<span class="unit">per load</span>
+<p>Everyday loads. Reliable and efficient.</p>
+</div>
+<div class="price-card">
+<h4>Large Wash</h4>
+<div class="amount"><strong>$7.50</strong></div>
+<span class="unit">per load</span>
+<p>New high-capacity machines. Perfect for bulky items.</p>
+</div>
+<div class="price-card">
+<h4>Dryers</h4>
+<div class="amount"><strong>25¢</strong></div>
+<span class="unit">per 2 minutes</span>
+<p>$1 for 8 minutes. Change machine available.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="reviews">
+<div class="container">
+<h2>Word on the street</h2>
+<div class="review-grid">
+<div class="review-item">
+<p>"Nice laundry. Not fancy but clean with good prices. 25 cents gets you 8 minutes on the dryers."</p>
+<div class="meta">Yelp</div>
+</div>
+<div class="review-item">
+<p>"Laundromat was clean and reasonably priced to do our laundry while laid over in Alamosa."</p>
+<div class="meta">Yelp</div>
+</div>
+</div>
+</div>
+</section>
+<section class="contact" id="contact">
+<div class="container">
+<h2>Come by</h2>
+<p>Open seven days a week. Behind City Market, easy parking.</p>
+<div class="info-grid">
+<div class="info-item">
+<div class="label">Address</div>
+<div class="value">217 Market St, Alamosa, CO 81101</div>
+</div>
+<div class="info-item">
+<div class="label">Phone</div>
+<div class="value"><a href="tel:7195895254">(719) 589-5254</a></div>
+</div>
+<div class="info-item">
+<div class="label">Mon – Sat</div>
+<div class="value">7:00 AM – 9:00 PM</div>
+</div>
+<div class="info-item">
+<div class="label">Sunday</div>
+<div class="value">8:00 AM – 8:00 PM</div>
+</div>
+</div>
+</div>
+</section>
+<footer>
+<p>© 2025 Sunshine Laundry · Alamosa, Colorado · <a href="tel:7195895254">(719) 589-5254</a></p>
+</footer>
+</body>
+</html>

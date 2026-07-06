@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sunshine Laundromat — Clean Clothes, Happy People</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--clr-bg:#fdf6f0;--clr-fg:#2d2318;--clr-1:#ff6f61;--clr-2:#ffcc5c;--clr-3:#5cb85c;--clr-4:#5bc0de;--clr-5:#9b59b6}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--clr-bg);color:var(--clr-fg);line-height:1.6}
+.hero{background:conic-gradient(from 0deg,var(--clr-1),var(--clr-2),var(--clr-3),var(--clr-4),var(--clr-5),var(--clr-1));padding:6rem 2rem;text-align:center}
+.hero-inner{background:var(--clr-bg);border-radius:24px;display:inline-block;padding:3rem 4rem;position:relative}
+.hero h1{font-size:2.8rem;font-weight:800;color:var(--clr-fg);margin-bottom:1rem}
+.hero h1 span{background:linear-gradient(135deg,var(--clr-1),var(--clr-5));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:1.1rem;color:#666;max-width:420px}
+.tabs{display:flex;justify-content:center;gap:0;margin:3rem auto;max-width:600px}
+.tab-btn{padding:.75rem 2rem;border:2px solid var(--clr-fg);background:var(--clr-bg);cursor:pointer;font-weight:700;font-size:.95rem;transition:all .2s}
+.tab-btn:first-child{border-radius:12px 0 0 12px}
+.tab-btn:last-child{border-radius:0 12px 12px 0}
+.tab-btn.active{background:var(--clr-fg);color:var(--clr-bg)}
+.tab-content{background:var(--clr-bg);border:2px solid var(--clr-fg);border-radius:12px;padding:2.5rem;margin:0 auto 3rem;max-width:600px}
+.tab-content[hidden]{display:none}
+.tab-content h3{font-size:1.5rem;margin-bottom:1rem}
+.tab-content ul{list-style:none;padding:0}
+.tab-content li{padding:.5rem 0;border-bottom:1px dashed #ccc;display:flex;justify-content:space-between}
+.tab-content li:last-child{border:none}
+.services{padding:4rem 2rem;max-width:900px;margin:0 auto}
+.services h2{text-align:center;font-size:2rem;margin-bottom:2rem}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem}
+.service-item{text-align:center;padding:2rem;border-radius:16px;color:#fff}
+.service-item:nth-child(1){background:var(--clr-1)}
+.service-item:nth-child(2){background:var(--clr-2);color:var(--clr-fg)}
+.service-item:nth-child(3){background:var(--clr-3)}
+.service-item:nth-child(4){background:var(--clr-4)}
+.service-item h3{font-size:1.3rem;margin-bottom:.5rem}
+.service-item p{font-size:.9rem;opacity:.9}
+.amenities{background:var(--clr-fg);color:var(--clr-bg);padding:4rem 2rem;margin:3rem 0;border-radius:24px}
+.amenities h2{text-align:center;font-size:2rem;margin-bottom:2rem;color:var(--clr-2)}
+.amenity-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;max-width:800px;margin:0 auto}
+.amenity-item{display:flex;align-items:flex-start;gap:1rem}
+.amenity-item .dot{width:12px;height:12px;border-radius:50%;background:var(--clr-3);flex-shrink:0;margin-top:6px}
+.amenity-item p{font-size:1rem}
+.hours-contact{padding:4rem 2rem;max-width:900px;margin:0 auto}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.col{padding:2.5rem;border-radius:20px;border:3px solid var(--clr-fg)}
+.col h3{font-size:1.3rem;margin-bottom:1.5rem;text-align:center}
+.row{display:flex;justify-content:space-between;padding:.5rem 0;font-size:1rem}
+.row-label{font-weight:600}
+.phone-big{text-align:center;margin-top:2rem;padding-top:1.5rem;border-top:2px solid var(--clr-bg)}
+.phone-big a{color:var(--clr-2);font-size:1.5rem;font-weight:800;text-decoration:none}
+.reviews-strip{display:flex;gap:0;overflow:hidden}
+.review-card{flex:1;min-width:250px;padding:2rem;background:var(--clr-2);color:var(--clr-fg);border-right:3px solid var(--clr-fg)}
+.review-card:last-child{border-right:none}
+.review-card p{font-style:italic;margin-bottom:.75rem;font-size:.95rem}
+.review-card cite{font-size:.8rem;opacity:.7}
+footer{text-align:center;padding:2rem;font-size:.9rem;color:#666;border-top:2px solid var(--clr-fg)}
+@media(max-width:768px){.two-col{grid-template-columns:1fr}.tabs{flex-wrap:wrap}.hero h1{font-size:2rem}}
+</style>
+</head>
+<body>
+<div class="hero">
+<div class="hero-inner">
+<h1>✨ <span>Sunshine</span> Laundromat</h1>
+<p>Clean clothes. Happy people. Simple as that.</p>
+</div>
+</div>
+<div class="tabs">
+<button class="tab-btn active">💰 Prices</button>
+<button class="tab-btn">ℹ️ Info</button>
+</div>
+<div class="tab-content">
+<h3>💰 Wash & Dry Prices</h3>
+<ul>
+<li><span>Small Washer</span><strong>$5.00 / load</strong></li>
+<li><span>Large Washer</span><strong>$7.50 / load</strong></li>
+<li><span>Dryer (2 min)</span><strong>25¢</strong></li>
+<li><span>Dryer (8 min)</span><strong>$1.00</strong></li>
+<li><span>Change Machine</span><strong>FREE</strong></li>
+</ul>
+</div>
+<div class="tab-content" hidden>
+<h3>ℹ️ About Us</h3>
+<p>Sunshine Laundromat is your neighborhood self-service laundry in Alamosa, Colorado. We've got modern machines, fair prices, and a welcoming atmosphere. Located behind City Market on Market Street — easy to find, easy to park.</p>
+<p style="margin-top:1rem">We're recommended by locals, listed on Yelp, and always open when you need us. Come on in!</p>
+</div>
+<div class="services">
+<h2>What We're All About</h2>
+<div class="services-grid">
+<div class="service-item">
+<h3>🫧 Modern Machines</h3>
+<p>Recently upgraded washers for every load size, including new big-capacity models.</p>
+</div>
+<div class="service-item">
+<h3>💲 Fair Pricing</h3>
+<p>Transparent prices. No hidden fees. 25¢ = 2 minutes in the dryer.</p>
+</div>
+<div class="service-item">
+<h3>🤝 Community</h3>
+<p>A trusted neighborhood spot, recommended by locals and featured in community groups.</p>
+</div>
+<div class="service-item">
+<h3>🅿️ Easy Access</h3>
+<p>Behind City Market with plenty of parking. Stop by anytime.</p>
+</div>
+</div>
+</div>
+<div class="amenities">
+<h2>What's Available</h2>
+<div class="amenity-list">
+<div class="amenity-item"><div class="dot"></div><p>Change machine on-site</p></div>
+<div class="amenity-item"><div class="dot" style="background:var(--clr-2)"></div><p>Staffed office — always someone here</p></div>
+<div class="amenity-item"><div class="dot" style="background:var(--clr-1)"></div><p>New high-capacity washers</p></div>
+<div class="amenity-item"><div class="dot" style="background:var(--clr-5)"></div><p>Spacious, well-lit interior</p></div>
+</div>
+</div>
+<div class="hours-contact">
+<div class="two-col">
+<div class="col" style="background:var(--clr-bg)">
+<h3>⏰ Hours</h3>
+<div class="row"><span class="row-label">Mon – Fri</span><span>7:00 AM – 9:00 PM</span></div>
+<div class="row"><span class="row-label">Saturday</span><span>7:00 AM – 9:00 PM</span></div>
+<div class="row"><span class="row-label">Sunday</span><span>8:00 AM – 8:00 PM</span></div>
+</div>
+<div class="col" style="background:var(--clr-2);color:var(--clr-fg)">
+<h3>📍 Find Us</h3>
+<div class="row"><span class="row-label">Address</span><span>217 Market St</span></div>
+<div class="row"><span class="row-label">City</span><span>Alamosa, CO 81101</span></div>
+<div class="row"><span class="row-label">Near</span><span>Behind City Market</span></div>
+<div class="phone-big">
+<p>📞 Call us:</p>
+<a href="tel:7195895254">(719) 589-5254</a>
+</div>
+</div>
+</div>
+</div>
+<div class="reviews-strip">
+<div class="review-card">
+<p>"Nice laundry. Not fancy but clean with good prices."</p>
+<cite>— Yelp</cite>
+</div>
+<div class="review-card" style="background:var(--clr-4)">
+<p>"Clean and reasonably priced to do our laundry while laid over in Alamosa."</p>
+<cite>— Yelp</cite>
+</div>
+<div class="review-card" style="background:var(--clr-3)">
+<p>"They have some new washers and they r big. Great for our big loads."</p>
+<cite>— Local Facebook</cite>
+</div>
+</div>
+<footer>
+<p>Sunshine Laundromat © 2025 · Alamosa, Colorado</p>
+</footer>
+</body>
+</html>

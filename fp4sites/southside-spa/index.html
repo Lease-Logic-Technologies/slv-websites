@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Southside Suds — Premium Laundry Experience</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--white:#ffffff;--snow:#f8f9fa;--ice:#e3f2fd;--blue:#1565c0;--deep:#0d47a1;--gray:#607d8b}
+body{font-family:'Helvetica Neue',Arial,sans-serif;background:var(--white);color:#263238}
+nav{background:var(--white);padding:1.5rem 2rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #eceff1}
+.brand{font-size:1.5rem;color:var(--blue);font-weight:300;letter-spacing:4px}
+.brand strong{font-weight:700}
+nav a{color:var(--gray);text-decoration:none;margin-left:2rem;font-size:.85rem;letter-spacing:2px;text-transform:uppercase;transition:color .2s}
+nav a:hover{color:var(--blue)}
+.hero{background:linear-gradient(180deg,var(--ice) 0%,var(--white) 100%);padding:8rem 2rem 6rem;text-align:center}
+.hero h1{font-size:3.5rem;font-weight:200;color:var(--deep);letter-spacing:-2px;margin-bottom:1rem}
+.hero h1 em{font-style:normal;font-weight:700;color:var(--blue)}
+.hero p{color:var(--gray);font-size:1.15rem;max-width:500px;margin:0 auto}
+.wave{height:4px;background:linear-gradient(90deg,var(--blue),var(--ice),var(--blue));border-radius:2px;margin:0 auto;max-width:200px}
+.section{max-width:800px;margin:0 auto;padding:5rem 2rem}
+.section h2{font-size:2rem;font-weight:300;color:var(--deep);margin-bottom:2rem;text-align:center;letter-spacing:-1px}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:3rem;margin:3rem 0}
+.feature{text-align:center;padding:2rem 0}
+.feature .icon{width:60px;height:60px;border-radius:50%;background:var(--ice);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin:0 auto 1.5rem}
+.feature h3{font-size:1.1rem;font-weight:600;margin-bottom:.75rem;color:var(--deep)}
+.feature p{font-size:.9rem;color:var(--gray);line-height:1.7}
+.services{background:var(--snow);padding:5rem 2rem;margin:0 -2rem}
+.services-inner{max-width:800px;margin:0 auto}
+.services h2{font-size:2rem;font-weight:300;color:var(--deep);margin-bottom:3rem;text-align:center}
+.service-list{display:grid;gap:2rem}
+.service{display:flex;align-items:flex-start;gap:1.5rem;padding:1.5rem;background:var(--white);border-radius:8px;border:1px solid #eceff1}
+.service .num{font-size:2rem;font-weight:200;color:var(--blue);flex-shrink:0;line-height:1}
+.service h3{font-size:1.1rem;font-weight:600;color:var(--deep);margin-bottom:.5rem}
+.service p{font-size:.9rem;color:var(--gray);line-height:1.6}
+.pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#eceff1;border:1px solid #eceff1;margin:3rem 0}
+.price{background:var(--white);padding:2.5rem 2rem;text-align:center}
+.price .amount{font-size:2.5rem;font-weight:200;color:var(--deep);letter-spacing:-2px}
+.price .amount strong{font-weight:700}
+.price .label{font-size:.8rem;color:var(--gray);text-transform:uppercase;letter-spacing:2px;margin-top:.5rem;display:block}
+.reviews{background:var(--deep);color:var(--white);padding:5rem 2rem;margin:0 -2rem}
+.reviews-inner{max-width:800px;margin:0 auto;text-align:center}
+.reviews h2{font-size:2rem;font-weight:300;color:var(--white);margin-bottom:3rem;letter-spacing:-1px}
+.review{padding:2rem;border:1px solid rgba(255,255,255,.1);margin-bottom:1.5rem;text-align:left}
+.review p{font-style:italic;opacity:.9;font-size:1.05rem;line-height:1.8;margin-bottom:.75rem}
+.review .stars{color:#4fc3f7;letter-spacing:2px}
+.review .src{font-size:.8rem;opacity:.5;text-transform:uppercase;letter-spacing:1px}
+.schedule{background:var(--white);border-top:1px solid #eceff1;padding:5rem 2rem}
+.schedule-inner{max-width:400px;margin:0 auto}
+.schedule h2{font-size:2rem;font-weight:300;color:var(--deep);margin-bottom:2rem;text-align:center}
+.time{display:flex;justify-content:space-between;padding:1rem 0;border-bottom:1px solid #eceff1;font-size:1.05rem}
+.time .day{color:var(--gray);font-weight:300}
+.time .hours{color:var(--deep);font-weight:500}
+.contact{text-align:center;padding:5rem 2rem;background:var(--ice)}
+.contact h2{font-size:2rem;font-weight:300;color:var(--deep);margin-bottom:1rem}
+.contact .phone{font-size:2rem;font-weight:200;color:var(--blue);text-decoration:none;letter-spacing:-1px}
+.contact .addr{color:var(--gray);margin-top:1rem}
+footer{text-align:center;padding:3rem 2rem;font-size:.85rem;color:var(--gray);border-top:1px solid #eceff1}
+@media(max-width:768px){.features,.pricing{grid-template-columns:1fr}.hero h1{font-size:2.5rem}}
+</style>
+</head>
+<body>
+<nav>
+<div class="brand"><strong>Southside</strong> Suds</div>
+<div>
+<a href="#services">Services</a>
+<a href="#reviews">Reviews</a>
+<a href="#schedule">Hours</a>
+</div>
+</nav>
+<section class="hero">
+<h1>Clean. <em>Fresh.</em> Southside.</h1>
+<p>A premium self-service laundry experience on Alamosa's south side. Where every load gets the attention it deserves.</p>
+<div class="wave"></div>
+</section>
+<section class="section" id="services">
+<h2>Why Southside Suds</h2>
+<div class="features">
+<div class="feature">
+<div class="icon">✦</div>
+<h3>Impeccable Cleanliness</h3>
+<p>We wipe down every machine before the next customer. Cleanliness isn't an afterthought — it's our standard.</p>
+</div>
+<div class="feature">
+<div class="icon">◈</div>
+<h3>Helpful Staff</h3>
+<p>Our team is friendly, knowledgeable, and always ready to assist. Your satisfaction matters to us.</p>
+</div>
+<div class="feature">
+<div class="icon">❖</div>
+<h3>Modern Machines</h3>
+<p>Up-to-date equipment that handles every type of laundry with care and efficiency.</p>
+</div>
+</div>
+</section>
+<section class="services" id="services2">
+<div class="services-inner">
+<h2>What We Offer</h2>
+<div class="service-list">
+<div class="service">
+<span class="num">01</span>
+<div>
+<h3>Self-Service Laundry</h3>
+<p>High-capacity washers and powerful dryers. You set the pace, we provide the equipment.</p>
+</div>
+</div>
+<div class="service">
+<span class="num">02</span>
+<div>
+<h3>Comfortable Environment</h3>
+<p>Bright, spacious, and thoughtfully designed. Folding tables, seating, and climate control.</p>
+</div>
+</div>
+<div class="service">
+<span class="num">03</span>
+<div>
+<h3>Customer Care</h3>
+<p>We care about our machines and our customers. Every space is maintained daily.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section">
+<h2>Pricing</h2>
+<div class="pricing">
+<div class="price"><div class="amount"><strong>$5</strong></div><span class="label">Small Wash</span></div>
+<div class="price"><div class="amount"><strong>$7.50</strong></div><span class="label">Large Wash</span></div>
+<div class="price"><div class="amount"><strong>25¢</strong></div><span class="label">Dryer / 2 min</span></div>
+</div>
+</section>
+<section class="reviews" id="reviews">
+<div class="reviews-inner">
+<h2>What Customers Say</h2>
+<div class="review">
+<p>"Great laundromat! The staff was helpful; wiping down machines before the next person used them to be sure they..."</p>
+<div class="stars">★★★★★</div>
+<div class="src">— YELP</div>
+</div>
+</div>
+</section>
+<section class="schedule" id="schedule">
+<div class="schedule-inner">
+<h2>Hours</h2>
+<div class="time"><span class="day">Monday – Friday</span><span class="hours">7:00 AM – 9:00 PM</span></div>
+<div class="time"><span class="day">Saturday</span><span class="hours">7:00 AM – 9:00 PM</span></div>
+<div class="time"><span class="day">Sunday</span><span class="hours">8:00 AM – 8:00 PM</span></div>
+</div>
+</section>
+<section class="contact">
+<h2>804 State Avenue, Alamosa, CO 81101</h2>
+<p class="addr">On the south side of Alamosa · Easy parking</p>
+</section>
+<footer>
+<p>Southside Suds · Alamosa, Colorado</p>
+</footer>
+</body>
+</html>

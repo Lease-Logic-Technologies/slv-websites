@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Splashland Triathlon — Great Southwest Triathlon Series Final Leg</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;color:#e0e0e0;background:#0a0e17}
+.navbar{background:rgba(10,14,23,.95);padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10;border-bottom:1px solid rgba(255,255,255,.08);backdrop-filter:blur(10px)}
+.brand{font-size:1.5rem;font-weight:800;color:#fff}
+.brand span{color:#00d4ff}
+.nav-links a{color:#aaa;text-decoration:none;margin-left:2rem;font-size:.85rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;transition:color .2s}
+.nav-links a:hover{color:#00d4ff}
+.hero{background:linear-gradient(180deg,#0a0e17 0%,#0d1b2a 50%,#1b263b 100%);padding:6rem 2rem 5rem;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(circle at 80% 30%,rgba(0,212,255,.08) 0%,transparent 50%)}
+.hero h1{font-size:3rem;color:#fff;margin-bottom:.75rem;position:relative;letter-spacing:2px}
+.hero .tagline{font-size:1.2rem;color:#00d4ff;position:relative;font-weight:600;letter-spacing:3px;text-transform:uppercase}
+.hero .subtitle{font-size:1rem;color:#8899aa;margin-top:.75rem;position:relative;max-width:600px;margin-left:auto;margin-right:auto}
+.stripes{display:flex;justify-content:center;gap:0;margin-top:3rem;position:relative}
+.stripe{width:4px;height:80px;border-radius:2px}
+.stripe:nth-child(1){background:#00d4ff;margin-right:8px}
+.stripe:nth-child(2){background:#00ff88;height:60px;margin:0 4px;align-self:flex-end}
+.stripe:nth-child(3){background:#ff006e;height:40px;margin:0 4px;align-self:flex-end}
+.event{padding:4rem 2rem;max-width:900px;margin:0 auto}
+.event h2{font-size:2rem;color:#fff;margin-bottom:2rem;text-align:center;letter-spacing:1px}
+.event h2 span{color:#00d4ff}
+.race-card{background:linear-gradient(135deg,rgba(0,212,255,.05),rgba(0,255,136,.03));border:1px solid rgba(0,212,255,.15);border-radius:12px;padding:2.5rem;margin-bottom:1.5rem;position:relative;overflow:hidden}
+.race-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:linear-gradient(180deg,#00d4ff,#00ff88)}
+.race-card .discipline{color:#00d4ff;font-size:.8rem;text-transform:uppercase;letter-spacing:2px;font-weight:700;margin-bottom:.5rem}
+.race-card h3{font-size:1.5rem;color:#fff;margin-bottom:.5rem}
+.race-card .distance{font-size:2.5rem;font-weight:800;color:#fff;margin-bottom:.25rem}
+.race-card .distance span{color:#00ff88;font-size:1.2rem;font-weight:600}
+.race-card p{color:#8899aa;line-height:1.6;margin-top:1rem}
+.race-details{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2rem}
+.detail-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:2rem}
+.detail-card h3{color:#00d4ff;font-size:1.1rem;margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem}
+.detail-card p,.detail-card li{color:#8899aa;line-height:1.7;font-size:.9rem}
+.detail-card ul{list-style:none;padding:0;margin-top:.5rem}
+.detail-card li::before{content:'\25b8\00a0';color:#00ff88}
+.kids-tri{background:linear-gradient(135deg,rgba(255,0,110,.05),rgba(255,165,0,.03));border:1px solid rgba(255,0,110,.2);border-radius:12px;padding:2.5rem;margin-top:2rem}
+.kids-tri h3{color:#ff006e;font-size:1.3rem;margin-bottom:1rem}
+.kids-tri p{color:#8899aa;line-height:1.7;font-size:.95rem}
+.kids-tri .kids-distance{display:flex;gap:2rem;margin-top:1rem;flex-wrap:wrap}
+.kids-tri .kids-distance span{background:rgba(255,0,110,.1);padding:.5rem 1rem;border-radius:6px;color:#ff006e;font-weight:700;font-size:.9rem}
+.pool-info{padding:4rem 2rem;max-width:900px;margin:0 auto}
+.pool-info h2{font-size:2rem;color:#fff;margin-bottom:2rem;text-align:center;letter-spacing:1px}
+.pool-specs{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.spec{background:rgba(0,255,136,.03);border:1px solid rgba(0,255,136,.15);border-radius:12px;padding:2rem;text-align:center}
+.spec .value{font-size:2.2rem;font-weight:800;color:#00ff88;margin-bottom:.25rem}
+.spec .label{color:#8899aa;font-size:.85rem;text-transform:uppercase;letter-spacing:1px}
+.cta{background:linear-gradient(135deg,#00d4ff,#00ff88);padding:3rem 2rem;text-align:center;margin:2rem}
+.cta h2{color:#0a0e17;font-size:1.5rem;margin-bottom:1rem;font-weight:800}
+.cta p{color:rgba(10,14,23,.7);margin-bottom:.5rem}
+.cta a{display:inline-block;background:#0a0e17;color:#00d4ff;padding:.75rem 2rem;border-radius:50px;font-weight:700;text-decoration:none;transition:transform .2s}
+.cta a:hover{transform:translateY(-2px)}
+.footer{background:#060810;color:#555;text-align:center;padding:2rem;font-size:.8rem;border-top:1px solid rgba(255,255,255,.05)}
+.footer a{color:#00d4ff;text-decoration:none}
+@media(max-width:768px){.race-card .distance{font-size:2rem}.race-details{grid-template-columns:1fr}.pool-specs{grid-template-columns:1fr}.hero h1{font-size:2rem}.nav-links a{font-size:.75rem;margin-left:1rem}}
+</style>
+</head>
+<body>
+<nav class="navbar">
+<div class="brand">SPLASH<span>LAND</span> TRI</div>
+<div class="nav-links">
+<a href="#event">Event</a>
+<a href="#pool">The Pool</a>
+<a href="#register">Register</a>
+</div>
+</nav>
+<header class="hero">
+<h1>FINISH WHERE IT BEGINS</h1>
+<div class="tagline">Leg 3 of the Great Southwest Triathlon Series</div>
+<p class="subtitle">Splashland Benefit Sprint Triathlon &mdash; Alamosa, Colorado</p>
+<div class="stripes">
+<div class="stripe"></div>
+<div class="stripe"></div>
+<div class="stripe"></div>
+</div>
+</header>
+
+<section class="event" id="event">
+<h2>The <span>Race</span></h2>
+<div class="race-card">
+<div class="discipline">Sprint Triathlon — Run &bull; Bike &bull; Swim</div>
+<div class="distance">3.4 mi <span>+</span> 10 mi <span>+</span> 400 yd</div>
+<p>A brutal, beautiful sprint through the heart of the San Luis Valley. Run the flat Colorado plains, bike through scenic high desert, and cap it off with a lap in 104&deg; geothermal water. No other triathlon in Colorado finishes in a hot spring.</p>
+</div>
+
+<div class="race-details">
+<div class="detail-card">
+<h3>\u23f1\ Run &mdash; 3.4 Miles</h3>
+<p>Flat, fast course through Alamosa and the Valley. Early morning, cool air, big sky. The route winds through city streets and trails before heading back to Splashland for the swim.</p>
+</div>
+<div class="detail-card">
+<h3>\ud83d\udeb4\ Bike &mdash; 10 Miles</h3>
+<p>Rolling high desert terrain with sweeping views of the Sangre de Cristo Mountains. A beautiful, challenging loop through the Valley before the final swim leg.</p>
+</div>
+</div>
+</section>
+
+<section class="event">
+<h2>Kids <span>Triathlon</span></h2>
+<div class="kids-tri">
+<h3>\u2b50 Ages 14 &amp; Under &mdash; September</h3>
+<p>Little athletes, big finish. The Splashland Kids Tri gives young athletes their first taste of multi-sport racing in a supportive, family-friendly environment. Same hot spring finish that makes every adult smile.</p>
+<div class="kids-distance">
+<span>Short Run</span>
+<span>Bike Loop</span>
+<span>Pool Swim</span>
+</div>
+</div>
+</section>
+
+<section class="pool-info" id="pool">
+<h2>The Finish: <span style="color:#00ff88">104&deg; Hot Springs</span></h2>
+<div class="pool-specs">
+<div class="spec"><div class="value">104&deg;</div><div class="label">Water Temp</div></div>
+<div class="spec"><div class="value">Since</div><div class="label">1955</div></div>
+<div class="spec"><div class="value">3</div><div class="label">Slides</div></div>
+</div>
+<p style="text-align:center;color:#8899aa;margin-top:2rem;line-height:1.7;max-width:600px;margin-left:auto;margin-right:auto">
+The pool at Splashland was discovered in 1955 while drilling for oil. Natural geothermal water flows at a constant 104&deg;F &mdash; making it the perfect finish for athletes who just pushed through the Valley heat.
+</p>
+</section>
+
+<section class="cta" id="register">
+<h2>Great Southwest Triathlon Series</h2>
+<p>Register on or before Oct 1 to guarantee your race shirt.</p>
+<p>Individual: $65 (early) / $70 (late) &bull; Team of 2: $110 (early) / $140 (late) &bull; Team of 3: $130 (early)</p>
+<a href="tel:7195896258">Call Splashland: (719) 589-6258</a>
+</section>
+
+<footer class="footer">
+<p>&copy; 2026 Splashland LLC &mdash; Alamosa, CO &bull; 5895 Highway 17, CO-81101</p>
+</footer>
+</body>
+</html>

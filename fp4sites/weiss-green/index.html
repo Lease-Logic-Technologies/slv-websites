@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weiss Dry Cleaners — Clean Green Alamosa</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--leaf:#38a169;--forest:#276749;--lime:#68d391;--mint:#c6f6d5;--cream:#f0fff4;--text:#22543d;--light:#e6ffed}
+body{font-family:Georgia,'Times New Roman',serif;background:var(--cream);color:var(--text);line-height:1.7}
+.header{background:var(--forest);padding:1.5rem 2rem;display:flex;justify-content:space-between;align-items:center}
+.logo{color:var(--mint);font-size:1.4rem;font-weight:700;letter-spacing:2px}
+.logo em{font-style:normal;color:var(--lime);font-weight:400}
+.nav-links a{color:var(--mint);text-decoration:none;margin-left:2rem;font-size:.9rem;letter-spacing:1px}
+.hero{background:linear-gradient(135deg,var(--leaf),var(--forest));padding:6rem 2rem;text-align:center;position:relative}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:40px;background:var(--cream);clip-path:polygon(0 100%,100% 100%,100% 0,75% 60%,50% 100%,25% 40%,0 70%)}
+.hero h1{font-size:3.5rem;color:white;font-weight:400;font-style:italic;margin-bottom:1rem;text-shadow:2px 2px 0 rgba(0,0,0,.2)}
+.hero h1 strong{font-weight:700;color:var(--lime)}
+.hero p{color:rgba(255,255,255,.9);font-size:1.2rem;max-width:500px;margin:0 auto}
+.content{max-width:800px;margin:0 auto;padding:4rem 2rem}
+.badge{display:inline-flex;align-items:center;gap:.5rem;background:var(--leaf);color:white;padding:.5rem 1.25rem;border-radius:50px;font-size:.85rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:2rem}
+.intro{text-align:center;margin-bottom:4rem}
+.intro h2{font-size:2.2rem;font-weight:400;margin-bottom:1.5rem;color:var(--forest)}
+.intro p{font-size:1.1rem;max-width:600px;margin:0 auto;color:rgba(34,84,61,.8)}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-bottom:4rem}
+.feature{text-align:center;padding:2rem}
+.feature .icon{font-size:2.5rem;margin-bottom:1rem;display:block}
+.feature h3{font-size:1.2rem;color:var(--forest);margin-bottom:.75rem;font-weight:600}
+.feature p{font-size:.95rem;opacity:.8}
+.services{background:white;padding:3rem;border-radius:16px;margin-bottom:4rem;box-shadow:0 4px 20px rgba(0,0,0,.05);border:1px solid var(--light)}
+.services h2{text-align:center;font-size:1.8rem;color:var(--forest);margin-bottom:2rem;font-weight:400}
+.service-list{display:grid;gap:1.5rem}
+.service-item{display:flex;align-items:center;gap:1.5rem;padding:1.5rem;background:var(--cream);border-radius:12px;border:1px solid var(--light)}
+.service-item .num{font-size:1.5rem;font-weight:700;color:var(--leaf);background:var(--light);width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:50%;flex-shrink:0}
+.service-item h4{font-size:1.1rem;color:var(--forest);margin-bottom:.25rem}
+.service-item p{font-size:.9rem;opacity:.7}
+.eco{background:var(--leaf);color:white;padding:3rem;border-radius:16px;margin-bottom:4rem;text-align:center}
+.eco h2{font-size:1.8rem;font-weight:400;margin-bottom:1rem;font-style:italic}
+.eco p{max-width:500px;margin:0 auto;opacity:.9}
+.info{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.info-box{padding:2.5rem;background:white;border-radius:16px;border:2px solid var(--light)}
+.info-box h3{font-size:1.1rem;color:var(--forest);margin-bottom:1.5rem;letter-spacing:1px}
+.time-row{display:flex;justify-content:space-between;padding:.5rem 0;font-size:1.05rem}
+.time-row .day{color:rgba(34,84,61,.7)}
+.time-row .time{font-weight:600}
+.call{text-align:center}
+.call .phone{font-size:2rem;font-weight:700;color:var(--leaf);text-decoration:none}
+.call .addr{margin-top:1rem;font-size:1.05rem}
+footer{background:var(--forest);color:var(--mint);text-align:center;padding:2rem;font-size:.9rem;margin-top:4rem;border-radius:16px 16px 0 0}
+@media(max-width:768px){.features,.info{grid-template-columns:1fr}.hero h1{font-size:2.5rem}}
+</style>
+</head>
+<body>
+<div class="header">
+<div class="logo">WEISS <em>Dry Cleaners</em></div>
+<div class="nav-links">
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#eco">Eco</a>
+<a href="#contact">Contact</a>
+</div>
+</div>
+<div class="hero">
+<h1>Weiss <strong>Care</strong></h1>
+<p>Where your clothes get green treatment in the heart of Alamosa.</p>
+</div>
+<div class="content">
+<div class="intro">
+<div class="badge">🌿 Eco-Friendly Since Day One</div>
+<h2 id="about">Your Clothes Deserve Better</h2>
+<p>We use eco-friendly cleaning processes that are gentle on fabrics and gentle on the planet. No toxic chemicals — just clean, fresh clothes and a cleaner San Luis Valley.</p>
+</div>
+<div class="features">
+<div class="feature">
+<span class="icon">🧥</span>
+<h3>Dry Cleaning</h3>
+<p>Professional care using green solvents. Your suit, your coat, your delicate — handled with care.</p>
+</div>
+<div class="feature">
+<span class="icon">✂️</span>
+<h3>Alterations</h3>
+<p>Expert tailoring, same-day turnaround when you need it.</p>
+</div>
+<div class="feature">
+<span class="icon">📦</span>
+<h3>Community Hub</h3>
+<p>From flag ironing to mask pressing, Weiss is a partner in Alamosa's community events.</p>
+</div>
+</div>
+<div class="services" id="services">
+<h2>Our Services</h2>
+<div class="service-list">
+<div class="service-item">
+<span class="num">1</span>
+<div>
+<h4>Dry Cleaning</h4>
+<p>Eco-friendly solvents that clean without chemicals. Gentle on fabrics, tough on stains.</p>
+</div>
+</div>
+<div class="service-item">
+<span class="num">2</span>
+<div>
+<h4>Alterations & Tailoring</h4>
+<p>Same-day alterations. Pants, shirts, dresses — all done right.</p>
+</div>
+</div>
+<div class="service-item">
+<span class="num">3</span>
+<div>
+<h4>Formal Wear</h4>
+<p>Affiliated with Jim's Formal Wear. Tuxedos, prom, wedding — we keep you looking sharp.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="eco" id="eco">
+<h2>Going Green, Not Backwards</h2>
+<p>Most dry cleaners use toxic chemicals. We use eco-friendly processing. Your clothes come back cleaner, and so does the water that flows through our valley.</p>
+</div>
+<div class="info" id="contact">
+<div class="info-box">
+<h3>Hours</h3>
+<div class="time-row"><span class="day">Monday – Friday</span><span class="time">7:30 AM – 5:30 PM</span></div>
+<div class="time-row"><span class="day">Sunday</span><span class="time">10:00 AM – 2:00 PM</span></div>
+<div class="time-row"><span class="day">Saturday</span><span class="time">Closed</span></div>
+</div>
+<div class="info-box call">
+<h3>Get In Touch</h3>
+<p><a href="tel:7195892598" class="phone">(719) 589-2598</a></p>
+<p class="addr">627 Main St, Alamosa, CO 81101</p>
+<p class="addr" style="font-size:.9rem;opacity:.6;margin-top:.5rem">Near Main St & San Juan Ave</p>
+</div>
+</div>
+</div>
+<footer>
+<p>Weiss Dry Cleaners · Alamosa, Colorado · Eco-Friendly Since the Beginning 🌿</p>
+</footer>
+</body>
+</html>

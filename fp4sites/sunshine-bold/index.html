@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sunshine Laundromat — Wash, Dry, Repeat!</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#1a1a2e;color:#eee;overflow-x:hidden}
+.hero{background:linear-gradient(135deg,#ff6b6b,#feca57,#48dbfb,#ff9ff3);padding:8rem 2rem;text-align:center;position:relative}
+.hero h1{font-size:4rem;font-weight:900;color:#fff;text-shadow:4px 4px 0 #000,8px 8px 0 rgba(0,0,0,.3);letter-spacing:-2px}
+.hero p{font-size:1.4rem;color:#fff;text-shadow:2px 2px 0 rgba(0,0,0,.5);max-width:600px;margin:1rem auto}
+.section{padding:4rem 2rem;max-width:900px;margin:0 auto}
+.section h2{font-size:2.5rem;font-weight:800;margin-bottom:2rem}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem}
+.card{padding:2rem;border-radius:0;position:relative;transform:rotate(-1deg);border:3px solid #000;transition:transform .2s}
+.card:hover{transform:rotate(0deg) scale(1.02)}
+.card:nth-child(2){transform:rotate(1deg);background:#feca57;color:#1a1a2e}
+.card:nth-child(3){transform:rotate(-2deg);background:#48dbfb;color:#1a1a2e}
+.card:nth-child(4){transform:rotate(1.5deg);background:#ff9ff3;color:#1a1a2e}
+.card h3{font-size:1.3rem;margin-bottom:.5rem;font-weight:800}
+.card p{font-size:.95rem}
+.price-box{background:#ff6b6b;border:4px solid #000;padding:3rem;margin:2rem 0;position:relative}
+.price-box::before{content:'💰';font-size:3rem;position:absolute;top:-30px;left:2rem;filter:drop-shadow(2px 2px 0 #000)}
+.price-box h2{font-size:2rem;font-weight:900;margin-bottom:1.5rem}
+.price-list{list-style:none}
+.price-list li{padding:.75rem 0;border-bottom:2px dashed #000;font-size:1.2rem;display:flex;justify-content:space-between}
+.price-list li:last-child{border:none}
+.price-list .name{font-weight:700}
+.price-list .price{background:#fff;color:#1a1a2e;padding:.25rem .75rem;font-weight:800}
+.hours-section{background:#feca57;color:#1a1a2e;padding:3rem;margin:2rem 0;border:4px solid #000}
+.hours-section h2{font-size:2rem;font-weight:900;margin-bottom:1.5rem}
+.hours-row{display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:2px solid #000;font-size:1.1rem;font-weight:600}
+.hours-row:last-child{border:none}
+.reviews{background:#48dbfb;color:#1a1a2e;padding:3rem;margin:2rem 0;border:4px solid #000}
+.reviews h2{font-size:2rem;font-weight:900;margin-bottom:1.5rem}
+.review{background:#fff;color:#1a1a2e;padding:1.5rem;margin-bottom:1rem;border:3px solid #000}
+.review p{font-style:italic;margin-bottom:.5rem}
+.review .stars{color:#ff6b6b}
+.cta{background:#ff9ff3;text-align:center;padding:4rem 2rem;border-top:4px solid #000;border-bottom:4px solid #000}
+.cta h2{font-size:2.5rem;font-weight:900;color:#fff;text-shadow:3px 3px 0 #000;margin-bottom:1rem}
+.cta .btn{display:inline-block;background:#000;color:#fff;padding:1rem 2.5rem;font-size:1.2rem;font-weight:800;text-decoration:none;text-transform:uppercase;letter-spacing:2px;border:4px solid #fff;margin-top:1rem;transition:all .2s}
+.cta .btn:hover{background:#feca57;color:#000;border-color:#000}
+footer{background:#000;text-align:center;padding:2rem;font-size:.9rem}
+footer a{color:#feca57;text-decoration:none}
+.wave{height:40px;background:linear-gradient(90deg,#ff6b6b 25%,transparent 25%,transparent 75%,#feca57 75%);position:relative}
+.wave::after{content:'';position:absolute;top:-20px;left:0;right:0;height:20px;background:repeating-linear-gradient(45deg,transparent,transparent 10px,#000 10px,#000 12px)}
+@media(max-width:768px){.hero h1{font-size:2.5rem}.price-list li{flex-direction:column;gap:.5rem}}
+</style>
+</head>
+<body>
+<div class="hero">
+<h1>Wash. Dry. Repeat. 🫧</h1>
+<p>Sunshine Laundromat — Alamosa's boldest, brightest self-service spot!</p>
+</div>
+<div class="wave"></div>
+<div class="section">
+<h2>WHAT WE DO 💪</h2>
+<div class="cards">
+<div class="card">
+<h3>Wash</h3>
+<p>Modern machines for every load size. Small everyday loads or big comforters — we handle it all.</p>
+</div>
+<div class="card">
+<h3>Dry</h3>
+<p>Powerful dryers at unbeatable prices. 25 cents = 2 minutes. Stack 'em up!</p>
+</div>
+<div class="card">
+<h3>Fold</h3>
+<p>Spacious tables, bright lights, and plenty of room. Take your time.</p>
+</div>
+<div class="card">
+<h3>Live</h3>
+<p>Located behind City Market. Easy parking. A neighborhood staple that never sleeps.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="price-box">
+<h2>THE DEALS 💸</h2>
+<ul class="price-list">
+<li><span class="name">Small Washer</span><span class="price">$5.00 / load</span></li>
+<li><span class="name">Large Washer</span><span class="price">$7.50 / load</span></li>
+<li><span class="name">Dryer</span><span class="price">25¢ / 2 min</span></li>
+<li><span class="name">Change Machine</span><span class="price">FREE</span></li>
+</ul>
+</div>
+</div>
+<div class="section">
+<div class="hours-section">
+<h2>⏰ HOURS</h2>
+<div class="hours-row"><span>Monday – Friday</span><span>7AM – 9PM</span></div>
+<div class="hours-row"><span>Saturday</span><span>7AM – 9PM</span></div>
+<div class="hours-row"><span>Sunday</span><span>8AM – 8PM</span></div>
+</div>
+</div>
+<div class="section">
+<div class="reviews">
+<h2>💬 LOCAL LOVE</h2>
+<div class="review">
+<p>"Nice laundry. Not fancy but clean with good prices. 25 cents gets you 8 minutes on the dryers."</p>
+<span class="stars">★★★★☆</span>
+<p style="font-size:.85rem;margin-top:.5rem;color:#999">— Yelp</p>
+</div>
+<div class="review">
+<p>"They have some new washers and they r big. Perfect for our big loads!"</p>
+<span class="stars">★★★★★</span>
+<p style="font-size:.85rem;margin-top:.5rem;color:#999">— Local Facebook</p>
+</div>
+</div>
+</div>
+<div class="cta">
+<h2>GET HERE! 🚀</h2>
+<p>217 Market St, Alamosa, CO 81101</p>
+<p>📞 <a href="tel:7195895254" style="color:#fff;font-size:1.3rem;font-weight:800">(719) 589-5254</a></p>
+<a href="tel:7195895254" class="btn">Call Now</a>
+</div>
+<footer>
+<p>Sunshine Laundromat © 2025 · Alamosa, Colorado 🌻</p>
+</footer>
+</body>
+</html>

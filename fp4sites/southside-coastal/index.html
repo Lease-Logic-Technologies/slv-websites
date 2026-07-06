@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Southside Suds — Ocean Breeze Laundry</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--ocean:#006994;--sand:#f5e6d3;--foam:#d6eff7;--shell:#e8a87c;--seaglass:#85cdca;--driftwood:#5c4033}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--sand);color:var(--driftwood);line-height:1.7}
+.hero{background:linear-gradient(180deg,#87ceeb 0%,#5ba3d9 40%,var(--ocean) 100%);padding:6rem 2rem 10rem;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:80px;background:var(--sand);clip-path:ellipse(55% 100% at 50% 100%)}
+.hero h1{font-size:3.5rem;color:#fff;font-weight:300;text-shadow:2px 2px 0 rgba(0,0,0,.2);letter-spacing:-2px}
+.hero h1 strong{font-weight:700;font-style:italic}
+.hero p{color:rgba(255,255,255,.9);font-size:1.1rem;margin-top:1rem}
+.content{max-width:800px;margin:0 auto;padding:3rem 2rem}
+.intro{text-align:center;margin-bottom:3rem}
+.intro h2{font-size:1.8rem;color:var(--ocean);font-weight:300;margin-bottom:1rem}
+.intro p{font-size:1.05rem;line-height:1.8;max-width:600px;margin:0 auto}
+.wave-divider{height:30px;background:repeating-linear-gradient(90deg,var(--foam) 0,var(--foam) 20px,transparent 20px,transparent 40px);margin:2rem -2rem;position:relative}
+.wave-divider::before{content:'🌊';position:absolute;right:1rem;top:-15px;font-size:1.5rem}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin:2rem 0}
+.card{background:rgba(255,255,255,.7);padding:2rem;border-radius:20px;backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.5)}
+.card h3{font-size:1.2rem;color:var(--ocean);margin-bottom:.75rem}
+.card p{font-size:.95rem;line-height:1.7}
+.pricing-wave{background:var(--ocean);margin:0 -2rem;padding:4rem 2rem;text-align:center;color:#fff}
+.pricing-wave h2{font-size:2rem;font-weight:300;margin-bottom:2rem}
+.prices{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;max-width:700px;margin:0 auto}
+.price{padding:2rem;background:rgba(255,255,255,.1);border-radius:16px;backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2)}
+.price .amount{font-size:2.5rem;font-weight:200}
+.price .amount strong{font-weight:700}
+.price .label{font-size:.85rem;opacity:.7;margin-top:.5rem;display:block}
+.schedule{background:var(--foam);margin:2rem -2rem;padding:3rem 2rem;border-radius:20px 20px 0 0}
+.schedule h2{text-align:center;font-size:1.5rem;color:var(--ocean);margin-bottom:1.5rem}
+.time-grid{display:grid;gap:1rem;max-width:400px;margin:0 auto}
+.time-item{display:flex;justify-content:space-between;padding:1rem 1.5rem;background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.time-item .day{font-weight:600;color:var(--ocean)}
+.time-item .hours{color:var(--driftwood)}
+.reviews-box{background:var(--seaglass);margin:0 -2rem;padding:3rem 2rem;text-align:center;color:var(--driftwood);border-radius:0 0 20px 20px}
+.reviews-box h2{font-size:1.5rem;margin-bottom:1.5rem}
+.review-card{background:rgba(255,255,255,.6);padding:2rem;border-radius:16px;max-width:600px;margin:0 auto;text-align:left}
+.review-card p{font-style:italic;margin-bottom:.75rem;font-size:1.05rem}
+.review-card .src{font-size:.85rem;opacity:.7}
+.contact{background:var(--sand);text-align:center;padding:3rem 2rem}
+.contact h2{font-size:1.5rem;color:var(--ocean);margin-bottom:1rem;font-weight:300}
+.contact .addr{font-size:1.1rem;margin-bottom:.5rem}
+footer{background:var(--driftwood);color:rgba(255,255,255,.5);text-align:center;padding:2rem;font-size:.85rem}
+@media(max-width:768px){.cards,.prices{grid-template-columns:1fr}.hero h1{font-size:2.5rem}}
+</style>
+</head>
+<body>
+<div class="hero">
+<h1>Southside <strong>Suds</strong></h1>
+<p>Ocean-fresh laundry experience on Alamosa's south side. Salt air not included.</p>
+</div>
+<div class="content">
+<div class="intro">
+<h2>Built on Care & Cleanliness</h2>
+<p>Southside Suds is more than a laundromat — it's a place where quality matters. Our staff wipes down every machine before each use because we believe your clothes deserve the best start.</p>
+</div>
+<div class="cards">
+<div class="card">
+<h3>🫧 Spotless Machines</h3>
+<p>Every washer wiped down before the next customer. We maintain higher standards than most.</p>
+</div>
+<div class="card">
+<h3>👥 Friendly Staff</h3>
+<p>Our team is helpful, knowledgeable, and genuinely cares about your experience.</p>
+</div>
+<div class="card">
+<h3>📸 Clean Interior</h3>
+<p>Bright, spacious, and well-maintained. Visitors consistently notice the quality.</p>
+</div>
+<div class="card">
+<h3>🌊 South Side Location</h3>
+<p>Conveniently located on State Avenue with easy parking and great access.</p>
+</div>
+</div>
+</div>
+<div class="pricing-wave">
+<h2>💰 Simple Pricing</h2>
+<div class="prices">
+<div class="price"><div class="amount"><strong>$5</strong></div><span class="label">Small Wash</span></div>
+<div class="price"><div class="amount"><strong>$7.50</strong></div><span class="label">Large Wash</span></div>
+<div class="price"><div class="amount"><strong>25¢</strong></div><span class="label">Dryer / 2 min</span></div>
+</div>
+</div>
+<div class="content">
+<div class="schedule">
+<h2>🕐 Hours</h2>
+<div class="time-grid">
+<div class="time-item"><span class="day">Monday – Friday</span><span class="hours">7:00 AM – 9:00 PM</span></div>
+<div class="time-item"><span class="day">Saturday</span><span class="hours">7:00 AM – 9:00 PM</span></div>
+<div class="time-item"><span class="day">Sunday</span><span class="hours">8:00 AM – 8:00 PM</span></div>
+</div>
+</div>
+<div class="reviews-box">
+<h2>⭐ Customer Love</h2>
+<div class="review-card">
+<p>"Great laundromat! The staff was helpful; wiping down machines before the next person used them to be sure they..."</p>
+<p class="src">— YELP REVIEW</p>
+</div>
+</div>
+</div>
+<div class="contact">
+<h2>804 State Avenue</h2>
+<p class="addr">Alamosa, CO 81101 · South Side of Town</p>
+</div>
+<footer>Southside Suds · Alamosa, Colorado · Est. South Side</footer>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Southside Suds — Neon Retro Laundry</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0d0d0d;--neon-pink:#ff006e;--neon-blue:#00b4d8;--neon-yellow:#fee440;--neon-purple:#8338ec;--dark:#1a1a1a;--light:#f0f0f0}
+body{font-family:sans-serif;background:var(--bg);color:var(--light);overflow-x:hidden}
+header{background:var(--bg);padding:1.5rem 2rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,0,110,.3)}
+.brand{font-size:1.3rem;font-weight:900;color:var(--neon-pink);text-shadow:0 0 10px var(--neon-pink),0 0 20px var(--neon-pink);letter-spacing:3px;text-transform:uppercase}
+nav a{color:var(--light);text-decoration:none;margin-left:2rem;font-size:.8rem;letter-spacing:2px;text-transform:uppercase;transition:text-shadow .3s}
+nav a:hover{text-shadow:0 0 10px var(--neon-blue)}
+.hero{padding:8rem 2rem;text-align:center;position:relative}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(255,0,110,.03) 3px,rgba(255,0,110,.03) 4px);pointer-events:none}
+.hero h1{font-size:5rem;font-weight:900;color:var(--neon-blue);text-shadow:0 0 10px var(--neon-blue),0 0 40px var(--neon-blue),0 0 80px var(--neon-blue);letter-spacing:-4px;text-transform:uppercase;line-height:.9}
+.hero h1 .amp{color:var(--neon-pink);text-shadow:0 0 10px var(--neon-pink),0 0 40px var(--neon-pink),0 0 80px var(--neon-pink);font-size:.7em}
+.hero p{color:rgba(240,240,240,.7);font-size:1.1rem;margin-top:2rem;letter-spacing:1px}
+.grid{max-width:1000px;margin:0 auto;padding:4rem 2rem;display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.card{background:var(--dark);border:2px solid;padding:2.5rem 2rem;text-align:center;position:relative;transition:all .3s}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--card-color);box-shadow:0 0 10px var(--card-color)}
+.card:nth-child(1){--card-color:var(--neon-pink);border-color:rgba(255,0,110,.3)}
+.card:nth-child(2){--card-color:var(--neon-blue);border-color:rgba(0,180,216,.3)}
+.card:nth-child(3){--card-color:var(--neon-yellow);border-color:rgba(254,228,64,.3)}
+.card:nth-child(4){--card-color:var(--neon-purple);border-color:rgba(131,56,236,.3)}
+.card:nth-child(5){--card-color:var(--neon-pink);border-color:rgba(255,0,110,.3)}
+.card:nth-child(6){--card-color:var(--neon-blue);border-color:rgba(0,180,216,.3)}
+.card:hover{border-color:var(--card-color);transform:translateY(-5px);box-shadow:0 0 30px rgba(var(--card-color),.2)}
+.card h3{font-size:1.2rem;font-weight:900;letter-spacing:2px;text-transform:uppercase;margin-bottom:1rem}
+.card:nth-child(1) h3{color:var(--neon-pink);text-shadow:0 0 10px var(--neon-pink)}
+.card:nth-child(2) h3{color:var(--neon-blue);text-shadow:0 0 10px var(--neon-blue)}
+.card:nth-child(3) h3{color:var(--neon-yellow);text-shadow:0 0 10px var(--neon-yellow)}
+.card:nth-child(4) h3{color:var(--neon-purple);text-shadow:0 0 10px var(--neon-purple)}
+.card:nth-child(5) h3{color:var(--neon-pink);text-shadow:0 0 10px var(--neon-pink)}
+.card:nth-child(6) h3{color:var(--neon-blue);text-shadow:0 0 10px var(--neon-blue)}
+.card p{font-size:.9rem;line-height:1.6;opacity:.7}
+.strip{background:var(--dark);padding:3rem;border-top:2px solid var(--neon-pink);border-bottom:2px solid var(--neon-pink)}
+.strip-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;text-align:center}
+.strip-item .amount{font-size:2.5rem;font-weight:900;color:var(--neon-blue);text-shadow:0 0 10px var(--neon-blue)}
+.strip-item .label{font-size:.8rem;letter-spacing:2px;text-transform:uppercase;color:rgba(240,240,240,.5);margin-top:.5rem}
+.reviews{padding:5rem 2rem;max-width:800px;margin:0 auto}
+.reviews h2{font-size:2rem;font-weight:900;color:var(--neon-pink);text-shadow:0 0 20px var(--neon-pink);letter-spacing:3px;text-transform:uppercase;margin-bottom:2rem;text-align:center}
+.review{background:var(--dark);border-left:4px solid var(--neon-blue);padding:2rem;margin-bottom:2rem}
+.review p{font-size:1.1rem;line-height:1.8;font-style:italic;margin-bottom:1rem}
+.review .src{font-size:.8rem;color:var(--neon-yellow);letter-spacing:2px;text-transform:uppercase}
+.hours{padding:4rem 2rem;max-width:600px;margin:0 auto}
+.hours h2{font-size:1.5rem;font-weight:900;color:var(--neon-purple);text-shadow:0 0 20px var(--neon-purple);letter-spacing:3px;text-transform:uppercase;margin-bottom:2rem;text-align:center}
+.time{display:flex;justify-content:space-between;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:1.1rem;letter-spacing:1px}
+.time:last-child{border:none}
+.time .day{color:rgba(240,240,240,.7)}
+.time .hours-text{color:var(--neon-blue);font-weight:700}
+.contact{background:var(--dark);text-align:center;padding:5rem 2rem;border-top:2px solid var(--neon-purple)}
+.contact h2{font-size:2.5rem;font-weight:900;color:var(--neon-pink);text-shadow:0 0 20px var(--neon-pink);margin-bottom:1rem;letter-spacing:3px}
+.contact .addr{color:rgba(240,240,240,.6);font-size:1.1rem}
+footer{background:var(--bg);text-align:center;padding:2rem;font-size:.85rem;color:rgba(240,240,240,.3);border-top:1px solid rgba(255,0,110,.2)}
+@media(max-width:768px){.grid,.strip-inner{grid-template-columns:1fr}.hero h1{font-size:3rem}}
+</style>
+</head>
+<body>
+<header>
+<div class="brand">Southside Suds</div>
+<nav>
+<a href="#about">About</a>
+<a href="#pricing">Prices</a>
+<a href="#reviews">Reviews</a>
+<a href="#hours">Hours</a>
+</nav>
+</header>
+<div class="hero">
+<h1>Southside <span class="amp">&</span> Suds</h1>
+<p>Neon-lit cleanliness on Alamosa's south side. Open late. Always clean.</p>
+</div>
+<div class="grid" id="about">
+<div class="card">
+<h3>Helpful</h3>
+<p>Staff that actually cares. Questions, help, advice — we got you.</p>
+</div>
+<div class="card">
+<h3>Clean</h3>
+<p>Every machine wiped down before each use. Not optional. Not negotiable.</p>
+</div>
+<div class="card">
+<h3>Bright</h3>
+<p>Spacious, well-lit interior. Photos don't lie — we keep it clean.</p>
+</div>
+<div class="card">
+<h3>Reliable</h3>
+<p>Modern machines. Consistent service. A south side staple.</p>
+</div>
+<div class="card">
+<h3>Accessible</h3>
+<p>Easy parking on State Avenue. Park, wash, go.</p>
+</div>
+<div class="card">
+<h3>Affordable</h3>
+<p>Fair prices. No hidden fees. 25 cents buys 2 minutes.</p>
+</div>
+</div>
+<div class="strip" id="pricing">
+<div class="strip-inner">
+<div class="strip-item">
+<div class="amount">$5</div>
+<div class="label">Small Wash</div>
+</div>
+<div class="strip-item">
+<div class="amount">$7.50</div>
+<div class="label">Large Wash</div>
+</div>
+<div class="strip-item">
+<div class="amount">25¢</div>
+<div class="label">Dryer / 2 min</div>
+</div>
+</div>
+</div>
+<div class="reviews" id="reviews">
+<h2>Reviews</h2>
+<div class="review">
+<p>"Great laundromat! The staff was helpful; wiping down machines before the next person used them to be sure they..."</p>
+<div class="src">— YELP</div>
+</div>
+</div>
+<div class="hours" id="hours">
+<h2>Hours</h2>
+<div class="time"><span class="day">Monday – Friday</span><span class="hours-text">7AM – 9PM</span></div>
+<div class="time"><span class="day">Saturday</span><span class="hours-text">7AM – 9PM</span></div>
+<div class="time"><span class="day">Sunday</span><span class="hours-text">8AM – 8PM</span></div>
+</div>
+<div class="contact">
+<h2>804 State Avenue</h2>
+<p class="addr">Alamosa, CO 81101 · South Side</p>
+</div>
+<footer>Southside Suds © 2025 · Alamosa, Colorado</footer>
+</body>
+</html>

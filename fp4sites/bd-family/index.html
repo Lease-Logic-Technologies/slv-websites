@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B & D's Laundromat — Family-Run Laundry in Alamosa, CO</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--wood:#6b4226;--cream:#faf3e8;--accent:#c47a4a;--soft:#e8d5bc;--green:#4a7c59;--text:#3e2f23}
+body{font-family:Georgia,'Times New Roman',serif;background:var(--cream);color:var(--text);line-height:1.7}
+.top-bar{background:var(--wood);color:var(--cream);text-align:center;padding:.6rem;font-size:.85rem;letter-spacing:1px}
+nav{background:var(--cream);padding:1.5rem 2rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--soft)}
+.logo{font-size:1.8rem;color:var(--wood);font-weight:700}
+.logo small{display:block;font-size:.55rem;color:var(--accent);letter-spacing:3px;text-transform:uppercase;font-family:system-ui;font-weight:400}
+nav a{color:var(--text);text-decoration:none;margin-left:2rem;font-size:.9rem;opacity:.8;transition:opacity .2s}
+nav a:hover{opacity:1;text-decoration:underline}
+.hero{background:linear-gradient(rgba(107,66,38,.85),rgba(107,66,38,.75)),repeating-conic-gradient(var(--soft) 0% 25%,var(--cream) 0% 50%) 0 0/40px 40px;padding:5rem 2rem;text-align:center}
+.hero h1{font-size:3rem;color:var(--cream);margin-bottom:1rem;font-weight:400}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero p{color:rgba(250,243,232,.8);max-width:500px;margin:0 auto;font-style:italic}
+.content{max-width:800px;margin:0 auto;padding:3rem 2rem}
+.content h2{font-size:1.8rem;color:var(--wood);margin-bottom:1.5rem;text-align:center;font-weight:400}
+.story{background:white;padding:2.5rem;border-radius:16px;border:1px solid var(--soft);margin-bottom:2rem}
+.story p{margin-bottom:1rem;font-size:1.05rem}
+.story p:last-child{margin-bottom:0}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin:2rem 0}
+.fact{text-align:center;padding:2rem;background:white;border-radius:12px;border:1px solid var(--soft)}
+.fact .num{font-size:2.5rem;color:var(--accent);display:block;margin-bottom:.5rem}
+.fact h3{font-size:1rem;margin-bottom:.5rem;color:var(--wood)}
+.fact p{font-size:.9rem;opacity:.7;font-style:italic}
+.hours-card{background:var(--green);color:var(--cream);padding:2.5rem;border-radius:16px;margin:2rem 0;text-align:center}
+.hours-card h2{color:var(--cream);font-size:1.5rem;margin-bottom:1.5rem}
+.hours-card table{width:100%;border-collapse:collapse}
+.hours-card td{padding:.5rem 0;border-bottom:1px solid rgba(255,255,255,.2);font-size:1.05rem}
+.hours-card td:first-child{text-align:right;padding-right:2rem;opacity:.8}
+.reviews{background:white;padding:2.5rem;border-radius:16px;border:1px solid var(--soft);margin:2rem 0}
+.reviews h2{margin-bottom:1.5rem}
+.review{padding:1.5rem;margin-bottom:1rem;border-left:3px solid var(--accent);background:var(--cream);border-radius:0 8px 8px 0}
+.review p{font-style:italic;margin-bottom:.5rem}
+.review .source{font-size:.85rem;opacity:.6}
+.contact-section{background:var(--wood);color:var(--cream);padding:3rem;border-radius:16px;text-align:center;margin:2rem 0}
+.contact-section h2{color:var(--cream)}
+.contact-section p{opacity:.8;margin-bottom:.5rem}
+.contact-section .phone{font-size:1.5rem;font-weight:700;color:var(--accent);text-decoration:none}
+footer{text-align:center;padding:2rem;font-size:.85rem;opacity:.6;border-top:1px solid var(--soft)}
+@media(max-width:768px){.facts{grid-template-columns:1fr}.hero h1{font-size:2rem}}
+</style>
+</head>
+<body>
+<div class="top-bar">Family-Run Since Day One · Alamosa, Colorado</div>
+<nav>
+<div class="logo">B & D's<small>Launderette</small></div>
+<div>
+<a href="#about">About</a>
+<a href="#pricing">Pricing</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+<div class="hero">
+<h1>Welcome to <em>B & D's</em></h1>
+<p>A family-run laundromat where you're treated like a neighbor, not a customer. Owners live right here on-site and we're always happy to help.</p>
+</div>
+<div class="content" id="about">
+<div class="story">
+<h2>Our Story</h2>
+<p>B & D's Laundromat is family-owned and operated from 510 La Veta Avenue in Alamosa. The owners live on-site, which means we're always just a step away if you need help finding a machine, getting quarters, or just need someone to chat with while your load runs.</p>
+<p>We've built this place on hard work, honesty, and treating every customer the way we'd want to be treated. It's not fancy — it's family.</p>
+</div>
+<div class="facts">
+<div class="fact">
+<span class="num">🏡</span>
+<h3>Family Owned</h3>
+<p>Owners live on-site and are always available to help</p>
+</div>
+<div class="fact">
+<span class="num">🫧</span>
+<h3>Hand Wash Sink</h3>
+<p>Dedicated sink for delicates and hand-wash items</p>
+</div>
+<div class="fact">
+<span class="num">💲</span>
+<h3>Fair Prices</h3>
+<p>Competitive pricing that respects your budget</p>
+</div>
+</div>
+</div>
+<div class="content">
+<h2 id="pricing">Pricing</h2>
+<table style="width:100%;border-collapse:collapse">
+<tr style="background:var(--wood);color:white">
+<th style="padding:1rem;text-align:left;font-weight:400">Service</th>
+<th style="padding:1rem;text-align:left;font-weight:400">Price</th>
+</tr>
+<tr style="background:white;border-bottom:1px solid var(--soft)">
+<td style="padding:1rem">Small Wash</td>
+<td style="padding:1rem;color:var(--accent);font-weight:700">$5.00 / load</td>
+</tr>
+<tr style="background:var(--cream);border-bottom:1px solid var(--soft)">
+<td style="padding:1rem">Large Wash</td>
+<td style="padding:1rem;color:var(--accent);font-weight:700">$7.50 / load</td>
+</tr>
+<tr style="background:white;border-bottom:1px solid var(--soft)">
+<td style="padding:1rem">Dryer</td>
+<td style="padding:1rem;color:var(--accent);font-weight:700">25¢ / 2 min</td>
+</tr>
+<tr style="background:var(--cream)">
+<td style="padding:1rem">Change Machine</td>
+<td style="padding:1rem;color:var(--accent);font-weight:700">FREE</td>
+</tr>
+</table>
+<div class="hours-card">
+<h2>Hours</h2>
+<table>
+<tr><td>Monday – Friday</td><td>Open Early to Late</td></tr>
+<tr><td>Saturday</td><td>Full Day</td></tr>
+<tr><td>Sunday</td><td>Open</td></tr>
+</table>
+<p style="margin-top:1.5rem;opacity:.7;font-size:.9rem">Call ahead if you have questions about specific hours.</p>
+</div>
+<div class="reviews">
+<h2>What Customers Say</h2>
+<div class="review">
+<p>"Great hours. Needed to do some laundry so stopped by this laundry facility."</p>
+<p class="source">— Yelp Review</p>
+</div>
+<div class="review">
+<p>"The lady running B&D was very sweet and helpful."</p>
+<p class="source">— Yelp Review</p>
+</div>
+<div class="review">
+<p>"Hand wash sink available. Looks like owners live on site. Very nice."</p>
+<p class="source">— Yelp Review</p>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="contact-section" id="contact">
+<h2>Stop By</h2>
+<p>510 La Veta Avenue, Alamosa, CO 81101</p>
+<p>Call us anytime:</p>
+<p><a href="tel:7195896441" class="phone">(719) 589-6441</a></p>
+<p style="margin-top:1.5rem;font-size:.9rem;opacity:.7">Family-run · Owners on-site · Always happy to help</p>
+</div>
+</div>
+<footer>
+<p>B & D's Laundromat © 2025 · 510 La Veta Ave, Alamosa, CO 81101</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B & D's Laundromat — Geometric Clean</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--orange:#ff6b35;--navy:#004e89;--white:#ffffff;--light:#f0f4f8;--teal:#1a936f}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--light);color:var(--navy)}
+.clip-hero{background:var(--orange);padding:6rem 2rem 8rem;position:relative;overflow:hidden}
+.clip-hero::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:60px;background:var(--light);clip-path:ellipse(55% 100% at 50% 100%)}
+.hero-content{max-width:600px;margin:0 auto;text-align:center}
+.hero-content h1{font-size:4rem;font-weight:900;color:var(--white);text-transform:uppercase;line-height:.9;letter-spacing:-3px}
+.hero-content h1 span{color:var(--teal);font-size:.6em;display:block}
+.hero-content p{color:rgba(255,255,255,.85);font-size:1.1rem;margin-top:1.5rem}
+.grid-container{max-width:1000px;margin:0 auto;padding:3rem 2rem;display:grid;grid-template-columns:repeat(2,1fr);gap:2rem}
+.block{background:var(--white);padding:2.5rem;clip-path:polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,20px 100%,0 calc(100% - 20px))}
+.block h3{font-size:1.3rem;font-weight:800;text-transform:uppercase;letter-spacing:2px;margin-bottom:1rem;color:var(--orange)}
+.block p{color:#666;line-height:1.8}
+.block.full{grid-column:span 2}
+.strip{background:var(--navy);color:var(--white);padding:3rem 2rem}
+.strip-content{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;text-align:center}
+.strip-item .num{font-size:3rem;font-weight:900;color:var(--orange)}
+.strip-item .label{font-size:.85rem;text-transform:uppercase;letter-spacing:2px;margin-top:.5rem;opacity:.7}
+.pricing-block{background:var(--white);padding:3rem;max-width:1000px;margin:2rem auto;display:grid;grid-template-columns:repeat(2,1fr);gap:0}
+.price-cell{padding:2rem;border:2px solid var(--light)}
+.price-cell .name{font-size:.8rem;text-transform:uppercase;letter-spacing:2px;color:#999;margin-bottom:.5rem}
+.price-cell .amount{font-size:2.5rem;font-weight:900;color:var(--navy)}
+.reviews{background:var(--orange);padding:4rem 2rem;text-align:center;color:var(--white)}
+.reviews h2{font-size:2rem;font-weight:800;text-transform:uppercase;letter-spacing:2px;margin-bottom:2rem}
+.review-cards{max-width:800px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.review{background:rgba(255,255,255,.15);padding:2rem;text-align:left;backdrop-filter:blur(10px)}
+.review p{font-style:italic;margin-bottom:.75rem;line-height:1.6}
+.review .src{font-size:.8rem;opacity:.6;text-transform:uppercase;letter-spacing:1px}
+.contact{background:var(--teal);padding:4rem 2rem;text-align:center;color:var(--white)}
+.contact h2{font-size:2rem;font-weight:800;margin-bottom:1rem}
+.contact .phone{font-size:2.5rem;font-weight:900;color:var(--white);text-decoration:none}
+.contact .addr{margin-top:1rem;opacity:.8}
+footer{background:var(--navy);color:rgba(255,255,255,.4);text-align:center;padding:2rem;font-size:.85rem;letter-spacing:1px}
+@media(max-width:768px){.grid-container,.strip-content,.pricing-block,.review-cards{grid-template-columns:1fr}.hero-content h1{font-size:2.5rem}}
+</style>
+</head>
+<body>
+<div class="clip-hero">
+<div class="hero-content">
+<h1>B & D's<span>Launderette</span></h1>
+<p>Geometric precision meets family warmth. Professional self-service laundry in Alamosa.</p>
+</div>
+</div>
+<div class="grid-container">
+<div class="block">
+<h3>Family Run</h3>
+<p>Owner-operated from 510 La Veta Avenue. Real people running real machines. We take pride in every load.</p>
+</div>
+<div class="block">
+<h3>On-Site Living</h3>
+<p>Our family lives on the premises. Always here to help, always friendly, always just a step away.</p>
+</div>
+<div class="block full">
+<h3>Why Choose B & D's?</h3>
+<p style="display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:1rem">
+<div>✅ Hand wash sink available</div>
+<div>✅ Great operating hours</div>
+<div>✅ Fair, honest pricing</div>
+<div>✅ Clean, well-maintained space</div>
+</div>
+</div>
+</div>
+<div class="strip">
+<div class="strip-content">
+<div class="strip-item">
+<div class="num">3.3</div>
+<div class="label">Yelp Rating</div>
+</div>
+<div class="strip-item">
+<div class="num">4</div>
+<div class="label">Verified Reviews</div>
+</div>
+<div class="strip-item">
+<div class="num">∞</div>
+<div class="Label">Community Trust</div>
+</div>
+</div>
+</div>
+<div class="pricing-block">
+<div class="price-cell"><div class="name">Small Wash</div><div class="amount">$5</div></div>
+<div class="price-cell"><div class="name">Large Wash</div><div class="amount">$7.50</div></div>
+<div class="price-cell"><div class="name">Dryer (2 min)</div><div class="amount">25¢</div></div>
+<div class="price-cell"><div class="name">Change Machine</div><div class="amount">FREE</div></div>
+</div>
+<div class="reviews">
+<h2>What People Say</h2>
+<div class="review-cards">
+<div class="review">
+<p>"Great hours. Needed to do some laundry so stopped by this laundry facility."</p>
+<div class="src">— YELP</div>
+</div>
+<div class="review">
+<p>"The lady running B&amp;D was very sweet and helpful."</p>
+<div class="src">— YELP</div>
+</div>
+</div>
+</div>
+<div class="contact">
+<h2>Visit Us</h2>
+<p><a href="tel:7195896441" class="phone">(719) 589-6441</a></p>
+<p class="addr">510 La Veta Avenue, Alamosa, CO 81101</p>
+</div>
+<footer>B & D's Laundromat · Alamosa, CO</footer>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weiss — Premium Clean</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--black:#0a0a0a;--white:#fff;--silver:#c0c0c0;--gray:#1a1a1a;--accent:#d4af37}
+body{font-family:system-ui,-apple-system,sans-serif;background:var(--black);color:var(--white)}
+nav{padding:1.5rem 2rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(212,175,55,.2)}
+.brand{font-size:1.5rem;letter-spacing:8px;text-transform:uppercase;font-weight:300}
+.brand strong{font-weight:700;color:var(--accent)}
+nav a{color:rgba(255,255,255,.5);text-decoration:none;margin-left:2rem;font-size:.8rem;letter-spacing:2px;text-transform:uppercase;transition:color .3s}
+nav a:hover{color:var(--accent)}
+.hero{padding:10rem 2rem;text-align:center;position:relative}
+.hero::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:200px;height:200px;border:1px solid rgba(212,175,55,.1);border-radius:50%}
+.hero::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:300px;height:300px;border:1px solid rgba(212,175,55,.05);border-radius:50%}
+.hero h1{font-size:clamp(2rem,5vw,4rem);font-weight:200;letter-spacing:6px;text-transform:uppercase;color:var(--silver)}
+.hero h1 strong{color:var(--accent);font-weight:700}
+.hero .line{width:60px;height:1px;background:var(--accent);margin:2rem auto}
+.hero p{color:rgba(255,255,255,.4);font-size:1rem;letter-spacing:3px}
+.section{max-width:800px;margin:0 auto;padding:6rem 2rem}
+.section h2{font-size:.8rem;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:3rem;text-align:center;position:relative}
+.section h2::after{content:'';display:block;width:40px;height:1px;background:var(--accent);margin:1rem auto 0}
+.about{line-height:2.5;color:rgba(255,255,255,.6);font-size:1.1rem;text-align:center}
+.about p{margin-bottom:2rem}
+.about strong{color:var(--white);font-weight:500}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem}
+.service{text-align:center;padding:2rem;border:1px solid rgba(255,255,255,.05);transition:all .3s}
+.service:hover{border-color:var(--accent);background:rgba(212,175,55,.02)}
+.service .icon{font-size:2rem;margin-bottom:1.5rem;display:block}
+.service h3{font-size:.85rem;letter-spacing:3px;text-transform:uppercase;margin-bottom:1rem;color:var(--accent)}
+.service p{color:rgba(255,255,255,.4);font-size:.9rem;line-height:1.8}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:3rem}
+.info{text-align:center}
+.info h3{font-size:.75rem;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:2rem}
+.info .phone{font-size:2rem;font-weight:200;color:var(--silver);text-decoration:none;letter-spacing:2px}
+.info .addr{color:rgba(255,255,255,.4);margin-top:1rem;line-height:1.8}
+.hours{text-align:center;margin-top:3rem}
+.hours .row{display:flex;justify-content:space-between;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,.05);max-width:400px;margin:0 auto;font-size:1rem}
+.hours .row .day{color:rgba(255,255,255,.4)}
+.hours .row .time{color:var(--silver)}
+.hours .row .closed{color:rgba(255,255,255,.2);font-style:italic}
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:3rem 2rem;text-align:center;font-size:.8rem;color:rgba(255,255,255,.2);letter-spacing:2px}
+@media(max-width:768px){.services-grid,.info-grid{grid-template-columns:1fr}nav{flex-direction:column;gap:1rem}}
+</style>
+</head>
+<body>
+<nav>
+<div class="brand"><strong>W</strong>EISS</div>
+<nav>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#contact">Contact</a>
+</nav>
+</nav>
+<div class="hero">
+<h1>Weiss <strong>Dry Clean</strong></h1>
+<div class="line"></div>
+<p>Alamosa, Colorado</p>
+</div>
+<div class="section" id="about">
+<h2>About</h2>
+<div class="about">
+<p>At the corner of <strong>Main and San Juan</strong>, Weiss has been the valley's trusted dry cleaning service.</p>
+<p>Family owned. Eco-conscious. The garments you entrust to us are handled with the same care you would.</p>
+<p>We believe that <strong>clean doesn't mean chemicals</strong>. Our green processes are proof.</p>
+</div>
+</div>
+<div class="section" id="services">
+<h2>Services</h2>
+<div class="services-grid">
+<div class="service">
+<span class="icon">◈</span>
+<h3>Dry Clean</h3>
+<p>Professional eco-friendly processing. Suits, coats, delicates.</p>
+</div>
+<div class="service">
+<span class="icon">◇</span>
+<h3>Alterations</h3>
+<p>Expert tailoring. Same day available.</p>
+</div>
+<div class="service">
+<span class="icon">✧</span>
+<h3>Formal</h3>
+<p>Jim's Formal Wear partnership. Tuxedos & prom.</p>
+</div>
+</div>
+</div>
+<div class="section" id="contact">
+<h2>Contact</h2>
+<div class="info-grid">
+<div class="info">
+<h3>Location</h3>
+<p class="addr">627 Main St<br>Alamosa, CO 81101<br><em style="color:rgba(255,255,255,.2);font-size:.85rem">Main St & San Juan Ave</em></p>
+</div>
+<div class="info">
+<h3>Phone</h3>
+<p><a href="tel:7195892598" class="phone">(719) 589-2598</a></p>
+</div>
+</div>
+<div class="hours">
+<h3 style="font-size:.75rem;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:2rem">Hours</h3>
+<div class="row"><span class="day">Monday – Friday</span><span class="time">7:30 AM – 5:30 PM</span></div>
+<div class="row"><span class="day">Sunday</span><span class="time">10:00 AM – 2:00 PM</span></div>
+<div class="row"><span class="day">Saturday</span><span class="time closed">Closed</span></div>
+</div>
+</div>
+<div class="footer">
+<p>WEISS DRY CLEANERS © 2025</p>
+</div>
+</body>
+</html>

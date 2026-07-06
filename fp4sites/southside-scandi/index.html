@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Southside Suds — Minimal Laundry</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#fafafa;--fg:#181818;--muted:#888;--accent:#333;--border:#e0e0e0}
+body{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;background:var(--bg);color:var(--fg);line-height:1.6;-webkit-font-smoothing:antialiased}
+nav{padding:2rem;max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+.brand{font-size:.85rem;letter-spacing:3px;text-transform:uppercase;font-weight:500}
+.nav-links a{color:var(--muted);text-decoration:none;margin-left:2rem;font-size:.8rem;letter-spacing:1px;text-transform:uppercase}
+nav a:hover{color:var(--fg)}
+.hero{text-align:center;padding:10rem 2rem 8rem;border-bottom:1px solid var(--border)}
+.hero h1{font-size:clamp(3rem,6vw,5rem);font-weight:300;letter-spacing:-3px;line-height:1;margin-bottom:2rem}
+.hero h1 strong{font-weight:700}
+.hero p{font-size:1.1rem;color:var(--muted);max-width:400px;margin:0 auto}
+.grid{padding:6rem 2rem;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:6rem 4rem;align-items:start}
+.grid-item .label{font-size:.75rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;display:block}
+.grid-item h3{font-size:1.5rem;font-weight:500;margin-bottom:1rem;line-height:1.3;letter-spacing:-.5px}
+.grid-item p{color:var(--muted);font-size:1rem;line-height:1.8}
+.pricing{padding:6rem 2rem;max-width:1200px;margin:0 auto}
+.pricing-header{font-size:.75rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:3rem}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
+.price{background:var(--bg);padding:3rem 2rem;text-align:center}
+.price .amount{font-size:3rem;font-weight:300;letter-spacing:-2px}
+.price .amount strong{font-weight:700}
+.price .unit{font-size:.85rem;color:var(--muted);margin-top:.5rem;display:block}
+.schedule{padding:6rem 2rem;max-width:1200px;margin:0 auto}
+.schedule h2{font-size:.75rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:3rem}
+.schedule-grid{display:grid;gap:0}
+.schedule-row{display:flex;justify-content:space-between;padding:1.5rem 0;border-bottom:1px solid var(--border);font-size:1.1rem}
+.schedule-row:last-child{border:none}
+.schedule-row .day{font-weight:500}
+.schedule-row .time{color:var(--muted)}
+.reviews{padding:6rem 2rem;max-width:1200px;margin:0 auto}
+.reviews h2{font-size:.75rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:3rem}
+.review{padding:2.5rem;border:1px solid var(--border);margin-bottom:1px}
+.review p{font-size:1.1rem;line-height:1.8;margin-bottom:1.5rem}
+.review .src{font-size:.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.contact{padding:8rem 2rem;text-align:center;border-top:1px solid var(--border)}
+.contact h2{font-size:clamp(2rem,4vw,3rem);font-weight:300;letter-spacing:-2px;margin-bottom:1rem}
+.contact p{color:var(--muted);font-size:1rem}
+footer{padding:3rem 2rem;text-align:center;font-size:.8rem;color:var(--muted);letter-spacing:1px;border-top:1px solid var(--border)}
+@media(max-width:768px){.grid{grid-template-columns:1fr;gap:3rem}.pricing-grid{grid-template-columns:1fr}.hero{padding:6rem 2rem 4rem}.grid-item h3{font-size:1.2rem}}
+</style>
+</head>
+<body>
+<nav>
+<div class="brand">Southside Suds</div>
+<div class="nav-links">
+<a href="#about">About</a>
+<a href="#pricing">Pricing</a>
+<a href="#schedule">Hours</a>
+</div>
+</nav>
+<section class="hero">
+<h1>Southside <strong>Suds</strong></h1>
+<p>A laundromat. Done right. Alamosa, Colorado.</p>
+</section>
+<section class="grid" id="about">
+<div>
+<span class="label">Cleanliness</span>
+<h3>Every machine wiped down before each use. Non-negotiable.</h3>
+<p>We maintain the highest cleanliness standards in the valley. You deserve a clean machine. We guarantee it.</p>
+</div>
+<div>
+<span class="label">Service</span>
+<h3>Staff that cares about your experience.</h3>
+<p>Our team is available to help with any questions, issues, or requests. You're not a number here.</p>
+</div>
+<div>
+<span class="label">Space</span>
+<h3>Bright, spacious, well-maintained.</h3>
+<p>Clean interior photographed and shared by our customers. A space you'll want to come back to.</p>
+</div>
+<div>
+<span class="label">Location</span>
+<h3>On State Avenue. Easy parking.</h3>
+<p>South side of Alamosa with convenient access and plenty of room to pull in and park.</p>
+</div>
+</section>
+<section class="pricing" id="pricing">
+<div class="pricing-header">Transparent Pricing</div>
+<div class="pricing-grid">
+<div class="price"><div class="amount"><strong>$5</strong></div><span class="unit">Small Wash</span></div>
+<div class="price"><div class="amount"><strong>$7.50</strong></div><span class="unit">Large Wash</span></div>
+<div class="price"><div class="amount"><strong>25¢</strong></div><span class="unit">Dryer / 2 min</span></div>
+</div>
+</section>
+<section class="schedule" id="schedule">
+<h2>Hours</h2>
+<div class="schedule-grid">
+<div class="schedule-row"><span class="day">Monday – Friday</span><span class="time">7:00 AM – 9:00 PM</span></div>
+<div class="schedule-row"><span class="day">Saturday</span><span class="time">7:00 AM – 9:00 PM</span></div>
+<div class="schedule-row"><span class="day">Sunday</span><span class="time">8:00 AM – 8:00 PM</span></div>
+</div>
+</section>
+<section class="reviews">
+<h2>Reviews</h2>
+<div class="review">
+<p>"Great laundromat! The staff was helpful; wiping down machines before the next person used them to be sure they..."</p>
+<div class="src">— YELP</div>
+</div>
+</section>
+<section class="contact">
+<h2>804 State Avenue, Alamosa, CO 81101</h2>
+<p>South Side of Alamosa · Free Parking</p>
+</section>
+<footer>
+<p>Southside Suds © 2025 · Alamosa, Colorado</p>
+</footer>
+</body>
+</html>

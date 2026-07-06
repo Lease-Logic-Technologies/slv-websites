@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weiss Dry Cleaners — Alamosa, CO</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1a2744;--steel:#4a5568;--ice:#edf2f7;--snow:#ffffff;--accent:#e53e3e;--border:#cbd5e0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--snow);color:var(--navy);line-height:1.6}
+header{background:var(--snow);border-bottom:1px solid var(--border);padding:1.25rem 2rem;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
+.brand{font-size:1.3rem;font-weight:700;color:var(--navy);letter-spacing:-0.5px}
+.brand span{font-weight:300;color:var(--steel)}
+nav{display:flex;gap:2rem;align-items:center}
+nav a{color:var(--steel);text-decoration:none;font-size:.85rem;letter-spacing:1px;text-transform:uppercase;font-weight:500;transition:color .2s}
+nav a:hover{color:var(--navy)}
+.cta{background:var(--accent);color:var(--snow);padding:0.6rem 1.5rem;border-radius:6px;text-decoration:none;font-size:.85rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;transition:background .2s}
+.cta:hover{background:#c53030}
+.hero{padding:7rem 2rem;text-align:center;background:var(--ice);position:relative;overflow:hidden}
+.hero::before{content:'W';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:30rem;font-weight:900;color:rgba(26,39,68,.03);pointer-events:none}
+.hero h1{font-size:clamp(2.5rem,5vw,4rem);font-weight:200;letter-spacing:-2px;margin-bottom:1rem;line-height:1.1}
+.hero h1 strong{font-weight:700}
+.hero p{font-size:1.15rem;color:var(--steel);max-width:500px;margin:0 auto}
+.section{max-width:1000px;margin:0 auto;padding:5rem 2rem}
+.section h2{font-size:1.8rem;font-weight:300;margin-bottom:2.5rem;text-align:center;letter-spacing:-0.5px}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-bottom:3rem}
+.service{text-align:center;padding:2.5rem 1.5rem;border:1px solid var(--border);border-radius:8px;transition:all .3s}
+.service:hover{border-color:var(--navy);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.08)}
+.service .icon{font-size:2rem;margin-bottom:1rem;display:block}
+.service h3{font-size:1.1rem;font-weight:600;margin-bottom:.75rem;color:var(--navy)}
+.service p{font-size:.9rem;color:var(--steel);line-height:1.6}
+.about{background:var(--snow);padding:3rem;border:1px solid var(--border);border-radius:8px;margin-bottom:3rem}
+.about h3{font-size:1.3rem;font-weight:500;margin-bottom:1rem;color:var(--navy)}
+.about p{color:var(--steel);line-height:1.8}
+.info-section{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.info-box{padding:2.5rem;border:1px solid var(--border);border-radius:8px}
+.info-box h3{font-size:1.1rem;font-weight:600;margin-bottom:1.5rem;color:var(--navy);text-transform:uppercase;letter-spacing:2px;font-size:.85rem}
+.hours-list .row{display:flex;justify-content:space-between;padding:.6rem 0;border-bottom:1px solid var(--ice);font-size:1rem}
+.hours-list .row:last-child{border:none}
+.hours-list .day{color:var(--steel)}
+.hours-list .time{font-weight:500}
+.hours-list .closed{color:var(--accent)}
+.contact-box{text-align:center}
+.contact-box .phone{font-size:2.5rem;font-weight:200;color:var(--navy);text-decoration:none;letter-spacing:-1px}
+.contact-box .addr{color:var(--steel);margin-top:1rem;font-size:1.05rem}
+.contact-box .cross-streets{font-size:.9rem;color:var(--steel);margin-top:.5rem;font-style:italic}
+footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--border);color:var(--steel);font-size:.85rem}
+footer a{color:var(--navy)}
+@media(max-width:768px){.services,.info-section{grid-template-columns:1fr}header{flex-direction:column;gap:1rem;nav{flex-wrap:wrap;justify-content:center}}}
+</style>
+</head>
+<body>
+<header>
+<div class="brand">WEISS <span>Dry Cleaners</span></div>
+<nav>
+<a href="#services">Services</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+<a href="tel:7195892598" class="cta">Call Now</a>
+</nav>
+</header>
+<section class="hero">
+<h1>Professional <strong>Garment Care</strong><br>in Alamosa</h1>
+<p>Family-owned. Eco-friendly. Trusted for over a decade in the San Luis Valley.</p>
+</section>
+<section class="section" id="services">
+<h2>What We Clean</h2>
+<div class="services">
+<div class="service">
+<span class="icon">🧥</span>
+<h3>Dry Cleaning</h3>
+<p>Professional garment care using eco-friendly solvents. Your clothes deserve better than the old chemicals.</p>
+</div>
+<div class="service">
+<span class="icon">✂️</span>
+<h3>Alterations</h3>
+<p>Same-day alterations available. Fits right, looks right — every time.</p>
+</div>
+<div class="service">
+<span class="icon">🎓</span>
+<h3>Formal Wear</h3>
+<p>Affiliated with Jim's Formal Wear. Tuxedos, prom dresses, and wedding attire handled with care.</p>
+</div>
+</div>
+</section>
+<section class="section" id="about">
+<div class="about">
+<h3>About Weiss Dry Cleaners</h3>
+<p>Located at 627 Main Street in the heart of Alamosa, we've been serving the San Luis Valley as a family-owned dry cleaning and laundry service. We use eco-friendly processing methods and treat every garment as if it were our own.</p>
+<p>We're an active part of this community — from ironing American flags for Centennial Park to pressing materials for Valley Health's mask drives. When you drop off your clothes, you're supporting a local business that invests back here.</p>
+</div>
+</section>
+<section class="section" id="contact">
+<div class="info-section">
+<div class="info-box">
+<h3>Hours</h3>
+<div class="hours-list">
+<div class="row"><span class="day">Monday – Friday</span><span class="time">7:30 AM – 5:30 PM</span></div>
+<div class="row"><span class="day">Sunday</span><span class="time">10:00 AM – 2:00 PM</span></div>
+<div class="row"><span class="day">Saturday</span><span class="time closed">Closed</span></div>
+</div>
+</div>
+<div class="info-box contact-box" id="contact">
+<h3>Visit Us</h3>
+<p><a href="tel:7195892598" class="phone">(719) 589-2598</a></p>
+<p class="addr">627 Main St, Alamosa, CO 81101</p>
+<p class="cross-streets">Near Main St & San Juan Ave</p>
+</div>
+</div>
+</section>
+<footer>
+<p>Weiss Dry Cleaners · 627 Main St, Alamosa, CO 81101 · <a href="tel:7195892598">(719) 589-2598</a></p>
+</footer>
+</body>
+</html>
