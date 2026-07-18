@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brett — Small Engine Repair | San Luis Valley, CO</title>
+    <meta name="description" content="Small engine repair for your farm, ranch, and yard. Brett fixes them all. Serving the San Luis Valley. (719) 850-3863.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --sky: #0ea5e9;
+            --sky-light: #7dd3fc;
+            --sky-pale: #e0f2fe;
+            --sun: #f59e0b;
+            --sun-light: #fbbf24;
+            --sun-pale: #fef3c7;
+            --grass: #22c55e;
+            --grass-dark: #16a34a;
+            --earth: #78716c;
+            --earth-dark: #57534e;
+            --white: #ffffff;
+            --off-white: #fafaf9;
+            --text: #1c1917;
+            --text-light: #44403c;
+            --text-muted: #78716c;
+            --border: #e7e5e4;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: var(--off-white);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* ── TOP BAR ── */
+        .top-bar {
+            background: var(--sky);
+            color: white;
+            padding: 8px 24px;
+            text-align: center;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .top-bar a { color: var(--sun-light); text-decoration: none; font-weight: 700; }
+        .top-bar a:hover { text-decoration: underline; }
+
+        /* ── NAV ── */
+        .nav {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(255,255,255,0.97);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .nav-inner {
+            max-width: 1100px; margin: 0 auto;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 12px 24px;
+        }
+        .nav-brand { text-decoration: none; display: flex; align-items: center; gap: 10px; }
+        .nav-icon {
+            width: 40px; height: 40px;
+            background: var(--grass);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 1.1rem;
+        }
+        .nav-title { font-size: 1.15rem; font-weight: 800; color: var(--text); }
+        .nav-title small { display: block; font-size: 0.65rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+        .nav-links { display: flex; gap: 24px; list-style: none; align-items: center; }
+        .nav-links a { color: var(--text-light); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+        .nav-links a:hover { color: var(--grass-dark); }
+        .nav-call {
+            background: var(--grass); color: white;
+            padding: 8px 18px; border-radius: 20px;
+            font-weight: 700; font-size: 0.85rem;
+            text-decoration: none; transition: all 0.2s;
+        }
+        .nav-call:hover { background: var(--grass-dark); }
+        .hamburger { display: none; background: none; border: none; cursor: pointer; }
+        .hamburger span { display: block; width: 22px; height: 3px; background: var(--text); margin: 4px 0; border-radius: 2px; }
+        .mobile-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; background: white; border-bottom: 1px solid var(--border); padding: 24px; z-index: 99; }
+        .mobile-menu.open { display: block; }
+        .mobile-menu a { display: block; color: var(--text); text-decoration: none; padding: 12px 0; border-bottom: 1px solid var(--border); font-weight: 600; }
+
+        /* ── HERO ── */
+        .hero {
+            padding: 60px 24px 80px;
+            background: linear-gradient(180deg, var(--sky-pale) 0%, var(--off-white) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-clouds {
+            position: absolute; top: 0; left: 0; right: 0; height: 200px;
+            pointer-events: none;
+        }
+        .cloud {
+            position: absolute; background: rgba(255,255,255,0.6);
+            border-radius: 50%;
+        }
+        .cloud-1 { width: 200px; height: 60px; top: 20px; left: 10%; }
+        .cloud-2 { width: 160px; height: 50px; top: 60px; left: 30%; }
+        .cloud-3 { width: 180px; height: 55px; top: 30px; right: 15%; }
+        .cloud-4 { width: 140px; height: 45px; top: 80px; right: 35%; }
+        .hero-inner {
+            max-width: 1100px; margin: 0 auto;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+            position: relative; z-index: 1;
+        }
+        .hero-content {}
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--sun-pale); border: 2px solid var(--sun);
+            padding: 6px 16px; border-radius: 20px;
+            font-size: 0.8rem; font-weight: 700; color: var(--sun);
+            margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+            font-weight: 900; line-height: 1.1;
+            color: var(--text); margin-bottom: 20px;
+        }
+        .hero h1 .accent { color: var(--grass-dark); }
+        .hero p { font-size: 1.1rem; color: var(--text-light); max-width: 460px; margin-bottom: 32px; line-height: 1.7; }
+        .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+        .btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 14px 28px; border-radius: 24px;
+            font-size: 0.95rem; font-weight: 700;
+            text-decoration: none; transition: all 0.25s; border: none; cursor: pointer;
+        }
+        .btn-green {
+            background: var(--grass); color: white;
+            box-shadow: 0 4px 12px rgba(34,197,94,0.3);
+        }
+        .btn-green:hover { background: var(--grass-dark); transform: translateY(-2px); }
+        .btn-sun {
+            background: var(--sun); color: white;
+        }
+        .btn-sun:hover { background: var(--sun-light); color: var(--text); }
+
+        /* Hero right */
+        .hero-visual {
+            display: flex; justify-content: center;
+        }
+        .field-card {
+            background: white;
+            border-radius: 20px;
+            padding: 36px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+            border: 2px solid var(--border);
+            max-width: 380px;
+        }
+        .field-card-header {
+            display: flex; align-items: center; gap: 12px;
+            margin-bottom: 24px; padding-bottom: 16px;
+            border-bottom: 2px solid var(--border);
+        }
+        .field-icon {
+            width: 48px; height: 48px;
+            background: var(--grass);
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 1.4rem;
+        }
+        .field-card-header h3 { font-size: 1.1rem; font-weight: 800; color: var(--text); }
+        .field-card-header h3 small { display: block; font-size: 0.7rem; color: var(--text-muted); font-weight: 600; }
+        .field-item {
+            display: flex; align-items: center; gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .field-item:last-child { border-bottom: none; }
+        .field-check {
+            width: 24px; height: 24px;
+            background: var(--grass);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 0.7rem; flex-shrink: 0;
+        }
+        .field-item span { font-size: 0.95rem; font-weight: 600; color: var(--text-light); }
+
+        /* ── FEATURES ── */
+        .features {
+            padding: 80px 24px;
+            background: var(--off-white);
+        }
+        .features-inner { max-width: 1100px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 {
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            font-weight: 900; color: var(--text); margin-bottom: 12px;
+        }
+        .section-header p { color: var(--text-muted); max-width: 550px; margin: 0 auto; font-size: 1.05rem; }
+        .features-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+        }
+        .feature-card {
+            background: white;
+            border-radius: 16px;
+            padding: 32px 28px;
+            border: 2px solid var(--border);
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .feature-card:hover { border-color: var(--grass); transform: translateY(-4px); box-shadow: 0 8px 24px rgba(34,197,94,0.1); }
+        .feature-emoji { font-size: 2.2rem; margin-bottom: 16px; }
+        .feature-card h3 { font-size: 1.1rem; font-weight: 800; color: var(--text); margin-bottom: 10px; }
+        .feature-card p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; }
+
+        /* ── EQUIPMENT BANNER ── */
+        .equip-banner {
+            padding: 60px 24px;
+            background: var(--grass);
+        }
+        .equip-banner h2 {
+            text-align: center; color: white;
+            font-size: 1.5rem; font-weight: 800; margin-bottom: 32px;
+        }
+        .equip-banner-grid {
+            max-width: 1100px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+        }
+        .equip-banner-item {
+            background: rgba(255,255,255,0.15);
+            border-radius: 12px;
+            padding: 24px 20px;
+            text-align: center;
+            transition: all 0.2s;
+        }
+        .equip-banner-item:hover { background: rgba(255,255,255,0.25); }
+        .equip-banner-item .icon { font-size: 1.8rem; margin-bottom: 8px; }
+        .equip-banner-item h4 { color: white; font-size: 0.9rem; font-weight: 700; }
+
+        /* ── HOW IT WORKS ── */
+        .how-it-works {
+            padding: 80px 24px;
+        }
+        .how-inner { max-width: 1000px; margin: 0 auto; }
+        .how-steps {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+        }
+        .how-step {
+            text-align: center; padding: 32px 20px;
+        }
+        .how-step-circle {
+            width: 72px; height: 72px; margin: 0 auto 20px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.8rem;
+            position: relative;
+        }
+        .how-step:nth-child(1) .how-step-circle { background: var(--sky-pale); }
+        .how-step:nth-child(2) .how-step-circle { background: var(--sun-pale); }
+        .how-step:nth-child(3) .how-step-circle { background: #dcfce7; }
+        .how-step:nth-child(4) .how-step-circle { background: #fef3c7; }
+        .how-step h3 { font-size: 1rem; font-weight: 800; color: var(--text); margin-bottom: 8px; }
+        .how-step p { font-size: 0.85rem; color: var(--text-muted); }
+        .step-connector {
+            display: none;
+        }
+
+        /* ── SEASONAL ── */
+        .seasonal {
+            padding: 80px 24px;
+            background: var(--sun-pale);
+        }
+        .seasonal-inner { max-width: 1100px; margin: 0 auto; }
+        .seasonal-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+        }
+        .seasonal-card {
+            background: white;
+            border-radius: 16px;
+            padding: 36px;
+            border: 2px solid var(--border);
+        }
+        .seasonal-card h3 {
+            font-size: 1.3rem; font-weight: 800; color: var(--text);
+            margin-bottom: 16px;
+            display: flex; align-items: center; gap: 10px;
+        }
+        .seasonal-card p { color: var(--text-light); font-size: 0.95rem; margin-bottom: 12px; line-height: 1.6; }
+        .seasonal-card ul { list-style: none; padding: 0; }
+        .seasonal-card li {
+            padding: 6px 0; font-size: 0.9rem; color: var(--text-light);
+            display: flex; align-items: center; gap: 8px;
+        }
+        .seasonal-card li::before { content: '✓'; color: var(--grass); font-weight: 700; }
+
+        /* ── CTA ── */
+        .cta {
+            padding: 80px 24px;
+            background: var(--sky);
+            text-align: center;
+        }
+        .cta h2 {
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            font-weight: 900; color: white; margin-bottom: 16px;
+        }
+        .cta p { color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-bottom: 32px; }
+        .cta-phone {
+            font-size: 2rem; font-weight: 900;
+            color: var(--sun-light);
+            text-decoration: none;
+            display: block; margin-bottom: 24px;
+        }
+        .cta-phone:hover { color: white; }
+
+        /* ── AREA ── */
+        .area {
+            padding: 80px 24px;
+            background: var(--off-white);
+            text-align: center;
+        }
+        .area-inner { max-width: 800px; margin: 0 auto; }
+        .area h2 {
+            font-size: 2rem; font-weight: 900; color: var(--text); margin-bottom: 16px;
+        }
+        .area > p { color: var(--text-muted); margin-bottom: 40px; font-size: 1.05rem; }
+        .area-towns {
+            display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;
+        }
+        .area-town {
+            background: white;
+            border: 2px solid var(--border);
+            padding: 10px 22px;
+            border-radius: 24px;
+            font-size: 0.9rem; font-weight: 700; color: var(--text-light);
+            transition: all 0.2s;
+        }
+        .area-town:hover { border-color: var(--grass); color: var(--grass-dark); }
+
+        /* ── FOOTER ── */
+        .footer {
+            background: var(--text);
+            color: white;
+            padding: 48px 24px 24px;
+        }
+        .footer-inner {
+            max-width: 1100px; margin: 0 auto;
+            display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-brand h3 { font-size: 1.2rem; font-weight: 800; margin-bottom: 12px; }
+        .footer-brand h3 em { color: var(--grass); font-style: normal; }
+        .footer-brand p { color: rgba(255,255,255,0.6); font-size: 0.9rem; max-width: 300px; line-height: 1.6; }
+        .footer-col h4 {
+            font-size: 0.75rem; font-weight: 700; color: var(--grass);
+            text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px;
+        }
+        .footer-col a { display: block; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem; padding: 4px 0; }
+        .footer-col a:hover { color: white; }
+        .footer-col p { color: rgba(255,255,255,0.6); font-size: 0.9rem; }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 24px;
+            text-align: center;
+            font-size: 0.8rem; color: rgba(255,255,255,0.4);
+        }
+
+        @media (max-width: 900px) {
+            .hero-inner { grid-template-columns: 1fr; text-align: center; }
+            .hero p { margin: 0 auto 32px; }
+            .hero-actions { justify-content: center; }
+            .hero-visual { display: none; }
+            .features-grid { grid-template-columns: 1fr 1fr; }
+            .equip-banner-grid { grid-template-columns: repeat(2, 1fr); }
+            .how-steps { grid-template-columns: repeat(2, 1fr); }
+            .seasonal-grid { grid-template-columns: 1fr; }
+            .footer-inner { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 640px) {
+            .nav-links { display: none; }
+            .hamburger { display: block; }
+            .features-grid { grid-template-columns: 1fr; }
+            .equip-banner-grid { grid-template-columns: 1fr 1fr; }
+            .how-steps { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        📞 Call for an estimate: <a href="tel:7198503863">(719) 850-3863</a> — No obligation, no surprises
+    </div>
+
+    <!-- NAV -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-brand">
+                <div class="nav-icon">⚙️</div>
+                <div class="nav-title">
+                    Brett's Engine Repair
+                    <small>San Luis Valley</small>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#process">How It Works</a></li>
+                <li><a href="#seasonal">Seasonal</a></li>
+                <li><a href="#area">Area</a></li>
+                <li><a href="tel:7198503863" class="nav-call">Call Now</a></li>
+            </ul>
+            <button class="hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('open')">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <div class="mobile-menu">
+            <a href="#services">Services</a>
+            <a href="#process">How It Works</a>
+            <a href="#seasonal">Seasonal</a>
+            <a href="#area">Service Area</a>
+            <a href="tel:7198503863">📞 (719) 850-3863</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-clouds">
+            <div class="cloud cloud-1"></div>
+            <div class="cloud cloud-2"></div>
+            <div class="cloud cloud-3"></div>
+            <div class="cloud cloud-4"></div>
+        </div>
+        <div class="hero-inner">
+            <div class="hero-content">
+                <div class="hero-badge">☀️ Serving the San Luis Valley</div>
+                <h1>Keep Your Equipment<br><span class="accent">Running All Season</span></h1>
+                <p>From spring mowers to winter snow blowers, Brett's got the skills to keep your small engines running strong. Honest repairs, fair estimates, local expertise.</p>
+                <div class="hero-actions">
+                    <a href="tel:7198503863" class="btn btn-green">📞 Call Brett</a>
+                    <a href="#services" class="btn btn-sun">See What We Fix →</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="field-card">
+                    <div class="field-card-header">
+                        <div class="field-icon">🔧</div>
+                        <h3>Our Expertise <small>What we work on</small></h3>
+                    </div>
+                    <div class="field-item"><div class="field-check">✓</div><span>2-Stroke Engines</span></div>
+                    <div class="field-item"><div class="field-check">✓</div><span>4-Stroke Engines</span></div>
+                    <div class="field-item"><div class="field-check">✓</div><span>Fuel & Carb Systems</span></div>
+                    <div class="field-item"><div class="field-check">✓</div><span>Ignition & Electrical</span></div>
+                    <div class="field-item"><div class="field-check">✓</div><span>Routine Maintenance</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="features" id="services">
+        <div class="features-inner">
+            <div class="section-header">
+                <h2>What We Repair</h2>
+                <p>If it's got a small engine and it's not running right, we can help.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-emoji">⛽</div>
+                    <h3>Fuel Systems</h3>
+                    <p>Carburetor cleaning and rebuilds, fuel line replacement, filter swaps, and tank cleaning. We find where the fuel stops flowing.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-emoji">⚡</div>
+                    <h3>Ignition Systems</h3>
+                    <p>Spark plugs, coils, kill switches, CDI modules. We trace the spark to the source and fix the electrical path.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-emoji">🛠️</div>
+                    <h3>Routine Maintenance</h3>
+                    <p>Oil changes, air filters, blade sharpening, seasonal tune-ups. Scheduled maintenance means fewer breakdowns.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-emoji">🪚</div>
+                    <h3>2-Stroke Engines</h3>
+                    <p>Chainsaws, leaf blowers, weed eaters. We know compression loss, piston wear, and fuel mix problems.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-emoji">🌾</div>
+                    <h3>4-Stroke Engines</h3>
+                    <p>Mowers, generators, pressure washers. Full service from valve adjustment to complete overhauls.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-emoji">🔍</div>
+                    <h3>Diagnostics</h3>
+                    <p>Won't start? Runs rough? We diagnose first, then fix. You get an estimate before any work begins — no surprises.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EQUIPMENT BANNER -->
+    <section class="equip-banner">
+        <h2>Equipment We Service</h2>
+        <div class="equip-banner-grid">
+            <div class="equip-banner-item"><div class="icon">🌾</div><h4>Lawn Mowers</h4></div>
+            <div class="equip-banner-item"><div class="icon">🪚</div><h4>Chainsaws</h4></div>
+            <div class="equip-banner-item"><div class="icon">⚡</div><h4>Generators</h4></div>
+            <div class="equip-banner-item"><div class="icon">💨</div><h4>Leaf Blowers</h4></div>
+            <div class="equip-banner-item"><div class="icon">🌿</div><h4>Weed Eaters</h4></div>
+            <div class="equip-banner-item"><div class="icon">💧</div><h4>Pressure Washers</h4></div>
+            <div class="equip-banner-item"><div class="icon">❄️</div><h4>Snow Blowers</h4></div>
+            <div class="equip-banner-item"><div class="icon">🏍️</div><h4>ATVs</h4></div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how-it-works" id="process">
+        <div class="how-inner">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>Four simple steps from broken to running again.</p>
+            </div>
+            <div class="how-steps">
+                <div class="how-step">
+                    <div class="how-step-circle">📞</div>
+                    <h3>Call Brett</h3>
+                    <p>Tell us what's wrong. We'll give you an estimate over the phone.</p>
+                </div>
+                <div class="how-step">
+                    <div class="how-step-circle">🚗</div>
+                    <h3>Drop It Off</h3>
+                    <p>Bring the equipment to the shop and we'll take a look.</p>
+                </div>
+                <div class="how-step">
+                    <div class="how-step-circle">🔧</div>
+                    <h3>We Fix It</h3>
+                    <p>Diagnose, repair, and test. We don't stop until it runs right.</p>
+                </div>
+                <div class="how-step">
+                    <div class="how-step-circle">🎉</div>
+                    <h3>Pick It Up</h3>
+                    <p>We'll call you when it's ready. Pay and head back to work.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEASONAL -->
+    <section class="seasonal" id="seasonal">
+        <div class="seasonal-inner">
+            <div class="section-header">
+                <h2>Seasonal Service</h2>
+                <p>In the SLV, your equipment works year-round. So do we.</p>
+            </div>
+            <div class="seasonal-grid">
+                <div class="seasonal-card">
+                    <h3>🌱 Spring / Summer</h3>
+                    <p>Get your equipment ready before the season starts:</p>
+                    <ul>
+                        <li>Mower tune-ups and blade sharpening</li>
+                        <li>Trimmer and blower service</li>
+                        <li>Generator testing and maintenance</li>
+                        <li>Pre-season carburetor cleaning</li>
+                        <li>Pressure washer prep</li>
+                    </ul>
+                </div>
+                <div class="seasonal-card">
+                    <h3>🌨️ Fall / Winter</h3>
+                    <p>Winter in the Valley means different equipment:</p>
+                    <ul>
+                        <li>Snow blower tune-ups and repairs</li>
+                        <li>Generator winter prep</li>
+                        <li>Chainsaw service for winter wood</li>
+                        <li>Equipment winterization</li>
+                        <li>ATV and snowmobile engine work</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AREA -->
+    <section class="area" id="area">
+        <div class="area-inner">
+            <h2>Serving the San Luis Valley</h2>
+            <p>From Monte Vista up through South Fork and Antonito. We're your local engine guys.</p>
+            <div class="area-towns">
+                <span class="area-town">Monte Vista</span>
+                <span class="area-town">Alamosa</span>
+                <span class="area-town">South Fork</span>
+                <span class="area-town">Antonito</span>
+                <span class="area-town">Mosca</span>
+                <span class="area-town">Creede</span>
+                <span class="area-town">Saguache</span>
+                <span class="area-town">Wet Mountain Valley</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <h2>Ready to Get It Running?</h2>
+        <p>Call for an estimate — no obligation, no surprises.</p>
+        <a href="tel:7198503863" class="cta-phone">(719) 850-3863</a>
+        <br>
+        <a href="tel:7198503863" class="btn btn-green" style="font-size:1.05rem; padding: 16px 36px;">📞 Call Brett Now</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <h3>Brett's <em>Engine Repair</em></h3>
+                <p>Small engine repair in the San Luis Valley. 2-stroke and 4-stroke. Honest work, fair prices, local expertise.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <a href="#services">Fuel Systems</a>
+                <a href="#services">Ignition</a>
+                <a href="#services">Maintenance</a>
+                <a href="#services">Diagnostics</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>Brett</p>
+                <a href="tel:7198503863">(719) 850-3863</a>
+                <p style="margin-top:8px">San Luis Valley, CO</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Brett's Small Engine Repair. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                e.preventDefault();
+                const t = document.querySelector(a.getAttribute('href'));
+                if (t) { t.scrollIntoView({ behavior: 'smooth' }); document.querySelector('.mobile-menu').classList.remove('open'); }
+            });
+        });
+    </script>
+</body>
+</html>

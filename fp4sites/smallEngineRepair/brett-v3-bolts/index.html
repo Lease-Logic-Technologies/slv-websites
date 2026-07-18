@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brett — Small Engine Repair | San Luis Valley, CO</title>
+    <meta name="description" content="Small engine repair. 2-stroke. 4-stroke. We fix it. San Luis Valley, CO. Brett: (719) 850-3863.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --black: #0a0a0a;
+            --dark: #141414;
+            --dark-card: #1a1a1a;
+            --dark-elevated: #222222;
+            --red: #e63946;
+            --red-dark: #c1121f;
+            --red-glow: rgba(230,57,70,0.3);
+            --white: #f1f1f1;
+            --gray: #888888;
+            --gray-dark: #555555;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* ── NAV ── */
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(10,10,10,0.9);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid #222;
+        }
+        .nav-inner {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 14px 24px;
+        }
+        .nav-brand {
+            text-decoration: none; color: var(--white);
+            font-family: 'Space Mono', monospace;
+            font-weight: 700; font-size: 1rem;
+            letter-spacing: 1px;
+        }
+        .nav-brand em { color: var(--red); font-style: normal; }
+        .nav-links { display: flex; gap: 24px; list-style: none; align-items: center; }
+        .nav-links a { color: var(--gray); text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--red); }
+        .nav-phone {
+            font-family: 'Space Mono', monospace;
+            color: var(--red); font-weight: 700; text-decoration: none;
+            border: 1px solid var(--red); padding: 6px 16px; border-radius: 2px;
+            font-size: 0.8rem; transition: all 0.2s;
+        }
+        .nav-phone:hover { background: var(--red); color: var(--black); }
+        .hamburger { display: none; background: none; border: none; cursor: pointer; }
+        .hamburger span { display: block; width: 22px; height: 2px; background: var(--white); margin: 5px 0; }
+        .mobile-menu { display: none; position: fixed; top: 56px; left: 0; right: 0; background: var(--black); border-bottom: 1px solid #222; padding: 24px; z-index: 99; }
+        .mobile-menu.open { display: block; }
+        .mobile-menu a { display: block; color: var(--white); text-decoration: none; padding: 12px 0; border-bottom: 1px solid #222; }
+
+        /* ── HERO ── */
+        .hero {
+            min-height: 100vh;
+            display: flex; align-items: center;
+            padding: 100px 24px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: ''; position: absolute; inset: 0;
+            background:
+                radial-gradient(ellipse at 80% 50%, var(--red-glow), transparent 50%),
+                radial-gradient(ellipse at 20% 80%, rgba(230,57,70,0.1), transparent 40%);
+        }
+        .hero-grid {
+            position: absolute; inset: 0; opacity: 0.03;
+            background-image:
+                linear-gradient(var(--red) 1px, transparent 1px),
+                linear-gradient(90deg, var(--red) 1px, transparent 1px);
+            background-size: 80px 80px;
+        }
+        .hero-inner {
+            max-width: 1200px; margin: 0 auto; width: 100%;
+            position: relative; z-index: 1;
+        }
+        .hero-top { margin-bottom: 60px; }
+        .hero-line {
+            display: flex; align-items: center; gap: 16px;
+            margin-bottom: 24px;
+        }
+        .hero-line-bar {
+            width: 60px; height: 2px; background: var(--red);
+        }
+        .hero-line-text {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem; color: var(--red);
+            text-transform: uppercase; letter-spacing: 3px;
+        }
+        .hero h1 {
+            font-size: clamp(3.5rem, 8vw, 7rem);
+            font-weight: 700;
+            line-height: 0.95;
+            letter-spacing: -2px;
+        }
+        .hero h1 .line { display: block; }
+        .hero h1 .line.outline {
+            -webkit-text-stroke: 2px var(--white);
+            color: transparent;
+        }
+        .hero h1 .line.red { color: var(--red); }
+        .hero-bottom {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+            margin-top: 60px;
+        }
+        .hero-desc {
+            font-size: 1.1rem; color: var(--gray);
+            max-width: 480px; line-height: 1.7;
+        }
+        .hero-cta-area { display: flex; align-items: center; gap: 32px; }
+        .hero-phone {
+            font-family: 'Space Mono', monospace;
+            font-size: 1.5rem; font-weight: 700;
+            color: var(--red); text-decoration: none;
+        }
+        .hero-phone:hover { text-shadow: 0 0 20px var(--red-glow); }
+
+        /* ── BOLT DIVIDER ── */
+        .bolt-divider {
+            display: flex; justify-content: center; gap: 12px; padding: 40px 0;
+        }
+        .bolt {
+            width: 8px; height: 8px; background: var(--red); border-radius: 50%;
+        }
+
+        /* ── SERVICES ── */
+        .services {
+            padding: 80px 24px;
+            border-top: 1px solid #222;
+        }
+        .services-inner { max-width: 1200px; margin: 0 auto; }
+        .section-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem; color: var(--red);
+            text-transform: uppercase; letter-spacing: 4px;
+            margin-bottom: 16px;
+        }
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700; margin-bottom: 60px;
+            letter-spacing: -1px;
+        }
+        .services-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+            background: #222;
+        }
+        .service-cell {
+            background: var(--dark);
+            padding: 40px 32px;
+            transition: all 0.3s;
+            position: relative;
+        }
+        .service-cell::before {
+            content: ''; position: absolute; top: 0; left: 0;
+            width: 0; height: 2px; background: var(--red);
+            transition: width 0.4s;
+        }
+        .service-cell:hover { background: var(--dark-card); }
+        .service-cell:hover::before { width: 100%; }
+        .service-num {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem; color: var(--red);
+            margin-bottom: 20px;
+        }
+        .service-cell h3 {
+            font-size: 1.2rem; font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .service-cell p { color: var(--gray); font-size: 0.9rem; line-height: 1.6; }
+
+        /* ── MARQUEE ── */
+        .marquee {
+            overflow: hidden;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+            padding: 20px 0;
+            background: var(--dark);
+        }
+        .marquee-track {
+            display: flex; gap: 40px;
+            animation: scroll 20s linear infinite;
+            width: max-content;
+        }
+        .marquee-item {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.8rem; color: var(--gray-dark);
+            text-transform: uppercase; letter-spacing: 3px;
+            white-space: nowrap;
+            display: flex; align-items: center; gap: 40px;
+        }
+        .marquee-item::after { content: '⚙'; color: var(--red); }
+        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        /* ── EQUIPMENT ── */
+        .equipment {
+            padding: 80px 24px;
+        }
+        .equip-inner { max-width: 1200px; margin: 0 auto; }
+        .equip-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+        }
+        .equip-cell {
+            border: 1px solid #222;
+            padding: 28px 24px;
+            transition: all 0.2s;
+        }
+        .equip-cell:hover { border-color: var(--red); background: rgba(230,57,70,0.03); }
+        .equip-cell .icon { font-size: 1.5rem; margin-bottom: 12px; }
+        .equip-cell h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 4px; }
+        .equip-cell p { font-size: 0.78rem; color: var(--gray); }
+
+        /* ── PROCESS ── */
+        .process {
+            padding: 80px 24px;
+            border-top: 1px solid #222;
+        }
+        .process-inner { max-width: 1000px; margin: 0 auto; }
+        .process-row {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+            background: #222;
+        }
+        .proc-cell {
+            background: var(--dark);
+            padding: 40px 28px;
+            position: relative;
+        }
+        .proc-cell::after {
+            content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+            height: 0; background: var(--red);
+            transition: height 0.3s;
+        }
+        .proc-cell:hover::after { height: 3px; }
+        .proc-num {
+            font-family: 'Space Mono', monospace;
+            font-size: 2.5rem; font-weight: 700;
+            color: var(--red); margin-bottom: 16px;
+            line-height: 1;
+        }
+        .proc-cell h4 { font-size: 1rem; font-weight: 600; margin-bottom: 8px; }
+        .proc-cell p { font-size: 0.85rem; color: var(--gray); }
+
+        /* ── QUOTE ── */
+        .quote-section {
+            padding: 100px 24px;
+            text-align: center;
+            border-top: 1px solid #222;
+            position: relative;
+        }
+        .quote-section::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 50% 50%, rgba(230,57,70,0.06), transparent 60%);
+        }
+        .quote-inner { max-width: 700px; margin: 0 auto; position: relative; z-index: 1; }
+        .quote-mark { font-size: 4rem; color: var(--red); line-height: 1; margin-bottom: 16px; }
+        .quote-text {
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+            font-weight: 500; line-height: 1.5;
+            margin-bottom: 24px;
+        }
+        .quote-author { color: var(--gray); font-size: 0.9rem; }
+        .quote-author strong { color: var(--red); }
+
+        /* ── CTA ── */
+        .cta {
+            padding: 100px 24px;
+            text-align: center;
+        }
+        .cta h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700; margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+        .cta h2 em { color: var(--red); font-style: normal; }
+        .cta p { color: var(--gray); font-size: 1.1rem; margin-bottom: 40px; }
+        .cta-phone-big {
+            font-family: 'Space Mono', monospace;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 700; color: var(--red);
+            text-decoration: none;
+            display: block; margin-bottom: 32px;
+            transition: all 0.2s;
+        }
+        .cta-phone-big:hover { text-shadow: 0 0 30px var(--red-glow); }
+        .cta-btn {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: var(--red); color: var(--black);
+            padding: 16px 36px; border-radius: 2px;
+            font-size: 1rem; font-weight: 700;
+            text-decoration: none; transition: all 0.2s;
+            border: none; cursor: pointer;
+        }
+        .cta-btn:hover { background: var(--white); transform: translateY(-2px); }
+
+        /* ── AREA ── */
+        .area {
+            padding: 80px 24px;
+            border-top: 1px solid #222;
+            text-align: center;
+        }
+        .area-inner { max-width: 800px; margin: 0 auto; }
+        .area h2 {
+            font-size: 2rem; font-weight: 700; margin-bottom: 32px;
+        }
+        .area-towns {
+            display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;
+        }
+        .area-town {
+            border: 1px solid #333;
+            padding: 8px 20px;
+            font-size: 0.85rem; color: var(--gray);
+            transition: all 0.2s;
+        }
+        .area-town:hover { border-color: var(--red); color: var(--red); }
+
+        /* ── FOOTER ── */
+        .footer {
+            border-top: 1px solid #222;
+            padding: 48px 24px 24px;
+        }
+        .footer-inner {
+            max-width: 1200px; margin: 0 auto;
+            display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-brand h3 {
+            font-family: 'Space Mono', monospace;
+            font-size: 1rem; font-weight: 700; margin-bottom: 12px;
+        }
+        .footer-brand h3 em { color: var(--red); font-style: normal; }
+        .footer-brand p { color: var(--gray); font-size: 0.85rem; max-width: 300px; }
+        .footer-col h4 {
+            font-size: 0.7rem; font-weight: 700; color: var(--red);
+            text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px;
+        }
+        .footer-col a { display: block; color: var(--gray); text-decoration: none; font-size: 0.85rem; padding: 4px 0; }
+        .footer-col a:hover { color: var(--red); }
+        .footer-col p { color: var(--gray); font-size: 0.85rem; }
+        .footer-bottom {
+            border-top: 1px solid #222;
+            padding-top: 24px;
+            text-align: center;
+            font-size: 0.8rem; color: var(--gray-dark);
+        }
+
+        @media (max-width: 900px) {
+            .hero-bottom { grid-template-columns: 1fr; }
+            .services-grid { grid-template-columns: 1fr 1fr; }
+            .equip-grid { grid-template-columns: repeat(2, 1fr); }
+            .process-row { grid-template-columns: repeat(2, 1fr); }
+            .footer-inner { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 640px) {
+            .nav-links { display: none; }
+            .hamburger { display: block; }
+            .services-grid { grid-template-columns: 1fr; }
+            .equip-grid { grid-template-columns: 1fr 1fr; }
+            .process-row { grid-template-columns: 1fr; }
+            .hero h1 { letter-spacing: -1px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-brand">SMALL <em>ENGINE</em> REPAIR</a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#area">Area</a></li>
+                <li><a href="tel:7198503863" class="nav-phone">719-850-3863</a></li>
+            </ul>
+            <button class="hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('open')">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <div class="mobile-menu">
+            <a href="#services">Services</a>
+            <a href="#process">Process</a>
+            <a href="#area">Service Area</a>
+            <a href="tel:7198503863">719-850-3863</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-grid"></div>
+        <div class="hero-inner">
+            <div class="hero-top">
+                <div class="hero-line">
+                    <div class="hero-line-bar"></div>
+                    <span class="hero-line-text">San Luis Valley, CO — Est. 2026</span>
+                </div>
+                <h1>
+                    <span class="line">SMALL</span>
+                    <span class="line outline">ENGINE</span>
+                    <span class="line red">REPAIR</span>
+                </h1>
+            </div>
+            <div class="hero-bottom">
+                <p class="hero-desc">We fix small engines. 2-stroke and 4-stroke. Fuel systems, ignition, carburetors — whatever's keeping your equipment down, we get it back on its feet.</p>
+                <div class="hero-cta-area">
+                    <a href="tel:7198503863" class="hero-phone">719-850-3863</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="bolt-divider">
+        <div class="bolt"></div>
+        <div class="bolt"></div>
+        <div class="bolt"></div>
+    </div>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <div class="services-inner">
+            <div class="section-label">// What We Do</div>
+            <h2 class="section-title">Services</h2>
+            <div class="services-grid">
+                <div class="service-cell">
+                    <div class="service-num">01</div>
+                    <h3>Fuel Systems</h3>
+                    <p>Carburetor rebuilds, fuel line replacement, filter swaps, tank cleaning. If your engine starves or floods, we find the leak.</p>
+                </div>
+                <div class="service-cell">
+                    <div class="service-num">02</div>
+                    <h3>Ignition Systems</h3>
+                    <p>Spark plugs, coils, CDI modules, kill switch wiring. We trace the spark to the source and fix the electrical fault.</p>
+                </div>
+                <div class="service-cell">
+                    <div class="service-num">03</div>
+                    <h3>Routine Maintenance</h3>
+                    <p>Oil changes, air filters, blade sharpening, seasonal tune-ups. Preventive work that keeps downtime low.</p>
+                </div>
+                <div class="service-cell">
+                    <div class="service-num">04</div>
+                    <h3>2-Stroke Engines</h3>
+                    <p>Chainsaws, blowers, trimmers. We handle compression loss, piston wear, and the carb issues unique to 2-stroke power.</p>
+                </div>
+                <div class="service-cell">
+                    <div class="service-num">05</div>
+                    <h3>4-Stroke Engines</h3>
+                    <p>Mowers, generators, washers. Full overhaul capability including valve adjustment and complete engine rebuilds.</p>
+                </div>
+                <div class="service-cell">
+                    <div class="service-num">06</div>
+                    <h3>Diagnostics</h3>
+                    <p>Call with your symptoms. We diagnose before we disassemble. You get an estimate before any wrench turns.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee">
+        <div class="marquee-track">
+            <span class="marquee-item">Lawn Mowers</span>
+            <span class="marquee-item">Chainsaws</span>
+            <span class="marquee-item">Generators</span>
+            <span class="marquee-item">Leaf Blowers</span>
+            <span class="marquee-item">Weed Eaters</span>
+            <span class="marquee-item">Pressure Washers</span>
+            <span class="marquee-item">Snow Blowers</span>
+            <span class="marquee-item">ATVs</span>
+            <span class="marquee-item">Lawn Mowers</span>
+            <span class="marquee-item">Chainsaws</span>
+            <span class="marquee-item">Generators</span>
+            <span class="marquee-item">Leaf Blowers</span>
+            <span class="marquee-item">Weed Eaters</span>
+            <span class="marquee-item">Pressure Washers</span>
+            <span class="marquee-item">Snow Blowers</span>
+            <span class="marquee-item">ATVs</span>
+        </div>
+    </div>
+
+    <!-- PROCESS -->
+    <section class="process" id="process">
+        <div class="process-inner">
+            <div class="section-label">// Workflow</div>
+            <h2 class="section-title">How It Works</h2>
+            <div class="process-row">
+                <div class="proc-cell">
+                    <div class="proc-num">01</div>
+                    <h4>Call</h4>
+                    <p>Describe the problem. Get an estimate.</p>
+                </div>
+                <div class="proc-cell">
+                    <div class="proc-num">02</div>
+                    <h4>Drop Off</h4>
+                    <p>Bring the equipment to the shop.</p>
+                </div>
+                <div class="proc-cell">
+                    <div class="proc-num">03</div>
+                    <h4>Repair</h4>
+                    <p>Diagnose, fix, bench-test.</p>
+                </div>
+                <div class="proc-cell">
+                    <div class="proc-num">04</div>
+                    <h4>Pick Up</h4>
+                    <p>We call when it's ready. Done.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUOTE -->
+    <section class="quote-section">
+        <div class="quote-inner">
+            <div class="quote-mark">"</div>
+            <p class="quote-text">When your equipment quits, you need someone who actually knows small engines — not a generalist guessing.</p>
+            <p class="quote-author">— <strong>Local Customer</strong>, San Luis Valley</p>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <h2>Call <em>Brett</em></h2>
+        <p>No estimate fee. No surprises. Just straight talk and honest repair.</p>
+        <a href="tel:7198503863" class="cta-phone-big">719-850-3863</a>
+        <br><br>
+        <a href="tel:7198503863" class="cta-btn">CALL NOW →</a>
+    </section>
+
+    <!-- AREA -->
+    <section class="area" id="area">
+        <div class="area-inner">
+            <div class="section-label">// Location</div>
+            <h2>San Luis Valley</h2>
+            <div class="area-towns">
+                <span class="area-town">Monte Vista</span>
+                <span class="area-town">Alamosa</span>
+                <span class="area-town">South Fork</span>
+                <span class="area-town">Antonito</span>
+                <span class="area-town">Mosca</span>
+                <span class="area-town">Creede</span>
+                <span class="area-town">Saguache</span>
+                <span class="area-town">Wet Mountain Valley</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <h3>SMALL <em>ENGINE</em> REPAIR</h3>
+                <p>2-stroke and 4-stroke engine repair in the San Luis Valley, Colorado.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <a href="#services">Fuel Systems</a>
+                <a href="#services">Ignition</a>
+                <a href="#services">Maintenance</a>
+                <a href="#services">Diagnostics</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>Brett</p>
+                <a href="tel:7198503863">719-850-3863</a>
+                <p style="margin-top:8px">San Luis Valley, CO</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Small Engine Repair. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                e.preventDefault();
+                const t = document.querySelector(a.getAttribute('href'));
+                if (t) { t.scrollIntoView({ behavior: 'smooth' }); document.querySelector('.mobile-menu').classList.remove('open'); }
+            });
+        });
+    </script>
+</body>
+</html>

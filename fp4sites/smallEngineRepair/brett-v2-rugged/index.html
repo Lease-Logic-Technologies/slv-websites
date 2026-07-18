@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brett — Small Engine Repair | San Luis Valley, CO</title>
+    <meta name="description" content="Honest small engine repair in the San Luis Valley. Lawn mowers, chainsaws, generators, ATVs. Brett knows engines. (719) 850-3863.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --forest: #2d5016;
+            --forest-deep: #1a3a0a;
+            --forest-light: #4a7c28;
+            --amber: #d4a017;
+            --amber-light: #f5d98e;
+            --amber-dark: #a07810;
+            --cream: #f5f0e8;
+            --cream-dark: #e8e0d0;
+            --text: #2c2416;
+            --text-light: #5a4e3e;
+            --text-muted: #8a7e6e;
+            --brown: #6b4423;
+            --brown-light: #8b6443;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* ── NAV ── */
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(245,240,232,0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 2px solid var(--forest);
+        }
+        .nav-inner {
+            max-width: 1100px; margin: 0 auto;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 12px 24px;
+        }
+        .nav-brand { text-decoration: none; color: var(--forest-deep); }
+        .nav-brand h2 { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 800; }
+        .nav-brand span { color: var(--amber); }
+        .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--text-light); font-weight: 600; font-size: 0.9rem; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--forest); }
+        .nav-phone {
+            color: var(--amber-dark); font-weight: 700; text-decoration: none;
+            background: var(--amber); color: var(--forest-deep);
+            padding: 8px 18px; border-radius: 4px;
+            font-size: 0.85rem;
+        }
+        .hamburger { display: none; background: none; border: none; cursor: pointer; }
+        .hamburger span { display: block; width: 22px; height: 3px; background: var(--forest); margin: 4px 0; border-radius: 2px; }
+        .mobile-menu { display: none; position: fixed; top: 60px; left: 0; right: 0; background: var(--cream); border-bottom: 2px solid var(--forest); padding: 24px; z-index: 99; }
+        .mobile-menu.open { display: block; }
+        .mobile-menu a { display: block; color: var(--text); text-decoration: none; padding: 12px 0; border-bottom: 1px solid var(--cream-dark); font-weight: 600; }
+
+        /* ── HERO ── */
+        .hero {
+            min-height: 100vh;
+            display: flex; align-items: center;
+            padding: 100px 24px 80px;
+            position: relative;
+            background:
+                linear-gradient(135deg, var(--forest-deep) 0%, var(--forest) 50%, var(--forest-light) 100%);
+            overflow: hidden;
+        }
+        .hero::before {
+            content: ''; position: absolute; inset: 0;
+            background:
+                radial-gradient(ellipse at 70% 30%, rgba(212,160,23,0.15), transparent 60%),
+                radial-gradient(ellipse at 30% 80%, rgba(0,0,0,0.2), transparent 50%);
+        }
+        .hero-pattern {
+            position: absolute; inset: 0; opacity: 0.05;
+            background-image:
+                repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(255,255,255,1) 40px, rgba(255,255,255,1) 41px);
+        }
+        .hero-inner {
+            max-width: 1100px; margin: 0 auto; width: 100%;
+            position: relative; z-index: 1;
+            display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center;
+        }
+        .hero-content { color: white; }
+        .hero-tag {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(212,160,23,0.2); border: 1px solid rgba(212,160,23,0.4);
+            padding: 6px 16px; border-radius: 20px;
+            font-size: 0.75rem; font-weight: 700; color: var(--amber-light);
+            text-transform: uppercase; letter-spacing: 2px; margin-bottom: 24px;
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.8rem, 5vw, 4.2rem);
+            font-weight: 900; line-height: 1.05;
+            margin-bottom: 24px;
+        }
+        .hero h1 em { font-style: italic; color: var(--amber-light); }
+        .hero p { font-size: 1.1rem; color: rgba(255,255,255,0.8); max-width: 480px; margin-bottom: 36px; line-height: 1.7; }
+        .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+        .btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 14px 28px; border-radius: 6px;
+            font-size: 0.95rem; font-weight: 700;
+            text-decoration: none; transition: all 0.25s; border: none; cursor: pointer;
+        }
+        .btn-amber {
+            background: var(--amber); color: var(--forest-deep);
+        }
+        .btn-amber:hover { background: var(--amber-light); transform: translateY(-2px); }
+        .btn-outline-light {
+            background: transparent; color: white;
+            border: 2px solid rgba(255,255,255,0.4);
+        }
+        .btn-outline-light:hover { border-color: white; }
+
+        /* Hero visual */
+        .hero-visual {
+            display: flex; justify-content: center;
+        }
+        .workshop-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 16px;
+            padding: 36px;
+            color: white;
+            max-width: 360px;
+        }
+        .workshop-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem; margin-bottom: 20px;
+            color: var(--amber-light);
+        }
+        .ws-item {
+            display: flex; align-items: center; gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .ws-item:last-child { border-bottom: none; }
+        .ws-dot {
+            width: 10px; height: 10px; border-radius: 50%;
+            background: var(--amber);
+            flex-shrink: 0;
+        }
+        .ws-item span { font-size: 0.95rem; color: rgba(255,255,255,0.9); }
+
+        /* ── INTRO ── */
+        .intro {
+            padding: 80px 24px;
+            background: var(--cream);
+        }
+        .intro-inner {
+            max-width: 1100px; margin: 0 auto;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+        }
+        .intro-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem; font-weight: 800;
+            color: var(--forest-deep); margin-bottom: 20px;
+        }
+        .intro-text h2 em { color: var(--amber-dark); font-style: italic; }
+        .intro-text p { color: var(--text-light); font-size: 1.05rem; margin-bottom: 16px; line-height: 1.7; }
+        .intro-visual {
+            background: var(--forest);
+            border-radius: 16px;
+            padding: 40px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .intro-visual::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(circle at 80% 20%, rgba(212,160,23,0.2), transparent 50%);
+        }
+        .intro-stats {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+            position: relative; z-index: 1;
+        }
+        .stat {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+        }
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem; font-weight: 900;
+            color: var(--amber-light);
+        }
+        .stat-label { font-size: 0.8rem; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+
+        /* ── SERVICES ── */
+        .services {
+            padding: 80px 24px;
+            background: var(--cream-dark);
+        }
+        .services-inner { max-width: 1100px; margin: 0 auto; }
+        .section-header {
+            text-align: center; margin-bottom: 60px;
+        }
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem; font-weight: 800;
+            color: var(--forest-deep); margin-bottom: 12px;
+        }
+        .section-header p { color: var(--text-muted); max-width: 550px; margin: 0 auto; font-size: 1.05rem; }
+        .services-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+        }
+        .service-card {
+            background: white;
+            border-radius: 12px;
+            padding: 32px 28px;
+            border: 1px solid var(--cream-dark);
+            transition: all 0.3s;
+            position: relative;
+        }
+        .service-card::after {
+            content: ''; position: absolute; bottom: 0; left: 20%; right: 20%;
+            height: 3px; background: var(--amber);
+            border-radius: 3px 3px 0 0;
+            transform: scaleX(0); transition: transform 0.3s;
+        }
+        .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+        .service-card:hover::after { transform: scaleX(1); }
+        .service-emoji { font-size: 2rem; margin-bottom: 16px; }
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem; font-weight: 700;
+            color: var(--forest-deep); margin-bottom: 10px;
+        }
+        .service-card p { color: var(--text-light); font-size: 0.9rem; line-height: 1.6; }
+
+        /* ── EQUIPMENT STRIP ── */
+        .equipment-strip {
+            padding: 60px 24px;
+            background: var(--forest-deep);
+        }
+        .equipment-strip h2 {
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            color: var(--amber-light);
+            font-size: 1.5rem; margin-bottom: 40px;
+        }
+        .equip-grid {
+            max-width: 1100px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+        }
+        .equip-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 28px 20px;
+            text-align: center;
+            transition: all 0.2s;
+        }
+        .equip-card:hover { background: rgba(255,255,255,0.1); border-color: var(--amber); }
+        .equip-card .icon { font-size: 1.8rem; margin-bottom: 12px; }
+        .equip-card h4 { color: white; font-size: 0.95rem; margin-bottom: 4px; }
+        .equip-card p { color: rgba(255,255,255,0.5); font-size: 0.8rem; }
+
+        /* ── PROCESS ── */
+        .process {
+            padding: 80px 24px;
+        }
+        .process-inner { max-width: 900px; margin: 0 auto; }
+        .process-steps {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px;
+        }
+        .step {
+            background: white;
+            border-radius: 12px;
+            padding: 32px;
+            border-left: 4px solid var(--amber);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+        }
+        .step-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem; font-weight: 900;
+            color: var(--amber); margin-bottom: 8px;
+        }
+        .step h3 { font-size: 1.1rem; font-weight: 700; color: var(--forest-deep); margin-bottom: 8px; }
+        .step p { color: var(--text-light); font-size: 0.9rem; }
+
+        /* ── CTA ── */
+        .cta {
+            padding: 100px 24px;
+            background: var(--forest);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 50% 50%, rgba(212,160,23,0.1), transparent 60%);
+        }
+        .cta-inner { position: relative; z-index: 1; max-width: 600px; margin: 0 auto; }
+        .cta h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem; font-weight: 900;
+            color: white; margin-bottom: 16px;
+        }
+        .cta p { color: rgba(255,255,255,0.8); font-size: 1.1rem; margin-bottom: 32px; }
+        .cta-phone {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem; font-weight: 900;
+            color: var(--amber-light);
+            text-decoration: none;
+            display: block; margin-bottom: 24px;
+        }
+        .cta-phone:hover { color: white; }
+
+        /* ── AREA ── */
+        .area {
+            padding: 80px 24px;
+            background: var(--cream-dark);
+        }
+        .area-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+        .area h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem; font-weight: 800;
+            color: var(--forest-deep); margin-bottom: 24px;
+        }
+        .area > p { color: var(--text-muted); max-width: 600px; margin: 0 auto 40px; font-size: 1.05rem; }
+        .towns {
+            display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;
+        }
+        .town {
+            background: white;
+            border: 1px solid var(--cream-dark);
+            padding: 10px 22px;
+            border-radius: 24px;
+            font-size: 0.9rem; font-weight: 600;
+            color: var(--forest);
+        }
+
+        /* ── FOOTER ── */
+        .footer {
+            background: var(--forest-deep);
+            padding: 48px 24px 24px;
+            color: white;
+        }
+        .footer-inner {
+            max-width: 1100px; margin: 0 auto;
+            display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-brand h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem; margin-bottom: 12px;
+        }
+        .footer-brand h3 span { color: var(--amber-light); }
+        .footer-brand p { color: rgba(255,255,255,0.6); font-size: 0.9rem; max-width: 300px; line-height: 1.6; }
+        .footer-col h4 {
+            font-size: 0.75rem; font-weight: 700; color: var(--amber-light);
+            text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px;
+        }
+        .footer-col a { display: block; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem; padding: 4px 0; }
+        .footer-col a:hover { color: white; }
+        .footer-col p { color: rgba(255,255,255,0.6); font-size: 0.9rem; }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 24px;
+            text-align: center;
+            font-size: 0.8rem; color: rgba(255,255,255,0.4);
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 900px) {
+            .hero-inner { grid-template-columns: 1fr; text-align: center; }
+            .hero p { margin: 0 auto 36px; }
+            .hero-actions { justify-content: center; }
+            .hero-visual { display: none; }
+            .intro-inner { grid-template-columns: 1fr; }
+            .services-grid { grid-template-columns: 1fr 1fr; }
+            .equip-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-inner { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 640px) {
+            .nav-links { display: none; }
+            .hamburger { display: block; }
+            .services-grid { grid-template-columns: 1fr; }
+            .process-steps { grid-template-columns: 1fr; }
+            .equip-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAV -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-brand">
+                <h2>Brett's <span>Engine Repair</span></h2>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#area">Area</a></li>
+                <li><a href="tel:7198503863" class="nav-phone">📞 (719) 850-3863</a></li>
+            </ul>
+            <button class="hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('open')">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <div class="mobile-menu">
+            <a href="#services">Services</a>
+            <a href="#process">Process</a>
+            <a href="#area">Service Area</a>
+            <a href="tel:7198503863">📞 (719) 850-3863</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-pattern"></div>
+        <div class="hero-inner">
+            <div class="hero-content">
+                <div class="hero-tag">⚙ San Luis Valley, CO</div>
+                <h1>Honest Work,<br><em>Running Engines.</em></h1>
+                <p>Local small engine repair you can trust. We fix what's broken, explain what's needed, and won't recommend what isn't. That's the way it should be.</p>
+                <div class="hero-actions">
+                    <a href="tel:7198503863" class="btn btn-amber">Call for Estimate</a>
+                    <a href="#services" class="btn btn-outline-light">See Services ↓</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="workshop-card">
+                    <h3>What We Work On</h3>
+                    <div class="ws-item"><div class="ws-dot"></div><span>2-Stroke Engines</span></div>
+                    <div class="ws-item"><div class="ws-dot"></div><span>4-Stroke Engines</span></div>
+                    <div class="ws-item"><div class="ws-dot"></div><span>Fuel & Carb Systems</span></div>
+                    <div class="ws-item"><div class="ws-dot"></div><span>Ignition & Electrical</span></div>
+                    <div class="ws-item"><div class="ws-dot"></div><span>Routine Maintenance</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="intro">
+        <div class="intro-inner">
+            <div class="intro-text">
+                <h2>Built on <em>Hard Work</em> and <em>Good Mechanics</em></h2>
+                <p>We service the San Luis Valley because that's where we live. We know what small engines do the hardest work around here — on farms, ranches, and every property that needs mowing, cutting, or clearing.</p>
+                <p>When your equipment quits, we get it back running. No runaround, no mystery charges. You call, we diagnose, we fix it, and we tell you what we found.</p>
+            </div>
+            <div class="intro-visual">
+                <div class="intro-stats">
+                    <div class="stat">
+                        <div class="stat-number">2S</div>
+                        <div class="stat-label">Stroke Repair</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">4S</div>
+                        <div class="stat-label">Stroke Repair</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">SLV</div>
+                        <div class="stat-label">Service Area</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">719</div>
+                        <div class="stat-label">Area Code</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <div class="services-inner">
+            <div class="section-header">
+                <h2>What We Fix</h2>
+                <p>From carburetor cleanings to full engine rebuilds — if it's got a small engine, we handle it.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-emoji">⛽</div>
+                    <h3>Fuel Systems</h3>
+                    <p>Carburetor cleaning, rebuild, and tuning. Fuel lines, filters, and tank issues. If it won't run right on gas, we find the problem.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-emoji">⚡</div>
+                    <h3>Ignition Systems</h3>
+                    <p>Spark plugs, coils, kill switches, and CDI modules. Electrical gremlins traced and fixed so you start reliably every time.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-emoji">🔧</div>
+                    <h3>Routine Maintenance</h3>
+                    <p>Oil changes, air filters, blade sharpening, seasonal tune-ups. Keep your equipment reliable between repairs.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-emoji">🪚</div>
+                    <h3>2-Stroke Engines</h3>
+                    <p>Chainsaws, blowers, trimmers. We know the unique needs of 2-stroke power — compression, piston wear, mix ratios.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-emoji">🌿</div>
+                    <h3>4-Stroke Engines</h3>
+                    <p>Mowers, generators, washers, pumps. Full service including valve adjustment, oil systems, and complete overhauls.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-emoji">🔍</div>
+                    <h3>Diagnostics</h3>
+                    <p>Won't start? Runs rough? Overheating? We diagnose before we touch anything. Call for an estimate — always upfront pricing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EQUIPMENT -->
+    <section class="equipment-strip">
+        <h2>Equipment We Service</h2>
+        <div class="equip-grid">
+            <div class="equip-card"><div class="icon">🌾</div><h4>Lawn Mowers</h4><p>Push, riding, zero-turn</p></div>
+            <div class="equip-card"><div class="icon">🪚</div><h4>Chainsaws</h4><p>Pro & homeowner grade</p></div>
+            <div class="equip-card"><div class="icon">⚡</div><h4>Generators</h4><p>Portable & standby</p></div>
+            <div class="equip-card"><div class="icon">💨</div><h4>Leaf Blowers</h4><p>Handheld & backpack</p></div>
+            <div class="equip-card"><div class="icon">🌿</div><h4>Weed Eaters</h4><p>Trimmers & edgers</p></div>
+            <div class="equip-card"><div class="icon">💧</div><h4>Pressure Washers</h4><p>Gas-powered units</p></div>
+            <div class="equip-card"><div class="icon">❄️</div><h4>Snow Blowers</h4><p>Single & two-stage</p></div>
+            <div class="equip-card"><div class="icon">🏍️</div><h4>ATVs / Snowmobiles</h4><p>Small engine work</p></div>
+        </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="process" id="process">
+        <div class="process-inner">
+            <div class="section-header">
+                <h2>Simple as It Should Be</h2>
+            </div>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-num">01</div>
+                    <h3>Call Brett</h3>
+                    <p>Tell us what's going on with your engine. We'll give you an initial estimate over the phone.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">02</div>
+                    <h3>Bring It In</h3>
+                    <p>Drop your equipment off at the shop. We'll take a look and confirm what needs to be done.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">03</div>
+                    <h3>We Fix It</h3>
+                    <p>Diagnose, repair, test on the bench. We don't hand it back until it runs right.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">04</div>
+                    <h3>You Get It Back</h3>
+                    <p>We call you when it's ready. Pay what we quoted and get back to work.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AREA -->
+    <section class="area" id="area">
+        <div class="area-inner">
+            <h2>Serving the San Luis Valley</h2>
+            <p>From Monte Vista to Antonito and everywhere in between. We're your local engine guys.</p>
+            <div class="towns">
+                <span class="town">Monte Vista</span>
+                <span class="town">Alamosa</span>
+                <span class="town">South Fork</span>
+                <span class="town">Antonito</span>
+                <span class="town">Mosca</span>
+                <span class="town">Creede</span>
+                <span class="town">Saguache</span>
+                <span class="town">Wet Mountain Valley</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="cta-inner">
+            <h2>Engine Acting Up?</h2>
+            <p>Call for an estimate. No obligation, no surprises — just honest repair work.</p>
+            <a href="tel:7198503863" class="cta-phone">(719) 850-3863</a>
+            <br>
+            <a href="tel:7198503863" class="btn btn-amber">Call Brett Now</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <h3>Brett's <span>Engine Repair</span></h3>
+                <p>Small engine repair in the San Luis Valley. 2-stroke and 4-stroke. We fix it right the first time.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <a href="#services">Fuel Systems</a>
+                <a href="#services">Ignition Systems</a>
+                <a href="#services">Maintenance</a>
+                <a href="#services">Diagnostics</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>Brett</p>
+                <a href="tel:7198503863">(719) 850-3863</a>
+                <p style="margin-top:8px">San Luis Valley, CO</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Brett's Small Engine Repair. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                e.preventDefault();
+                const t = document.querySelector(a.getAttribute('href'));
+                if (t) { t.scrollIntoView({ behavior: 'smooth' }); document.querySelector('.mobile-menu').classList.remove('open'); }
+            });
+        });
+    </script>
+</body>
+</html>
