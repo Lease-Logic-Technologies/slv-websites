@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alamosa Rotary Club — High Altitude, High Impact</title>
+    <meta name="description" content="Alamosa Rotary Club, San Luis Valley, Colorado. Serving at elevation. District 5040. Meeting at Juanito's Mexican Kitchen, 1st & 3rd Mondays.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --pine: #1a3c2a;
+            --pine-deep: #0f2818;
+            --pine-light: #2d5a3f;
+            --slate: #3d4f5f;
+            --slate-light: #6b7f8f;
+            --gold: #d4a843;
+            --gold-light: #e8c86a;
+            --snow: #f0ece4;
+            --snow-dark: #e5dfd5;
+            --text: #1a1a1a;
+            --text-light: #4a4a4a;
+            --text-muted: #7a7a7a;
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Outfit', sans-serif; background: var(--snow); color: var(--text); line-height: 1.6; }
+
+        .top-bar { background: var(--pine-deep); color: rgba(255,255,255,0.7); padding: 8px 24px; text-align: center; font-size: 0.8rem; }
+        .top-bar a { color: var(--gold); text-decoration: none; font-weight: 600; }
+
+        .nav { position: sticky; top: 0; z-index: 100; background: rgba(240,236,228,0.95); backdrop-filter: blur(12px); border-bottom: 2px solid var(--pine); }
+        .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 12px 24px; }
+        .nav-brand { text-decoration: none; display: flex; align-items: center; gap: 12px; }
+        .nav-wedge { width: 40px; height: 40px; background: var(--pine); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+        .nav-wedge svg { width: 24px; height: 24px; fill: var(--gold); }
+        .nav-title { font-size: 1.15rem; font-weight: 800; color: var(--pine-deep); }
+        .nav-title small { display: block; font-size: 0.6rem; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px; }
+        .nav-links { display: flex; gap: 24px; list-style: none; align-items: center; }
+        .nav-links a { color: var(--text-light); text-decoration: none; font-weight: 500; font-size: 0.9rem; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--pine); }
+        .nav-join { background: var(--pine); color: var(--gold); padding: 8px 18px; border-radius: 6px; font-weight: 600; font-size: 0.85rem; text-decoration: none; transition: all 0.2s; }
+        .nav-join:hover { background: var(--pine-light); }
+        .hamburger { display: none; background: none; border: none; cursor: pointer; }
+        .hamburger span { display: block; width: 22px; height: 2px; background: var(--pine); margin: 5px 0; }
+        .mobile-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; background: var(--snow); border-bottom: 2px solid var(--pine); padding: 24px; z-index: 99; }
+        .mobile-menu.open { display: block; }
+        .mobile-menu a { display: block; color: var(--text); text-decoration: none; padding: 12px 0; border-bottom: 1px solid var(--snow-dark); font-weight: 600; }
+
+        .hero { min-height: 85vh; display: flex; align-items: center; background: linear-gradient(160deg, var(--pine-deep) 0%, var(--pine) 50%, var(--pine-light) 100%); position: relative; overflow: hidden; padding: 80px 24px; }
+        .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 70%, rgba(212,168,67,0.1), transparent 50%); }
+        .mountain { position: absolute; bottom: 0; left: 0; right: 0; height: 300px; opacity: 0.06; }
+        .mountain svg { width: 100%; height: 100%; }
+        .hero-inner { max-width: 1200px; margin: 0 auto; width: 100%; position: relative; z-index: 1; display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center; }
+        .hero-content { color: white; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(212,168,67,0.15); border: 1px solid rgba(212,168,67,0.3); padding: 6px 16px; border-radius: 20px; font-size: 0.7rem; font-weight: 600; color: var(--gold-light); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 24px; }
+        .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; line-height: 1.05; margin-bottom: 20px; }
+        .hero h1 em { color: var(--gold-light); font-style: italic; }
+        .hero p { font-size: 1.1rem; color: rgba(255,255,255,0.7); max-width: 480px; margin-bottom: 32px; line-height: 1.7; }
+        .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 8px; font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: all 0.25s; border: none; cursor: pointer; }
+        .btn-gold { background: var(--gold); color: var(--pine-deep); }
+        .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
+        .btn-outline-light { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.3); }
+        .btn-outline-light:hover { border-color: var(--gold); color: var(--gold); }
+        .hero-card { background: rgba(255,255,255,0.06); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 32px; color: white; }
+        .hero-card h3 { font-size: 1rem; color: var(--gold-light); margin-bottom: 20px; }
+        .hc-item { display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .hc-item:last-child { border-bottom: none; }
+        .hc-dot { width: 8px; height: 8px; background: var(--gold); border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
+        .hc-item p { font-size: 0.9rem; color: rgba(255,255,255,0.8); }
+
+        .elevation-bar { background: var(--pine); padding: 24px; text-align: center; }
+        .elevation-bar p { font-family: 'DM Mono', monospace; font-size: 0.85rem; color: var(--gold); letter-spacing: 2px; }
+
+        .section { padding: 80px 24px; }
+        .section-inner { max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-tag { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--pine); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 12px; }
+        .section-title { font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 800; color: var(--pine-deep); margin-bottom: 16px; }
+        .section-sub { color: var(--text-muted); max-width: 600px; margin: 0 auto; font-size: 1.05rem; }
+
+        .mission { background: var(--snow-dark); }
+        .mission-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .mission-card { background: white; border-radius: 12px; padding: 32px 28px; border: 1px solid var(--snow-dark); transition: all 0.3s; }
+        .mission-card:hover { border-color: var(--pine); transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+        .mission-card .icon { font-size: 1.8rem; margin-bottom: 16px; }
+        .mission-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--pine-deep); margin-bottom: 10px; }
+        .mission-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+
+        .fourway { background: var(--pine-deep); color: white; }
+        .fourway-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+        .fw-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 28px 20px; text-align: center; transition: all 0.2s; }
+        .fw-card:hover { border-color: var(--gold); }
+        .fw-num { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--gold); letter-spacing: 2px; margin-bottom: 12px; }
+        .fw-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+        .fw-card p { font-size: 0.82rem; color: rgba(255,255,255,0.5); }
+
+        .meeting { background: white; }
+        .meeting-card { background: var(--snow); border-radius: 16px; padding: 40px; max-width: 700px; margin: 0 auto; text-align: center; border: 2px solid var(--snow-dark); }
+        .meeting-card h3 { font-size: 1.5rem; font-weight: 800; color: var(--pine-deep); margin-bottom: 24px; }
+        .mg-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; text-align: left; }
+        .mg-cell { background: white; border-radius: 10px; padding: 20px; border: 1px solid var(--snow-dark); }
+        .mg-cell .icon { font-size: 1.2rem; margin-bottom: 8px; }
+        .mg-cell h4 { font-size: 0.75rem; font-weight: 600; color: var(--pine); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+        .mg-cell p { font-size: 0.9rem; color: var(--text-light); }
+
+        .cta { text-align: center; background: var(--pine); padding: 80px 24px; }
+        .cta h2 { font-size: 2.5rem; font-weight: 800; color: white; margin-bottom: 16px; }
+        .cta h2 em { color: var(--gold-light); font-style: italic; }
+        .cta p { color: rgba(255,255,255,0.7); font-size: 1.1rem; margin-bottom: 32px; }
+        .cta-phone { font-size: 1.8rem; color: var(--gold); text-decoration: none; display: block; margin-bottom: 24px; }
+
+        .footer { background: var(--pine-deep); color: white; padding: 48px 24px 24px; }
+        .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+        .footer-brand h3 { font-size: 1.2rem; font-weight: 800; margin-bottom: 12px; }
+        .footer-brand h3 em { color: var(--gold); font-style: normal; }
+        .footer-brand p { color: rgba(255,255,255,0.5); font-size: 0.9rem; max-width: 300px; line-height: 1.6; }
+        .footer-col h4 { font-size: 0.7rem; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px; }
+        .footer-col a { display: block; color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9rem; padding: 4px 0; }
+        .footer-col a:hover { color: var(--gold); }
+        .footer-col p { color: rgba(255,255,255,0.5); font-size: 0.9rem; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; text-align: center; font-size: 0.8rem; color: rgba(255,255,255,0.3); }
+
+        @media (max-width: 900px) {
+            .hero-inner { grid-template-columns: 1fr; text-align: center; }
+            .hero p { margin: 0 auto 32px; }
+            .hero-actions { justify-content: center; }
+            .hero-card { max-width: 400px; margin: 0 auto; }
+            .mission-grid { grid-template-columns: 1fr 1fr; }
+            .fourway-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-inner { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 640px) {
+            .nav-links { display: none; }
+            .hamburger { display: block; }
+            .mission-grid { grid-template-columns: 1fr; }
+            .fourway-grid { grid-template-columns: 1fr; }
+            .mg-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">Rotary District 5040 &nbsp;|&nbsp; <a href="tel:7195882557">(719) 588-2557</a> &nbsp;|&nbsp; 7,813 ft — Alamosa, CO</div>
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-brand">
+                <div class="nav-wedge"><svg viewBox="0 0 100 100"><path d="M50 5 L62 35 L95 35 L68 55 L78 88 L50 68 L22 88 L32 55 L5 35 L38 35 Z"/></svg></div>
+                <div class="nav-title">Alamosa Rotary<small>San Luis Valley, CO</small></div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#mission">Mission</a></li><li><a href="#fourway">Four-Way Test</a></li><li><a href="#meetings">Meetings</a></li><li><a href="#join" class="nav-join">Join Us</a></li>
+            </ul>
+            <button class="hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('open')"><span></span><span></span><span></span></button>
+        </div>
+        <div class="mobile-menu"><a href="#mission">Mission</a><a href="#fourway">Four-Way Test</a><a href="#meetings">Meetings</a><a href="#join">Join Us</a></div>
+    </nav>
+
+    <section class="hero">
+        <div class="mountain"><svg viewBox="0 0 1200 300" preserveAspectRatio="none"><polygon fill="white" points="0,300 150,100 300,200 500,50 700,180 900,80 1100,150 1200,100 1200,300"/></svg></div>
+        <div class="hero-inner">
+            <div class="hero-content">
+                <div class="hero-badge">⛰ High Altitude Service</div>
+                <h1>Serving the<br><em>San Luis Valley</em></h1>
+                <p>At 7,813 feet, the San Luis Valley is where high plains meet high peaks. The Alamosa Rotary Club brings together community leaders to serve this unique region — and the world beyond it.</p>
+                <div class="hero-actions">
+                    <a href="#join" class="btn btn-gold">Join the Club</a>
+                    <a href="#meetings" class="btn btn-outline-light">Attend a Meeting</a>
+                </div>
+            </div>
+            <div>
+                <div class="hero-card">
+                    <h3>Alamosa Rotary</h3>
+                    <div class="hc-item"><div class="hc-dot"></div><p>District 5040, Rotary International</p></div>
+                    <div class="hc-item"><div class="hc-dot"></div><p>Diverse group of professional leaders</p></div>
+                    <div class="hc-item"><div class="hc-dot"></div><p>1st & 3rd Mondays at noon</p></div>
+                    <div class="hc-item"><div class="hc-dot"></div><p>Juanito's Mexican Kitchen, Alamosa</p></div>
+                    <div class="hc-item"><div class="hc-dot"></div><p>Contact: Suzanne DeVore (719) 588-2557</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="elevation-bar"><p>7,813 FT ELEVATION — ALAMOSA, COLORADO — SAN LUIS VALLEY</p></div>
+
+    <section class="section mission" id="mission">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-tag">Our Purpose</div>
+                <h2 class="section-title">Service Above Self</h2>
+                <p class="section-sub">From local community projects to global polio eradication, Rotary members turn fellowship into action.</p>
+            </div>
+            <div class="mission-grid">
+                <div class="mission-card"><div class="icon">🏔️</div><h3>Local Service</h3><p>Supporting Alamosa and the SLV through community programs, youth initiatives, and local partnerships.</p></div>
+                <div class="mission-card"><div class="icon">🌍</div><h3>Global Impact</h3><p>Part of 1.2 million Rotarians in 200+ countries, funding projects from clean water to peace Fellowships.</p></div>
+                <div class="mission-card"><div class="icon">🤝</div><h3>Fellowship</h3><p>Building lasting friendships with neighbors who share our commitment to service and making things better.</p></div>
+                <div class="mission-card"><div class="icon">🕊️</div><h3>Peace</h3><p>Promoting understanding and conflict resolution through Rotary Peace Centers worldwide.</p></div>
+                <div class="mission-card"><div class="icon">📚</div><h3>Education</h3><p>Supporting literacy programs, scholarships, and Teacher Exchange to empower communities.</p></div>
+                <div class="mission-card"><div class="icon">💧</div><h3>Clean Water</h3><p>Building wells and water systems for communities that lack this fundamental need.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section fourway" id="fourway">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-tag" style="color: var(--gold);">Our Guiding Code</div>
+                <h2 class="section-title" style="color: white;">The Four-Way Test</h2>
+            </div>
+            <div class="fourway-grid">
+                <div class="fw-card"><div class="fw-num">I</div><h3>Is it the TRUTH?</h3><p>We ask first whether what we think, say, or do is true.</p></div>
+                <div class="fw-card"><div class="fw-num">II</div><h3>Is it FAIR?</h3><p>Whether our actions are fair to all those concerned.</p></div>
+                <div class="fw-card"><div class="fw-num">III</div><h3>Will it build GOODWILL?</h3><p>Whether it will build goodwill and better friendships.</p></div>
+                <div class="fw-card"><div class="fw-num">IV</div><h3>Will it be BENEFICIAL?</h3><p>Whether it will be beneficial to all concerned.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section meeting" id="meetings">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-tag">Come Meet Us</div>
+                <h2 class="section-title">Our Meetings</h2>
+                <p class="section-sub">No obligation to buy lunch or to join — unless you want to!</p>
+            </div>
+            <div class="meeting-card">
+                <h3>First & Third Mondays</h3>
+                <div class="mg-grid">
+                    <div class="mg-cell"><div class="icon">🕐</div><h4>Time</h4><p>Noon — 1:00 PM</p></div>
+                    <div class="mg-cell"><div class="icon">📍</div><h4>Location</h4><p>Juanito's Mexican Kitchen, 2069 First Street, Alamosa</p></div>
+                    <div class="mg-cell"><div class="icon">📞</div><h4>Contact</h4><p>Suzanne DeVore, (719) 588-2557</p></div>
+                    <div class="mg-cell"><div class="icon">🌐</div><h4>Rotary</h4><p>District 5040, Rotary International</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="join">
+        <h2>Serve at <em>Elevation</em></h2>
+        <p>Join the Alamosa Rotary Club. Be part of something bigger than yourself — right here in the SLV.</p>
+        <a href="tel:7195882557" class="cta-phone">(719) 588-2557</a>
+        <br><a href="tel:7195882557" class="btn btn-gold" style="font-size:1.05rem; padding:16px 36px;">Contact Suzanne DeVore</a>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand"><h3>Alamosa <em>Rotary</em> Club</h3><p>Serving the San Luis Valley from 7,813 feet. Part of Rotary International, District 5040. Service Above Self.</p></div>
+            <div class="footer-col"><h4>Explore</h4><a href="#mission">Mission</a><a href="#fourway">Four-Way Test</a><a href="#meetings">Meetings</a></div>
+            <div class="footer-col"><h4>Connect</h4><a href="tel:7195882557">(719) 588-2557</a><a href="https://www.rotary.org" target="_blank">Rotary International</a><a href="https://www.facebook.com/p/Alamosa-Rotary-Club-100064863991118/" target="_blank">Facebook</a></div>
+        </div>
+        <div class="footer-bottom">&copy; 2026 Alamosa Rotary Club. District 5040. Service Above Self.</div>
+    </footer>
+    <script>document.querySelectorAll('a[href^="#"]').forEach(a => { a.addEventListener('click', e => { e.preventDefault(); const t = document.querySelector(a.getAttribute('href')); if (t) { t.scrollIntoView({ behavior: 'smooth' }); document.querySelector('.mobile-menu').classList.remove('open'); } }); });</script>
+</body>
+</html>

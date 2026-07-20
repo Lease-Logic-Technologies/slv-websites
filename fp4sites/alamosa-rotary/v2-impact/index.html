@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alamosa Rotary Club — People of Action</title>
+    <meta name="description" content="Alamosa Rotary Club. 1.2 million people of action across the globe. Serving the San Luis Valley. District 5040. Meet 1st & 3rd Mondays at Juanito's.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --red: #005eb8;
+            --rotary-blue: #0054A6;
+            --rotary-red: #F7A800;
+            --dark: #0a0a0a;
+            --white: #ffffff;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-500: #6b7280;
+            --gray-700: #374151;
+            --gray-900: #111827;
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--gray-900); line-height: 1.6; }
+
+        .top-bar { background: var(--rotary-blue); color: rgba(255,255,255,0.8); padding: 8px 24px; text-align: center; font-size: 0.8rem; font-weight: 500; }
+        .top-bar a { color: var(--rotary-red); text-decoration: none; font-weight: 600; }
+
+        .nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--gray-200); }
+        .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 14px 24px; }
+        .nav-brand { text-decoration: none; display: flex; align-items: center; gap: 10px; }
+        .nav-logo { width: 36px; height: 36px; background: var(--rotary-blue); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+        .nav-logo svg { width: 22px; height: 22px; fill: var(--rotary-red); }
+        .nav-title { font-size: 1.05rem; font-weight: 800; color: var(--gray-900); }
+        .nav-title small { display: block; font-size: 0.6rem; font-weight: 500; color: var(--gray-500); text-transform: uppercase; letter-spacing: 1.5px; }
+        .nav-links { display: flex; gap: 24px; list-style: none; align-items: center; }
+        .nav-links a { color: var(--gray-500); text-decoration: none; font-weight: 500; font-size: 0.9rem; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--rotary-blue); }
+        .nav-join { background: var(--rotary-blue); color: white; padding: 8px 18px; border-radius: 6px; font-weight: 600; font-size: 0.85rem; text-decoration: none; transition: all 0.2s; }
+        .nav-join:hover { background: #004080; }
+        .hamburger { display: none; background: none; border: none; cursor: pointer; }
+        .hamburger span { display: block; width: 22px; height: 2px; background: var(--gray-900); margin: 5px 0; }
+        .mobile-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; background: white; border-bottom: 1px solid var(--gray-200); padding: 24px; z-index: 99; }
+        .mobile-menu.open { display: block; }
+        .mobile-menu a { display: block; color: var(--gray-900); text-decoration: none; padding: 12px 0; border-bottom: 1px solid var(--gray-100); font-weight: 500; }
+
+        .hero { padding: 80px 24px 60px; background: var(--gray-50); }
+        .hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .hero-content {}
+        .hero-tag { display: inline-block; background: var(--rotary-blue); color: white; padding: 4px 14px; border-radius: 20px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; }
+        .hero h1 { font-size: clamp(2.5rem, 5vw, 3.8rem); font-weight: 900; line-height: 1.05; margin-bottom: 20px; color: var(--gray-900); }
+        .hero h1 span { color: var(--rotary-blue); }
+        .hero p { font-size: 1.1rem; color: var(--gray-500); max-width: 480px; margin-bottom: 32px; line-height: 1.7; }
+        .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 8px; font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: all 0.2s; border: none; cursor: pointer; }
+        .btn-blue { background: var(--rotary-blue); color: white; }
+        .btn-blue:hover { background: #004080; transform: translateY(-1px); }
+        .btn-outline { background: transparent; color: var(--gray-700); border: 2px solid var(--gray-200); }
+        .btn-outline:hover { border-color: var(--rotary-blue); color: var(--rotary-blue); }
+        .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .stat-card { background: white; border-radius: 12px; padding: 24px; border: 1px solid var(--gray-200); }
+        .stat-number { font-size: 2rem; font-weight: 900; color: var(--rotary-blue); }
+        .stat-label { font-size: 0.75rem; color: var(--gray-500); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+
+        .impact-bar { background: var(--rotary-blue); padding: 40px 24px; }
+        .impact-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; color: white; }
+        .impact-item .num { font-size: 2.2rem; font-weight: 900; color: var(--rotary-red); }
+        .impact-item .label { font-size: 0.8rem; color: rgba(255,255,255,0.7); margin-top: 4px; }
+
+        .section { padding: 80px 24px; }
+        .section-inner { max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 800; color: var(--gray-900); margin-bottom: 12px; }
+        .section-header p { color: var(--gray-500); max-width: 600px; margin: 0 auto; font-size: 1.05rem; }
+
+        .causes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        .cause-card { background: var(--gray-50); border-radius: 10px; padding: 28px; border: 1px solid var(--gray-200); transition: all 0.2s; }
+        .cause-card:hover { border-color: var(--rotary-blue); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+        .cause-card .icon { font-size: 1.5rem; margin-bottom: 12px; }
+        .cause-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
+        .cause-card p { font-size: 0.85rem; color: var(--gray-500); }
+
+        .fourway { background: var(--gray-50); }
+        .fourway-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+        .fw-card { background: white; border-radius: 10px; padding: 28px 20px; text-align: center; border: 1px solid var(--gray-200); position: relative; overflow: hidden; }
+        .fw-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--rotary-blue); }
+        .fw-num { font-size: 0.7rem; font-weight: 800; color: var(--rotary-blue); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
+        .fw-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+        .fw-card p { font-size: 0.82rem; color: var(--gray-500); }
+
+        .meeting { background: var(--gray-900); color: white; }
+        .meeting-inner { max-width: 700px; margin: 0 auto; text-align: center; }
+        .meeting-inner h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 16px; }
+        .meeting-inner > p { color: var(--gray-500); margin-bottom: 40px; }
+        .meeting-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+        .mg-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 24px; text-align: left; }
+        .mg-card .icon { font-size: 1.3rem; margin-bottom: 8px; }
+        .mg-card h4 { font-size: 0.8rem; font-weight: 600; color: var(--rotary-red); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+        .mg-card p { font-size: 0.95rem; color: rgba(255,255,255,0.8); }
+
+        .cta { padding: 80px 24px; text-align: center; }
+        .cta h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: 16px; }
+        .cta h2 span { color: var(--rotary-blue); }
+        .cta p { color: var(--gray-500); font-size: 1.1rem; margin-bottom: 32px; }
+
+        .footer { background: var(--gray-900); color: white; padding: 48px 24px 24px; }
+        .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+        .footer-brand h3 { font-size: 1.2rem; font-weight: 800; margin-bottom: 12px; }
+        .footer-brand p { color: rgba(255,255,255,0.5); font-size: 0.9rem; max-width: 300px; line-height: 1.6; }
+        .footer-col h4 { font-size: 0.7rem; font-weight: 700; color: var(--rotary-red); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px; }
+        .footer-col a { display: block; color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9rem; padding: 4px 0; }
+        .footer-col a:hover { color: white; }
+        .footer-col p { color: rgba(255,255,255,0.5); font-size: 0.9rem; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; text-align: center; font-size: 0.8rem; color: rgba(255,255,255,0.3); }
+
+        @media (max-width: 900px) {
+            .hero-inner { grid-template-columns: 1fr; text-align: center; }
+            .hero p { margin: 0 auto 32px; }
+            .hero-actions { justify-content: center; }
+            .hero-stats { max-width: 400px; margin: 0 auto; }
+            .impact-inner { grid-template-columns: repeat(2, 1fr); }
+            .causes-grid { grid-template-columns: 1fr 1fr; }
+            .fourway-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-inner { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 640px) {
+            .nav-links { display: none; }
+            .hamburger { display: block; }
+            .causes-grid { grid-template-columns: 1fr; }
+            .fourway-grid { grid-template-columns: 1fr; }
+            .meeting-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">Rotary International District 5040 &nbsp;|&nbsp; <a href="tel:7195882557">(719) 588-2557</a></div>
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-brand">
+                <div class="nav-logo"><svg viewBox="0 0 100 100"><path d="M50 5 L62 35 L95 35 L68 55 L78 88 L50 68 L22 88 L32 55 L5 35 L38 35 Z"/></svg></div>
+                <div class="nav-title">Alamosa Rotary<small>People of Action</small></div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#causes">Causes</a></li><li><a href="#fourway">Four-Way Test</a></li><li><a href="#meetings">Meetings</a></li><li><a href="#join" class="nav-join">Join Us</a></li>
+            </ul>
+            <button class="hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('open')"><span></span><span></span><span></span></button>
+        </div>
+        <div class="mobile-menu"><a href="#causes">Causes</a><a href="#fourway">Four-Way Test</a><a href="#meetings">Meetings</a><a href="#join">Join Us</a></div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-content">
+                <div class="hero-tag">District 5040</div>
+                <h1>We Are<br><span>People of Action</span></h1>
+                <p>Alamosa Rotary brings together professional leaders in the San Luis Valley to solve community needs, build lasting friendships, and create change that matters.</p>
+                <div class="hero-actions">
+                    <a href="#join" class="btn btn-blue">Join Our Club</a>
+                    <a href="#meetings" class="btn btn-outline">Attend a Meeting</a>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-card"><div class="stat-number">1.2M</div><div class="stat-label">Members Worldwide</div></div>
+                <div class="stat-card"><div class="stat-number">200+</div><div class="stat-label">Countries</div></div>
+                <div class="stat-card"><div class="stat-number">120+</div><div class="stat-label">Years of Service</div></div>
+                <div class="stat-card"><div class="stat-number">3B+</div><div class="stat-label">Children Immunized</div></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="impact-bar">
+        <div class="impact-inner">
+            <div class="impact-item"><div class="num">$850M</div><div class="label">Volunteer effort value/year</div></div>
+            <div class="impact-item"><div class="num">$273M</div><div class="label">Global grants awarded</div></div>
+            <div class="impact-item"><div class="num">99.9%</div><div class="label">Polio case reduction</div></div>
+            <div class="impact-item"><div class="num">47M</div><div class="label">Volunteer hours/year</div></div>
+        </div>
+    </div>
+
+    <section class="section" id="causes">
+        <div class="section-inner">
+            <div class="section-header"><h2>Rotary's Areas of Focus</h2><p>For more than a century, we've connected continents to solve the world's most persistent challenges.</p></div>
+            <div class="causes-grid">
+                <div class="cause-card"><div class="icon">🕊️</div><h3>Promoting Peace</h3><p>Building understanding through Rotary Peace Fellows and conflict mediation programs.</p></div>
+                <div class="cause-card"><div class="icon">👶</div><h3>Improving Maternal & Child Health</h3><p>Safe mothers, safe births, healthy children in communities worldwide.</p></div>
+                <div class="cause-card"><div class="icon">💉</div><h3>Fighting Disease</h3><p>From polio eradication to malaria vaccine research and healthcare access.</p></div>
+                <div class="cause-card"><div class="icon">📚</div><h3>Supporting Education</h3><p>Literacy programs, scholarships, and Teacher Exchange worldwide.</p></div>
+                <div class="cause-card"><div class="icon">🌍</div><h3>Protecting the Environment</h3><p>Sustainability projects, conservation, and climate action at the local level.</p></div>
+                <div class="cause-card"><div class="icon">💧</div><h3>Providing Clean Water</h3><p>Wells, filtration systems, and sanitation for communities in need.</p></div>
+                <div class="cause-card"><div class="icon">🌾</div><h3>Growing Local Economies</h3><p>Microfinance, vocational training, and entrepreneurship development.</p></div>
+                <div class="cause-card"><div class="icon">🏥</div><h3>Polio Eradication</h3><p>3 billion+ children immunized since 1988. 99.9% reduction in cases.</p></div>
+                <div class="cause-card"><div class="icon">🤝</div><h3>Community Service</h3><p>Local projects making a real difference right here in Alamosa and the SLV.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section fourway" id="fourway">
+        <div class="section-inner">
+            <div class="section-header"><h2>The Four-Way Test</h2><p>A moral code used by Rotarians worldwide for personal and business relationships.</p></div>
+            <div class="fourway-grid">
+                <div class="fw-card"><div class="fw-num">Question One</div><h3>Is it the TRUTH?</h3><p>Of the things we think, say, or do — we ask whether it is true.</p></div>
+                <div class="fw-card"><div class="fw-num">Question Two</div><h3>Is it FAIR to all?</h3><p>We consider whether our actions are fair to everyone involved.</p></div>
+                <div class="fw-card"><div class="fw-num">Question Three</div><h3>Will it build GOODWILL?</h3><p>We strive to create goodwill and strengthen friendships.</p></div>
+                <div class="fw-card"><div class="fw-num">Question Four</div><h3>Will it be BENEFICIAL?</h3><p>We ensure our work benefits all concerned, not just a few.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section meeting" id="meetings">
+        <div class="section-inner">
+            <div class="meeting-inner">
+                <h2>Meet With Us</h2>
+                <p>No obligation to buy lunch or join — just come, meet your neighbors, and see what Rotary is all about.</p>
+                <div class="meeting-grid">
+                    <div class="mg-card"><div class="icon">📅</div><h4>When</h4><p>1st & 3rd Mondays of each month</p></div>
+                    <div class="mg-card"><div class="icon">🕐</div><h4>Time</h4><p>Noon — 1:00 PM</p></div>
+                    <div class="mg-card"><div class="icon">📍</div><h4>Where</h4><p>Juanito's Mexican Kitchen<br>2069 First Street, Alamosa</p></div>
+                    <div class="mg-card"><div class="icon">📞</div><h4>Contact</h4><p>Suzanne DeVore<br>(719) 588-2557</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="join">
+        <h2>Join <span>People of Action</span></h2>
+        <p>Become part of the world's oldest and largest service organization. Right here in Alamosa.</p>
+        <a href="tel:7195882557" class="btn btn-blue" style="font-size:1.05rem; padding:16px 36px;">Call (719) 588-2557</a>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand"><h3>Alamosa Rotary Club</h3><p>Part of Rotary International District 5040. A diverse group of professional leaders serving the San Luis Valley. Service Above Self.</p></div>
+            <div class="footer-col"><h4>Explore</h4><a href="#causes">Our Causes</a><a href="#fourway">Four-Way Test</a><a href="#meetings">Meetings</a></div>
+            <div class="footer-col"><h4>Connect</h4><a href="tel:7195882557">(719) 588-2557</a><a href="https://www.rotary.org" target="_blank">Rotary International</a><a href="https://www.facebook.com/p/Alamosa-Rotary-Club-100064863991118/" target="_blank">Facebook</a></div>
+        </div>
+        <div class="footer-bottom">&copy; 2026 Alamosa Rotary Club. Rotary International District 5040. Service Above Self.</div>
+    </footer>
+
+    <script>document.querySelectorAll('a[href^="#"]').forEach(a => { a.addEventListener('click', e => { e.preventDefault(); const t = document.querySelector(a.getAttribute('href')); if (t) { t.scrollIntoView({ behavior: 'smooth' }); document.querySelector('.mobile-menu').classList.remove('open'); } }); });</script>
+</body>
+</html>
