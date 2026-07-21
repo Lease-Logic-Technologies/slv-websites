@@ -1,7 +1,57 @@
-<ol>
-    <li><a href="brett-v1-industrial/">Brett V1 Industrial</a></li>
-    <li><a href="brett-v2-rugged/">Brett V2 Rugged</a></li>
-    <li><a href="brett-v3-bolts/">Brett V3 Bolts</a></li>
-    <li><a href="brett-v4-field/">Brett V4 Field</li>
-    <li><a href="brett-v5-retro/">Brett V5 Retro</a></li>
-</ol>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brett — Small Engine Repair Variations</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: system-ui, -apple-system, sans-serif; background: #1a1a1a; color: #f0f0f0; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 24px; }
+        h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 8px; color: #e63946; }
+        .subtitle { color: #888; font-size: 1.1rem; margin-bottom: 48px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1400px; width: 100%; }
+        .card { background: #222; border: 1px solid #333; border-radius: 12px; padding: 28px; transition: all 0.25s; text-decoration: none; color: inherit; display: block; }
+        .card:hover { border-color: #e63946; transform: translateY(-4px); box-shadow: 0 8px 24px rgba(230,57,70,0.15); }
+        .card-num { font-size: 0.7rem; font-weight: 700; color: #e63946; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+        .card h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; }
+        .card p { font-size: 0.9rem; color: #888; line-height: 1.5; }
+        .card .arrow { margin-top: 16px; color: #e63946; font-weight: 600; font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <h1>Brett — Small Engine Repair</h1>
+    <p class="subtitle">5 Design Variations — Select One to Preview</p>
+    <div class="grid">
+        <a href="brett-v1-industrial/" class="card">
+            <div class="card-num">Variation 01</div>
+            <h2>Industrial Metallic</h2>
+            <p>Cold chrome and machined steel aesthetic. Blueprint glow on deep navy, animated concentric engine rings, technical grid lines, and JetBrains Mono monospace accents. The "cold and metallic" variation.</p>
+            <div class="arrow">View →</div>
+        </a>
+        <a href="brett-v2-rugged/" class="card">
+            <div class="card-num">Variation 02</div>
+            <h2>Rugged Warm</h2>
+            <p>Forest green and amber on cream. Playfair Display serif headings give a mountain workshop warmth. Amber accent buttons and diagonal stripe patterns — feels like a place your neighbor trusts.</p>
+            <div class="arrow">View →</div>
+        </a>
+        <a href="brett-v3-bolts/" class="card">
+            <div class="card-num">Variation 03</div>
+            <h2>Dark Bolts</h2>
+            <p>Near-black with electric red accents. Space Grotesk and Space Mono fonts. Oversized hero text with outlined typography, red accent lines on hover, scrolling equipment marquee. Bold and punchy.</p>
+            <div class="arrow">View →</div>
+        </a>
+        <a href="brett-v4-field/" class="card">
+            <div class="card-num">Variation 04</div>
+            <h2>Field Service</h2>
+            <p>Bright and practical. Sky blue top bar, green CTAs, soft cloud decorations. Seasonal service section calling out Spring/Summer vs Fall/Winter equipment. Clean, approachable, farm-country friendly.</p>
+            <div class="arrow">View →</div>
+        </a>
+        <a href="brett-v5-retro/" class="card">
+            <div class="card-num">Variation 05</div>
+            <h2>Retro Garage</h2>
+            <p>Vintage workshop poster aesthetic. Oswald display font, bold uppercase typography, red strike-through hero text, a faux "poster" card with offset shadow. 1950s garage sign meets modern web.</p>
+            <div class="arrow">View →</div>
+        </a>
+    </div>
+</body>
+</html>
