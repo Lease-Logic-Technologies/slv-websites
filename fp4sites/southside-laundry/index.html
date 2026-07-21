@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Southside Suds Variations</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: system-ui, -apple-system, sans-serif; background: #0d0d0d; color: #f0f0f0; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 24px; }
+        h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 8px; color: #ff006e; }
+        .subtitle { color: #888; font-size: 1.1rem; margin-bottom: 48px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1400px; width: 100%; }
+        .card { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 12px; padding: 28px; transition: all 0.25s; text-decoration: none; color: inherit; display: block; }
+        .card:hover { border-color: #ff006e; transform: translateY(-4px); box-shadow: 0 8px 24px rgba(255,0,110,0.12); }
+        .card-num { font-size: 0.7rem; font-weight: 700; color: #ff006e; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+        .card h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; }
+        .card p { font-size: 0.9rem; color: #888; line-height: 1.5; }
+        .card .arrow { margin-top: 16px; color: #ff006e; font-weight: 600; font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <h1>Southside Suds</h1>
+    <p class="subtitle">5 Design Variations — Select One to Preview</p>
+    <div class="grid">
+        <a href="southside-spa/index.html" class="card">
+            <div class="card-num">Variation 01</div>
+            <h2>Premium Spa</h2>
+            <p>Ultra-clean white and blue palette with ultra-light font weights. Reads like a luxury spa rather than a laundromat — frosted glass icons, elegant pricing cards with feature checkmarks, and a "Premium Laundry Experience" positioning.</p>
+            <div class="arrow">View →</div>
+        </a>
+        <a href="southside-scandi/index.html" class="card">
+            <div class="card-num">Variation 02</div>
+            <h2>Scandi Minimal</h2>
+            <p>Almost no color — pure off-white background, near-black text, and 1px borders. Helvetica Neue throughout, ultralight hero at 5rem with thin weight, and a grid-based pricing table. The one that looks like it was designed in Copenhagen.</p>
+            <div class="arrow">View →</div>
+        </a>
+        <a href="southside-coastal/index.html" class="card">
+            <div class="card-num">Variation 03</div>
+            <h2>Ocean Breeze</h2>
+            <p>Sand, ocean blue, seafoam, and sea glass tones with wave-shaped dividers. Frosted glass cards on a sandy background, a wave SVG at the hero bottom, and a "beach day laundry" aesthetic.</p>
+            <div class="arrow">View →</div>
+        </a>
+        <a href="southside-neon/index.html" class="card">
+            <div class="card-num">Variation 04</div>
+            <h2>Neon Retro</h2>
+            <p>Dark background with glowing neon pink, blue, yellow, and purple text-shadows. CRT scanline overlay, bold uppercase typography, and colored neon borders on every card. A 1980s arcade laundromat.</p>
+            <div class="arrow">View →</div>
+        </a>
+        <a href="southside-colorful/index.html" class="card">
+            <div class="card-num">Variation 05</div>
+            <h2>Color Splash</h2>
+            <p>Rainbow gradient hero with massive 5rem bold type and black stroke outlines. Each section uses a different primary color — red, blue, yellow, green, purple — in hard-colored cards. Energetic and loud.</p>
+            <div class="arrow">View →</div>
+        </a>
+    </div>
+</body>
+</html>
