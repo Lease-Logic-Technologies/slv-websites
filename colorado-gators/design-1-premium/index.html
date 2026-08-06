@@ -338,14 +338,16 @@
       position: absolute;
       inset: 0;
       z-index: 0;
+      overflow: hidden;
     }
 
-    .hero__bg-layer {
+    .hero__bg img {
       position: absolute;
       inset: 0;
-      background:
-        url('https://images.unsplash.com/photo-1516934024742-b467f36a4093?auto=format&fit=crop&w=1920&q=80')
-        center center / cover no-repeat;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
     }
 
     .hero__overlay {
@@ -509,8 +511,8 @@
     }
 
     .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
+      opacity: 1 !important;
+      transform: translateY(0) !important;
     }
 
     .reveal-delay-1 { transition-delay: 0.1s; }
@@ -793,10 +795,17 @@
     .morris__bg {
       position: absolute;
       inset: 0;
-      background:
-        url('https://images.unsplash.com/photo-1476863077854-4bcc305415a4?auto=format&fit=crop&w=1920&q=80')
-        center center / cover no-repeat;
-      filter: brightness(0.3) saturate(0.7);
+      overflow: hidden;
+    }
+
+    .morris__bg img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      filter: brightness(0.35) saturate(0.8);
     }
 
     .morris__overlay {
@@ -805,6 +814,7 @@
       background:
         radial-gradient(ellipse at center, rgba(20, 83, 45, 0.2), transparent 70%),
         linear-gradient(180deg, var(--bg-primary), transparent 20%, transparent 80%, var(--bg-primary));
+      z-index: 1;
     }
 
     .morris__content {
@@ -813,14 +823,18 @@
       max-width: 800px;
       margin: 0 auto;
       text-align: center;
+      color: var(--white);
+    }
+
+    .morris__content .section__label {
+      color: #22c55e
     }
 
     .morris__quote-mark {
       font-family: var(--serif);
       font-size: 8rem;
       line-height: 0.5;
-      color: var(--accent);
-      opacity: 0.3;
+      color: rgba(255, 255, 255, 0.15);
       margin-bottom: 1rem;
     }
 
@@ -831,13 +845,13 @@
       line-height: 1.1;
       letter-spacing: -0.03em;
       margin-bottom: 0.5rem;
-      color: var(--ink);
+      color: #f5f2ed;
     }
 
     .morris__subtitle {
       font-size: 1rem;
       font-weight: 500;
-      color: var(--accent);
+      color: rgba(255, 255, 255, 0.85);
       letter-spacing: 0.1em;
       text-transform: uppercase;
       margin-bottom: 3rem;
@@ -846,7 +860,7 @@
     .morris__text {
       font-size: 1.25rem;
       line-height: 1.8;
-      color: var(--ink-light);
+      color: rgba(255, 255, 255, 0.85);
       max-width: 60ch;
       margin: 0 auto 3rem;
     }
@@ -863,9 +877,9 @@
       font-size: 0.8rem;
       font-weight: 500;
       padding: 0.5rem 1.25rem;
-      border: 1px solid var(--border);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 100px;
-      color: var(--ink-light);
+      color: rgba(255, 255, 255, 0.85);
     }
 
     .morris__stats {
@@ -873,7 +887,7 @@
       justify-content: center;
       gap: 4rem;
       padding-top: 3rem;
-      border-top: 1px solid var(--border);
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
     }
 
     .morris__stat-number {
@@ -881,13 +895,16 @@
       font-size: 3rem;
       font-weight: 400;
       line-height: 1;
-      color: var(--accent);
+      background: linear-gradient(180deg, #bbf7d0 0%, #22c55e 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
       margin-bottom: 0.5rem;
     }
 
     .morris__stat-label {
       font-size: 0.8rem;
-      color: var(--ink-subtle);
+      color: rgba(255, 255, 255, 0.6);
       letter-spacing: 0.05em;
     }
 
@@ -914,6 +931,30 @@
       border: 1px solid var(--border);
       border-radius: 16px;
       padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .visit__card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(22, 101, 52, 0.08);
+    }
+
+    .visit__card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-deep), var(--accent), var(--accent-hover));
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+
+    .visit__card:hover::before {
+      opacity: 1;
     }
 
     .visit__card-title {
@@ -1360,7 +1401,7 @@
   <!-- Hero -->
   <section class="hero" id="hero">
     <div class="hero__bg">
-      <div class="hero__bg-layer"></div>
+      <img src="images/hero.jpg" alt="Colorado Gators alligator in water">
       <div class="hero__overlay"></div>
     </div>
     <div class="hero__content">
@@ -1391,7 +1432,7 @@
           </div>
         </div>
         <div class="about__image-wrapper reveal reveal-delay-2">
-          <img src="https://images.unsplash.com/photo-1516934024742-b467f36a4093?auto=format&fit=crop&w=800&q=80" alt="American alligator resting near water" loading="lazy">
+          <img src="images/about.jpg" alt="Colorado Gators reptile enclosure" loading="lazy">
         </div>
       </div>
     </div>
@@ -1407,7 +1448,7 @@
       <div class="experiences__grid">
         <!-- Card 1: Hold -->
         <div class="experience-card reveal">
-          <img class="experience-card__image" src="https://images.unsplash.com/photo-1531386151447-fd76ad50012f?auto=format&fit=crop&w=600&q=80" alt="Person holding a small reptile" loading="lazy">
+          <img class="experience-card__image" src="images/experience-hold.jpg" alt="Person holding a small reptile" loading="lazy">
           <div class="experience-card__overlay"></div>
           <div class="experience-card__content">
             <div class="experience-card__icon"><i class="fa-solid fa-hand"></i></div>
@@ -1418,7 +1459,7 @@
 
         <!-- Card 2: Tortoises -->
         <div class="experience-card reveal reveal-delay-1">
-          <img class="experience-card__image" src="https://images.unsplash.com/photo-1484557052118-f32bd25b45b5?auto=format&fit=crop&w=600&q=80" alt="Large tortoise in natural setting" loading="lazy">
+          <img class="experience-card__image" src="images/experience-shop.jpg" alt="Large tortoise in natural setting" loading="lazy">
           <div class="experience-card__overlay"></div>
           <div class="experience-card__content">
             <div class="experience-card__icon"><i class="fa-solid fa-leaf"></i></div>
@@ -1429,7 +1470,7 @@
 
         <!-- Card 3: Fish -->
         <div class="experience-card reveal reveal-delay-2">
-          <img class="experience-card__image" src="https://images.unsplash.com/photo-1520302630591-e691b146273a?auto=format&fit=crop&w=600&q=80" alt="Fish being caught in water" loading="lazy">
+          <img class="experience-card__image" src="images/experience-tour.jpg" alt="Fish being caught in water" loading="lazy">
           <div class="experience-card__overlay"></div>
           <div class="experience-card__content">
             <div class="experience-card__icon"><i class="fa-solid fa-fish"></i></div>
@@ -1440,7 +1481,7 @@
 
         <!-- Card 4: Tour -->
         <div class="experience-card reveal reveal-delay-3">
-          <img class="experience-card__image" src="https://images.unsplash.com/photo-1504450874802-0ba2bcd659e3?auto=format&fit=crop&w=600&q=80" alt="Educational nature experience" loading="lazy">
+          <img class="experience-card__image" src="images/experience-visit.jpg" alt="Educational nature experience" loading="lazy">
           <div class="experience-card__overlay"></div>
           <div class="experience-card__content">
             <div class="experience-card__icon"><i class="fa-solid fa-binoculars"></i></div>
@@ -1462,7 +1503,7 @@
 
     <div class="animals__grid">
       <div class="animal-card animal-card--wide animal-card--tall reveal">
-        <img class="animal-card__image" src="https://images.unsplash.com/photo-1516934024742-b467f36a4093?auto=format&fit=crop&w=1200&q=80" alt="American alligator" loading="lazy">
+        <img class="animal-card__image" src="images/alligator-close.jpg" alt="American alligator" loading="lazy">
         <span class="animal-card__caption">Signature Species</span>
         <div class="animal-card__info">
           <h3 class="animal-card__name">American Alligator</h3>
@@ -1471,7 +1512,7 @@
       </div>
 
       <div class="animal-card reveal reveal-delay-1">
-        <img class="animal-card__image" src="https://images.unsplash.com/photo-1476863077854-4bcc305415a4?auto=format&fit=crop&w=800&q=80" alt="Crocodile" loading="lazy">
+        <img class="animal-card__image" src="images/crocodile.jpg" alt="Crocodile" loading="lazy">
         <span class="animal-card__caption">VIP Resident</span>
         <div class="animal-card__info">
           <h3 class="animal-card__name">Crocodiles</h3>
@@ -1480,7 +1521,7 @@
       </div>
 
       <div class="animal-card reveal reveal-delay-2">
-        <img class="animal-card__image" src="https://images.unsplash.com/photo-1484557052118-f32bd25b45b5?auto=format&fit=crop&w=800&q=80" alt="Desert tortoise" loading="lazy">
+        <img class="animal-card__image" src="images/tortoise.png" alt="Desert tortoise" loading="lazy">
         <span class="animal-card__caption">Gentle Giant</span>
         <div class="animal-card__info">
           <h3 class="animal-card__name">Desert Tortoises</h3>
@@ -1489,7 +1530,7 @@
       </div>
 
       <div class="animal-card reveal reveal-delay-3">
-        <img class="animal-card__image" src="https://images.unsplash.com/photo-1504450874802-0ba2bcd659e3?auto=format&fit=crop&w=800&q=80" alt="Albino alligator" loading="lazy">
+        <img class="animal-card__image" src="images/albino-alligator.jpg" alt="Albino alligator" loading="lazy">
         <span class="animal-card__caption">Rare</span>
         <div class="animal-card__info">
           <h3 class="animal-card__name">Albino Alligator</h3>
@@ -1498,7 +1539,7 @@
       </div>
 
       <div class="animal-card animal-card--wide reveal reveal-delay-4">
-        <img class="animal-card__image" src="https://images.unsplash.com/photo-1531386151447-fd76ad50012f?auto=format&fit=crop&w=1200&q=80" alt="Caiman" loading="lazy">
+        <img class="animal-card__image" src="images/caiman.jpg" alt="Caiman" loading="lazy">
         <span class="animal-card__caption">Rescued</span>
         <div class="animal-card__info">
           <h3 class="animal-card__name">Caimans &amp; Turtles</h3>
@@ -1510,7 +1551,9 @@
 
   <!-- Morris Tribute -->
   <section class="morris" id="morris">
-    <div class="morris__bg"></div>
+    <div class="morris__bg">
+      <img src="images/morris-jay-young.jpg" alt="Morris Jay Young with alligator">
+    </div>
     <div class="morris__overlay"></div>
     <div class="morris__content">
       <p class="section__label reveal">Our Legacy</p>

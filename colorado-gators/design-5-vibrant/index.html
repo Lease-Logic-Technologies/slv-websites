@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Colorado Gators Reptile Park — the only high-altitude alligator farm in the world. Family-run reptile rescue, education, and hands-on experiences at 9,400 ft in the San Luis Valley.">
+<meta name="theme-color" content="#f0fdf4">
+<meta name="generated" content="New AGENTS.md Process v2.0 — Variant 5 (Vibrant)">
+<title>Colorado Gators — Reptile Rescue &amp; Education</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ZooOrAquarium",
+  "name": "Colorado Gators Reptile Park",
+  "description": "The only high-altitude alligator farm in the world. Family-run reptile rescue and tourist attraction in Mosca, CO at 9,400 ft elevation.",
+  "url": "https://www.coloradogators.com",
+  "telephone": "+1-719-378-2612",
+  "email": "colog8rs@gmail.com",
+  "address": {"@type":"PostalAddress","streetAddress":"9162 Lane 9 N","addressLocality":"Mosca","addressRegion":"CO","postalCode":"81146","addressCountry":"US"},
+  "geo":{"@type":"GeoCoordinates","latitude":37.489,"longitude":-105.583},
+  "openingHoursSpecification":[
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"starts":"09:00","ends":"17:00","description":"February 27 through November 1"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"starts":"09:00","ends":"16:00","description":"November 2 through February 26"}
+  ],
+  "priceRange":"$15 - $30",
+  "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.2","reviewCount":"380"},
+  "sameAs":["https://www.facebook.com/ColoradoGatorFarm"]
+}
+</script>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg-primary:#ffffff;--bg-secondary:#f0fdf4;--bg-tertiary:#dcfce7;
+  --ink:#064e3b;--ink-muted:#374151;--ink-dim:#6b7280;
+  --accent:#059669;--accent-light:#10b981;--accent-glow:rgba(5,150,105,0.12);
+  --navy:#0f172a;--navy-light:#1e293b;
+  --border:#e5e7eb;--border-light:#f3f4f6;
+  --font-serif:'Playfair Display',Georgia,'Times New Roman',serif;
+  --font-sans:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --container:1200px;
+}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:var(--font-sans);font-size:1.125rem;line-height:1.7;color:var(--ink);background:var(--bg-primary);-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+
+/* SCROLL BAR */
+#scroll-progress{position:fixed;top:0;left:0;height:3px;background:var(--accent);z-index:10001;width:0%;transition:width .05s linear}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;height:64px;z-index:10000;background:transparent;transition:background .3s,box-shadow .3s}
+.nav--solid{background:rgba(255,255,255,.95);backdrop-filter:blur(16px);box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.nav__inner{max-width:var(--container);margin:0 auto;padding:0 2rem;height:100%;display:flex;align-items:center;justify-content:space-between}
+.nav__logo{font-family:var(--font-serif);font-size:1.25rem;font-weight:700;letter-spacing:-.02em}
+.nav--solid .nav__logo{color:var(--navy)}
+.nav:not(.nav--solid) .nav__logo{color:#fff}
+.nav__logo .logo-accent{color:var(--accent-light)}
+.nav__right{display:flex;align-items:center;gap:2rem}
+.nav__link{font-size:.875rem;font-weight:500;transition:color .2s}
+.nav--solid .nav__link{color:var(--ink-muted)}
+.nav:not(.nav--solid) .nav__link{color:rgba(255,255,255,.8)}
+.nav__link:hover{color:var(--accent-light)}
+.nav__btn{padding:.6rem 1.5rem;border-radius:100px;background:var(--accent-light);color:#fff;font-size:.875rem;font-weight:600;transition:all .2s;min-height:44px;display:flex;align-items:center;gap:.5rem}
+.nav__btn:hover{background:var(--accent);transform:translateY(-1px)}
+.nav--solid .nav__btn{background:var(--accent)}
+.hamburger{display:none;flex-direction:column;gap:5px;width:44px;height:44px;background:none;border:none;cursor:pointer;padding:0}
+.hamburger span{display:block;width:22px;height:2px;background:var(--ink);transition:all .3s;border-radius:2px}
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+@media(max-width:768px){
+  .hamburger{display:flex}
+  .nav__right{position:fixed;top:0;right:-100%;width:280px;height:100vh;background:#fff;flex-direction:column;padding:5rem 2rem 2rem;gap:1.25rem;transition:right .3s;box-shadow:-4px 0 24px rgba(0,0,0,.1)}
+  .nav__right.open{right:0}
+}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;background:var(--navy)}
+.hero__bg{position:absolute;inset:0}
+.hero__bg img{width:100%;height:100%;object-fit:cover}
+.hero__overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,23,42,.7),rgba(15,23,42,.3))}
+.hero__content{position:relative;z-index:1;max-width:var(--container);margin:0 auto;padding:8rem 2rem 4rem}
+.hero__badge{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1.25rem;border-radius:100px;background:rgba(16,185,129,.15);border:1px solid rgba(16,185,129,.25);color:var(--accent-light);font-size:.8rem;font-weight:600;margin-bottom:1.5rem;text-transform:uppercase;letter-spacing:.1em}
+.hero__title{font-family:var(--font-serif);font-size:clamp(2.75rem,6vw,5.5rem);color:#fff;line-height:1.05;max-width:700px;margin-bottom:1.5rem}
+.hero__desc{font-size:1.2rem;color:rgba(255,255,255,.75);max-width:560px;margin-bottom:2.5rem;line-height:1.6}
+.hero__actions{display:flex;gap:1rem;flex-wrap:wrap}
+.btn{font-family:var(--font-sans);font-size:.9rem;font-weight:600;padding:.85rem 2rem;border-radius:100px;border:none;cursor:pointer;transition:all .2s;min-height:48px;display:inline-flex;align-items:center;gap:.5rem}
+.btn--green{background:var(--accent-light);color:#fff}
+.btn--green:hover{background:var(--accent);transform:translateY(-2px);box-shadow:0 8px 24px rgba(16,185,129,.3)}
+.btn--white{background:#fff;color:var(--navy)}
+.btn--white:hover{background:var(--bg-secondary);transform:translateY(-2px)}
+
+/* SECTION LAYOUT */
+.section{padding:5rem 2rem}
+.section__inner{max-width:var(--container);margin:0 auto}
+.section__eyebrow{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:var(--accent);margin-bottom:.75rem}
+.section__title{font-family:var(--font-serif);font-size:clamp(2rem,4vw,3.25rem);line-height:1.1;margin-bottom:1.25rem}
+.section__text{font-size:1.1rem;color:var(--ink-muted);max-width:640px;margin-bottom:2.5rem;line-height:1.7}
+.section--navy{background:var(--navy);color:#fff}
+.section--navy .section__title{color:#fff}
+.section--navy .section__text{color:rgba(255,255,255,.65)}
+.section--green{background:var(--accent-light);color:#fff}
+.section--green .section__eyebrow{color:rgba(255,255,255,.6)}
+.section--green .section__title{color:#fff}
+.section--green .section__text{color:rgba(255,255,255,.8)}
+
+/* NUMBERED SERVICES */
+.services-list{display:flex;flex-direction:column;gap:0;margin-top:2.5rem}
+.service-item{display:grid;grid-template-columns:3rem 1fr;gap:1.5rem;padding:2rem 0;border-bottom:1px solid var(--border)}
+.service-item__num{font-family:var(--font-serif);font-size:2.5rem;font-weight:700;color:var(--accent);line-height:1}
+.service-item__title{font-weight:700;font-size:1.125rem;margin-bottom:.25rem}
+.service-item__desc{color:var(--ink-muted);font-size:.95rem}
+
+/* GALLERY GRID */
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.5rem}
+.gallery-grid .gallery-item:first-child{grid-column:span 2;grid-row:span 2}
+.gallery-item{border-radius:12px;overflow:hidden;position:relative}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.gallery-item:hover img{transform:scale(1.03)}
+.gallery-item__label{position:absolute;bottom:1rem;left:1rem;background:rgba(0,0,0,.65);backdrop-filter:blur(8px);color:#fff;padding:.5rem 1rem;border-radius:8px;font-size:.85rem;font-weight:500}
+
+/* TWO-COL LAYOUT */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-top:2.5rem}
+.two-col img{width:100%;border-radius:16px;box-shadow:0 8px 32px var(--accent-glow)}
+
+/* PRICING CARDS */
+.pricing-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin-top:2.5rem}
+.pricing-card{text-align:center;padding:2rem 1.25rem;border-radius:16px;border:2px solid var(--border);transition:all .3s;background:#fff}
+.pricing-card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 12px 32px var(--accent-glow)}
+.pricing-card.featured{border-color:var(--accent);background:var(--bg-secondary)}
+.pricing-card__label{font-weight:700;font-size:1rem;margin-bottom:.5rem}
+.pricing-card__price{font-family:var(--font-serif);font-size:2.75rem;font-weight:700;color:var(--accent);line-height:1}
+.pricing-card__price span{font-size:1rem;color:var(--ink-dim);font-weight:400}
+.pricing-card__note{font-size:.85rem;color:var(--ink-dim);margin-top:.5rem}
+
+/* TESTIMONIALS */
+.testimonial-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin-top:2.5rem}
+.testimonial{background:#fff;border:1px solid var(--border);border-radius:16px;padding:2rem;transition:box-shadow .3s}
+.testimonial:hover{box-shadow:0 8px 24px var(--accent-glow)}
+.testimonial__stars{color:#f59e0b;font-size:.9rem;margin-bottom:1rem;letter-spacing:2px}
+.testimonial__quote{font-style:italic;color:var(--ink);margin-bottom:1.25rem;line-height:1.6}
+.testimonial__author{font-weight:600;font-size:.9rem}
+.testimonial__source{font-size:.8rem;color:var(--ink-dim);margin-top:.25rem}
+
+/* CONTACT */
+.contact-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem;margin-top:2.5rem}
+.contact-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:2rem;text-align:center;transition:all .3s}
+.contact-card:hover{border-color:var(--accent);box-shadow:0 4px 16px var(--accent-glow)}
+.contact-card__icon{width:48px;height:48px;border-radius:12px;background:var(--bg-secondary);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:1.25rem;margin:0 auto 1rem}
+.contact-card__label{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-dim);margin-bottom:.5rem}
+.contact-card__value{font-weight:600;font-size:1rem}
+.contact-card__value a{color:var(--accent);transition:opacity .2s}
+.contact-card__value a:hover{opacity:.7}
+
+/* FOOTER */
+.footer{background:var(--navy);color:rgba(255,255,255,.6);padding:3rem 2rem 2rem}
+.footer__inner{max-width:var(--container);margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.1)}
+.footer__brand{font-family:var(--font-serif);font-size:1.25rem;color:#fff;margin-bottom:.5rem}
+.footer__tagline{font-size:.9rem}
+.footer__heading{font-weight:700;font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--accent-light);margin-bottom:1rem}
+.footer__links{display:flex;flex-direction:column;gap:.5rem}
+.footer__link{font-size:.9rem;transition:color .2s}
+.footer__link:hover{color:#fff}
+.footer__bottom{display:flex;justify-content:space-between;align-items:center;padding-top:1.5rem;font-size:.8rem;max-width:var(--container);margin:0 auto}
+.footer__social{display:flex;gap:1rem}
+.footer__social a{color:rgba(255,255,255,.4);transition:color .2s;font-size:1.125rem}
+.footer__social a:hover{color:var(--accent-light)}
+
+@media(max-width:992px){.two-col{grid-template-columns:1fr}.gallery-grid{grid-template-columns:repeat(2,1fr)}.gallery-grid .gallery-item:first-child{grid-column:span 1;grid-row:span 1}.footer__inner{grid-template-columns:1fr}}
+@media(max-width:480px){.section{padding:3.5rem 1.25rem}}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+</style>
+</head>
+<body>
+<div id="scroll-progress"></div>
+<nav class="nav">
+  <div class="nav__inner">
+    <div class="nav__logo">Colorado <span class="logo-accent">Gators</span></div>
+    <div class="nav__right">
+      <a href="#about" class="nav__link">About</a>
+      <a href="#gallery" class="nav__link">Gallery</a>
+      <a href="#services" class="nav__link">Services</a>
+      <a href="#pricing" class="nav__link">Pricing</a>
+      <a href="#visit" class="nav__link">Visit</a>
+      <a href="tel:+17193782612" class="nav__btn"><i class="fas fa-phone"></i> (719) 378-2612</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__bg"><img src="images/hero-gator-pond.jpg" alt="Colorado Gators Reptile Park — Alligators basking in geothermal waters at 9,400 ft elevation"></div>
+  <div class="hero__overlay"></div>
+  <div class="hero__content">
+    <div class="hero__badge"><i class="fas fa-map-pin"></i> Mosca, CO · 9,400 ft Elevation</div>
+    <h1 class="hero__title">The Only High-Altitude Alligator Farm in the World</h1>
+    <p class="hero__desc">Where rescued reptiles thrive in geothermal warmth 17 miles north of Alamosa. Hands-on experiences for the whole family.</p>
+    <div class="hero__actions">
+      <a href="#visit" class="btn btn--green"><i class="fas fa-map-marker-alt"></i> Plan Your Visit</a>
+      <a href="#about" class="btn btn--white"><i class="fas fa-play"></i> Our Story</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="section__inner">
+    <div class="section__eyebrow reveal">Established 1977</div>
+    <div class="two-col">
+      <div>
+        <h2 class="section__title reveal">From Fish Farm to Reptile Paradise</h2>
+        <p class="section__text reveal">What started as a fish farm in 1977 became something extraordinary. In 1987, the first alligators arrived as "garbage disposals." Today, Colorado Gators is home to hundreds of rescued reptiles thriving in the warmth of our 2,050-foot deep geothermal well.</p>
+        <p class="section__text reveal">We're not a zoo. We're a rescue. Every animal here has been found, abandoned, or seized. We give them a warm, safe place to live for the rest of their lives.</p>
+      </div>
+      <img src="images/historic-farm.jpg" alt="Colorado Gators historic geothermal ponds" class="reveal reveal-delay-1">
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section--navy" id="gallery">
+  <div class="section__inner">
+    <div class="section__eyebrow reveal">Meet Them</div>
+    <h2 class="section__title reveal">The Residents</h2>
+    <p class="section__text reveal">Hundreds of rescued reptiles — from albino alligators to movie-star Morris, preserved as taxidermy.</p>
+    <div class="gallery-grid">
+      <div class="gallery-item reveal">
+        <img src="images/albino-alligators.jpg" alt="Rare albino alligators at Colorado Gators">
+        <div class="gallery-item__label">Albino Alligators</div>
+      </div>
+      <div class="gallery-item reveal reveal-delay-1">
+        <img src="images/morris-taxidermy.jpg" alt="Morris the Movie Star Alligator — taxidermy display">
+        <div class="gallery-item__label">Morris — "Happy Gilmore"</div>
+      </div>
+      <div class="gallery-item reveal reveal-delay-2">
+        <img src="images/crocodiles-caiman.jpg" alt="Crocodiles and caimans basking">
+        <div class="gallery-item__label">Crocodiles & Caiman</div>
+      </div>
+      <div class="gallery-item reveal reveal-delay-1">
+        <img src="images/tortoises-feeding.jpg" alt="African tortoises being fed">
+        <div class="gallery-item__label">Giant Tortoises</div>
+      </div>
+      <div class="gallery-item reveal reveal-delay-2">
+        <img src="images/snakes-collection.jpg" alt="Diverse snake collection at Colorado Gators">
+        <div class="gallery-item__label">Snakes & Iguanas</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NUMBERED SERVICES -->
+<section class="section" id="services">
+  <div class="section__inner">
+    <div class="section__eyebrow reveal">What We Offer</div>
+    <h2 class="section__title reveal">Hands-On Experiences</h2>
+    <p class="section__text reveal">Don't just watch — get up close and personal with the most incredible creatures on Earth.</p>
+    <div class="services-list">
+      <div class="service-item reveal">
+        <div class="service-item__num">01</div>
+        <div><div class="service-item__title">Pet an Alligator</div><div class="service-item__desc">Hold and pet a juvenile alligator with direct staff supervision. An experience you'll never forget.</div></div>
+      </div>
+      <div class="service-item reveal reveal-delay-1">
+        <div class="service-item__num">02</div>
+        <div><div class="service-item__title">Feed the Gators</div><div class="service-item__desc">Buy gator chow and watch these ancient predators surge from the water with raw power.</div></div>
+      </div>
+      <div class="service-item reveal reveal-delay-2">
+        <div class="service-item__num">03</div>
+        <div><div class="service-item__title">Photo Ops with Celeb Gators</div><div class="service-item__desc">Snap pics with albino gators, massive tortoises, and the famous Morris the movie-star.</div></div>
+      </div>
+      <div class="service-item reveal reveal-delay-3">
+        <div class="service-item__num">04</div>
+        <div><div class="service-item__title">Pet-Friendly Tours</div><div class="service-item__desc">Bring your dog! Well-behaved pups are welcome. (Piper the dog approved — except for the African tortoises.)</div></div>
+      </div>
+      <div class="service-item reveal">
+        <div class="service-item__num">05</div>
+        <div><div class="service-item__title">Educational Programs</div><div class="service-item__desc">School groups and private tours available. Learn about reptile conservation and rescue.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section--green" id="pricing">
+  <div class="section__inner">
+    <div class="section__eyebrow reveal">Admission</div>
+    <h2 class="section__title reveal">Family-Friendly Pricing</h2>
+    <p class="section__text reveal">Open daily. Walk-ins welcome. No reservations needed.</p>
+    <div class="pricing-cards">
+      <div class="pricing-card reveal"><div class="pricing-card__label">Ages 5 & Under</div><div class="pricing-card__price">FREE</div><div class="pricing-card__note">Little explorers</div></div>
+      <div class="pricing-card reveal reveal-delay-1"><div class="pricing-card__label">Ages 6–15</div><div class="pricing-card__price">$15 <span>/person</span></div><div class="pricing-card__note">Kids & youth</div></div>
+      <div class="pricing-card featured reveal reveal-delay-2"><div class="pricing-card__label">Ages 16–64</div><div class="pricing-card__price">$30 <span>/person</span></div><div class="pricing-card__note">Standard admission</div></div>
+      <div class="pricing-card reveal reveal-delay-3"><div class="pricing-card__label">Ages 65–79</div><div class="pricing-card__price">$15 <span>/person</span></div><div class="pricing-card__note">Senior discount</div></div>
+      <div class="pricing-card reveal"><div class="pricing-card__label">Ages 80+</div><div class="pricing-card__price">FREE</div><div class="pricing-card__note">Our heroes</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" id="reviews">
+  <div class="section__inner">
+    <div class="section__eyebrow reveal">What Visitors Say</div>
+    <h2 class="section__title reveal">Real Stories, Real Wonder</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial reveal">
+        <div class="testimonial__stars">★★★★★</div>
+        <div class="testimonial__quote">"Very hands-on, friendly staff, and pet friendly. The alligator feeding experience was the highlight of our trip! Lots of unique creatures you won't see anywhere else."</div>
+        <div class="testimonial__author">— TripAdvisor Visitor</div>
+        <div class="testimonial__source">TripAdvisor · 2024</div>
+      </div>
+      <div class="testimonial reveal reveal-delay-1">
+        <div class="testimonial__stars">★★★★★</div>
+        <div class="testimonial__quote">"Morris is back!! What a unique roadside attraction. The albino alligators are incredible. Staff was super knowledgeable and passionate about the animals."</div>
+        <div class="testimonial__author">— TripAdvisor Visitor</div>
+        <div class="testimonial__source">TripAdvisor · 2025</div>
+      </div>
+      <div class="testimonial reveal reveal-delay-2">
+        <div class="testimonial__stars">★★★★☆</div>
+        <div class="testimonial__quote">"A true Colorado gem. Not fancy, not polished, but genuinely authentic. Makes total sense — geothermal warmth at nearly 10,000 feet."</div>
+        <div class="testimonial__author">— TripAdvisor Visitor</div>
+        <div class="testimonial__source">TripAdvisor · 2025</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISIT / CONTACT -->
+<section class="section--navy" id="visit">
+  <div class="section__inner">
+    <div class="section__eyebrow reveal">Get Directions</div>
+    <h2 class="section__title reveal">17 Miles North of Alamosa</h2>
+    <div class="contact-cards">
+      <div class="contact-card reveal" style="background:var(--navy-light);border-color:rgba(255,255,255,.1)">
+        <div class="contact-card__icon" style="background:rgba(255,255,255,.05);color:#fff"><i class="fas fa-map-pin"></i></div>
+        <div class="contact-card__label" style="color:rgba(255,255,255,.5)">Address</div>
+        <div class="contact-card__value" style="color:#fff">9162 Lane 9 N, Mosca, CO 81146</div>
+      </div>
+      <div class="contact-card reveal reveal-delay-1" style="background:var(--navy-light);border-color:rgba(255,255,255,.1)">
+        <div class="contact-card__icon" style="background:rgba(255,255,255,.05);color:#fff"><i class="fas fa-clock"></i></div>
+        <div class="contact-card__label" style="color:rgba(255,255,255,.5)">Hours</div>
+        <div class="contact-card__value" style="color:#fff">9 AM – 5 PM Daily<br><span style="font-weight:400;font-size:.9rem;color:rgba(255,255,255,.6)">Feb 27 – Nov 1</span></div>
+      </div>
+      <div class="contact-card reveal reveal-delay-2" style="background:var(--navy-light);border-color:rgba(255,255,255,.1)">
+        <div class="contact-card__icon" style="background:rgba(255,255,255,.05);color:#fff"><i class="fas fa-phone"></i></div>
+        <div class="contact-card__label" style="color:rgba(255,255,255,.5)">Call Us</div>
+        <div class="contact-card__value"><a href="tel:+17193782612" style="color:var(--accent-light)">(719) 378-2612</a></div>
+      </div>
+      <div class="contact-card reveal reveal-delay-3" style="background:var(--navy-light);border-color:rgba(255,255,255,.1)">
+        <div class="contact-card__icon" style="background:rgba(255,255,255,.05);color:#fff"><i class="fas fa-envelope"></i></div>
+        <div class="contact-card__label" style="color:rgba(255,255,255,.5)">Email</div>
+        <div class="contact-card__value"><a href="mailto:colog8rs@gmail.com" style="color:var(--accent-light)">colog8rs@gmail.com</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div>
+      <div class="footer__brand">Colorado Gators Reptile Park</div>
+      <div class="footer__tagline">The only high-altitude alligator farm in the world. Reptile rescue and education since 1977.</div>
+    </div>
+    <div>
+      <div class="footer__heading">Navigate</div>
+      <div class="footer__links">
+        <a href="#about" class="footer__link">Our Story</a>
+        <a href="#gallery" class="footer__link">Gallery</a>
+        <a href="#services" class="footer__link">Experiences</a>
+        <a href="#pricing" class="footer__link">Pricing</a>
+        <a href="#visit" class="footer__link">Visit Us</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer__heading">Support</div>
+      <div class="footer__links">
+        <a href="https://gofund.me/7965ff70" target="_blank" rel="noopener" class="footer__link">GoFundMe ❤️</a>
+        <a href="https://www.facebook.com/ColoradoGatorFarm" target="_blank" rel="noopener" class="footer__link">Facebook</a>
+        <a href="https://www.tripadvisor.com/Attraction_Review-g60841-d2243649" target="_blank" rel="noopener" class="footer__link">TripAdvisor</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span>&copy; 2026 Colorado Gators Reptile Park. All rights reserved.</span>
+    <div class="footer__social">
+      <a href="https://www.facebook.com/ColoradoGatorFarm" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll progress
+window.addEventListener('scroll',()=>{const e=document.documentElement.scrollTop,t=document.documentElement.scrollHeight-document.documentElement.clientHeight;document.getElementById('scroll-progress').style.width=(e/t*100)+'%'});
+// Navbar
+window.addEventListener('scroll',()=>{document.querySelector('.nav').classList.toggle('nav--solid',window.scrollY>50)});
+// Mobile menu
+document.getElementById('hamburger').addEventListener('click',function(){this.classList.toggle('active');document.getElementById('navLinks')&&document.getElementById('navLinks').classList.toggle('open');document.querySelector('.nav__right')&&document.querySelector('.nav__right').classList.toggle('open')});
+document.querySelectorAll('.nav__right a,.nav__link').forEach(a=>a.addEventListener('click',()=>{document.querySelector('.hamburger')&&document.querySelector('.hamburger').classList.remove('active');document.querySelector('.nav__right')&&document.querySelector('.nav__right').classList.remove('open')}));
+// Scroll reveal
+document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('.reveal').forEach(el=>{if(el.getBoundingClientRect().top<window.innerHeight)el.classList.add('visible')});const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));setTimeout(()=>{document.querySelectorAll('.reveal').forEach(el=>{el.classList.add('visible')})},500)});
+</script>
+</body>
+</html>
