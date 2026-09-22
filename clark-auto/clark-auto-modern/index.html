@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clark Auto Service | Classic & Modern Alamosa Auto Repair</title>
+    <style>
+        :root {
+            --bg-dark: #121212;
+            --bg-card: #1e1e1e;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --accent: #3b82f6; /* Modern Tech Blue */
+            --accent-hover: #2563eb;
+            --border: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(18, 18, 18, 0.95);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        .cta-btn {
+            background-color: var(--accent);
+            color: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--accent-hover);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 6rem 2rem;
+            text-align: center;
+            background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.8)), url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 2.5rem auto;
+        }
+
+        /* Services Grid */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background-color: var(--bg-card);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* About Section */
+        .about-section {
+            background-color: var(--bg-card);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+        }
+
+        .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* Reviews */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .review-card {
+            background-color: var(--bg-card);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .stars {
+            color: #fbbf24;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .review-text {
+            font-style: italic;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .reviewer {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Contact/Footer */
+        footer {
+            background-color: #0a0a0a;
+            padding: 4rem 2rem 2rem 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .about-content { grid-template-columns: 1fr; }
+            nav ul { display: none; } /* Simplified for demo */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Clark <span>Auto</span></div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+            </ul>
+        </nav>
+        <a href="tel:7195894485" class="cta-btn">Call (719) 589-4485</a>
+    </header>
+
+    <section class="hero">
+        <h1>Expert Care for<br>Classic & Modern Vehicles</h1>
+        <p>The best of both worlds: Generations of vintage expertise meets state-of-the-art diagnostics in the heart of Alamosa.</p>
+        <a href="tel:7195894485" class="cta-btn">Schedule Service</a>
+    </section>
+
+    <section id="services" class="container">
+        <div class="section-title">
+            <h2>Our Services</h2>
+            <p>From T-Buckets to Teslas, we've got the tools and the talent.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Modern Diagnostics</h3>
+                <p>State-of-the-art computer diagnostics and repair for 2015+ vehicles. We speak fluent check-engine light.</p>
+            </div>
+            <div class="service-card">
+                <h3>Classic Restoration</h3>
+                <p>Deep knowledge of pre-1950s mechanics. We treat every vintage vehicle with the respect it deserves.</p>
+            </div>
+            <div class="service-card">
+                <h3>Custom Fabrication</h3>
+                <p>In-house metal fabrication, pinstriping, and bodywork. From removable tops to custom accents.</p>
+            </div>
+            <div class="service-card">
+                <h3>Routine Maintenance</h3>
+                <p>Oil changes, brake service, cooling systems, and electrical repairs. Honest, fast, and reliable.</p>
+            </div>
+            <div class="service-card">
+                <h3>Specialty Vehicles</h3>
+                <p>Experienced with unique platforms including Porsche Cayman, VW Vanagon, and obscure imports.</p>
+            </div>
+            <div class="service-card">
+                <h3>Emergency Support</h3>
+                <p>Fast turnaround for urgent repairs. We know you might be on a road trip and need to get home safely.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>The Clark Legacy</h2>
+                    <p>Clark Auto Service isn't just a shop—it's a family legacy. Located on Tremont Street in Alamosa, we bridge the gap between the old guard and the new.</p>
+                    <p>With mechanics who worked on cars since the <span class="highlight">pre-1950s</span> alongside modern experts in <span class="highlight">2015+ platforms</span>, you get the best of both worlds under one roof. Whether you're restoring a T-Bucket or troubleshooting a complex modern sensor array, Chris and Ron have the experience to get it right.</p>
+                    <p>We pride ourselves on transparent pricing, fast service, and the kind of personal touch you don't find at big chain shops.</p>
+                </div>
+                <div class="about-image">
+                    <!-- Placeholder for a shop image -->
+                    <div style="background-color: var(--border); height: 300px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--text-muted);">
+                        [Shop Interior / Mechanic Photo]
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="container">
+        <div class="section-title">
+            <h2>What Locals Say</h2>
+            <p>Consistently rated 5 stars by our community.</p>
+        </div>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Chris is THE DUDE! He got us taken care of super fast and had reasonable pricing. Our blower motor stopped working and Chris was able to diagnose and fix the problem immediately!"</p>
+                <div class="reviewer">— Christopher H.</div>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"You have the best of both worlds, you a get a older mechanic (Ron Clark) that worked on cars since the pre 50's, and a younger mechanic that knows how to fix anything from old school cars right up 2015's."</p>
+                <div class="reviewer">— John B.</div>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Check engine light popped on while on a road trip from Texas. So kind and helpful! If I lived in Alamosa this would be my go to shop. Roadtrippers, this is a trustworthy, family owned shop!"</p>
+                <div class="reviewer">— Andrew M.</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Clark Auto Service</h4>
+                <ul>
+                    <li>Classic Repairs</li>
+                    <li>Modern Diagnostics</li>
+                    <li>Custom Fabrication</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Visit Us</h4>
+                <ul>
+                    <li>1817 Tremont St</li>
+                    <li>Alamosa, CO 81101</li>
+                    <li>Near Washington Ave</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Hours</h4>
+                <ul>
+                    <li>Mon - Thu: 8:00 AM - 6:00 PM</li>
+                    <li>Fri - Sun: Closed</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="tel:7195894485" style="color: var(--accent);">(719) 589-4485</a></li>
+                    <li>PO Box 846</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Clark Auto Service LLC. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>

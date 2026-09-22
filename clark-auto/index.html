@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clark Auto Service Variations</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: system-ui, -apple-system, sans-serif; background: #17181a; color: #eceae7; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 24px; }
+        h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 8px; color: #e8731a; }
+        .subtitle { color: #9a9a9a; font-size: 1.1rem; margin-bottom: 48px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1400px; width: 100%; }
+        .card { background: #1f2124; border: 1px solid #2c2e33; border-radius: 12px; padding: 28px; transition: all 0.25s; text-decoration: none; color: inherit; display: block; }
+        .card:hover { border-color: #e8731a; transform: translateY(-4px); box-shadow: 0 8px 24px rgba(232,115,26,0.12); }
+        .card-num { font-size: 0.7rem; font-weight: 700; color: #e8731a; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+        .card h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; }
+        .card p { font-size: 0.9rem; color: #9a9a9a; line-height: 1.5; }
+        .card .arrow { margin-top: 16px; color: #e8731a; font-weight: 600; font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <h1>Clark Auto Service</h1>
+    <p class="subtitle">4 Design Variations &mdash; Select One to Preview</p>
+    <div class="grid">
+        <a href="clark-auto-service/index.html" class="card">
+            <div class="card-num">Variation 01</div>
+            <h2>Warm Rustic</h2>
+            <p>Paper-and-rust tones with DM Serif Display headlines over Inter body text. Leans into the family legacy and the two-generation shop. Calm, established, trustworthy.</p>
+            <div class="arrow">View &rarr;</div>
+        </a>
+        <a href="clark-auto-neon/index.html" class="card">
+            <div class="card-num">Variation 02</div>
+            <h2>Neon Night Drive</h2>
+            <p>Dark surfaces with glowing orange accents, a sky-and-road CSS-art hero, and a light/dark theme toggle. The boldest, most animated of the three.</p>
+            <div class="arrow">View &rarr;</div>
+        </a>
+        <a href="clark-auto-modern/index.html" class="card">
+            <div class="card-num">Variation 03</div>
+            <h2>Modern Tech</h2>
+            <p>Near-black surfaces with a crisp blue accent and a clean six-card services grid. Straightforward and conversion-focused &mdash; the most "professional shop" of the set.</p>
+            <div class="arrow">View &rarr;</div>
+        </a>
+        <a href="clark-auto-openroad/index.html" class="card">
+            <div class="card-num">Variation 04</div>
+            <h2>Open Road &amp; After Dark</h2>
+            <p>Golden-hour open-road photo hero, a numbered services list, then a wet-asphalt neon car-meet scene with under-car glow and a classic on the lift. Krea2-generated imagery, warm classic neon over modern underglow.</p>
+            <div class="arrow">View &rarr;</div>
+        </a>
+    </div>
+</body>
+</html>

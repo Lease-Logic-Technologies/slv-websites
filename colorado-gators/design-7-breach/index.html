@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Colorado Gators — a family-run reptile rescue in Mosca, Colorado, at 7,700 ft in the San Luis Valley. See hundreds of rescued alligators, crocodiles, caiman, tortoises and turtles, hold a gator, and meet the movie star.">
+  <meta property="og:title" content="Colorado Gators — Reptile Rescue at 7,700 ft">
+  <meta property="og:description" content="Hundreds of rescued reptiles at the high desert edge. Hold a gator, feed the tortoises, meet the movie star. Mosca, Colorado.">
+  <meta property="og:type" content="website">
+  <title>Colorado Gators — Reptile Rescue &amp; Education · Mosca, CO</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" referrerpolicy="no-referrer">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ZooOrAquarium",
+    "name": "Colorado Gators Reptile Park",
+    "alternateName": "Colorado Gators",
+    "description": "Family-run reptile rescue and education center in Mosca, Colorado at 7,700 ft in the San Luis Valley. Hundreds of rescued alligators, crocodiles, caiman, tortoises and turtles, plus hands-on experiences.",
+    "url": "https://coloradogators.com",
+    "telephone": "+1-719-378-2612",
+    "email": "colog8rs@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "9162 Lane 9 N",
+      "addressLocality": "Mosca",
+      "addressRegion": "CO",
+      "postalCode": "81146",
+      "addressCountry": "US"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 37.489, "longitude": -105.583 },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "09:00", "closes": "17:00",
+        "description": "February 27 through November 1" },
+      { "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "09:00", "closes": "16:00",
+        "description": "November 2 through February 26" }
+    ],
+    "priceRange": "$15 - $30",
+    "slogan": "Reptile Rescue and Education",
+    "sameAs": ["https://www.facebook.com/ColoradoGatorFarm", "https://gofund.me/7965ff70"]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    :root{
+      --bg:#0b100a; --bg-2:#0f160d; --bg-3:#15200f;
+      --ink:#eef1e5; --ink-2:#b9c1a9; --ink-3:#7f886f;
+      --line:rgba(238,241,229,.12); --line-2:rgba(238,241,229,.22);
+      --accent:#d8ff3f; --accent-2:#93d94e; --amber:#e0a53a; --terra:#cf7440; --teal:#5fb3a1; --olive:#8fae52;
+      --g-skin:#26371f; --g-skin-2:#314a28; --g-belly:#c8b178; --g-eye:#e0a53a;
+      --g-tooth:#f3efe2; --g-ridge:#141f0d; --g-lip:#0e1809;
+      --display:'Anton',Impact,'Arial Narrow',sans-serif;
+      --body:'Space Grotesk',system-ui,-apple-system,sans-serif;
+      --nav:70px; --max:1280px; --t:0.5s cubic-bezier(.22,.61,.36,1);
+    }
+    html{ scroll-behavior:smooth; -webkit-font-smoothing:antialiased; }
+    body{ font-family:var(--body); background:var(--bg); color:var(--ink); line-height:1.65; overflow-x:hidden; }
+    img{ max-width:100%; display:block; }
+    a{ color:inherit; text-decoration:none; }
+    ul{ list-style:none; }
+    ::selection{ background:var(--accent); color:#0b100a; }
+
+    .wrap{ max-width:var(--max); margin:0 auto; padding:0 clamp(1.25rem,4vw,3rem); }
+    .kicker{ font:600 .78rem/1 var(--body); letter-spacing:.28em; text-transform:uppercase; color:var(--accent); display:inline-flex; align-items:center; gap:.6rem; }
+    .kicker::before{ content:""; width:26px; height:1px; background:var(--accent); display:inline-block; }
+
+    /* ---------- NAV ---------- */
+    .nav{ position:fixed; inset:0 0 auto 0; height:var(--nav); z-index:100; display:flex; align-items:center;
+      transition:background var(--t), border-color var(--t), backdrop-filter var(--t); border-bottom:1px solid transparent; }
+    .nav.solid{ background:rgba(9,13,7,.72); backdrop-filter:blur(16px) saturate(1.3); border-bottom-color:var(--line); }
+    .nav__inner{ width:100%; display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+    .brand{ display:flex; align-items:center; gap:.7rem; font-family:var(--display); font-size:1.15rem; letter-spacing:.04em; text-transform:uppercase; }
+    .brand svg{ width:40px; height:26px; color:var(--accent); }
+    .brand b{ font-weight:400; color:var(--ink); } .brand span{ color:var(--accent); }
+    .nav__links{ display:flex; align-items:center; gap:2rem; }
+    .nav__links a{ font-size:.86rem; font-weight:500; color:var(--ink-2); position:relative; padding:.4rem 0; min-height:44px; display:flex; align-items:center; }
+    .nav__links a::after{ content:""; position:absolute; left:0; bottom:6px; width:0; height:1px; background:var(--accent); transition:width var(--t); }
+    .nav__links a:hover{ color:var(--ink); } .nav__links a:hover::after{ width:100%; }
+    .btn{ display:inline-flex; align-items:center; gap:.6rem; font:600 .9rem/1 var(--body); padding:.85rem 1.5rem; min-height:44px;
+      border-radius:100px; background:var(--accent); color:#0b100a; border:1px solid var(--accent); transition:transform .25s, box-shadow .25s, background .25s; cursor:pointer; }
+    .btn:hover{ transform:translateY(-2px); box-shadow:0 12px 34px rgba(216,255,63,.22); }
+    .btn--ghost{ background:transparent; color:var(--ink); border-color:var(--line-2); }
+    .btn--ghost:hover{ background:rgba(238,241,229,.06); border-color:var(--ink); box-shadow:none; }
+    .nav__cta{ margin-left:.5rem; }
+    .hamb{ display:none; width:44px; height:44px; background:none; border:1px solid var(--line-2); border-radius:10px; cursor:pointer; flex-direction:column; gap:5px; align-items:center; justify-content:center; }
+    .hamb span{ width:18px; height:2px; background:var(--ink); border-radius:2px; transition:transform .3s, opacity .3s; }
+    .hamb.open span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+    .hamb.open span:nth-child(2){ opacity:0; }
+    .hamb.open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+    .mmenu{ position:fixed; inset:0; z-index:99; background:rgba(8,11,6,.97); backdrop-filter:blur(10px);
+      display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1.6rem; opacity:0; visibility:hidden; transition:opacity .4s, visibility .4s; }
+    .mmenu.open{ opacity:1; visibility:visible; }
+    .mmenu a{ font-family:var(--display); font-size:2.2rem; text-transform:uppercase; color:var(--ink); }
+    .mmenu a:hover{ color:var(--accent); }
+
+    /* ---------- REVEAL ---------- */
+    .reveal{ opacity:0; transform:translateY(42px); transition:opacity .9s var(--t), transform .9s var(--t); will-change:opacity,transform; }
+    .reveal.in{ opacity:1; transform:none; }
+    .d1{ transition-delay:.08s; } .d2{ transition-delay:.16s; } .d3{ transition-delay:.24s; } .d4{ transition-delay:.32s; } .d5{ transition-delay:.4s; }
+    .lm{ display:block; overflow:hidden; }
+    .lm > span{ display:block; transform:translateY(110%); transition:transform 1s var(--t); }
+    .reveal.in .lm > span{ transform:none; }
+    .reveal.in .lm:nth-child(2) > span{ transition-delay:.09s; }
+    .reveal.in .lm:nth-child(3) > span{ transition-delay:.18s; }
+
+    /* ---------- HERO ---------- */
+    .hero{ position:relative; min-height:100vh; min-height:100svh; display:flex; align-items:flex-end; overflow:hidden; perspective:1200px;
+      background:
+        radial-gradient(120% 80% at 50% 118%, rgba(216,255,63,.10), transparent 55%),
+        linear-gradient(180deg,#0a0f08 0%, #0c130a 40%, #101a0d 72%, #0e160b 100%); }
+    .hero__grid{ position:absolute; inset:0; background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+      background-size:64px 64px; -webkit-mask-image:linear-gradient(180deg,transparent, #000 40%, transparent 92%); mask-image:linear-gradient(180deg,transparent, #000 40%, transparent 92%); opacity:.5; }
+    .hero__sun{ position:absolute; top:14%; right:12%; width:220px; height:220px; border-radius:50%;
+      background:radial-gradient(circle, rgba(224,165,58,.5), rgba(224,165,58,0) 68%); filter:blur(4px); }
+    .hero__inner{ position:relative; z-index:3; width:100%; padding-bottom:clamp(2.5rem,7vh,6rem); padding-top:120px; }
+    .hero__title{ font-family:var(--display); font-size:clamp(3.4rem,13vw,10rem); line-height:.92; letter-spacing:-.01em; text-transform:uppercase; margin:1.1rem 0 1.4rem; }
+    .hero__title .accent{ color:var(--accent); }
+    .hero__sub{ font-size:clamp(1.05rem,2vw,1.4rem); color:var(--ink-2); max-width:46ch; }
+    .hero__meta{ display:flex; flex-wrap:wrap; gap:.6rem 1.6rem; margin-top:2rem; font-size:.82rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-3); }
+    .hero__meta b{ color:var(--ink); font-weight:600; }
+    .hero__cta{ display:flex; flex-wrap:wrap; gap:.9rem; margin-top:2.4rem; }
+
+    /* gator stage (hero + breach share structure) */
+    .gator-stage{ position:absolute; left:50%; bottom:-6%; transform:translateX(-50%); width:clamp(340px,60vw,760px); z-index:2;
+      perspective:1000px; will-change:transform; }
+    .gator-tilt{ transform-style:preserve-3d; will-change:transform; }
+    .gator{ width:100%; height:auto; display:block; filter:drop-shadow(0 40px 60px rgba(0,0,0,.55)); }
+    .gator .gator-jaw{ transform-box:fill-box; transform-origin:18% 12%; transition:transform .5s cubic-bezier(.34,1.56,.64,1); }
+    .gator .gator-skull, .gator .gator-body{ transform-box:fill-box; will-change:transform; }
+    .hero .gator-stage{ bottom:auto; top:50%; transform:translate(-50%,-34%); opacity:0; animation:heroSurface 1.6s .3s cubic-bezier(.2,.9,.25,1) forwards; }
+    @media (max-width:900px){ .hero .gator-stage{ opacity:.55; width:clamp(300px,86vw,420px); } }
+    @keyframes heroSurface{ 0%{ transform:translate(-50%,26%); opacity:0; } 60%{ opacity:1; } 100%{ transform:translate(-50%,-34%); opacity:1; } }
+    .hero__hint{ position:absolute; right:clamp(1rem,4vw,3rem); bottom:clamp(2rem,7vh,5rem); z-index:4; font-size:.72rem; letter-spacing:.22em; text-transform:uppercase; color:var(--ink-3);
+      display:flex; align-items:center; gap:.6rem; }
+    .hero__hint i{ color:var(--accent); animation:nudge 1.8s ease-in-out infinite; }
+    @keyframes nudge{ 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(4px);} }
+    .hero__scroll{ position:absolute; left:50%; bottom:1.4rem; transform:translateX(-50%); z-index:4; display:flex; flex-direction:column; align-items:center; gap:.5rem;
+      font-size:.68rem; letter-spacing:.3em; text-transform:uppercase; color:var(--ink-3); }
+    .hero__scroll i{ animation:bob 1.6s ease-in-out infinite; }
+    @keyframes bob{ 0%,100%{ transform:translateY(0);opacity:.4;} 50%{ transform:translateY(6px);opacity:1;} }
+
+    /* ---------- ALTITUDE STATEMENT ---------- */
+    .alt{ position:relative; padding:clamp(6rem,16vh,12rem) 0; border-top:1px solid var(--line); overflow:hidden; }
+    .alt__num{ font-family:var(--display); font-size:clamp(5rem,22vw,17rem); line-height:.85; color:var(--ink); letter-spacing:-.02em;
+      background:linear-gradient(180deg,#f4ffd0 0%, #cfe86a 55%, rgba(216,255,63,.18) 130%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+    .alt__unit{ font-family:var(--display); font-size:clamp(1.2rem,3vw,2rem); color:var(--accent); letter-spacing:.1em; vertical-align:top; }
+    .alt__row{ display:grid; grid-template-columns:1.1fr .9fr; gap:3rem; align-items:end; }
+    .alt__copy{ color:var(--ink-2); font-size:clamp(1.05rem,1.6vw,1.3rem); max-width:42ch; }
+    .alt__copy strong{ color:var(--ink); font-weight:600; }
+    .alt__bar{ height:2px; background:var(--line); margin-top:2.4rem; position:relative; overflow:hidden; }
+    .alt__bar i{ position:absolute; inset:0; background:var(--accent); transform:scaleX(0); transform-origin:left; }
+
+    /* ---------- BREACH (pinned 3D) ---------- */
+    .breach{ position:relative; }
+    .breach__pin{ position:sticky; top:0; height:100vh; height:100svh; overflow:hidden; display:grid; place-items:center;
+      background:radial-gradient(90% 70% at 50% 120%, rgba(216,255,63,.14), transparent 60%),
+                 linear-gradient(180deg,#0a0f08,#0c130a 60%,#0a1108); }
+    .breach__water{ position:absolute; left:0; right:0; bottom:0; height:42%; background:linear-gradient(180deg,transparent, rgba(20,31,13,.9)); z-index:1; }
+    .breach__water::before, .breach__water::after{ content:""; position:absolute; left:0; right:0; height:2px; background:linear-gradient(90deg,transparent,rgba(216,255,63,.5),transparent); }
+    .breach__water::before{ top:8%; } .breach__water::after{ top:34%; opacity:.5; }
+    .breach__stage{ position:relative; z-index:3; width:clamp(300px,52vw,620px); will-change:transform; }
+    .breach__stage .gator-tilt{ transform-style:preserve-3d; }
+    .breach__ripple{ position:absolute; left:50%; bottom:6%; width:340px; height:90px; border:2px solid rgba(216,255,63,.5); border-radius:50%;
+      transform:translateX(-50%) scale(.2); opacity:0; z-index:2; }
+    .breach__title{ position:absolute; top:14%; left:0; right:0; text-align:center; z-index:4; }
+    .breach__title h2{ font-family:var(--display); font-size:clamp(2.6rem,8vw,6rem); text-transform:uppercase; line-height:.95; letter-spacing:-.01em; }
+    .breach__title p{ color:var(--ink-2); margin-top:1rem; font-size:clamp(1rem,1.6vw,1.2rem); max-width:40ch; margin-inline:auto; }
+    .breach__label{ position:absolute; bottom:4%; left:0; right:0; text-align:center; z-index:4; font-size:.72rem; letter-spacing:.26em; text-transform:uppercase; color:var(--ink-3); }
+
+    /* ---------- SPECIES (pinned horizontal) ---------- */
+    .species{ position:relative; }
+    .species__head{ padding:clamp(4rem,10vh,7rem) 0 2rem; }
+    .species__head h2{ font-family:var(--display); font-size:clamp(2.4rem,7vw,5.5rem); text-transform:uppercase; line-height:.95; margin-top:1rem; }
+    .species__pin{ position:sticky; top:0; height:100vh; height:100svh; overflow:hidden; }
+    .track{ display:flex; gap:clamp(1rem,2vw,2rem); align-items:center; height:100%; padding:0 clamp(1rem,5vw,6vw); will-change:transform; width:max-content; }
+    .sp{ position:relative; flex:0 0 auto; width:clamp(280px,30vw,420px); height:min(74vh,560px); border-radius:18px; overflow:hidden;
+      background:var(--bg-2); border:1px solid var(--line); display:flex; flex-direction:column; justify-content:space-between; padding:1.8rem; }
+    .sp__band{ position:absolute; top:0; left:0; right:0; height:6px; }
+    .sp__num{ font-family:var(--display); font-size:1rem; letter-spacing:.2em; color:var(--ink-3); }
+    .sp__sil{ width:120px; height:64px; opacity:.9; margin-top:auto; }
+    .sp__name{ font-family:var(--display); font-size:clamp(1.8rem,3vw,2.6rem); text-transform:uppercase; line-height:.98; margin-top:1.2rem; }
+    .sp__sci{ font-style:italic; color:var(--ink-3); font-size:.95rem; margin-top:.4rem; }
+    .sp__desc{ color:var(--ink-2); font-size:.98rem; margin-top:1rem; }
+    .sp__tag{ position:absolute; top:1.4rem; right:1.6rem; font-size:.68rem; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-2);
+      border:1px solid var(--line-2); padding:.35rem .7rem; border-radius:100px; }
+    .sp__intro, .sp__outro{ flex:0 0 auto; width:clamp(320px,40vw,520px); }
+    .sp__intro h3, .sp__outro h3{ font-family:var(--display); font-size:clamp(2rem,4.4vw,3.4rem); text-transform:uppercase; line-height:.95; }
+    .sp__intro p, .sp__outro p{ color:var(--ink-2); margin-top:1rem; }
+    .sp__outro .btn{ margin-top:1.6rem; }
+
+    /* ---------- EXPERIENCES ---------- */
+    .exp{ padding:clamp(6rem,14vh,10rem) 0; border-top:1px solid var(--line); }
+    .exp__head{ max-width:60ch; }
+    .exp__head h2{ font-family:var(--display); font-size:clamp(2.2rem,6vw,4.6rem); text-transform:uppercase; line-height:.95; margin:1rem 0; }
+    .exp__head p{ color:var(--ink-2); font-size:clamp(1.05rem,1.6vw,1.25rem); }
+    .exp__list{ margin-top:3.5rem; border-top:1px solid var(--line); }
+    .exp__item{ display:grid; grid-template-columns:80px 1fr 1.2fr auto; gap:1.5rem; align-items:center; padding:1.8rem 0; border-bottom:1px solid var(--line);
+      transition:padding .4s, background .4s; }
+    .exp__item:hover{ padding-left:1rem; background:linear-gradient(90deg,rgba(216,255,63,.05),transparent 60%); }
+    .exp__idx{ font-family:var(--display); font-size:1.4rem; color:var(--accent); }
+    .exp__name{ font-family:var(--display); font-size:clamp(1.4rem,2.6vw,2rem); text-transform:uppercase; line-height:1; }
+    .exp__txt{ color:var(--ink-2); font-size:.98rem; }
+    .exp__ico{ width:52px; height:52px; border-radius:50%; border:1px solid var(--line-2); display:grid; place-items:center; color:var(--accent); font-size:1.1rem; }
+
+    /* ---------- MORRIS ---------- */
+    .morris{ position:relative; padding:clamp(6rem,16vh,12rem) 0; overflow:hidden; background:#070b06; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+    .morris__spot{ position:absolute; top:-20%; left:50%; transform:translateX(-50%); width:60vw; height:90%;
+      background:radial-gradient(ellipse at center top, rgba(224,165,58,.28), transparent 62%); pointer-events:none; }
+    .morris__inner{ position:relative; display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
+    .morris__card{ position:relative; aspect-ratio:4/5; border-radius:16px; overflow:hidden; border:1px solid var(--line-2);
+      background:linear-gradient(160deg,#1a2410,#0d130a); display:grid; place-items:center; }
+    .morris__card .gator{ width:86%; filter:drop-shadow(0 30px 50px rgba(0,0,0,.6)); }
+    .morris__badge{ position:absolute; top:1.2rem; left:1.2rem; font-family:var(--display); letter-spacing:.14em; text-transform:uppercase; font-size:.8rem;
+      background:var(--amber); color:#0b100a; padding:.4rem .8rem; border-radius:6px; }
+    .morris h2{ font-family:var(--display); font-size:clamp(2.6rem,7vw,5rem); text-transform:uppercase; line-height:.95; }
+    .morris h2 span{ color:var(--amber); }
+    .morris__role{ color:var(--amber); letter-spacing:.2em; text-transform:uppercase; font-size:.8rem; font-weight:600; margin:1rem 0; }
+    .morris p{ color:var(--ink-2); font-size:1.05rem; margin-bottom:1.1rem; max-width:46ch; }
+    .morris__chips{ display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1.6rem; }
+    .morris__chips span{ font-size:.82rem; border:1px solid var(--line-2); padding:.5rem .9rem; border-radius:100px; color:var(--ink); }
+
+    /* ---------- RESCUE / SUPPORT ---------- */
+    .rescue{ padding:clamp(6rem,14vh,10rem) 0; }
+    .rescue__grid{ display:grid; grid-template-columns:1.1fr .9fr; gap:3.5rem; align-items:center; }
+    .rescue h2{ font-family:var(--display); font-size:clamp(2.2rem,6vw,4.6rem); text-transform:uppercase; line-height:.95; margin:1rem 0 1.2rem; }
+    .rescue p{ color:var(--ink-2); font-size:1.08rem; max-width:48ch; margin-bottom:1.1rem; }
+    .rescue__panel{ background:var(--bg-2); border:1px solid var(--line); border-radius:20px; padding:2.4rem; }
+    .rescue__panel h3{ font-family:var(--display); font-size:1.6rem; text-transform:uppercase; letter-spacing:.02em; }
+    .rescue__panel p{ font-size:.98rem; margin:1rem 0 1.6rem; }
+    .rescue__panel .btn{ width:100%; justify-content:center; }
+    .rescue__fine{ font-size:.8rem; color:var(--ink-3); margin-top:1rem; }
+
+    /* ---------- VISIT ---------- */
+    .visit{ padding:clamp(6rem,14vh,10rem) 0; border-top:1px solid var(--line); background:var(--bg-2); }
+    .visit__head{ max-width:60ch; margin-bottom:3rem; }
+    .visit__head h2{ font-family:var(--display); font-size:clamp(2.4rem,7vw,5rem); text-transform:uppercase; line-height:.95; margin-top:1rem; }
+    .visit__grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; }
+    .vcard{ background:var(--bg); border:1px solid var(--line); border-radius:16px; padding:1.8rem; }
+    .vcard h3{ font-family:var(--display); font-size:1.3rem; text-transform:uppercase; letter-spacing:.03em; display:flex; align-items:center; gap:.7rem; margin-bottom:1.2rem; }
+    .vcard h3 i{ color:var(--accent); font-size:1rem; }
+    .vrow{ display:flex; justify-content:space-between; align-items:baseline; padding:.7rem 0; border-bottom:1px solid var(--line); font-size:.95rem; }
+    .vrow:last-child{ border-bottom:none; }
+    .vrow b{ font-weight:600; } .vrow span{ color:var(--ink-2); }
+    .vrow .free{ color:var(--accent); font-weight:600; }
+    .vlist{ display:flex; flex-direction:column; gap:1rem; }
+    .vlist li{ display:flex; gap:.85rem; align-items:flex-start; font-size:.95rem; }
+    .vlist i{ color:var(--accent); margin-top:.3rem; width:16px; text-align:center; }
+    .vlist a:hover{ color:var(--accent); }
+    .vmap{ margin-top:1.25rem; border-radius:16px; overflow:hidden; border:1px solid var(--line); aspect-ratio:16/7; }
+    .vmap iframe{ width:100%; height:100%; border:0; filter:grayscale(.4) contrast(1.05); }
+
+    /* ---------- FAQ ---------- */
+    .faq{ padding:clamp(4rem,10vh,7rem) 0; }
+    .faq__list{ margin-top:2rem; border-top:1px solid var(--line); }
+    .faq__item{ border-bottom:1px solid var(--line); }
+    .faq__q{ width:100%; background:none; border:none; color:var(--ink); font:600 1.05rem/1.3 var(--body); text-align:left; padding:1.3rem 0; cursor:pointer;
+      display:flex; justify-content:space-between; align-items:center; gap:1rem; min-height:44px; }
+    .faq__q i{ color:var(--accent); transition:transform .35s; }
+    .faq__item.open .faq__q i{ transform:rotate(45deg); }
+    .faq__a{ max-height:0; overflow:hidden; transition:max-height .45s var(--t); }
+    .faq__a p{ color:var(--ink-2); padding-bottom:1.3rem; max-width:70ch; }
+
+    /* ---------- FOOTER ---------- */
+    .foot{ padding:4rem 0 2.5rem; border-top:1px solid var(--line); background:var(--bg); }
+    .foot__top{ display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:2.5rem; padding-bottom:3rem; border-bottom:1px solid var(--line); }
+    .foot__brand .brand{ font-size:1.4rem; margin-bottom:1rem; }
+    .foot__brand p{ color:var(--ink-2); font-size:.95rem; max-width:38ch; }
+    .foot h4{ font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-3); margin-bottom:1rem; }
+    .foot__col a{ display:block; color:var(--ink-2); font-size:.95rem; padding:.3rem 0; }
+    .foot__col a:hover{ color:var(--accent); }
+    .foot__social{ display:flex; gap:.7rem; margin-top:.5rem; }
+    .foot__social a{ width:44px; height:44px; border:1px solid var(--line-2); border-radius:50%; display:grid; place-items:center; color:var(--ink-2); }
+    .foot__social a:hover{ background:var(--accent); color:#0b100a; border-color:var(--accent); }
+    .foot__bottom{ display:flex; justify-content:space-between; align-items:center; padding-top:2rem; font-size:.8rem; color:var(--ink-3); flex-wrap:wrap; gap:1rem; }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width:992px){
+      .alt__row, .morris__inner, .rescue__grid{ grid-template-columns:1fr; gap:2.2rem; }
+      .visit__grid{ grid-template-columns:1fr 1fr; }
+      .exp__item{ grid-template-columns:48px 1fr auto; }
+      .exp__txt{ grid-column:2 / 3; grid-row:2; }
+      .foot__top{ grid-template-columns:1fr 1fr; }
+    }
+    @media (max-width:768px){
+      .nav__links, .nav__cta{ display:none; }
+      .hamb{ display:flex; }
+      .visit__grid{ grid-template-columns:1fr; }
+      .foot__top{ grid-template-columns:1fr; }
+      .species__pin{ position:static; height:auto; overflow-x:auto; -webkit-overflow-scrolling:touch; scroll-snap-type:x mandatory; }
+      .track{ height:auto; padding-bottom:2rem; }
+      .sp{ height:70vh; scroll-snap-align:center; }
+      .hero__hint{ display:none; }
+    }
+    @media (prefers-reduced-motion:reduce){
+      *{ animation-duration:.001s !important; animation-iteration-count:1 !important; }
+      html{ scroll-behavior:auto; }
+      .reveal{ opacity:1; transform:none; transition:none; }
+      .lm > span{ transform:none; }
+      .hero .gator-stage{ opacity:1; animation:none; transform:translate(-50%,-34%); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="wrap nav__inner">
+      <a class="brand" href="#top" aria-label="Colorado Gators home">
+        <svg viewBox="0 0 64 40" fill="currentColor" aria-hidden="true"><path d="M2 24c4-6 12-8 20-8l24-2c6 0 12 3 14 7 1 2-1 4-4 4l-8 1c-2 5-6 8-12 9l-2 5c1-4 1-7 4-9-6 0-12-1-16-4-5-1-9-2-14-1-3 0-3-1-2-2z"/><circle cx="46" cy="16" r="2.4" fill="#0b100a"/></svg>
+        <span class="brandtxt"><b>Colorado</b> <span>Gators</span></span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#altitude">Altitude</a>
+        <a href="#breach">The Breach</a>
+        <a href="#species">Residents</a>
+        <a href="#experience">Experience</a>
+        <a href="#morris">The Legend</a>
+        <a href="#visit">Visit</a>
+        <a href="#visit" class="btn nav__cta">Plan Your Visit</a>
+      </nav>
+      <button class="hamb" id="hamb" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <div class="mmenu" id="mmenu">
+    <a href="#altitude">Altitude</a>
+    <a href="#breach">The Breach</a>
+    <a href="#species">Residents</a>
+    <a href="#experience">Experience</a>
+    <a href="#morris">The Legend</a>
+    <a href="#visit">Visit</a>
+    <a href="https://gofund.me/7965ff70" target="_blank" rel="noopener" style="color:var(--accent)">Support the Rescue →</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero__grid"></div>
+    <div class="hero__sun"></div>
+    <div class="gator-stage" id="heroStage">
+      <div class="gator-tilt" id="heroTilt"></div>
+    </div>
+    <div class="wrap hero__inner">
+      <p class="kicker reveal">San Luis Valley · Mosca, Colorado</p>
+      <h1 class="hero__title reveal d1">
+        <span class="lm"><span>Reptile rescue</span></span>
+        <span class="lm"><span class="accent">at 7,700 ft</span></span>
+      </h1>
+      <p class="hero__sub reveal d2">Hundreds of rescued alligators, crocodiles, caiman, tortoises and turtles at the high-desert edge of Colorado. Hold a gator. Feed the tortoises. Meet the movie star.</p>
+      <div class="hero__cta reveal d3">
+        <a class="btn" href="#visit">Plan Your Visit <i class="fa-solid fa-arrow-right"></i></a>
+        <a class="btn btn--ghost" href="#experience">See What's Here</a>
+      </div>
+      <div class="hero__meta reveal d4">
+        <span>Open <b>Daily 9am–5pm</b></span>
+        <span><b>9162 Lane 9 N</b>, Mosca, CO</span>
+        <span><b>(719) 378-2612</b></span>
+      </div>
+    </div>
+    <div class="hero__hint"><span>Move your cursor</span> <i class="fa-solid fa-hand"></i></div>
+    <div class="hero__scroll"><span>Scroll</span><i class="fa-solid fa-chevron-down"></i></div>
+  </section>
+
+  <!-- ALTITUDE STATEMENT -->
+  <section class="alt" id="altitude">
+    <div class="wrap">
+      <div class="alt__row">
+        <div class="reveal">
+          <p class="kicker">The Altitude</p>
+          <div style="margin-top:1.4rem"><span class="alt__num" id="altNum">0</span><span class="alt__unit"> FT</span></div>
+          <div class="alt__bar"><i id="altBar"></i></div>
+        </div>
+        <div class="alt__copy reveal d1">
+          <p>Alligators are a swamp animal. So it feels wrong to find them here — but that's the whole point. <strong>Colorado Gators is a rescue, not a theme park.</strong> These animals were surrendered, relocated, or pulled from situations where they could no longer be cared for, and they found a permanent home in the high desert. As far as we know, no one else on Earth keeps alligators at this altitude.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BREACH -->
+  <section class="breach" id="breach">
+    <div class="breach__pin" id="breachPin">
+      <div class="breach__water"></div>
+      <div class="breach__ripple" id="breachRipple"></div>
+      <div class="breach__title">
+        <p class="kicker" style="justify-content:center">The moment</p>
+        <h2 class="reveal"><span class="lm"><span>Out of the water</span></span></h2>
+        <p class="reveal d1">Every one of them is a rescue with a story. This is what happens when the high-desert water wakes up.</p>
+      </div>
+      <div class="breach__stage" id="breachStage"><div class="gator-tilt" id="breachTilt"></div></div>
+      <div class="breach__label">Scroll to send it over <i class="fa-solid fa-chevron-down" style="margin-left:.4rem"></i></div>
+    </div>
+  </section>
+
+  <!-- SPECIES (pinned horizontal) -->
+  <section class="species" id="species">
+    <div class="wrap species__head">
+      <p class="kicker reveal">The Residents</p>
+      <h2 class="reveal d1">Six ways to<br>meet the rescue</h2>
+    </div>
+    <div class="species__pin" id="speciesPin">
+      <div class="track" id="track">
+        <div class="sp__intro"><h3>The<br>collection</h3><p>Drag through the resident families — all of them rescued, all of them here to stay.</p></div>
+        <article class="sp">
+          <div class="sp__band" style="background:var(--accent)"></div>
+          <div class="sp__num">01</div><span class="sp__tag">The star</span>
+          <svg class="sp__sil" viewBox="0 0 120 60" fill="#d8ff3f"><path d="M4 42c4-8 12-12 24-13l30-2 20-6 30 8 6 8-8 6-14-2-30 6-30 3c-12 1-22 0-28-2z"/><circle cx="94" cy="30" r="3" fill="#0b100a"/></svg>
+          <div><div class="sp__name">American<br>Alligator</div><div class="sp__sci">Alligator mississippiensis</div><p class="sp__desc">The signature resident. Dozens of them, from a few inches to a couple of hundred pounds, in ponds at 7,700 feet.</p></div>
+        </article>
+        <article class="sp">
+          <div class="sp__band" style="background:#f4efe0"></div>
+          <div class="sp__num">02</div><span class="sp__tag">Rare</span>
+          <svg class="sp__sil" viewBox="0 0 120 60" fill="#efe7cf"><path d="M4 42c4-8 12-12 24-13l30-2 20-6 30 8 6 8-8 6-14-2-30 6-30 3c-12 1-22 0-28-2z"/><circle cx="94" cy="30" r="3" fill="#7a3b12"/></svg>
+          <div><div class="sp__name">Albino<br>Alligator</div><div class="sp__sci">Leucistic variant</div><p class="sp__desc">The pale ones everyone comes to see. Rare, striking, and entirely at home in the high-desert sun.</p></div>
+        </article>
+        <article class="sp">
+          <div class="sp__band" style="background:var(--teal)"></div>
+          <div class="sp__num">03</div><span class="sp__tag">Rescued</span>
+          <svg class="sp__sil" viewBox="0 0 120 60" fill="#5fb3a1"><path d="M6 42c4-7 10-11 22-12l28-3 18-7 24 9 4 8-6 5-12-2-26 7-28 2c-11 1-20 0-24-2z"/><circle cx="82" cy="31" r="3" fill="#0b100a"/></svg>
+          <div><div class="sp__name">Caiman</div><div class="sp__sci">Caimaninae</div><p class="sp__desc">Broader-snouted relatives of the gators, sharing the ponds and the feeding times.</p></div>
+        </article>
+        <article class="sp">
+          <div class="sp__band" style="background:var(--terra)"></div>
+          <div class="sp__num">04</div><span class="sp__tag">VIP</span>
+          <svg class="sp__sil" viewBox="0 0 120 60" fill="#cf7440"><path d="M8 42c3-7 9-11 20-12l26-3 16-8 34 6 2 6-4 6-16 2-30 6-26 3c-9 1-18 0-22-2z"/><circle cx="92" cy="30" r="3" fill="#0b100a"/></svg>
+          <div><div class="sp__name">Crocodiles</div><div class="sp__sci">Crocodylidae</div><p class="sp__desc">The VIP residents. Longer, keener snouts and a very different look from their alligator neighbors.</p></div>
+        </article>
+        <article class="sp">
+          <div class="sp__band" style="background:var(--olive)"></div>
+          <div class="sp__num">05</div><span class="sp__tag">Gentle giant</span>
+          <svg class="sp__sil" viewBox="0 0 120 60" fill="#8fae52"><path d="M20 44c-2-14 14-26 40-26s42 12 40 26c-1 3-4 4-6 3-3-6-10-8-14-4-4-8-12-12-20-12s-16 4-20 12c-4-4-11-2-14 4-2 1-5 0-6-3z"/></svg>
+          <div><div class="sp__name">Desert<br>Tortoise</div><div class="sp__sci">Gopherus agassizii</div><p class="sp__desc">Slow, gentle, and beloved. Hand-feed them fresh greens — a calm moment in the middle of the big lizards.</p></div>
+        </article>
+        <article class="sp">
+          <div class="sp__band" style="background:var(--amber)"></div>
+          <div class="sp__num">06</div><span class="sp__tag">Supporting cast</span>
+          <svg class="sp__sil" viewBox="0 0 120 60" fill="#e0a53a"><path d="M10 44c10-16 24-22 40-18 8 2 12 8 10 14-2 6-9 8-14 5 14-1 26 4 34 12 3 3 2 6-2 6-20 1-40 1-60 0-3 0-4-4-2-6z"/><circle cx="98" cy="34" r="4" fill="#0b100a"/></svg>
+          <div><div class="sp__name">Turtles<br>&amp; Snakes</div><div class="sp__sci">Testudines · Squamata</div><p class="sp__desc">The rest of the resident families — ponds, feeders, and quiet corners filled with rescued reptiles.</p></div>
+        </article>
+        <div class="sp__outro"><h3>Come see<br>them in person</h3><p>Admission from free for little ones. Every ticket keeps the rescue running.</p><a class="btn" href="#visit">Plan Your Visit <i class="fa-solid fa-arrow-right"></i></a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCES -->
+  <section class="exp" id="experience">
+    <div class="wrap">
+      <div class="exp__head">
+        <p class="kicker reveal">Hands-On</p>
+        <h2 class="reveal d1">You don't just<br>watch. You do.</h2>
+        <p class="reveal d2">Every visitor gets real contact with the animals — guided, safe, and honestly a little unforgettable.</p>
+      </div>
+      <div class="exp__list">
+        <div class="exp__item reveal"><div class="exp__idx">01</div><div class="exp__name">Hold a Gator</div><div class="exp__txt">Pet, hold, and photograph a small alligator with the staff right there to guide you.</div><div class="exp__ico"><i class="fa-solid fa-hand"></i></div></div>
+        <div class="exp__item reveal d1"><div class="exp__idx">02</div><div class="exp__name">Feed the Tortoises</div><div class="exp__txt">Hand-feed the desert tortoises fresh vegetables. The gentlest stop on the whole loop.</div><div class="exp__ico"><i class="fa-solid fa-leaf"></i></div></div>
+        <div class="exp__item reveal d2"><div class="exp__idx">03</div><div class="exp__name">Fish for Carp</div><div class="exp__txt">Catch your own carp from the pond, then watch the alligators take it from your hands.</div><div class="exp__ico"><i class="fa-solid fa-fish"></i></div></div>
+        <div class="exp__item reveal d3"><div class="exp__idx">04</div><div class="exp__name">Buy Gator Chow</div><div class="exp__txt">Pick up gator chow and take part in the feeding — the closest you'll get to the big ones.</div><div class="exp__ico"><i class="fa-solid fa-bowl-food"></i></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MORRIS -->
+  <section class="morris" id="morris">
+    <div class="morris__spot"></div>
+    <div class="wrap morris__inner">
+      <div class="morris__card reveal">
+        <span class="morris__badge">Movie Star</span>
+        <div id="morrisGator"></div>
+      </div>
+      <div>
+        <p class="kicker reveal">The Legend</p>
+        <h2 class="reveal d1">Morris, the<br><span>movie star</span></h2>
+        <p class="morris__role reveal d1">Hollywood · Then the high desert</p>
+        <p class="reveal d2">Before he ever saw the San Luis Valley, Morris spent decades on film and television — an alligator who actually made it to the big screen, with a widely loved cameo in <em>Happy Gilmore</em>.</p>
+        <p class="reveal d3">After a long career, he retired here to Colorado, where he spent his golden years at 7,700 feet, far from the studio lots. He's still the name the whole ranch is built around.</p>
+        <div class="morris__chips reveal d4">
+          <span>Decades of film &amp; TV</span>
+          <span>Happy Gilmore cameo</span>
+          <span>Retired to Mosca, CO</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESCUE / SUPPORT -->
+  <section class="rescue" id="rescue">
+    <div class="wrap rescue__grid">
+      <div>
+        <p class="kicker reveal">The Mission</p>
+        <h2 class="reveal d1">Rescue first.<br>Attraction second.</h2>
+        <p class="reveal d2">Colorado Gators began as a fish farm that needed a practical way to handle its fish waste. A few alligators seemed like the obvious answer. What started as logistics turned into a mission: give rescued and surrendered reptiles a place to live.</p>
+        <p class="reveal d3">Today that place is a family-run education center and one of the most unusual stops in the San Luis Valley. Admission keeps the tanks fed and the lights on.</p>
+      </div>
+      <div class="rescue__panel reveal d2">
+        <h3>Keep the rescue running</h3>
+        <p>The park is supported by visitors and a community that believes these animals belong somewhere safe. If you can, help it keep going.</p>
+        <a class="btn" href="https://gofund.me/7965ff70" target="_blank" rel="noopener"><i class="fa-solid fa-heart"></i> Support the Rescue</a>
+        <p class="rescue__fine">Donations go through the park's official GoFundMe.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section class="visit" id="visit">
+    <div class="wrap">
+      <div class="visit__head">
+        <p class="kicker reveal">Plan Your Visit</p>
+        <h2 class="reveal d1">Everything<br>you need</h2>
+      </div>
+      <div class="visit__grid">
+        <div class="vcard reveal">
+          <h3><i class="fa-regular fa-clock"></i> Hours</h3>
+          <div class="vrow"><b>Feb 27 – Nov 1</b><span>Daily 9am – 5pm</span></div>
+          <div class="vrow"><b>Nov 2 – Feb 26</b><span>Daily 9am – 4pm</span></div>
+          <div class="vrow"><b>Closed</b><span>Thanksgiving &amp; Christmas</span></div>
+        </div>
+        <div class="vcard reveal d1">
+          <h3><i class="fa-solid fa-ticket"></i> Admission</h3>
+          <div class="vrow"><span>Ages 5 &amp; under</span><b class="free">FREE</b></div>
+          <div class="vrow"><span>Ages 6 – 15</span><b>$15</b></div>
+          <div class="vrow"><span>Ages 16 – 64</span><b>$30</b></div>
+          <div class="vrow"><span>Ages 65 – 79</span><b>$15</b></div>
+          <div class="vrow"><span>Ages 80 &amp; up</span><b class="free">FREE</b></div>
+        </div>
+        <div class="vcard reveal d2">
+          <h3><i class="fa-solid fa-location-dot"></i> Contact</h3>
+          <ul class="vlist">
+            <li><i class="fa-solid fa-map-pin"></i><span>9162 Lane 9 N, Mosca, CO 81146</span></li>
+            <li><i class="fa-solid fa-phone"></i><a href="tel:+17193782612">(719) 378-2612</a></li>
+            <li><i class="fa-solid fa-envelope"></i><a href="mailto:colog8rs@gmail.com">colog8rs@gmail.com</a></li>
+            <li><i class="fa-brands fa-facebook-f"></i><a href="https://www.facebook.com/ColoradoGatorFarm" target="_blank" rel="noopener">Facebook</a></li>
+            <li><i class="fa-solid fa-heart"></i><a href="https://gofund.me/7965ff70" target="_blank" rel="noopener">Support the rescue</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="vmap reveal d1">
+        <iframe src="https://maps.google.com/maps?q=9162%20Lane%209%20N%20Mosca%20CO%2081146&z=13&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Colorado Gators location"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <p class="kicker reveal">Good to know</p>
+      <div class="faq__list">
+        <div class="faq__item"><button class="faq__q" aria-expanded="false">Is it family friendly?<i class="fa-solid fa-plus"></i></button><div class="faq__a"><p>Yes. Kids 5 and under get in free, and the tortoise and small-gator interactions are the hits with the little ones. The whole experience is built for families on a road trip through the valley.</p></div></div>
+        <div class="faq__item"><button class="faq__q" aria-expanded="false">How long does a visit take?<i class="fa-solid fa-plus"></i></button><div class="faq__a"><p>Most people spend 60–90 minutes. If you hold a gator, fish for carp, and feed the tortoises, plan a little longer. There's no rush — the animals set the pace.</p></div></div>
+        <div class="faq__item"><button class="faq__q" aria-expanded="false">Can I hold an alligator?<i class="fa-solid fa-plus"></i></button><div class="faq__a"><p>Yes — every visitor can pet, hold, and photograph a small alligator, with staff guiding you. This is a supervised, hands-on experience, not a behind-glass zoo.</p></div></div>
+        <div class="faq__item"><button class="faq__q" aria-expanded="false">Where exactly is it?<i class="fa-solid fa-plus"></i></button><div class="faq__a"><p>9162 Lane 9 N, Mosca, Colorado — in the San Luis Valley at about 7,700 feet. It's a natural stop between the valley's farms, wineries, and the Sangre de Cristo range.</p></div></div>
+        <div class="faq__item"><button class="faq__q" aria-expanded="false">Why are alligators in Colorado?<i class="fa-solid fa-plus"></i></button><div class="faq__a"><p>It started as a fish farm that needed a practical way to handle fish waste. A few alligators were the obvious answer. It grew into a rescue — today every animal on site is a rescued or surrendered reptile.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot__top">
+        <div class="foot__brand">
+          <a class="brand" href="#top"><svg viewBox="0 0 64 40" fill="currentColor" aria-hidden="true"><path d="M2 24c4-6 12-8 20-8l24-2c6 0 12 3 14 7 1 2-1 4-4 4l-8 1c-2 5-6 8-12 9l-2 5c1-4 1-7 4-9-6 0-12-1-16-4-5-1-9-2-14-1-3 0-3-1-2-2z"/><circle cx="46" cy="16" r="2.4" fill="#0b100a"/></svg><span class="brandtxt"><b>Colorado</b> <span>Gators</span></span></a>
+          <p>Reptile rescue and education at 7,700 feet in the San Luis Valley. Hundreds of rescued reptiles, hands-on experiences, and one very famous gator.</p>
+        </div>
+        <div class="foot__col">
+          <h4>Explore</h4>
+          <a href="#altitude">The Altitude</a>
+          <a href="#species">The Residents</a>
+          <a href="#experience">Hands-On</a>
+          <a href="#morris">The Legend</a>
+          <a href="#visit">Plan Your Visit</a>
+        </div>
+        <div class="foot__col">
+          <h4>Contact</h4>
+          <a href="tel:+17193782612">(719) 378-2612</a>
+          <a href="mailto:colog8rs@gmail.com">colog8rs@gmail.com</a>
+          <a href="https://www.facebook.com/ColoradoGatorFarm" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://gofund.me/7965ff70" target="_blank" rel="noopener">Support the Rescue</a>
+          <div class="foot__social">
+            <a href="https://www.facebook.com/ColoradoGatorFarm" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="foot__bottom">
+        <span>© 2026 Colorado Gators Reptile Park · 9162 Lane 9 N, Mosca, CO 81146</span>
+        <span>Open daily 9am–5pm · Feb 27 – Nov 1</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    "use strict";
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.documentElement.classList.add('js');
+
+    /* ---------- GATOR SVG (single source, injected) ----------
+       NOTE: CSS var() does NOT work in SVG presentation attributes —
+       all dynamic fills use style="" (real CSS), stable colors are literals. */
+    function gatorSVG(id){
+      var gid = 'sk' + id;
+      return ''+
+      '<svg class="gator" viewBox="0 0 820 440" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid meet">'+
+        '<defs><linearGradient id="'+gid+'" x1="0" y1="0" x2="0" y2="1">'+
+          '<stop offset="0" stop-color="#314a28"/><stop offset="1" stop-color="#26371f"/>'+
+        '</linearGradient></defs>'+
+        '<g class="gator-body">'+
+          '<path style="fill:var(--g-skin)" d="M250 214 C 198 216, 150 222, 108 234 C 66 246, 28 260, 6 278 C 20 268, 42 262, 64 258 C 34 268, 16 282, 6 300 C 42 284, 92 274, 142 264 C 184 256, 224 246, 252 238 Z"/>'+
+          '<path style="fill:url(#'+gid+')" d="M246 150 C 322 126, 432 122, 522 138 C 562 146, 588 158, 598 176 L 598 214 C 562 226, 520 232, 470 234 C 380 238, 300 236, 250 230 C 224 226, 210 200, 216 182 C 220 168, 230 156, 246 150 Z"/>'+
+          '<path style="fill:var(--g-belly)" d="M252 232 C 322 242, 432 244, 522 234 L 560 216 L 560 226 C 500 242, 380 248, 300 244 C 270 242, 256 238, 250 234 Z"/>'+
+          '<path style="fill:var(--g-ridge)" d="M272 146 l10 -16 l13 13 l13 -17 l13 17 l13 -13 l13 11 l13 -9 l13 9 l13 -7 l11 7 l-2 9 l-126 2 Z"/>'+
+          '<path style="fill:var(--g-skin-2)" d="M330 230 l-11 46 l22 0 l15 -42 Z"/>'+
+          '<path style="fill:var(--g-skin-2)" d="M470 232 l-4 48 l22 0 l11 -44 Z"/>'+
+          '<path style="fill:var(--g-belly)" d="M316 274 l32 7 l-4 9 l-28 -5 Z"/>'+
+          '<path style="fill:var(--g-belly)" d="M462 278 l28 5 l-2 9 l-26 -5 Z"/>'+
+        '</g>'+
+        '<g class="gator-skull">'+
+          '<path style="fill:url(#'+gid+')" d="M556 140 C 590 124, 634 120, 664 128 C 644 136, 622 146, 600 154 L 574 162 C 564 156, 556 148, 556 140 Z"/>'+
+          '<path style="fill:url(#'+gid+')" d="M596 150 C 652 140, 712 142, 762 154 C 774 157, 778 166, 774 174 C 720 176, 660 180, 610 186 L 596 188 Z"/>'+
+          '<ellipse cx="754" cy="160" rx="5" ry="4" fill="#0e1809"/>'+
+          '<path style="fill:var(--g-ridge)" d="M594 130 l32 -9 l5 9 l-32 9 Z"/>'+
+          '<circle cx="612" cy="140" r="13" fill="#e0a53a"/>'+
+          '<circle cx="612" cy="140" r="5.5" fill="#0c140a"/>'+
+          '<circle cx="607" cy="135" r="2.4" fill="#ffffff" opacity="0.85"/>'+
+          '<path style="fill:var(--g-tooth)" d="M612 186 l9 13 l9 -13 Z M642 184 l9 13 l9 -13 Z M672 183 l9 13 l9 -13 Z M702 180 l9 13 l9 -13 Z M732 177 l9 12 l9 -12 Z"/>'+
+        '</g>'+
+        '<g class="gator-jaw">'+
+          '<path style="fill:var(--g-skin-2)" d="M598 190 C 652 196, 704 200, 744 208 C 754 211, 754 220, 744 222 C 704 226, 652 226, 606 220 C 598 214, 596 200, 598 190 Z"/>'+
+          '<path style="fill:var(--g-tooth)" d="M620 197 l9 -12 l9 12 Z M652 200 l9 -12 l9 12 Z M684 203 l9 -12 l9 12 Z M716 206 l9 -12 l9 12 Z"/>'+
+        '</g>'+
+      '</svg>';
+    }
+    var heroTilt = document.getElementById('heroTilt');
+    var breachTilt = document.getElementById('breachTilt');
+    var morrisG = document.getElementById('morrisGator');
+    if(heroTilt) heroTilt.innerHTML = gatorSVG('h');
+    if(breachTilt) breachTilt.innerHTML = gatorSVG('b');
+    if(morrisG) morrisG.innerHTML = gatorSVG('m');
+
+    /* ---------- NAV solid ---------- */
+    var nav = document.getElementById('nav');
+    function navState(){ nav.classList.toggle('solid', (window.pageYOffset||0) > 40); }
+    window.addEventListener('scroll', navState, {passive:true}); navState();
+
+    /* ---------- MOBILE MENU ---------- */
+    var hamb = document.getElementById('hamb'), mmenu = document.getElementById('mmenu');
+    function setMenu(o){ mmenu.classList.toggle('open',o); hamb.classList.toggle('open',o); hamb.setAttribute('aria-expanded',o); document.body.style.overflow = o?'hidden':''; }
+    hamb.addEventListener('click', function(){ setMenu(!mmenu.classList.contains('open')); });
+    mmenu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ setMenu(false); }); });
+
+    /* ---------- REVEAL ---------- */
+    var reveals = [].slice.call(document.querySelectorAll('.reveal'));
+    if('IntersectionObserver' in window && !reduce){
+      var io = new IntersectionObserver(function(es){
+        es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, {rootMargin:'0px 0px -8% 0px', threshold:0.08});
+      reveals.forEach(function(el){ io.observe(el); });
+    } else {
+      reveals.forEach(function(el){ el.classList.add('in'); });
+    }
+    // safety: never let content stay hidden
+    setTimeout(function(){ reveals.forEach(function(el){ el.classList.add('in'); }); }, 1800);
+
+    /* ---------- ALTITUDE counter (scroll scrub) ---------- */
+    (function(){
+      var sec = document.getElementById('altitude'); if(!sec) return;
+      var num = document.getElementById('altNum'), bar = document.getElementById('altBar');
+      var target = 7700;
+      function fmt(n){ return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
+      function update(){
+        var r = sec.getBoundingClientRect();
+        var vh = window.innerHeight;
+        var p = (vh - r.top) / (vh + r.height);
+        p = Math.max(0, Math.min(1, p));
+        if(reduce){ p = 1; }
+        num.textContent = fmt(Math.round(target * p));
+        if(bar) bar.style.transform = 'scaleX(' + p + ')';
+      }
+      window.addEventListener('scroll', update, {passive:true});
+      window.addEventListener('resize', update); update();
+    })();
+
+    /* ---------- HERO gator: mouse 3D tilt + parallax + idle jaw ---------- */
+    (function(){
+      var hero = document.querySelector('.hero'); if(!hero) return;
+      var tilt = document.getElementById('heroTilt');
+      var skull = heroTilt && heroTilt.querySelector('.gator-skull');
+      var body  = heroTilt && heroTilt.querySelector('.gator-body');
+      var jaw   = heroTilt && heroTilt.querySelector('.gator-jaw');
+      if(reduce || !tilt) return;
+      var tx=0, ty=0, cx=0, cy=0;
+      hero.addEventListener('pointermove', function(e){
+        var r = hero.getBoundingClientRect();
+        tx = (e.clientX - r.left)/r.width - 0.5;
+        ty = (e.clientY - r.top)/r.height - 0.5;
+      });
+      hero.addEventListener('pointerleave', function(){ tx=0; ty=0; });
+      function loop(){
+        cx += (tx-cx)*0.08; cy += (ty-cy)*0.08;
+        tilt.style.transform = 'rotateY(' + (cx*16) + 'deg) rotateX(' + (-cy*11) + 'deg)';
+        if(skull) skull.style.transform = 'translate(' + (cx*-10) + 'px,' + (cy*-8) + 'px)';
+        if(body)  body.style.transform  = 'translate(' + (cx*-4)  + 'px,' + (cy*-3) + 'px)';
+        requestAnimationFrame(loop);
+      }
+      requestAnimationFrame(loop);
+      // idle jaw breathing
+      if(jaw) setInterval(function(){ jaw.style.transform = 'rotate(' + (3+Math.random()*4) + 'deg)'; }, 2600);
+    })();
+
+    /* ---------- BREACH: pinned 3D leap ---------- */
+    (function(){
+      var sec = document.getElementById('breach'); if(!sec) return;
+      var stage = document.getElementById('breachStage');
+      var tilt = document.getElementById('breachTilt');
+      var ripple = document.getElementById('breachRipple');
+      var jaw = tilt && tilt.querySelector('.gator-jaw');
+      var skull = tilt && tilt.querySelector('.gator-skull');
+      var vh = window.innerHeight;
+      // set section height so the pin has room to travel
+      function setH(){ sec.style.height = (vh*3) + 'px'; }
+      setH(); window.addEventListener('resize', setH);
+
+      function easeInOut(x){ return x<0.5 ? 4*x*x*x : 1 - Math.pow(-2*x+2,3)/2; }
+      function frame(){
+        var r = sec.getBoundingClientRect();
+        var total = sec.offsetHeight - vh;
+        var p = Math.max(0, Math.min(1, -r.top / total));
+        // phases: 0..0.4 rise, 0.4..0.7 hold (airborne), 0.7..1 dip back
+        var rise = easeInOut(Math.min(1, p/0.4));
+        var dip  = Math.max(0, (p-0.7)/0.3);
+        var airborne = Math.max(0, 1 - dip);
+        var scale = 0.6 + rise*0.55 - dip*0.12;
+        var rot = Math.sin(p*Math.PI*2)*8 * airborne;      // tumble while airborne
+        var rotY = Math.sin(p*Math.PI*3)*14 * airborne;
+        // stage rides up the screen while pinned, then dips out
+        stage.style.transform = 'translateY(' + ( (1-rise)*60 - dip*50 ) + 'vh) scale(' + scale + ') rotate(' + rot + 'deg)';
+        if(tilt) tilt.style.transform = 'rotateY(' + rotY + 'deg)';
+        // jaw opens fully at peak
+        if(jaw){
+          var open = Math.max(0, 1 - Math.abs(p-0.55)/0.18);
+          jaw.style.transform = 'rotate(' + (open*14) + 'deg)';
+        }
+        if(skull) skull.style.transform = 'translateY(' + (-open*4) + 'px)';
+        // ripple at the moment of breach
+        if(ripple){
+          var rp = Math.max(0, 1 - Math.abs(p-0.4)/0.1);
+          ripple.style.opacity = (rp*0.7);
+          ripple.style.transform = 'translateX(-50%) scale(' + (0.2 + (1-rp)*1.6) + ')';
+        }
+        requestAnimationFrame(frame);
+      }
+      if(!reduce){ requestAnimationFrame(frame); }
+      else { stage.style.transform='scale(1)'; }
+    })();
+
+    /* ---------- SPECIES: pinned horizontal ---------- */
+    (function(){
+      var sec = document.getElementById('species'); if(!sec) return;
+      var pin = document.getElementById('speciesPin');
+      var track = document.getElementById('track');
+      var isDesktop = window.matchMedia('(min-width:769px)').matches;
+      function setup(){
+        isDesktop = window.matchMedia('(min-width:769px)').matches;
+        if(isDesktop){
+          var vh = window.innerHeight;
+          var sw = track.scrollWidth;
+          sec.style.height = (vh + Math.max(0, sw - window.innerWidth)) + 'px';
+          pin.style.position = 'sticky';
+        } else {
+          sec.style.height = '';
+          pin.style.position = '';
+          track.style.transform = '';
+        }
+      }
+      function frame(){
+        if(!isDesktop) return;
+        var r = sec.getBoundingClientRect();
+        var vh = window.innerHeight;
+        var total = sec.offsetHeight - vh;
+        var p = Math.max(0, Math.min(1, -r.top/total));
+        var max = track.scrollWidth - window.innerWidth;
+        track.style.transform = 'translateX(' + (-p*max) + 'px)';
+        requestAnimationFrame(frame);
+      }
+      setup();
+      window.addEventListener('resize', setup);
+      if(!reduce) requestAnimationFrame(frame);
+      else track.style.transform = 'translateX(0)';
+    })();
+
+    /* ---------- FAQ ---------- */
+    document.querySelectorAll('.faq__item').forEach(function(item){
+      var q = item.querySelector('.faq__q'), a = item.querySelector('.faq__a');
+      q.addEventListener('click', function(){
+        var open = item.classList.toggle('open');
+        q.setAttribute('aria-expanded', open);
+        a.style.maxHeight = open ? (a.scrollHeight + 'px') : '0px';
+      });
+    });
+
+    /* ---------- SMOOTH anchor scroll (offset for nav) ---------- */
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){
+      a.addEventListener('click', function(e){
+        var id = a.getAttribute('href');
+        if(id === '#' ) return;
+        var t = document.querySelector(id);
+        if(t){ e.preventDefault(); var y = t.getBoundingClientRect().top + window.pageYOffset - 64; window.scrollTo({top:y, behavior: reduce?'auto':'smooth'}); }
+      });
+    });
+  })();
+  </script>
+</body>
+</html>
