@@ -1,0 +1,49 @@
+{
+  "_note": "Source of truth for the rail. Order here = order on the page. demo: live demo-page URL, or null (falls back to the repo README). No invented demos: fill demo URLs only for pages that actually exist. Selected from the verified public set (GitHub API, 2026-09-24): user Tesloth (eo-docs, green-spot-garden-center, ngcli-docker, tesloth.github.io) + org Lease-Logic-Technologies (slv-websites). ngcli-docker excluded (2017 fork, stale). Chris: curate freely.",
+  "repos": [
+    {
+      "name": "slv-websites",
+      "full_name": "Lease-Logic-Technologies/slv-websites",
+      "url": "https://github.com/Lease-Logic-Technologies/slv-websites",
+      "demo": "https://leaselogictechnologies.com/",
+      "blurb": "The client-sites monorepo: marketing sites for San Luis Valley businesses.",
+      "stack": ["HTML", "CSS", "JS"],
+      "kind": "sites",
+      "status": "live",
+      "year": 2026
+    },
+    {
+      "name": "green-spot-garden-center",
+      "full_name": "Tesloth/green-spot-garden-center",
+      "url": "https://github.com/Tesloth/green-spot-garden-center",
+      "demo": "https://tesloth.github.io/green-spot-garden-center/",
+      "blurb": "Site for Green Spot Garden Center in Alamosa, CO.",
+      "stack": ["HTML", "CSS"],
+      "kind": "site",
+      "status": "live",
+      "year": 2025
+    },
+    {
+      "name": "eo-docs",
+      "full_name": "Tesloth/eo-docs",
+      "url": "https://github.com/Tesloth/eo-docs",
+      "demo": null,
+      "blurb": "Documentation site for Eduss Online.",
+      "stack": ["HTML"],
+      "kind": "docs",
+      "status": "live",
+      "year": 2013
+    },
+    {
+      "name": "tesloth.github.io",
+      "full_name": "Tesloth/tesloth.github.io",
+      "url": "https://github.com/Tesloth/tesloth.github.io",
+      "demo": "https://tesloth.github.io/",
+      "blurb": "This page’s GitHub Pages host: a static site, no build step.",
+      "stack": ["HTML", "CSS", "JS"],
+      "kind": "host",
+      "status": "live",
+      "year": 2026
+    }
+  ]
+}

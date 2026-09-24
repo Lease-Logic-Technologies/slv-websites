@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lease Logic Technologies: Software and AI, built in Alamosa, Colorado</title>
+  <meta name="description" content="Software and AI, built in Alamosa, Colorado, by one engineer. No slides, no portfolio deck. The code is the proof: every card on this page runs, and every line is open to read.">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#101214">
+  <meta property="og:title" content="Lease Logic Technologies: Software and AI">
+  <meta property="og:description" content="This page is the demo. Software and AI, built in Alamosa, Colorado, by one engineer. The code is the proof.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- The build trace: fixed edge rail, nav + memory of the journey. Hidden without JS (spec 11). -->
+  <nav class="trace" aria-label="Page progress">
+    <svg class="trace-line trace-v" viewBox="0 0 4 100" preserveAspectRatio="none" aria-hidden="true">
+      <line class="t-base" x1="2" y1="0" x2="2" y2="100" vector-effect="non-scaling-stroke"/>
+      <line class="t-live" x1="2" y1="0" x2="2" y2="100" vector-effect="non-scaling-stroke"/>
+    </svg>
+    <svg class="trace-line trace-h" viewBox="0 0 100 4" preserveAspectRatio="none" aria-hidden="true">
+      <line class="t-base" x1="0" y1="2" x2="100" y2="2" vector-effect="non-scaling-stroke"/>
+      <line class="t-live" x1="0" y1="2" x2="100" y2="2" vector-effect="non-scaling-stroke"/>
+    </svg>
+    <span class="playhead" aria-hidden="true"></span>
+    <a class="node" href="#top" data-act="top" style="--ni:0"><span class="dot" aria-hidden="true"></span><span class="tlabel">init</span></a>
+    <a class="node" href="#capabilities" data-act="capabilities" style="--ni:1"><span class="dot" aria-hidden="true"></span><span class="tlabel">capabilities</span></a>
+    <a class="node" href="#work" data-act="work" style="--ni:2"><span class="dot" aria-hidden="true"></span><span class="tlabel">proof</span></a>
+    <a class="node" href="#ai" data-act="ai" style="--ni:3"><span class="dot" aria-hidden="true"></span><span class="tlabel">ai</span></a>
+    <a class="node" href="#ship" data-act="ship" style="--ni:4"><span class="dot" aria-hidden="true"></span><span class="tlabel">ship</span></a>
+    <span class="ticks" aria-hidden="true"></span>
+  </nav>
+
+  <main id="main">
+
+    <!-- ACT 1: HERO (parallax, kinetic greet) -->
+    <section id="top" class="act act-hero" data-act="top" style="--span:2.4">
+      <div class="folio" aria-label="Site folio">
+        <span class="folio-brand">Lease Logic Technologies</span>
+        <span class="folio-links">
+          <a href="https://github.com/Tesloth" target="_blank" rel="noopener">github <span class="arr" aria-hidden="true">&#8599;</span></a>
+          <span class="folio-sep" aria-hidden="true">·</span>
+          <a href="#ship">start a build</a>
+        </span>
+      </div>
+      <div class="stage hero-stage">
+        <div class="planes" aria-hidden="true">
+          <div class="plane plane-grid" data-rate="-1.4"></div>
+          <div class="plane plane-sketch" data-rate="-0.6">
+            <svg viewBox="0 0 900 600" fill="none" stroke="currentColor" stroke-width="1">
+              <rect x="120" y="180" width="120" height="80" rx="6"/>
+              <path d="M240 200 H360 V300 H520"/>
+              <path d="M240 240 H420 V180 H560"/>
+              <path d="M180 260 V420 H360"/>
+              <path d="M650 300 H520"/>
+              <rect x="560" y="260" width="90" height="70" rx="6"/>
+              <circle cx="360" cy="300" r="4"/>
+              <circle cx="420" cy="180" r="4"/>
+              <circle cx="360" cy="420" r="4"/>
+              <circle cx="650" cy="300" r="4"/>
+              <path d="M560 180 H420"/>
+              <path d="M460 420 H600 V330"/>
+              <circle cx="600" cy="330" r="4"/>
+            </svg>
+          </div>
+          <div class="plane plane-signal" data-rate="0.35">
+            <svg viewBox="0 0 1440 900" fill="none" stroke="currentColor" stroke-width="3">
+              <path d="M1440 140 L1050 330 L800 430 L520 560 L300 520 L0 640"/>
+              <circle cx="800" cy="430" r="5" fill="currentColor" stroke="none"/>
+              <circle cx="520" cy="560" r="5" fill="currentColor" stroke="none"/>
+            </svg>
+          </div>
+        </div>
+        <div class="hero-copy">
+          <h1 class="h1"><span class="h1-line">This page is the demo<span class="dot-accent" aria-hidden="true">.</span></span></h1>
+          <p class="lead">Software and AI, built in Alamosa, Colorado, by one engineer. No slides, no portfolio deck. The code is the proof: every card on this page runs, and every line is open to read.</p>
+          <p class="hero-ctas">
+            <a class="btn btn-primary" href="#work">Run the Demos</a>
+            <a class="btn btn-ghost" href="#ship">Start a Project</a>
+          </p>
+          <p class="kicker">Alamosa, Colorado · One engineer, whole project · The code is the proof</p>
+          <p class="hero-cap">Everything on this page is source code. Read it whenever you like.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACT 2: THE GAP (quiet pin, crossfade cues) -->
+    <section id="gap" class="act act-gap" data-act="gap" style="--span:1.4">
+      <div class="stage gap-stage">
+        <div class="cues">
+          <p class="cue">Most of these pages are templates.</p>
+          <p class="cue">Most dev portfolios are a list of links.</p>
+          <p class="cue cue-final">This is neither.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACT 3: THE LEVER (reveal, self-drawing SVG) -->
+    <section id="capabilities" class="act act-lever" data-act="capabilities" style="--span:2">
+      <div class="stage lever-stage">
+        <div class="lever-split">
+          <div class="lever-art">
+            <svg id="lever-draw" viewBox="0 0 520 400" fill="none">
+              <g class="draw-edges" stroke="var(--ink-soft)" stroke-width="1.5">
+                <path class="draw" pathLength="100" d="M66 200 L244 100"/>
+                <path class="draw" pathLength="100" d="M60 200 L244 200"/>
+                <path class="draw" pathLength="100" d="M66 200 L244 300"/>
+                <path class="draw" pathLength="100" d="M256 100 L434 200"/>
+                <path class="draw" pathLength="100" d="M256 200 L434 200"/>
+                <path class="draw" pathLength="100" d="M256 300 L434 200"/>
+              </g>
+              <g class="draw-signal" stroke="var(--accent)" stroke-width="2">
+                <path class="draw" pathLength="100" d="M60 200 L250 200 L440 200"/>
+              </g>
+              <g class="draw-nodes" stroke="var(--ink)" stroke-width="1.5" fill="var(--bg)">
+                <circle class="draw" pathLength="100" cx="60" cy="200" r="7"/>
+                <circle class="draw" pathLength="100" cx="250" cy="100" r="7"/>
+                <circle class="draw" pathLength="100" cx="250" cy="200" r="7"/>
+                <circle class="draw" pathLength="100" cx="250" cy="300" r="7"/>
+                <circle class="draw" pathLength="100" cx="440" cy="200" r="7"/>
+              </g>
+              <g class="draw-dims" stroke="var(--steel)" stroke-width="1">
+                <path class="draw" pathLength="100" d="M250 322 V352"/>
+                <path class="draw" pathLength="100" d="M244 352 H256"/>
+                <path class="draw" pathLength="100" d="M250 90 V76"/>
+                <path class="draw" pathLength="100" d="M448 200 L488 168"/>
+                <path class="draw" pathLength="100" d="M52 200 L20 172"/>
+              </g>
+              <g class="draw-calls">
+                <text class="call" x="48" y="232" text-anchor="end" fill="var(--ink-soft)">input</text>
+                <text class="call" x="258" y="372" fill="var(--ink-soft)">model</text>
+                <text class="call" x="512" y="160" text-anchor="end" fill="var(--ink-soft)">output</text>
+                <text class="call" x="330" y="186" fill="var(--steel)">weights</text>
+              </g>
+            </svg>
+          </div>
+          <div class="lever-copy">
+            <h2 id="lever-h2" class="h2"><span class="w">A</span> <span class="w">portfolio</span> <span class="w">is</span> <span class="w">a</span> <span class="w">list</span> <span class="w">of</span> <span class="w">past</span> <span class="w">jobs.</span> <span class="w">This</span> <span class="w">is</span> <span class="w">the</span> <span class="w">jobs.</span></h2>
+            <div class="caps">
+              <div class="cap">
+                <h3>Software that runs a business.</h3>
+                <p>Invoices, customers, inventory, orders: the systems people actually log into every day. Built to order, owned by the business, not rented from a SaaS roadmap.</p>
+              </div>
+              <div class="cap">
+                <h3>AI that does the work.</h3>
+                <p>Not a chatbot on a homepage. Agents and pipelines that read, process, and run on their own: the ones that take real hours off a real week.</p>
+              </div>
+              <div class="cap">
+                <h3>Interfaces that hold your attention.</h3>
+                <p>The page you&rsquo;re on: a static site, no framework, no build step: and it still moves like a game. If the brochure is a demo, imagine the product.</p>
+              </div>
+              <div class="cap">
+                <h3>Engineering underneath.</h3>
+                <p>A decade of shipping code in production, an engineering-physics degree, and the habit of reading the source. The scroll is the least of it.</p>
+              </div>
+            </div>
+            <p class="lever-cap">What you see is the top. The systems underneath are the job.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACT 4: PROOF / REPO RAIL (pan; PEAK) -->
+    <section id="work" class="act act-rail" data-act="work" style="--span:5.5">
+      <div class="stage" id="rail-stage">
+        <div class="rail-head" id="rail-head">
+          <p class="rail-eyebrow">the proof</p>
+          <h2 class="rail-h2">The code is the portfolio.</h2>
+          <p class="rail-count" id="rail-count">Four things that run. All of them.</p>
+          <p class="rail-lead">Everything below runs. Open the demo, poke at it, then read the source if you like: a page you can inspect beats a deck you have to trust.</p>
+        </div>
+        <div class="rail-track" id="rail-track">
+          <!-- Static rail cards: the no-JS mirror of repos.json (spec 11). Keep in sync when the data file changes; JS re-renders this container from repos.json when available. -->
+          <div class="rail-cards" id="rail-cards">
+            <article class="card" style="--si:-0.3">
+              <div class="card-tilt">
+                <h3 class="card-name"><a href="https://github.com/Lease-Logic-Technologies/slv-websites" target="_blank" rel="noopener">slv-websites</a></h3>
+                <p class="card-stack">HTML · CSS · JS</p>
+                <p class="card-meta">live · sites · 2026</p>
+                <p class="card-blurb">The client-sites monorepo: marketing sites for San Luis Valley businesses.</p>
+                <p class="card-links">
+                  <a class="card-link" href="https://github.com/Lease-Logic-Technologies/slv-websites" target="_blank" rel="noopener">repo <span class="arr" aria-hidden="true">&#8599;</span></a>
+                  <a class="card-link" href="https://leaselogictechnologies.com/" target="_blank" rel="noopener">demo <span class="arr" aria-hidden="true">&#8599;</span></a>
+                </p>
+              </div>
+            </article>
+            <article class="card" style="--si:0.05">
+              <div class="card-tilt">
+                <h3 class="card-name"><a href="https://github.com/Tesloth/green-spot-garden-center" target="_blank" rel="noopener">green-spot-garden-center</a></h3>
+                <p class="card-stack">HTML · CSS</p>
+                <p class="card-meta">live · site · 2025</p>
+                <p class="card-blurb">Site for Green Spot Garden Center in Alamosa, CO.</p>
+                <p class="card-links">
+                  <a class="card-link" href="https://github.com/Tesloth/green-spot-garden-center" target="_blank" rel="noopener">repo <span class="arr" aria-hidden="true">&#8599;</span></a>
+                  <a class="card-link" href="https://tesloth.github.io/green-spot-garden-center/" target="_blank" rel="noopener">demo <span class="arr" aria-hidden="true">&#8599;</span></a>
+                </p>
+              </div>
+            </article>
+            <article class="card" style="--si:0.10">
+              <div class="card-tilt">
+                <h3 class="card-name"><a href="https://github.com/Tesloth/eo-docs" target="_blank" rel="noopener">eo-docs</a></h3>
+                <p class="card-stack">HTML</p>
+                <p class="card-meta">live · docs · 2013</p>
+                <p class="card-blurb">Documentation site for Eduss Online.</p>
+                <p class="card-links">
+                  <a class="card-link" href="https://github.com/Tesloth/eo-docs" target="_blank" rel="noopener">repo <span class="arr" aria-hidden="true">&#8599;</span></a>
+                  <a class="card-link" href="https://github.com/Tesloth/eo-docs/#readme" target="_blank" rel="noopener">readme <span class="arr" aria-hidden="true">&#8599;</span></a>
+                </p>
+              </div>
+            </article>
+            <article class="card" style="--si:0.15">
+              <div class="card-tilt">
+                <h3 class="card-name"><a href="https://github.com/Tesloth/tesloth.github.io" target="_blank" rel="noopener">tesloth.github.io</a></h3>
+                <p class="card-stack">HTML · CSS · JS</p>
+                <p class="card-meta">live · host · 2026</p>
+                <p class="card-blurb">This page&rsquo;s GitHub Pages host: a static site, no build step.</p>
+                <p class="card-links">
+                  <a class="card-link" href="https://github.com/Tesloth/tesloth.github.io" target="_blank" rel="noopener">repo <span class="arr" aria-hidden="true">&#8599;</span></a>
+                  <a class="card-link" href="https://tesloth.github.io/" target="_blank" rel="noopener">demo <span class="arr" aria-hidden="true">&#8599;</span></a>
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div class="rail-item rail-note">
+            <p class="rail-note-line">More as it ships.</p>
+            <p class="rail-note-sub">Want one of these running in your business?</p>
+            <a class="btn btn-primary" href="#ship">Start a Project</a>
+          </div>
+        </div>
+        <!-- Stack fallback (phone + reduced motion): same schema and order, static. JS re-renders both card containers from repos.json. -->
+        <div class="rail-stack" id="rail-stack">
+          <div class="rail-item rail-head">
+            <p class="rail-eyebrow">the proof</p>
+            <h2 class="rail-h2">The code is the portfolio.</h2>
+            <p class="rail-count">Four things that run. All of them.</p>
+            <p class="rail-lead">Everything below runs. Open the demo, poke at it, then read the source if you like: a page you can inspect beats a deck you have to trust.</p>
+          </div>
+          <div class="rail-cards" id="rail-cards-stack">
+            <article class="card">
+              <div class="card-tilt">
+                <h3 class="card-name"><a href="https://github.com/Lease-Logic-Technologies/slv-websites" target="_blank" rel="noopener">slv-websites</a></h3>
+                <p class="card-stack">HTML · CSS · JS</p>
+                <p class="card-meta">live · sites · 2026</p>
+                <p class="card-blurb">The client-sites monorepo: marketing sites for San Luis Valley businesses.</p>
+                <p class="card-links">
+                  <a class="card-link" href="https://github.com/Lease-Logic-Technologies/slv-websites" target="_blank" rel="noopener">repo <span class="arr" aria-hidden="true">&#8599;</span></a>
+                  <a class="card-link" href="https://leaselogictechnologies.com/" target="_blank" rel="noopener">demo <span class="arr" aria-hidden="true">&#8599;</span></a>
+                </p>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card-tilt">
+                <h3 class="card-name"><a href="https://github.com/Tesloth/green-spot-garden-center" target="_blank" rel="noopener">green-spot-garden-center</a></h3>
+                <p class="card-stack">HTML · CSS</p>
+                <p class="card-meta">live · site · 2025</p>
+                <p class="card-blurb">Site for Green Spot Garden Center in Alamosa, CO.</p>
+                <p class="card-links">
+                  <a class="card-link" href="https://github.com/Tesloth/green-spot-garden-center" target="_blank" rel="noopener">repo <span class="arr" aria-hidden="true">&#8599;</span></a>
+                  <a class="card-link" href="https://tesloth.github.io/green-spot-garden-center/" target="_blank" rel="noopener">demo <span class="arr" aria-hidden="true">&#8599;</span></a>
+                </p>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card-tilt">
+                <h3 class="card-name"><a href="https://github.com/Tesloth/eo-docs" target="_blank" rel="noopener">eo-docs</a></h3>
+                <p class="card-stack">HTML</p>
+                <p class="card-meta">live · docs · 2013</p>
+                <p class="card-blurb">Documentation site for Eduss Online.</p>
+                <p class="card-links">
+                  <a class="card-link" href="https://github.com/Tesloth/eo-docs" target="_blank" rel="noopener">repo <span class="arr" aria-hidden="true">&#8599;</span></a>
+                  <a class="card-link" href="https://github.com/Tesloth/eo-docs/#readme" target="_blank" rel="noopener">readme <span class="arr" aria-hidden="true">&#8599;</span></a>
+                </p>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card-tilt">
+                <h3 class="card-name"><a href="https://github.com/Tesloth/tesloth.github.io" target="_blank" rel="noopener">tesloth.github.io</a></h3>
+                <p class="card-stack">HTML · CSS · JS</p>
+                <p class="card-meta">live · host · 2026</p>
+                <p class="card-blurb">This page&rsquo;s GitHub Pages host: a static site, no build step.</p>
+                <p class="card-links">
+                  <a class="card-link" href="https://github.com/Tesloth/tesloth.github.io" target="_blank" rel="noopener">repo <span class="arr" aria-hidden="true">&#8599;</span></a>
+                  <a class="card-link" href="https://tesloth.github.io/" target="_blank" rel="noopener">demo <span class="arr" aria-hidden="true">&#8599;</span></a>
+                </p>
+              </div>
+            </article>
+          </div>
+          <div class="rail-item rail-note">
+            <p class="rail-note-line">More as it ships.</p>
+            <p class="rail-note-sub">Want one of these running in your business?</p>
+            <a class="btn btn-primary" href="#ship">Start a Project</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACT 5: THE AI SIDE (flow + in, compressed) -->
+    <section id="ai" class="act act-ai" data-act="ai" style="--span:1.2">
+      <div class="wrap">
+        <p class="eyebrow rv">the ai side</p>
+        <h2 class="h2 rv">How AI is used here.</h2>
+        <p class="dek rv">Not a chatbot on a homepage. Agents and pipelines that read, process, and run on their own: the ones that take real hours off a real week.</p>
+        <div class="aistack">
+          <div class="ai-row rv">
+            <span class="ai-term">Agents</span>
+            <p>A team of them on one task board: they research, design, build, review, and ship. This page is their output.</p>
+          </div>
+          <div class="ai-row rv">
+            <span class="ai-term">Workflows</span>
+            <p>Pipelines that take the work off a real week: read, process, run on their own.</p>
+          </div>
+          <div class="ai-row rv">
+            <span class="ai-term">Inference</span>
+            <p>Open-weight models, run on one machine in the shop. No cloud account required.</p>
+          </div>
+        </div>
+        <div class="who rv">
+          <p class="who-line">The person who wrote this page is the person you&rsquo;d hire.</p>
+          <p class="who-sub">Chris Lease: an engineering physicist from Colorado School of Mines, a decade of production software, one engineer, whole project.</p>
+          <a class="who-cta" href="tel:+1-719-657-7528">Be one of the first: tell me what you&rsquo;re running: (719) 657-7528</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACT 6: THE DOOR (pin + hold; command-line close) -->
+    <section id="ship" class="act act-door" data-act="ship" style="--span:1.6">
+      <div class="stage door-stage">
+        <h2 class="door-k">The next one&rsquo;s yours.</h2>
+        <p class="door-body">You&rsquo;ve seen what code and AI can do: the proof is on this page. The next project could be a system your business runs on, an agent that does the work you do by hand, or something you haven&rsquo;t named yet.</p>
+        <div class="term" role="group" aria-label="Contact actions">
+          <span class="term-prompt" aria-hidden="true">you@leaselogic:~$</span>
+          <a class="term-line" href="https://github.com/Tesloth" target="_blank" rel="noopener"><span class="tl-cmd">open the code</span><span class="tl-arg">github <span class="arr" aria-hidden="true">&#8599;</span></span></a>
+          <a class="term-line" href="tel:+1-719-657-7528"><span class="tl-cmd">start a build</span><span class="tl-arg">text (719) 657-7528</span></a>
+        </div>
+        <footer class="ftr">
+          <span>Lease Logic Technologies · Alamosa, Colorado · Serving Alamosa, Monte Vista, Center, Del Norte, and the whole Valley</span>
+          <span><a href="tel:+1-719-657-7528">(719) 657-7528</a> · <a href="mailto:info@leaselogictechnologies.com">info@leaselogictechnologies.com</a> · © 2026</span>
+          <span>This page: hand-built, no framework. <a href="https://github.com/Lease-Logic-Technologies/slv-websites" target="_blank" rel="noopener">View source <span class="arr" aria-hidden="true">&#8599;</span></a></span>
+        </footer>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
