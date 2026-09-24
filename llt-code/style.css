@@ -10,10 +10,10 @@
   --ground-deep:#0C0E10;
   --ink:#F7F5F0;
   --ink-soft:#A7ADB3;
-  --ink-faint:#6A7076;
+  --ink-faint:#8B9197; /* text-safe: 5.9:1 on --bg, 6.07:1 on --ground-deep. Raised in QA (t_ef0fb51e P1-5): used at 11.5-15.5px text */
   --accent:#E8501E;
   --accent-deep:#C23A0E;
-  --steel:#2F7E8C;
+  --steel:#3597A8; /* text-safe: 5.49:1 on --bg, 5.15:1 on --surface. Raised in QA (t_ef0fb51e P1-5): eyebrows/prompt at 12-14px */
   --steel-deep:#26666F;
   --line:rgba(247,245,240,0.14);
   --line-strong:rgba(247,245,240,0.24);
@@ -98,10 +98,17 @@ html:not(.js) .trace{display:none}
 }
 .trace .node.is-lit .dot{background:var(--trace-live);opacity:1;transform:scale(1.15)}
 .trace .node.is-lit .tlabel{opacity:1;transform:translateY(-50%) translateX(0)}
-/* the active act's own node label would float over that act's content (e.g.
-   "proof" over the rail heading at the peak) — while its act is pinned the
-   app hides that one label; the node dot stays lit (the record is kept) */
+/* labels that would sit on pinned content hide while pinned (QA P1-2):
+   (1) the active act's own label ("proof" over the rail heading at the
+   peak); (2) any lit label whose y-band overlaps a pinned act's heading
+   block ("capabilities" stacked under the rail eyebrow at the peak).
+   Dots stay lit (the record is kept). No !important: the later
+   .node:hover rule (equal specificity) must still be able to reveal the
+   label on hover. */
 .trace .node.tlabel-off .tlabel{opacity:0}
+/* under reduced motion the trace is a static legend — every label shows,
+   so the suppression never applies there */
+html.js.rm .trace .node.tlabel-off .tlabel{opacity:1}
 .trace .node:hover .tlabel{opacity:1}
 .trace .ticks{position:absolute;inset:0}
 .trace .tick{
@@ -118,13 +125,20 @@ html:not(.js) .trace{display:none}
 @media (max-width:1023px){
   .trace{left:0;right:0;top:auto;bottom:10px;height:3px;width:100vw}
   .trace .trace-v{display:none}
-  .trace .trace-h{position:absolute;left:8vw;right:8vw;top:0;height:4px;width:84vw}
+  /* the global .trace-h{display:none} is re-enabled here (QA P1-4): without
+     it the mobile signature renders as five dots floating over no line */
+  .trace .trace-h{display:block;position:absolute;left:8vw;right:8vw;top:0;height:4px;width:84vw}
   .trace .t-live{stroke-dasharray:1000;stroke-dashoffset:calc(1000 - 1000*var(--trace-p,0))}
   .trace .playhead{
     left:8vw;bottom:auto;top:-4px;width:11px;height:11px;
     transform:translateX(calc(var(--trace-p,0)*84vw));
   }
-  .trace .node{left:calc(8vw + var(--tfrac,0)*84vw - 13px);bottom:-12px;width:44px;height:32px}
+  /* hit width 40 (review P1-4, the review's own fix option): at 44px the two
+     rightmost nodes (ai/ship, ~24px apart center-to-center at 390px) shared
+     4px of pixels. -20px recenters each node on the line's progress point;
+     40px is still a comfortable finger target (the spec's 44 is the soft
+     target the review waived). */
+  .trace .node{left:calc(8vw + var(--tfrac,0)*84vw - 20px);bottom:-12px;width:40px;height:32px}
   .trace .node .tlabel{display:none}
   .trace .tick{left:calc(8vw + var(--tfrac,0)*84vw - 5px);bottom:5px;width:14px;height:2px;transform-origin:left center}
 }
@@ -150,6 +164,9 @@ html:not(.js) .trace{display:none}
 .folio a:hover{color:var(--ink)}
 .folio-brand{font-weight:700;color:var(--ink)}
 .folio-sep{color:var(--ink-faint)}
+/* one line at every width (QA P2-12): "start a build" was breaking
+   START A / BUILD at 390 */
+.folio-links a{white-space:nowrap}
 .hero-stage{background:var(--bg)}
 .planes{position:absolute;inset:0}
 .plane{position:absolute;inset:0;will-change:transform}
@@ -160,7 +177,9 @@ html:not(.js) .trace{display:none}
   opacity:.5;
   transform:translate3d(0,calc(var(--sc-p,0)*-140px),0) scale(1.08);
 }
-.plane-sketch{color:var(--ink-soft);opacity:.3}
+/* sketch plane sits behind the lead + button read zone: one step down in
+   presence so the hero stays dimensional, not crowded (QA P2-10) */
+.plane-sketch{color:var(--ink-soft);opacity:.2}
 .plane-sketch svg{
   position:absolute;left:12%;top:16%;width:min(58vw,760px);
   transform:translate3d(0,calc(var(--sc-p,0)*-64px),0);
@@ -289,10 +308,13 @@ html:not(.js) .trace{display:none}
 
 /* ---------- act 4: the rail (PEAK) ---------- */
 .act-rail .stage{background:var(--surface)}
+/* the rail's lateral travel: fixed 400px left (the slab width) so the cards
+   start flush with the slab edge and panMax = offsetLeft + scrollWidth -
+   stage width (QA P2-7) */
 .rail-track{
   position:absolute;top:50%;transform:translateY(-50%);
   display:flex;align-items:center;gap:48px;height:auto;
-  left:34vw;
+  left:400px;
   width:max-content;padding:12vh 0;
   will-change:transform;
 }
@@ -306,12 +328,18 @@ html:not(.js) .trace{display:none}
   margin:0 0 14px;
   font:700 12px/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--steel);
 }
-.rail-h2{margin:0;font:700 clamp(2rem,4.6vw,3.25rem)/1.05 var(--f-display);letter-spacing:-.015em;text-wrap:balance}
+.rail-h2{margin:0;font:700 clamp(1.9rem,4.6vw,3.25rem)/1.05 var(--f-display);letter-spacing:-.015em;text-wrap:balance}
+/* slab is a fixed 400px (QA P2-7: 34vw left a 56-155px dead band), so the H2
+   steps down below ~1180px where its text column narrows, keeping it to
+   ~3 lines and out of vertical trouble at the 1024px floor */
+@media (min-width:1024px) and (max-width:1180px){
+  .rail-h2{font-size:clamp(1.8rem,2.5vw + 1rem,2.125rem)}
+}
 .rail-count{
   margin:18px 0 0;
   font:400 14px/1.4 var(--f-mono);letter-spacing:.04em;color:var(--ink-soft);
 }
-.rail-lead{margin:12px 0 0;font-size:15.5px;line-height:1.55;color:var(--ink-soft);max-width:44ch}
+.rail-lead{margin:12px 0 0;font-size:15.5px;line-height:1.55;color:var(--ink-soft);max-width:46ch}
 .rail-cards{display:flex;align-items:stretch;gap:48px;flex:none}
 .card{
   flex:none;width:clamp(16.5rem,24vw,18.75rem);
@@ -337,9 +365,11 @@ html:not(.js) .trace{display:none}
   margin:10px 0 0;
   font:400 13px/1.4 var(--f-mono);letter-spacing:.06em;color:var(--ink-soft);
 }
+/* two mono tiers, not one dimness step (QA P2-8): stack reads, meta recedes
+   by size + tracking, not just lightness */
 .card-meta{
   margin:6px 0 0;
-  font:400 12px/1.4 var(--f-mono);letter-spacing:.06em;color:var(--ink-faint);
+  font:400 11.5px/1.4 var(--f-mono);letter-spacing:.1em;color:var(--ink-faint);
   font-variant-numeric:tabular-nums;
 }
 .card-blurb{margin:12px 0 0;font-size:15.5px;line-height:1.55;color:var(--ink-soft);flex:1}
@@ -369,19 +399,32 @@ html:not(.js) .rail-track{
 }
 html:not(.js) .card{opacity:1;transform:none;width:min(30rem,calc(50% - 12px))}
 html:not(.js) .card-tilt{transition:none}
+/* >=44px link targets in the no-JS grid too (spec 12) */
+html:not(.js) .card-link{min-height:44px}
 html:not(.js) .rail-note{width:100%}
 /* JS desktop: pan rail visible; the heading is a fixed opaque left label the
    cards slide behind (opaque ground + fade to the right, spec 8.8) */
 html.js .rail-stack{display:none}
 @media (min-width:1024px){
   html.js .rail-head{
-    position:absolute;z-index:2;top:0;bottom:0;left:0;width:34vw;
+    position:absolute;z-index:2;top:0;bottom:0;left:0;width:400px;
     display:flex;flex-direction:column;justify-content:center;
-    padding:0 clamp(24px,4vw,64px) 0 32px;
+    /* left pad >=64px clears the trace node-label zone (x 32-86) — QA P1-2;
+       fixed 400px slab (was 34vw) so the text column is a constant ~290px —
+       QA P2-7 */
+    padding:0 24px 0 112px;
     /* opaque same-ground slab: cards (z below) pass behind the text and
        emerge at the right edge; label and stage share --surface so the
        occluding edge reads as "behind the heading", not a visible panel. */
     background:var(--surface);
+  }
+  /* right-edge fade to the ground (spec 8.8): cards dissolve out at the slab
+     edge instead of being cut mid-word — the straddled card at pan end reads
+     as deliberate at every pan position (QA P1-1) */
+  html.js .rail-head::after{
+    content:"";position:absolute;z-index:3;left:100%;top:0;bottom:0;width:72px;
+    background:linear-gradient(to right,var(--surface) 0%,var(--surface) 18%,rgba(23,25,28,0) 100%);
+    pointer-events:none;
   }
 }
 /* JS phone + reduced motion: the stack (its own head + cards + note) with
@@ -395,6 +438,10 @@ html.js .rail-stack{display:none}
   }
   html.js .rail-stack .rail-cards{flex-direction:row;overflow-x:auto;scroll-snap-type:x mandatory;gap:20px;padding:4px 4px 24px;max-width:100vw}
   html.js .rail-stack .card{width:min(30rem,86vw);opacity:1;transform:none;scroll-snap-align:start}
+  /* touch targets >=44px (spec 12, QA P1-6): links were 33px hit height */
+  html.js .rail-stack .card-link{min-height:44px}
+  /* act 5 content is now a pinned .stage (QA P1-3): its own padding-top on
+     .stage handles the flow-after-pin inset, so the old override is gone */
 }
 
 /* ---------- act 5: ai + who ---------- */
@@ -405,7 +452,8 @@ html.js .rail-stack{display:none}
 }
 .act-ai .h2{margin:0 0 16px}
 .dek{margin:0;max-width:60ch;font-size:17px;line-height:1.65;color:var(--ink-soft)}
-.aistack{margin-top:44px;border-top:1px solid var(--line)}
+/* even block gaps: measured 50px/70px at build, both 56px (QA P2-9) */
+.aistack{margin-top:56px;border-top:1px solid var(--line)}
 .ai-row{
   display:grid;grid-template-columns:minmax(130px,220px) 1fr;gap:16px 28px;align-items:baseline;
   padding:22px 0;border-bottom:1px solid var(--line);
@@ -414,10 +462,12 @@ html.js .rail-stack{display:none}
   font:700 14px/1.4 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink);
 }
 .ai-row p{margin:0;font-size:15.5px;line-height:1.55;color:var(--ink-soft);max-width:64ch}
-.who{margin-top:64px}
+.who{margin-top:56px}
+/* the conversion climax gets one step over the section intro (QA P2-9):
+   who-line was 40px vs h2 38px, so the line that matters read as equal */
 .who-line{
   margin:0;
-  font:700 clamp(1.7rem,3.6vw,2.5rem)/1.15 var(--f-display);letter-spacing:-.01em;text-wrap:balance;
+  font:700 clamp(1.7rem,3.9vw,2.75rem)/1.12 var(--f-display);letter-spacing:-.01em;text-wrap:balance;
 }
 .who-sub{margin:14px 0 0;max-width:58ch;font-size:16px;line-height:1.6;color:var(--ink-soft)}
 .who-cta{

@@ -23,6 +23,9 @@
   var cards = track ? Array.prototype.slice.call(track.querySelectorAll("#rail-cards > .card")) : [];
   var h2w = doc.querySelectorAll("#lever-h2 .w");
   var rv = Array.prototype.slice.call(doc.querySelectorAll(".rv"));
+  // heading blocks that trace labels must never land on while their act is
+  // pinned (QA P1-2): the rail slab head and act 5's H2
+  var headEls = doc.querySelectorAll("#rail-head, .act-ai .h2");
   var nodeActIdx = nodes.map(function (n) {
     var id = n.getAttribute("data-act");
     for (var k = 0; k < acts.length; k++) {
@@ -53,8 +56,8 @@
       });
     }
     if (track && railStage) {
-      // travel = distance from the track's start (its left offset, 34vw on
-      // desktop) to its right edge reaching the stage's right edge
+      // travel = distance from the track's start (fixed 400px = the slab
+      // width) to its right edge reaching the stage's right edge
       panMax = Math.max(0, track.offsetLeft + track.scrollWidth - railStage.clientWidth);
     }
     layoutTicks();
@@ -175,6 +178,9 @@
     catch (e) { html.setAttribute("data-frame-err", (e && e.message) || String(e)); }
   }
   function frameBody() {
+    // reduced motion is a static final state (applyMotionState wrote it);
+    // the scroll loop must not overwrite it with live scroll positions
+    if (RMQ.matches) return;
     var vh = window.innerHeight;
     var y = window.scrollY;
     // ---- read phase (no interleaved writes) ----
@@ -211,13 +217,38 @@
       var p = r.top <= 0 ? Math.min(1, -r.top / (spanOf(acts[idx]) * vh)) : 0;
       if (p > 0.15) n.classList.add("is-lit");
     });
-    // the active act's own label sits where that act's content is (e.g. "proof"
-    // over the rail heading at the peak) — hide it while its act is pinned;
-    // the dot stays lit and hover still reveals the label
+    // labels that would sit on pinned content hide while pinned (QA P1-2):
+    // (1) the active act's own label ("proof" over the rail heading at the
+    //     peak); (2) any lit label whose y-band overlaps a pinned act's
+    //     heading block ("capabilities" stacked under the rail eyebrow).
+    // Labels render at x >= 32px, always inside the slab zone, so the y-band
+    // test is the whole test. Dots stay lit (the record is kept); hover still
+    // reveals the label (the CSS suppression rule beats the hover rule).
+    var headRects = [];
+    headEls.forEach(function (h) {
+      // the container box (e.g. #rail-head is a full-height flex slab) would
+      // suppress every left-rail label; the heading block is its text children
+      var kids = h.children.length ? h.children : [h];
+      for (var ki = 0; ki < kids.length; ki++) {
+        var hr = kids[ki].getBoundingClientRect();
+        if (hr.top < vh && hr.bottom > 0) headRects.push(hr);
+      }
+    });
     nodes.forEach(function (n, ni) {
       var idx = nodeActIdx[ni];
       if (idx < 0) return;
-      n.classList.toggle("tlabel-off", activeId === acts[idx].getAttribute("data-act"));
+      var off = activeId === acts[idx].getAttribute("data-act");
+      if (!off && n.classList.contains("is-lit")) {
+        var lb = n.querySelector(".tlabel");
+        var lr = lb ? lb.getBoundingClientRect() : null;
+        if (lr && lr.height > 0) {
+          for (var hi = 0; hi < headRects.length; hi++) {
+            var hr = headRects[hi];
+            if (lr.top < hr.bottom - 2 && lr.bottom > hr.top + 2) { off = true; break; }
+          }
+        }
+      }
+      n.classList.toggle("tlabel-off", off);
     });
     // act 5 flow reveals: deterministic on scroll position. Fires once an
     // element's top passes 92% of the viewport; elements already above that
